@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+<script>
+
+
+</script>
+    <head>
+        <link rel="shortcut icon" type="image/x-icon" href="Play%20Button.ico" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script type="text/javascript">
+           (function(){
+              emailjs.init("user_CBiuqLZ6Ri8hfxrHaEVYG");
+           })();
+        </script>
+    </head>
+    <title>Inspire</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+    .mySlides {display:none}
+    .w3-left, .w3-right, .w3-badge {cursor:pointer}
+    .w3-badge {height:13px;width:13px;padding:0}
+    .divider{
+    width:100px;
+    height:auto;
+    display:inline-block;
+        }
+    .button {
+    background-color: black; /* Green */
+    border: 1px solid white;
+    color: white;
+    padding: 20px 32px;
+    text-align: center;
+    text-decoration: none;
+    display:inline-block;
+    float:right;
+    -moz-transition: 0.5s linear;
+    -ms-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    -webkit-transition: 1s linear;
+    transition: 0.5s linear;
+    font-size: 16px;
+    
+}
+    .button
+        {
+        cursor: pointer;
+        }
+    .button:hover 
+        {
+            border: 1px solid white;
+            background-color: antiquewhite;
+            color: black;
+        }
+    .header 
+        {
+    display: inline-block;
+    float: left;
+    
+        }
+    input[type=text]
+        {
+            width: 80%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+    .select
+        {
+            width: 80%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .stuff
+        {
+            width: 80%;
+            padding: 50px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        padding-top: 60px;
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+        border: 1px solid #888;
+        width: 70%; /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button (x) */
+    .close {
+        position: absolute;
+        right: 25px;
+        top: 0;
+        color: #000;
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: red;
+        cursor: pointer;
+    }
+
+    /* Add Zoom Animation */
+    .animate {
+        -webkit-animation: animatezoom 0.6s;
+        animation: animatezoom 0.6s
+    }
+
+    @-webkit-keyframes animatezoom {
+        from {-webkit-transform: scale(0)} 
+        to {-webkit-transform: scale(1)}
+    }
+
+    @keyframes animatezoom {
+        from {transform: scale(0)} 
+        to {transform: scale(1)}
+    }
+
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+        span.psw {
+           display: block;
+           float: none;
+        }
+        .cancelbtn {
+           width: 100%;
+        }
+    }
+        div.borders {
+    border-radius: 25px;
+    background-color: #e7e7e7;
+    width: 90%;
+    padding: 10px;
+    border: 5px solid #e7e7e7;
+    margin: 0;
+            
+}
+#main
+{
+    width: 100%;
+    height: 4.4em;
+}
+
+
+.buttonSearch
+        {
+            background-color:#e7e7e7;
+            border:none; 
+            color: black; 
+            width: 80%;
+            padding: 12px;
+            
+        }
+        
+    .buttonSearch:hover
+        {
+            background-color:white;
+            border: 1px solid black;
+            color: black; 
+            width: 80%;
+            padding: 12px;
+            
+        }
+
+    </style>
+<body style="background-color:antiquewhite;">
+    
+    
+    
+    <h1 class ="header">&nbsp;&nbsp;INSPIRE</h1>
+    <div id="main">
+    <div style="text-align: right" id="menu">
+    
+    <a  class="button" onclick="document.getElementById('id01').style.display='block'; get()" id=request>Request Topic</a>
+    <a class="button" onclick="All()">All Subjects</a>
+     <a class="button" onclick="document.getElementById('id02').style.display='block'">Search</a>
+
+    </div>
+    </div>
+    <div id="id01" class="modal">
+  
+  <form class="modal-content animate" >
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal" id="closed">&times;</span>
+      
+    </div>
+
+    <div class="container">
+    <br>
+      <label><b>Name:</b></label>
+    <br>
+      <input type="text" placeholder="Enter Your Name" name="uname" required id="name">
+    <br>
+        <label><b>What Is Your Email:</b></label>
+    <br>
+        <input  type="text"  placeholder="Please Enter Your Email Address So You Can Be Informed When Topic Is Uploaded" name="psw" id="email" required>
+    <br>
+      <label><b>Topic:</b></label>
+    <br>
+      <input  type="text"  placeholder="Enter Topic Name" name="psw" required id="showname">
+    <br>
+        <label><b>Other Relavant Infomation:</b></label>
+    <br>
+        <input  type="text"  placeholder="Enter Any Other Relavant Information" name="psw" id="option">
+    <br>
+      <button class="buttonSearch" onclick ="send()" type="button">Submit</button>
+    <br>
+    <br>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+    </div>
+  </form>
+</div>
+    
+    
+    
+    
+    <div id="id02" class="modal">
+  
+  <form class="modal-content animate" >
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal" id="closed">&times;</span>
+      
+    </div>
+
+    <div class="container">
+    <br>
+      <label><b>Enter Name of Topic:</b></label>
+    <br>
+    
+      <input  type="Text" placeholder="Search.." name="search" id = "searchtxt" >
+    <p>please remove all special characters from search such as ':,-,$'</p>
+    <br>
+      <button  class="buttonSearch" onclick ="search3();" type="button" >Search</button>
+    <br>
+    <br>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+    </div>
+  </form>
+</div>
+    
+    
+    
+    
+    
+    
+<div class="w3-content w3-display-container" style="max-width:100%">
+    
+        <div class="mySlides ">
+                <a href = "#"><img   src="FrontpgPics/Chemistry.jpg" style="width:100%" height = "400px"></a>
+                <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black">
+               IGCSE EDEXCEL Chemistry
+                </div>
+
+          </div>    
+  
+    <div class="mySlides">           
+             <a href = "#"><img   src="FrontpgPics/Physics.png" style="width:100%" height="400px" ></a> 
+        <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black">
+                IGCSE EDEXCEL Physics
+                </div>
+
+          </div>
+    
+            <div class="mySlides">
+                      <a href =#><img   src="FrontpgPics/Biology.jpg" style="width:100%" height = "400px"></a>
+                <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black">
+              IGCSE EDEXCEL Biology
+                </div>
+
+          </div>
+    
+        <div class="mySlides ">
+              <a href = #><img   src="FrontpgPics/Math.jpg" style="width:100%" height = "400px"></a>
+                <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black">
+                IGCSE CIE Extended Math
+                </div>
+
+          </div>
+    
+            <div class="mySlides">
+                      <a href = "#"><img   src="FrontpgPics/geography.jpg" style="width:100%" height = "400px"></a>
+                <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black">
+               IGCSE CIE Geography
+                </div>
+
+          </div>
+
+            
+
+    
+  <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+    <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+    <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(5)"></span>
+  </div>
+</div>
+    
+<h3 > &nbsp;  &nbsp; &nbsp; Latest Topics</h3>
+<center>
+<div class="borders">
+    
+<a href ="#"><img style="border: 1px solid black;" onclick =clickonrq() hspace="55" src="http://static.wpe.au.syrahost.com/var/m_4/4b/4b1/28256/940003-coming-soon.jpg"  width = "158.4px" height ="234.8px"></a>
+    
+<a href ="#"><img style="border: 1px solid black;" onclick =clickonrq() src="http://static.wpe.au.syrahost.com/var/m_4/4b/4b1/28256/940003-coming-soon.jpg"  width = "158.4px" height ="234.8px"></a>
+    
+<a href="#"><img style="border: 1px solid black;" onclick =clickonrq() hspace="55" src="http://static.wpe.au.syrahost.com/var/m_4/4b/4b1/28256/940003-coming-soon.jpg"  width = "158.4px" height ="234.8px"></a>
+    
+<a href="#"><img style="border: 1px solid black;" onclick =clickonrq()  src="http://static.wpe.au.syrahost.com/var/m_4/4b/4b1/28256/940003-coming-soon.jpg"  width = "158.4px" height ="234.8px"></a>
+    
+<a href="#"><img style="border: 1px solid black;" onclick =clickonrq() hspace="55" src="http://static.wpe.au.syrahost.com/var/m_4/4b/4b1/28256/940003-coming-soon.jpg"  width = "158.4px" height ="234.8px"></a>
+    
+<br>
+<br>
+<a href="#"><img style="border: 1px solid black;" onclick =clickonrq() hspace="55" src="http://static.wpe.au.syrahost.com/var/m_4/4b/4b1/28256/940003-coming-soon.jpg"  width = "158.4px" height ="234.8px"></a>
+   
+<a href="#"><img style="border: 1px solid black;" onclick =clickonrq()  src="http://static.wpe.au.syrahost.com/var/m_4/4b/4b1/28256/940003-coming-soon.jpg"  width = "158.4px" height ="234.8px"></a>
+    
+        <a href="#"><img style="border: 1px solid black;" id=21 onclick =clickonrq()  class="movpost" src="http://static.wpe.au.syrahost.com/var/m_4/4b/4b1/28256/940003-coming-soon.jpg"  width = "158.4px" height ="234.8px" hspace="55"></a>
+    
+    <a href="#"><img  style="border: 1px solid black;" onclick =clickonrq()  src="http://static.wpe.au.syrahost.com/var/m_4/4b/4b1/28256/940003-coming-soon.jpg"  width = "158.4px" height ="234.8px"></a>
+    
+     <a href="#"><img style="border: 1px solid black;" onclick =clickonrq() hspace="55" src="http://static.wpe.au.syrahost.com/var/m_4/4b/4b1/28256/940003-coming-soon.jpg"  width = "158.4px" height ="234.8px"></a>
+    
+    
+    </div>
+</center>
+
+    <br>
+<br>
+</body>
+    
+<script>
+    
+
+    
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 5000); // Change image every 2 seconds
+    currentDiv(myIndex)
+}
+    
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-white";
+}
+    
+    var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+var modal = document.getElementById('id02');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+var modal = document.getElementById('id03');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+function Movie()
+    {
+        localStorage.setItem("Entrance",true)
+    }
+
+function get()
+    {
+                    document.getElementById("name").value = localStorage.getItem("Name")
+                    document.getElementById("email").value = localStorage.getItem("Email")
+                    
+    }
+function send()
+    {
+        localStorage.setItem("Name",document.getElementById("name").value)
+        localStorage.setItem("Email",document.getElementById("email").value)
+        emailjs.send("default_service","ocean_movie_s_send",{name:document.getElementById("name").value, email:document.getElementById("email").value,  Movie:document.getElementById("showname").value, Year:document.getElementById("year").value, information:document.getElementById("option").value});
+        
+        document.getElementById("name").value=""
+        document.getElementById("showname").value=""
+        document.getElementById("email").value=""
+        document.getElementById("year").value=""
+        document.getElementById("option").value=""
+        document.getElementById("closed").click();
+        alert("Form Submitted!")
+    }
+    
+    function search3()
+    {
+        localStorage.setItem("searchitem",document.getElementById('searchtxt').value)
+        self.location="TopicSearch.html";
+        
+        localStorage.setItem("hide",true)
+        localStorage.setItem("Entrance",true)
+    }
+    function All()
+    {
+        self.location="TopicSearch.html";
+        localStorage.setItem("hide",false)
+        localStorage.setItem("Entrance",true)
+    }
+        function clickonrq()
+    {
+        document.getElementById("request").click();
+    }
+    
+    function ComingSoon()
+    {
+        alert("Coming Soon")
+    }
+    </script>
+    
+</html>
