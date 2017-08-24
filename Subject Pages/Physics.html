@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" type="text/css" href="Subject%20Page.css">
+
+<img src="Subject%20Page%20Pics/Physics%20Page.png" width="100%" >
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Physics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none;}
+</style>
+<body style="background-color:#CFEDFA;" >
+        <div class="w3-center w3-bar w3-black">
+              <button class="w3-button demo w3-bar-item " onclick="currentDiv(1)">Syllabus Point Breakdown</button> 
+              <button class="w3-button demo w3-bar-item" onclick="currentDiv(2)">Physics Videos</button> 
+              <button class="w3-button demo w3-bar-item" onclick="currentDiv(3)">Past Papers</button> 
+              <button class="w3-button demo w3-bar-item" onclick="currentDiv(4)">Books And Fun Videos</button> 
+              <button class="w3-button demo w3-bar-item" onclick="currentDiv(5)">Q & A</button> 
+        </div>
+        <div class="w3-content" style="max-width:100%">
+            
+        <div class="mySlides w3-container">
+            <h1>Syllabus Points</h1>
+        </div>
+
+            
+        <div class="mySlides w3-container">
+            <h1>Physics Videos</h1>
+        </div>
+            
+        <div class="mySlides w3-container">
+            <h1>Past Papers</h1>
+            <div class="w3-center w3-bar w3-black">
+                <button class="w3-button demo2 w3-bar-item" onclick="currentDiv2(1)">Questions By Topic</button> 
+                <button class="w3-button demo2 w3-bar-item" onclick="currentDiv2(2)">Past Year Tests</button> 
+            </div>
+                <div class="w3-content w3-white" style="max-width:100%">
+                    
+                            <div class="mySlides2 w3-container">
+                                <div class="newspaper">
+                                    <h3 style="display:inline-block;">Double Science</h3>
+                                    <h3 style="display:inline-block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+                                    <h3 style="display:inline-block;">Separate Science</h3>
+                                    <hr>
+
+                                   
+                                </div>
+                            </div>
+                    
+                            <div class="mySlides2 w3-container">
+                                    <h1>hello2</h1>
+                            </div>
+                </div>
+        </div>
+            
+        <div class="mySlides w3-container">
+            <h1>Books And Fun Videos</h1>
+        </div>
+            
+       <div class="mySlides w3-container">
+                <h1>Ask Any Question! We Will Reply Soon</h1>
+                <div id="disqus_thread"></div>
+                <script>
+
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                /*
+                var disqus_config = function () {
+                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                */
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://dcbinspire.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+        </div>
+
+        </div>
+
+
+    
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+
+    function currentDiv(n) {
+      showDivs(slideIndex = n);
+    }
+
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      if (n > x.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+         dots[i].className = dots[i].className.replace(" w3-red", "");
+      }
+      x[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " w3-red";
+    }
+    
+    
+     var slideIndex2 = 1;
+    showDivs2(slideIndex2);
+
+    function currentDiv2(n) {
+      showDivs2(slideIndex2 = n);
+    }
+
+    function showDivs2(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides2");
+      var dots = document.getElementsByClassName("demo2");
+      if (n > x.length) {slideIndex2 = 1}    
+      if (n < 1) {slideIndex2 = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+         dots[i].className = dots[i].className.replace(" w3-red", "");
+      }
+      x[slideIndex2-1].style.display = "block";  
+      dots[slideIndex2-1].className += " w3-red";
+    }
+</script>
+<script id="dsq-count-scr" src="//dcbinspire.disqus.com/count.js" async></script>
+</body >
+</html>
