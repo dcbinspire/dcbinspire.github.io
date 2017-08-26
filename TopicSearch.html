@@ -46,9 +46,7 @@ input[type=searchtext]:focus {
     display:inline-block;
         }
     .button {
-    background-color: black; /* Green */
-    
-    border: 1px solid white;
+    background-color: #B20320; /* Green */
     color: white;
     padding: 20px 32px;
     text-align: center;
@@ -58,11 +56,12 @@ input[type=searchtext]:focus {
     -moz-transition: 0.5s linear;
     -ms-transition: 0.5s linear;
     -o-transition: 0.5s linear;
-    -webkit-transition: 0.5s linear;
+    -webkit-transition: 1s linear;
     transition: 0.5s linear;
     font-size: 16px;
     
 }
+    .white{color:white;}
     .button
         {
         cursor: pointer;
@@ -75,8 +74,16 @@ input[type=searchtext]:focus {
         }
     .header 
         {
-    display: inline-block;
-    float: left;
+            display: inline-block;
+            float: left;
+            width: 100%;
+            height: 66px;
+            background-color: #B20320;
+            padding-top:15px;
+            z-index:-10;
+            position:absolute;
+            top:-10px;
+            color: white;
     
         }
     input[type=text]
@@ -171,10 +178,10 @@ input[type=searchtext]:focus {
     }
         div.borders {
     border-radius: 25px;
-    background-color: #9BA6A9;
+    background-color: #edf2f4;
     width: 90%;
     padding: 10px;
-    border: 5px solid #9BA6A9;
+    border: 5px solid #edf2f4;
     margin: 0;
             
 }
@@ -208,7 +215,7 @@ input[type=searchtext]:focus {
         
 
     </style>
-<body style="background-color:#CFEDFA;">
+<body style="background-color:#8d99ae;">
     
     
     
@@ -286,9 +293,7 @@ input[type=searchtext]:focus {
 </div>
         
     
-<br><br>
-    
-<h3 id="SearchText" > &nbsp;  &nbsp; &nbsp; All Topics</h3>
+<h3 style="color:white; width:100%; height:50px; padding-top:12.5px; background-color:#242638; position:relative; top:-10px;" id="SearchText" > &nbsp;  &nbsp; &nbsp; All Topics</h3>
 <center>
 <div class="borders" id="border">
 <a href ="#"><img style="border: 1px solid black;" onclick =clickonrq() hspace="5%" src="http://static.wpe.au.syrahost.com/var/m_4/4b/4b1/28256/940003-coming-soon.jpg"  class="movpost" width = "158.4px" height ="234.8px" id =1></a>
