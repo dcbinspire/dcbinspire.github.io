@@ -1,5 +1,27 @@
 <!DOCTYPE html>
 <html>
+<style> 
+    /*searchbar css*/
+input[type=searchtext] {
+    width: 18%;
+    height: 40px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 14px 0;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+input[type=searchtext]:focus {
+    width: 50%;
+}
+</style>
     <head>
         <link rel="shortcut icon" type="image/x-icon" href="Play%20Button.ico" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -10,7 +32,7 @@
            })();
         </script>
     </head>
-    <title>Ocean Movies</title>
+    <title>INSPIRE</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -196,7 +218,7 @@
     
     <a  class="button" onclick="document.getElementById('id01').style.display='block'; get()" id=request>Request Topic</a>
     <a class ="button" onclick="home()">Home</a>
-     <a class="button" onclick="document.getElementById('id02').style.display='block'">Search</a>
+     <input type="searchtext" name="search" onkeydown="key_down(event)" placeholder="Search for a topic" id="searchtxt" required>
 
     </div>
     </div>
@@ -212,9 +234,9 @@
     <br>
       <label><b>Name:</b></label>
     <br>
-      <input type="text" placeholder="Enter Your Name" name="uname" required id="name">
+      <input type="text" placeholder="Enter your name" name="uname" required id="name">
     <br>
-        <label><b>What Is Your Email:</b></label>
+        <label><b>Email:</b></label>
     <br>
         <input  type="text"  placeholder="Enter your email to receive notifications when the topic is uploaded" name="psw" id="email" required>
     <br>
@@ -222,7 +244,7 @@
     <br>
       <input  type="text"  placeholder="Enter topic name" name="psw" required id="showname">
     <br>
-        <label><b>Other Relavant Infomation:</b></label>
+        <label><b>Other relavant infomation:</b></label>
     <br>
         <input  type="text"  placeholder="Enter Any Other relavant information" name="psw" id="option">
     <br>
@@ -237,8 +259,7 @@
 </div>
     
     
-    
-    
+       
     <div id="id02" class="modal">
   
   <form class="modal-content animate">
@@ -263,7 +284,6 @@
     </div>
   </form>
 </div>
-   
         
     
 <br><br>
@@ -441,6 +461,21 @@ function send()
         localStorage.setItem("searchitem",document.getElementById('searchtxt').value)
         localStorage.setItem("hide",true)
         location.reload();
+    }
+    /* Search ENTER key listner */
+    function key_down(e) 
+    {
+        if(e.keyCode === 13) {
+                search3();
+        }
+    }
+    function search3()
+    {
+        localStorage.setItem("searchitem",document.getElementById('searchtxt').value)
+        self.location="TopicSearch.html";
+        
+        localStorage.setItem("hide",true)
+        localStorage.setItem("Entrance",true)
     }
     function clickonrq()
     {

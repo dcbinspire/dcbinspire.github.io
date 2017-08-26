@@ -1,8 +1,29 @@
 <!DOCTYPE html>
 <html>
+<style> 
+    /*searchbar css*/
+input[type=searchtext] {
+    width: 18%;
+    height: 40px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 14px 0;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+input[type=searchtext]:focus {
+    width: 50%;
+}
+</style>
 <script>
-
-
+    
 </script>
     <head>
         <link rel="shortcut icon" type="image/x-icon" href="Play%20Button.ico" />
@@ -198,8 +219,7 @@
     
     <a  class="button" onclick="document.getElementById('id01').style.display='block'; get()" id=request>Request Topic</a>
     <a class="button" onclick="All()">All Subjects</a>
-     <a class="button" onclick="document.getElementById('id02').style.display='block'">Search</a>
-
+    <input type="searchtext" name="search" onkeydown="key_down(event)" placeholder="Search for a topic" id="searchtxt" required>
     </div>
     </div>
     <div id="id01" class="modal">
@@ -224,7 +244,7 @@
     <br>
       <input  type="text"  placeholder="Enter topic name" name="psw" required id="showname">
     <br>
-        <label><b>Other Relavant Infomation:</b></label>
+        <label><b>Other relavant infomation:</b></label>
     <br>
         <input  type="text"  placeholder="Enter any other relavant information" name="psw" id="option">
     <br>
@@ -245,26 +265,7 @@
     <div id="id02" class="modal">
   
   <form class="modal-content animate" >
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal" id="closed">&times;</span>
-      
-    </div>
-
-    <div class="container">
-    <br>
-      <label><b>Enter Name of Topic:</b></label>
-    <br>
     
-      <input  type="Text" placeholder="Search.." name="search" id = "searchtxt" >
-    <p>please remove all special characters from search such as ':,-,$'</p>
-    <br>
-      <button  class="buttonSearch" onclick ="search3();" type="button" >Search</button>
-    <br>
-    <br>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-    </div>
   </form>
 </div>
     
@@ -462,7 +463,13 @@ function send()
         document.getElementById("closed").click();
         alert("Form Submitted!")
     }
-    
+    /* Search ENTER key listner */
+    function key_down(e) 
+    {
+        if(e.keyCode === 13) {
+                search3();
+        }
+    }
     function search3()
     {
         localStorage.setItem("searchitem",document.getElementById('searchtxt').value)
