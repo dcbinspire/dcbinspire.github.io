@@ -1,11 +1,18 @@
-h5{
- color:deepskyblue;
-}
 
 h3 { 
 font-weight: bold; 
 }
 
+
+a:link {
+    color: deepskyblue;
+}
+a:visited{
+    color:deepskyblue;
+}
+a:hover {
+    color:royalblue;
+}
 body {
   font-family: sans-serif;
   font-size: .9rem;
