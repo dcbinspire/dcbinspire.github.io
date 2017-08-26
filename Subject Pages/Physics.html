@@ -22,6 +22,35 @@
             
         <div class="mySlides w3-container">
             <h1>Syllabus Points</h1>
+        <div class="w3-center w3-bar w3-black">
+              <button class="w3-button demo3 w3-bar-item " onclick="currentDiv3(1)">Section 1</button> 
+              <button class="w3-button demo3 w3-bar-item" onclick="currentDiv3(2)">Section 2</button> 
+              <button class="w3-button demo3 w3-bar-item" onclick="currentDiv3(3)">Section 3</button> 
+              <button class="w3-button demo3 w3-bar-item" onclick="currentDiv3(4)">Section 4</button> 
+              <button class="w3-button demo3 w3-bar-item" onclick="currentDiv3(5)">Section 5</button> 
+        </div>
+            <div class="w3-content w3-white" style="max-width:100%">
+                        <div class="mySlides3 w3-container">
+                                <h1>Section 1</h1>
+                        </div>
+                
+                        <div class="mySlides3 w3-container">
+                                <h1>Section 2</h1>
+                        </div> 
+                
+                        <div class="mySlides3 w3-container">
+                                <h1>Section 3</h1>
+                        </div>
+                
+                        <div class="mySlides3 w3-container">
+                                <h1>Section 4</h1>
+                        </div> 
+                
+                        <div class="mySlides3 w3-container">
+                                <h1>Section 5</h1>
+                        </div>
+                      
+            </div>
         </div>
 
             
@@ -38,14 +67,36 @@
                 <div class="w3-content w3-white" style="max-width:100%">
                     
                             <div class="mySlides2 w3-container">
-                                <div class="newspaper">
-                                    <h3 style="display:inline-block;">Double Science</h3>
-                                    <h3 style="display:inline-block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
-                                    <h3 style="display:inline-block;">Separate Science</h3>
-                                    <hr>
-
-                                   
+                                <div class="autowide">
+                                    
+                                    <div class="module">
+                                    <b><h3>Double Science</h3></b>                           
+                                    <h4>Question Paper</h4>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsVDZ2TGEzdkZ2LWs" target="_blank"><h5>Movement And Position</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsaHpoYV9kTnZmR3M" target="_blank"><h5>Movement And Position</h5></a>
+                                    </div>
+                                    
+                                    <div class="module">
+                                        <br>
+                                        <br>
+                                        <h4>Mark Scheme</h4>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSseWJxYTFnWW9MU00" target="_blank"><h5 >Movement And Position MS</h5></a>
+                                    </div>
+                                    
+                                    <div class="module">
+                                        <b><h3>Separate Science</h3></b>
+                                        <h4>Question Paper</h4>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsVUlweDZFSkR3M28" target="_blank"><h5>Movement And Position</h5></a>                              
+                                    </div>
+                                    
+                                    <div class="module">
+                                    <br>
+                                    <br>
+                                    <h4>Mark Scheme</h4>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsS0loQjFLdVlSNGc" target="_blank"><h5>Movement And Position MS</h5></a>
+                                    </div>
                                 </div>
+                                            
                             </div>
                     
                             <div class="mySlides2 w3-container">
@@ -137,6 +188,30 @@
       }
       x[slideIndex2-1].style.display = "block";  
       dots[slideIndex2-1].className += " w3-red";
+    }
+    
+    
+         var slideIndex3 = 1;
+    showDivs3(slideIndex3);
+
+    function currentDiv3(n) {
+      showDivs3(slideIndex3 = n);
+    }
+
+    function showDivs3(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides3");
+      var dots = document.getElementsByClassName("demo3");
+      if (n > x.length) {slideIndex3 = 1}    
+      if (n < 1) {slideIndex3 = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+         dots[i].className = dots[i].className.replace(" w3-red", "");
+      }
+      x[slideIndex3-1].style.display = "block";  
+      dots[slideIndex3-1].className += " w3-red";
     }
 </script>
 <script id="dsq-count-scr" src="//dcbinspire.disqus.com/count.js" async></script>
