@@ -22,9 +22,6 @@ input[type=searchtext]:focus {
     width: 50%;
 }
 </style>
-<script>
-    
-</script>
     <head>
         <link rel="shortcut icon" type="image/x-icon" href="Play%20Button.ico" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -35,7 +32,7 @@ input[type=searchtext]:focus {
            })();
         </script>
     </head>
-    <title font="">Inspire</title>
+    <title>INSPIRE</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -48,7 +45,6 @@ input[type=searchtext]:focus {
     height:auto;
     display:inline-block;
         }
-        .whiteclass{ color: 242638;}
     .button {
     background-color: #B20320; /* Green */
     color: white;
@@ -65,11 +61,7 @@ input[type=searchtext]:focus {
     font-size: 16px;
     
 }
-    .buttoncolor{
-            background-color:#2B2D42;
-            color:white;
-            border-bottom-right-radius: 25px;
-        }
+    .white{color:white;}
     .button
         {
         cursor: pointer;
@@ -97,15 +89,6 @@ input[type=searchtext]:focus {
     input[type=text]
         {
             width: 50%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
-    .select
-        {
-            width: 80%;
             padding: 12px 20px;
             margin: 8px 0;
             display: inline-block;
@@ -152,7 +135,15 @@ input[type=searchtext]:focus {
         font-size: 35px;
         font-weight: bold;
     }
-
+    .select
+        {
+            width: 80%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
     .close:hover,
     .close:focus {
         color: red;
@@ -187,10 +178,10 @@ input[type=searchtext]:focus {
     }
         div.borders {
     border-radius: 25px;
-    background-color: #EDF2F4;
+    background-color: #edf2f4;
     width: 90%;
     padding: 10px;
-    border: 5px solid #EDF2F4;
+    border: 5px solid #edf2f4;
     margin: 0;
             
 }
@@ -201,9 +192,10 @@ input[type=searchtext]:focus {
 }
 
 
+
 .buttonSearch
         {
-            background-color:white;
+            background-color:#e7e7e7;
             border:none; 
             color: black; 
             width: 50%;
@@ -220,9 +212,10 @@ input[type=searchtext]:focus {
             padding: 12px;
             
         }
+        
 
     </style>
-<body style="background-color:#8D99AE;">
+<body style="background-color:#8d99ae;">
     
     
     
@@ -231,13 +224,14 @@ input[type=searchtext]:focus {
     <div style="text-align: right" id="menu">
     
     <a  class="button" onclick="document.getElementById('id01').style.display='block'; get()" id=request>Request Topic</a>
-    <a class="button" onclick="All()">All Subjects</a>
-    <input type="searchtext" name="search" onkeydown="key_down(event)" placeholder="Search for a topic" id="searchtxt" required>
+    <a class ="button" onclick="home()">Home</a>
+     <input type="searchtext" name="search" onkeydown="key_down(event)" placeholder="Search for a topic" id="searchtxt" required>
+
     </div>
     </div>
     <div id="id01" class="modal">
   
-  <form class="modal-content animate" >
+  <form class="modal-content animate">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal" id="closed">&times;</span>
       
@@ -253,13 +247,13 @@ input[type=searchtext]:focus {
     <br>
         <input  type="text"  placeholder="Enter your email to receive notifications when the topic is uploaded" name="psw" id="email" required>
     <br>
-      <label><b>Topic:</b></label>
+        <label><b>Topic:</b></label>
     <br>
       <input  type="text"  placeholder="Enter topic name" name="psw" required id="showname">
     <br>
         <label><b>Other relavant infomation:</b></label>
     <br>
-        <input  type="text"  placeholder="Enter any other relavant information" name="psw" id="option">
+        <input  type="text"  placeholder="Enter Any Other relavant information" name="psw" id="option">
     <br>
       <button class="buttonSearch" onclick ="send()" type="button">Submit</button>
     <br>
@@ -268,171 +262,71 @@ input[type=searchtext]:focus {
 
     <div class="container" style="background-color:#f1f1f1">
     </div>
-
   </form>
 </div>
     
     
-    
-    
+       
     <div id="id02" class="modal">
   
-  <form class="modal-content animate" >
-    
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal" id="closed">&times;</span>
+      
+    </div>
+
+    <div class="container">
+    <br>
+      <label><b>Enter Name of Topic:</b></label>
+    <br>
+      <input  type="Text" placeholder="Search.." name="search" id ="searchtxt" required>
+    <p style="margin=0;">please remove all special characters from search such as ':,-,$'</p>
+    <br>
+      <button  class="buttonSearch" onclick="look()"  type="button">Enter</button>
+    <br>
+    <br>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+    </div>
   </form>
 </div>
+        
     
-    
-    
-    
-    
-    
-<div class="w3-content w3-display-container" style="max-width:100%">
-    
-    
-    <div class="mySlides ">
-                <a href = "videoviewpage.html"><img   src=http://i4.ytimg.com/vi/xuCn8ux2gbs/hqdefault.jpg style="width:100%; background-size: cover; background-position: center;" height = "400px"></a>
-                <div class="w3-display-topleft w3-large w3-container w3-padding-16 buttoncolor">
-               Featured video (PG 13)
-                </div>
-
-          </div> 
-    
-    <div class="mySlides ">
-                <a href = "#"><img   src="FrontpgPics/Chemistry.jpg" style="width:100%" height = "400px"></a>
-                <div class="w3-display-topleft w3-large w3-container w3-padding-16 buttoncolor">
-               IGCSE EDEXCEL Chemistry
-                </div>
-
-          </div>    
-  
-    <div class="mySlides">           
-             <a href = "Subject%20Pages/Physics.html"><img   src="FrontpgPics/Physics.png" style="width:100%" height="400px" ></a> 
-        <div class="w3-display-topleft w3-large w3-container w3-padding-16 buttoncolor">
-                IGCSE EDEXCEL Physics
-                </div>
-
-          </div>
-    
-    <div class="mySlides">
-                      <a href =#><img   src="FrontpgPics/Biology.jpg" style="width:100%" height = "400px"></a>
-                <div class="w3-display-topleft w3-large w3-container w3-padding-16 buttoncolor">
-              IGCSE EDEXCEL Biology
-                </div>
-
-          </div>
-    
-    <div class="mySlides ">
-              <a href = #><img   src="FrontpgPics/Math.jpg" style="width:100%" height = "400px"></a>
-                <div class="w3-display-topleft w3-large w3-container w3-padding-16 buttoncolor">
-                IGCSE CIE Extended Math
-                </div>
-
-          </div>
-    
-    <div class="mySlides">
-                      <a href = "#"><img   src="FrontpgPics/geography.jpg" style="width:100%" height = "400px"></a>
-                <div class="w3-display-topleft w3-large w3-container w3-padding-16 buttoncolor">
-               IGCSE CIE Geography
-                </div>
-
-          </div>
-
-            
-
-    
-  <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-    <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-    <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
-    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
-    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(5)"></span>
-    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(6)"></span>
-  </div>
-</div>
-<br>
+<h3 style="color:white; width:100%; height:50px; padding-top:12.5px; background-color:#242638; position:relative; top:-10px;" id="SearchText" > &nbsp;  &nbsp; &nbsp; All Topics</h3>
 <center>
-<div class="borders">
-    
-<a href ="#"><img style="border: 1px solid black;" onclick =clickonrq() hspace="5%" src="http://static.wpe.au.syrahost.com/var/m_4/4b/4b1/28256/940003-coming-soon.jpg"  width = "158.4px" height ="234.8px"></a>
-    
-<a href ="#"><img style="border: 1px solid black;" onclick =clickonrq() src="http://static.wpe.au.syrahost.com/var/m_4/4b/4b1/28256/940003-coming-soon.jpg"  width = "158.4px" height ="234.8px"></a>
-    
-<a href="#"><img style="border: 1px solid black;" onclick =clickonrq() hspace="5%" src="http://static.wpe.au.syrahost.com/var/m_4/4b/4b1/28256/940003-coming-soon.jpg"  width = "158.4px" height ="234.8px"></a>
-    
-<a href="#"><img style="border: 1px solid black;" onclick =clickonrq()  src="http://static.wpe.au.syrahost.com/var/m_4/4b/4b1/28256/940003-coming-soon.jpg"  width = "158.4px" height ="234.8px"></a>
-    
-<a href="#"><img style="border: 1px solid black;" onclick =clickonrq() hspace="5%" src="http://static.wpe.au.syrahost.com/var/m_4/4b/4b1/28256/940003-coming-soon.jpg"  width = "158.4px" height ="234.8px"></a>
-    
-<br>
-<br>
-<a href="#"><img style="border: 1px solid black;" onclick =clickonrq() hspace="5%" src="http://static.wpe.au.syrahost.com/var/m_4/4b/4b1/28256/940003-coming-soon.jpg"  width = "158.4px" height ="234.8px"></a>
-   
-<a href="#"><img style="border: 1px solid black;" onclick =clickonrq()  src="http://static.wpe.au.syrahost.com/var/m_4/4b/4b1/28256/940003-coming-soon.jpg"  width = "158.4px" height ="234.8px"></a>
-    
-        <a href="#"><img style="border: 1px solid black;" id=21 onclick =clickonrq()  class="movpost" src="http://static.wpe.au.syrahost.com/var/m_4/4b/4b1/28256/940003-coming-soon.jpg"  width = "158.4px" height ="234.8px" hspace="5%"></a>
-    
-    <a href="#"><img  style="border: 1px solid black;" onclick =clickonrq()  src="http://static.wpe.au.syrahost.com/var/m_4/4b/4b1/28256/940003-coming-soon.jpg"  width = "158.4px" height ="234.8px"></a>
-    
-     <a href="#"><img style="border: 1px solid black;" onclick =clickonrq() hspace="5%" src="http://static.wpe.au.syrahost.com/var/m_4/4b/4b1/28256/940003-coming-soon.jpg"  width = "158.4px" height ="234.8px"></a>
-    
-    
-    </div>
+<div class="borders" id="border">
+    <iframe width="853" height="480" src="https://www.youtube.com/embed/xuCn8ux2gbs" frameborder="0" allowfullscreen></iframe>
+</div>    
 </center>
-
-    <br>
+    
+    <h3 id = tvshow></h3>
+<center>
+</center>
+<br>
 <br>
 </body>
     
 <script>
-    
+var allmov = document.getElementsByTagName("a").length;
+allmov=allmov-3
 
-    
-var myIndex = 0;
-carousel();
-
-function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";  
+for(i = 1; i < allmov+1; i++)
+    {
+ var x = document.getElementById(i)  
+if (localStorage.getItem("hide")=="true")
+        {
+            x.style.display='none'
+            document.getElementById("SearchText").innerHTML= "  \xa0\xa0\xa0\xa0\xa0 Showing Search Resuts For: " + localStorage.getItem("searchitem")
+            
+        }
     }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-    x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 5000); // Change image every 2 seconds
-    currentDiv(myIndex)
-}
-    
-var slideIndex = 1;
-showDivs(slideIndex);
+if (localStorage.getItem("hide")=="true")
+    {
+        document.getElementById("tvshow").innerHTML= ""
+        find()
+    }
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function currentDiv(n) {
-  showDivs(slideIndex = n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-     dots[i].className = dots[i].className.replace(" w3-white", "");
-  }
-  x[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " w3-white";
-}
-    
     var modal = document.getElementById('id01');
 
 // When the user clicks anywhere outside of the modal, close it
@@ -443,15 +337,6 @@ window.onclick = function(event) {
 }
 
 var modal = document.getElementById('id02');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
-var modal = document.getElementById('id03');
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -485,6 +370,80 @@ function send()
         document.getElementById("closed").click();
         alert("Form Submitted!")
     }
+    function home()
+    {
+        self.location="index.html"
+    }
+    function find()
+    {
+    for(i = 1; i < allmov+1; i++)
+    {
+    document.getElementById(i).hspace=0;
+    }
+        
+    var sheet = document.createElement('style')
+    sheet.innerHTML = ".movpost{position: absolute};";
+    document.body.appendChild(sheet);
+        
+   var searchitem = localStorage.getItem("searchitem")
+   searchitem=searchitem.toLowerCase();
+    searchitem=searchitem.replace(/ /g,'')
+   var NumOfMov= document.querySelectorAll('#border .'+searchitem).length;
+        
+        var movtitle = document.getElementById("border").querySelectorAll("."+searchitem);
+        var inum = 0
+        var tnum = 0 
+        for (i = 0; i < NumOfMov; i++)
+            {
+                
+                movtitle[i].style.display='block';
+                var percent = 4.25+inum
+                var percent2 = 22.5+tnum
+                var PtS2 = percent2.toString();
+                var PtS= percent.toString();
+                movtitle[i].style.left=PtS+"%"
+                movtitle[i].style.top=PtS2+"%"
+                inum=inum+20
+                if(percent>71)
+                    {
+                        tnum=tnum+30
+                        inum=0
+                    }
+                
+            }
+        var dontdoit = NumOfMov
+        var NumOfMov= document.querySelectorAll('#border2 .'+searchitem).length;
+        var movtitle = document.getElementById("border2").querySelectorAll("."+searchitem);
+        for (i = 0; i < NumOfMov; i++)
+            {
+                
+                movtitle[i].style.display='block';
+                var percent = 4.25+inum
+                var percent2 = 22.5+tnum
+                var PtS2 = percent2.toString();
+                var PtS= percent.toString();
+                movtitle[i].style.left=PtS+"%"
+                movtitle[i].style.top=PtS2+"%"
+                inum=inum+20
+                if(percent>71)
+                    {
+                        tnum=tnum+30
+                        inum=0
+                    }
+                
+            }
+        
+        if (dontdoit==0&&NumOfMov==0)
+        {
+            document.getElementById("SearchText").innerHTML= "  \xa0\xa0\xa0\xa0\xa0 Sorry There Was No Results For: " + localStorage.getItem("searchitem")
+        }
+    }
+    function look()
+    {
+        localStorage.setItem("searchitem",document.getElementById('searchtxt').value)
+        localStorage.setItem("hide",true)
+        location.reload();
+    }
     /* Search ENTER key listner */
     function key_down(e) 
     {
@@ -500,21 +459,31 @@ function send()
         localStorage.setItem("hide",true)
         localStorage.setItem("Entrance",true)
     }
-    function All()
-    {
-        self.location="TopicSearch.html";
-        localStorage.setItem("hide",false)
-        localStorage.setItem("Entrance",true)
-    }
-        function clickonrq()
+    function clickonrq()
     {
         document.getElementById("request").click();
     }
     
-    function ComingSoon()
+        function ComingSoon()
     {
         alert("Coming Soon")
     }
+        function currentplay()
+    {
+
+        document.getElementById("currentplayer").innerHTML= "Your Current Player Is: " + localStorage.getItem("CurrentPlayer")
+    }
+    
+    var modal = document.getElementById('id03');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+localStorage.setItem("Entrance",false)
+localStorage.setItem("hide",false)
     </script>
     
 </html>
