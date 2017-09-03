@@ -80,3 +80,12 @@ h1 {
   float: left;
   width: 50%;
 }
+
+        div.borders {
+    border-radius: 25px;
+    background-color: #EDF2F4;
+    width: 90%;
+    padding: 10px;
+    border: 5px solid #EDF2F4;
+    margin: 0;
+            
