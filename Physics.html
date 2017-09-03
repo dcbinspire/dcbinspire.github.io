@@ -1,0 +1,810 @@
+<html>
+    <head><script src="../../jquery-3.2.1.min.js"></script></head>
+  <link rel="stylesheet" type="text/css" href="../Subject%20Page.css">
+            <link rel="shortcut icon" type="image/x-icon" href="../Logo.ico" />
+<link rel="stylesheet" href="../../Buttonsw3.css">
+<img src="../Subject%20Page%20Pics/Physics%20Page.png" width="100%" >
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Physics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../Style.css">
+<style>
+.mySlides {display:none;}
+</style>
+<body style="background-color:#8d99ae" >
+    <script>
+            $(document).ready(function()
+    {
+        var today = new Date();
+        var date1 = new Date(parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear()); 
+        // get the current date today
+        var date2 = new Date("9/3/2017");
+        // day the site was launched
+        var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+        //need to have date diff because it will increment everyday as the day moves further from our launch date, everytime the date diff increases so does our fact, it will display the fact on the next line in the txt file.
+        var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+        // to make sure date diff is always positive
+        jQuery.get('PhysicsFact.txt', function(data) // getting the file
+        {     
+            var factnumber = data.split('\n'); //spliting the file into lines
+            var facttxt = document.getElementById('fact');
+            facttxt.innerHTML = factnumber[diffDays]; //changing the h1 tag's text into the fact
+        }); 
+                
+        jQuery.get('PhysicsFactPics.txt', function(data2) // getting the file
+        {     
+            var picnumber = data2.split('\n'); //spliting the file into lines
+            document.getElementById("factimg").src=picnumber[diffDays];
+
+        }); 
+    }); 
+    </script>
+        <div class="w3-center w3-bar w3-black">
+              <button class="w3-button w3-bar-item" onclick="location.href='../index.html'" style="background-color:#B20320">Home</button> 
+              <button class="w3-button demo w3-bar-item " onclick="currentDiv(1)">Featured Content</button> 
+              <button class="w3-button demo w3-bar-item " onclick="currentDiv(2)">Syllabus Point Breakdown</button> 
+              <button class="w3-button demo w3-bar-item" onclick="currentDiv(3)">Physics Videos</button> 
+              <button class="w3-button demo w3-bar-item" onclick="currentDiv(4)">Past Papers</button> 
+              <button class="w3-button demo w3-bar-item" onclick="currentDiv(5)">Books And Fun Videos</button> 
+              <button class="w3-button demo w3-bar-item" onclick="currentDiv(6)">Q & A</button> 
+        </div>
+        
+        <div class="w3-content" style="max-width:100%">
+            
+            <div class="mySlides w3-container w3-white">
+                    <div id=factss>
+                        <h2>Physics Fact Of The Day!</h2>
+                        <h3 id=fact></h3>
+                        <img id=factimg src="" width=100%>
+                                        <br><br>
+
+                    </div>
+                
+                    <div id=video>
+                           <h2>Video</h2> 
+                    </div>
+            </div> 
+        <div class="mySlides w3-container">
+            <h2>Syllabus Points</h2>
+        <div class="w3-center w3-bar w3-black">
+              <button class="w3-button demo3 w3-bar-item " onclick="currentDiv3(1)">Section 1</button> 
+              <button class="w3-button demo3 w3-bar-item" onclick="currentDiv3(2)">Section 2</button> 
+              <button class="w3-button demo3 w3-bar-item" onclick="currentDiv3(3)">Section 3</button> 
+              <button class="w3-button demo3 w3-bar-item" onclick="currentDiv3(4)">Section 4</button> 
+              <button class="w3-button demo3 w3-bar-item" onclick="currentDiv3(5)">Section 5</button> 
+              <button class="w3-button demo3 w3-bar-item" onclick="currentDiv3(6)">Section 6</button> 
+              <button class="w3-button demo3 w3-bar-item" onclick="currentDiv3(7)">Section 7</button> 
+        </div>
+            
+            
+            <!-- To anyone adding content to sections, here is a template to make things easier. And also, underline triple points but not the point number or the breakdown itself, just the title -->
+            
+            
+            <h3><b></b></h3>
+             <p></p><br>
+            
+
+
+            <div class="w3-content w3-white" style="max-width:100%">
+                
+                
+                        <div class="mySlides3 w3-container">
+                                <h1>Forces and Motion</h1><br>
+                            <p>***<u>Underlined</u> points are triple***</p><br>
+                            <h3><b>1.1 Use the following units:</b></h3>
+                            <p>Mass: kg<br>
+                                Velocity: m / s<br>
+                                Acceleration: m / s<sup>2</sup> ; N/kg<br>
+                                Force: N<br>
+                                Time: s<br>
+                                Momentum: kg m / s</p><br>
+                            
+                            <h3><b>1.2 Plot and interpret distance-time graphs</b></h3>
+                            <p>Straight and sloped line = constant speed <br>
+                                Horizontal line =  stationary</p><br>
+                            
+                            <h3><b>1.3 Know and use the relationship between average speed, distance moved and time</b></h3>
+                            <p>Average speed = total distance moved ÷ total time taken</p><br>
+                            
+                            <h3><b>1.4 Describe experiments to investigate the motion of everyday objects such as toy cars or tennis balls</b></h3>
+                            <p> Remember:<br><br> - Distance measurer <br> - Stopwatch <br> - Starting point, ending point <br> - Repeats</p><br>
+                            
+                            <h3><b>1.5 Know and use the relationship between acceleration, velocity and time</b></h3>
+                            <p>Acceleration = change in velocity ÷ change in time</p><br>
+                            
+                            <h3><b>1.6 Plot and interpret velocity-time graphs</b></h3>
+                            <p>Straight and sloped line = Constant acceleration <br>
+                            Horizontal line = Constant velocity <br> Area = distance travelled</p><br>
+                            
+                            <h3><b>1.7 Determine acceleration from the gradient of a velocity-time graph</b></h3>
+                            <p>Acceleration = change in velocity ÷ change in time</p><br>
+                            
+                            <h3><b>1.8 Determine the distance travelled from the area between a velocity-time graph and the time axis</b></h3>
+                            <p>Distance = velocity * time <br><br> This is only assuming that the line is horizontal, if it isn't then the following equation applies <br><br> Distance = average velocity * time</p><br>
+                            
+                            <h3><b>1.9 Describe the effects of forces between bodies such as changes in speed, shape or direction</b></h3>
+                            <p></p><br>
+                            
+                            <h3><b>1.10 Identify the different types of forces</b></h3>
+                            <p>Gravitational (aka Weight): Massive objects are attracted to each other, makes stuff (like uncoordinated hoomans) fall.<br><br>
+                                Friction: the resistance that one surface or object encounters when moving over another, like tyres on a car against the road.<br><br>
+                                Drag: air resistance/water resistance in one beautiful word, like why parachutes stops stuff from going SPLAT.<br><br>
+                                Upthrust: upward push of surrounding air, like in a hot air balloon.<br>
+                                Magnetic: forces caused by the motion of electric charge, resulting in attractive and repulsive forces between objects, like in compass needles.<br><br>
+                                Electrostatic: force produced by movement of charged particles (electrons).<br><br>
+                                Nuclear force: forces acting inside the nucleus of atoms, that hold that nucleons together.</p><br>
+                            
+                            <h3><b>1.11 Distinguish between vector and scalar quantities</b></h3>
+                            <p>Scalar: magnitude <br>
+                            Vector: magnitude AND direction</p><br>
+                            
+                            <h3><b>1.12 <u>Understand that force is a vector quantity</u></b></h3>
+                            <p></p><br>
+                            
+                            <h3><b>1.13 <u>Find the resultant force of forces that act along a line</u></b></h3>
+                            <p></p><br>
+                            
+                            <h3><b>1.14 Understand that friction is a force that opposes motion</b></h3>
+                            <p></p><br>
+                            
+                            <h3><b>1.15 Know and use the relationship between force, mass and acceleration</b></h3>
+                            <p>F = m * a </p><br>
+                            
+                            <h3><b>1.16 Know and use the relationship between weight, mass and g (gravitational field strength)</b></h3>
+                            <p>Weight = m * g</p><br>
+                            
+                            <h3><b>1.17 Describe the forces acting on falling objects and explain why falling objects reach a terminal velocity</b></h3>
+                            <p>Weight is constant, and a force. At first, weight is larger than air resistance/drag. As the object falls, drag increases (since it is proportional to speed), reducing the resultant force. Eventually, the drag force will be equal and opposite to the weight, making the resultant force 0. According to Newton's First Law of Motion, an object moving at a constant velocity will continue to move at that velocity unless an external force is applied, and since the resultant force is 0, the velocity will be constant. At this point, the object has reached terminal velocity.</p><br>
+                            
+                            <h3><b>1.18 Describe experiments to investigate the forces acting on falling objects, such as sycamore seeds or parachutes</b></h3>
+                            <p>Sycamore Seeds: <br><br>
+                                <br> - Obtain at least 5 differently sized sycamore seeds
+                                Measure the length and width with a ruler
+                                <br> - Multiply to find the surface area
+                                <br> - Drop the seeds one at a time, using a stopwatch to time them
+                                <br> - Plot a graph of surface area vs time graph
+                                Line of best fit should show that the larger the surface area, the longer the time it takes to fall
+                                <br> - With smaller surface areas, there is less drag, so it is mostly weight that acts on the seed
+                                <br> - We can show that drag acts on the seed by increasing the surface area 
+                                <br> - Parachutes are the same just replace sycamore seeds with parachutes</p><br>
+                            
+                            <h3><br><b>1.19 Describe the factors affecting vehicle stopping distance including speed, mass, road condition and reaction time</b></h3>
+                            <p>Stopping distance = thinking distance + braking distance
+                                <br>Speed: high speed increases thinking distance and braking distance
+                               <br>Mass: larger mass increases braking distance
+                               <br>Road condition: slippery roads increases braking distance.
+                               <br>Reaction time: slower reaction time increases thinking distance</p><br>
+                            
+                            <h3><b>1.20 Know and use the relationship between momentum, mass and velocity</b></h3>
+                            <p>momentum = mass * velocity <br>p = m*v</p><br>
+                            
+                            <h3><b>1.21 <u>Use the idea of momentum to explain safety features</u></b></h3>
+                            <p>Seat belts:<br><br>
+                                - Re-distributes force
+                                <br> - Increases impact time, decreasing velocity, hence decreasing rate of change of momentum.
+                                <br> - Decreasing rate of change of momentum = lower force
+                                <br> - Positioned so that the passenger's head impacts the air bag correctly.
+                                <br> - Restrain passengers so they don't fly out the windshield.<br><br>
+                                Crumple zones:<br><br>
+                                - Slows down collision, decreasing velocity, hence decreasing rate of change of momentum, reducing force
+                                <br> - Absorbs energy, redistributes force to the hard/rigid/strong frame.<br><br>
+                                Air bags:<br><br>
+                                - Increases impact time, decreasing velocity, hence decreasing the rate of change of momentum.
+                                <br> - Decreasing rate of change of momentum = lower force</p><br>
+                            
+                            <h3><b>1.22 <u>Use the conservation of momentum to calculate the mass, velocity or momentum of objects</u></b></h3>
+                            <p><b>For a collision occuring between object 1 and object 2 in an isolated system, the total momentum of the two objects before and after the collision are equal.</b></p><br>
+                            
+                            <h3><b>1.23 <u>Use the relationship between force, change in momentum and time taken</u></b></h3>
+                            <p>Force = change in momentum ÷ time taken <br><br>
+                            This can be understood since the unit of force is m / s<sup>2</sup> and the units of momentum is m / s and the unit of time is s, therefore m / s<sup>2</sup> = m / s / s</p><br>
+                            
+                            <h3><b>1.24 <u>Demonstrate an understanding of Newton's third law</u></b></h3>
+                            <p>Every action will have an equal and opposite reaction <br><br> If I run into you with a force of 100N, I will also feel a force of 100N towards me in the opposite direction.</p><br>
+                            
+                            <h3><b>1.25 Know and use the relationship between the moment of a force and its distance from the pivot</b></h3>
+                            <p>Moment of a force (torque) = force * perpendicular distance from pivot</p><br>
+                            
+                            <h3><b>1.26 Recall that the weight of a body acts through its center of gravity</b></h3>
+                            <p></p><br>
+                            
+                            <h3><b>1.27 <u>Know and use the principle of moments for a simple system of parallel forces acting in one plane</u></b></h3>
+                            <p>Sum of all clockwise moments = sum of all anti-clockwise moments</p><br>
+                            
+                            <h3><b>1.28 <u>Understand that the upward forces on a light beam, supported at its ends, vary with the position of a heavy object placed on the beam</u></b></h3>
+                            <p>This means you need to understand that if you have say a plank of wood being held in balance by springs pushing up at the ends and you put a weight on the beam, the springs would have to exert more force as they need to equal the downward force.<br><br>Find the ratio of the lengths to find the torques.
+
+                            </p><br>
+                            
+                            <h3><b>Describe experiments to investigate how extension varies with applied force for helical springs, metal wires and rubber bands</b></h3>
+                            <p>1.Attach the object to the clamp on a clamp-stand<br>
+                                2.Measure the original length of the object without additional masses attached using a ruler.
+                                <br>3.Hang 0.5kg from  the object.
+                                <br>4.Measure the new length of the object.
+                                <br>5.Subtract the original length from this value to find the extension.
+                                <br>6.Repeat 3-5  until 5kg of mass has been added.
+                                <br>7.Record the results in a table
+                                <br>8.Force = mass * acceleration due to gravity (9.8 on earth)
+                                <br>9.Graph the results.</p><br>
+                            
+                            <h3><b>1.30 Understand that the initial linear region of a force-extension graph is associate with Hooke's law</b></h3>
+                            <p>Hooke's law : The extension of an object is directly proportional to the force applied up to its elastic limit</p><br>
+                            
+                            <h3><b>1.31 Describe elastic behaviour as the ability of a material to recover its original shape after the forces causing deformation have been removed</b></h3>
+                            <p></p><br>
+                            
+                            <h3><b>1.32 Understand gravitational field strength, g, and recall that it is different on other planets and the moon from that on the earth</b></h3>
+                            <p></p><br>
+                            
+                            <h3><b>1.33 Explain that gravitational force:</b></h3>
+                            <p>- Causes moons to orbit planets <br>
+                            - Causes planets to orbit the sun <br>
+                            - Causes artificial satellites to orbit the Earth <br>
+                            - Causes comets to orbit the sun</p><br>
+                            
+                            <h3><b>1.34 Describe the differences in the orbits of comets, moons and planets.</b></h3>
+                            <p>Comets: They form an elliptical orbit of the sun, tails always point away from the sun. <br><br>
+                            Moons: Orbit around planets and about its own axis <br><br>
+                            Planets: Elliptical orbit, but more circular than comets around the sun and around its own axis</p><br>
+                            
+                            <h3><b>1.35 Use the relationship between orbita speed, orbital radius and time period</b></h3>
+                            <p>Orbital speed = (2 * π * orbital radius) ÷ time period </p><br>
+                            
+                            <h3><b>1.36 Understand that:</b></h3>
+                            <p>- The universe is a large collection of billions of galaxies <br>
+                            - A galaxy is a large collection of billions of stars
+                            <br> - A star system such as our solar system is a system where planets orbit around a single star
+                            <br> - Our solar system is in the Milky way galaxy</p><br>
+                        </div>
+                
+                        <div class="mySlides3 w3-container">
+                                <h1>Electricity</h1><br>
+                            <p>***<u>Underlined</u> points are triple***</p><br>
+                            <h3><b>2.1 Use the following units: Ampere (A), Coulomb (C), joule (J), Ohm (Ω), seconds (s), volt (V), watt (W)</b></h3>
+                            <p>Ampere = Current <br>Coulomb = Charge <br>Joule = Energy <br>Ohm = Resistance <br>Seconds = Time <br>Volts = Voltage <br>Watt = Power</p><br>
+                            
+                            <h3><b>2.2 Understand and identify the hazards of electricity, including frayed cables, long cables, damaged plugs, water around sockets and pushing metal objects into sockets</b></h3>
+                            <p></p><br>
+                            
+                            <h3><b>2.3 Understand the uses of insulation, double insulation, earthing, fuses and circuit breakers in a range of domestic appliances</b></h3>
+                            <p><b>Insulation</b>: a coating of an insulating material - usually plastic - on wires.<br>
+                            <b>Double insulation</b>: coating an object in plastic so that even if the live wire touches the metal casing, it will not give the person an electric shock. Alternatively, appliances can be designed so that the live wire cannot touch the metal casing at all. The symbol for double insulation looks like 回 <br>
+                            <b>Earthing</b>: when the earth wire is connected to the casing, it provides a low resistance route for electrons to travel through. As a result, instead of shocking the person, electrons travel through the earth wire and escape into the ground. The low resistance increases current (since V = IR), blowing the fuse, breaking the circuit.<br>
+                            <b>Fuses</b>: when the current exceeds a certain value, it causes the wire to heat up and melt, breaking the circuit.<br>
+                            <b>Circuit breakers</b>: automatically operated electrical switches that protect electrical circuits from overloading or short circuiting by detecting faults and stopping the flow of electricity when necessary- like resettable fuses.</p><br>
+                            
+                            <h3><b>2.4 Understand that a current in a resistor results in the electrical transfer of energy and an increase in temperature, and how this can be used in a variety of domestic context</b></h3>
+                            <p>Examples of applications include heaters, hair dryers and kettles.</p><br>
+                            
+                            <h3><b>2.5 Know and use the relationship:</b></h3>
+                            <p>Power (watts) = current (amperes) * voltage (volts) <br> P = IV</p><br>
+                            
+                            <h3><b>2.6 Use the relationship between energy transferred, current, voltage and time</b></h3>
+                            <p>Energy transferred (joules) = current * voltage * time <br>E = IVt <br><br> Or alternatively E = Pt where P is power.</p><br>
+                            
+                            <h3><b>2.7 Understand the difference between mains electricity being alternating current (a.c.) and direct current (d.c.) being supplied by a cell or a battery</b></h3>
+                            <p><b>Alternating current</b>: an electric current that reverses its direction many times a second at regular intervals, typically used in power supplies.<br>
+                            <b>Direct current</b>: an electric current flowing in one direction only.</p><br>
+                            
+                            <h3><b>2.8 Explain why a series or parallel circuit is more appropriate for particular applications, including domestic lighting</b></h3>
+                            <p><b>Domestic lighting</b>: Use parallel circuits because voltage in all branches of a parallel circuit are the same; so you can control one light at a time; so if one light breaks the rest can still function. <br>
+                            <b>Lawnmowers</b>: Use series circuits for safety reasons, so that both switches must be closed for lawnmower to turn on</p><br>
+                            
+                            <h3><b>2.9 Understand that the current in a series circuit depends on the applied voltage and the number and nature of other components</b></h3>
+                            <p>In a series, current is constant, voltage is divided among the components.</p><br>
+                            
+                            <h3><b>2.10 Describe how current varies with voltage in wires, resistors, metal filament lamps and diodes, and how this can be investigated experimentally.</b></h3>
+                            <p><b>Result:</b><br><br>
+                            <b>Wires</b>: voltage and current are directly proportional until the wire heats up, where the graphed line will curve.<br>
+                            <b>Ohmic resistors</b>: voltage and current are directly proportional until there is a large temperature increase due to the increase in current, where the resistance will increase, curving the graph.<br>
+                            <b>Metal filament lamps</b>: when the filament bulb is first turned on, the resistance is quite low, so voltage and current are directly proportional. However, as the filament heats up, resistance increases, hence the graph curves<br>
+                            <b>Diodes</b>: a small voltage of approximately 0.6V must be applied to the diode before it will conduct. Further increases in the voltage will increase current. If the voltage is applied in the opposite direction, almost no current flows.<br><br>
+                            <b>Process:</b><br><br>
+                            1.Set up the circuit with the component to be tested<br>
+                            2.Place a voltmeter in parallel to the component, and an ammeter in series<br>
+                            3.Record the results, and repeat with different voltages<br>
+                            4.Graph current over voltage<br>
+                            5.Use the relationship V = IR to find the resistance</p><br>
+                            
+                            <h3><b>2.11 Describe the qualitative effect of changing resistance on the current in a circuit/</b></h3>
+                            <p>As resistance increases, current decreases since V = IR</p><br>
+                            
+                            <h3><b>2.12 Describe the qualitative variation of resistance of LDR's with illumination and of thermistors with temperature</b></h3>
+                            <p><b>Light dependent resistors (LDR's):</b><br>
+                            - In dark conditions, LDR's contain few free electrons, so they have high resistance<br>
+                            - When exposed to light, more electrons are freed, so the resistance decreases<br><br>
+                            <b>Thermistors:</b><br>
+                            - At room temperature, there are few free electrons, so they have high resistance.<br>
+                            - As the temperature increases, more electrons are freed, so the resistance decreases</p><br>
+            
+                            <h3><b>2.13 Know that lamps and LED's can be used to indicate the presence of a current in a circuit</b></h3>
+                            <p>If it lights up, then there's current.</p><br>
+                            
+                            <h3><b>2.14 Know and use the relationship between voltage, current and resistance</b></h3>
+                            <p>Voltage = current * resistance <br>V = IR</p><br>
+                            
+                            <h3><b>2.15 Understand that current is the rate of flow of charge</b></h3>
+                            <p></p><br>
+                                                                                       
+                            
+                            <h3><b>2.16 Know and use the relationship between charge, current and time:</b></h3>
+                            <p>Charge = current * time <br>Q = It</p><br>
+                                                                                       
+                            
+                            <h3><b>2.17 Know that electric current in solid metallic conductor is a flow of negatively charged electrons</b></h3>
+                            <p></p><br>
+                            
+                            <h3><b>2.18 <u>Understand that:</u></b></h3>
+                            <p>- Voltage is the energy transferred per unit charge passed. <br>
+                            - The volt is a joule per coulomb. <br>
+                            - V = E/Q</p><br>
+                                                                                       
+                            <h3><b>2.19 Identify common materials which are electrical conductors or insulators, including metals and plastics.</b></h3>
+                            <p>Conductors - metals <br>Insulators - plastics</p><br>
+                                                                                       
+                            <h3><b>2.20 <u>Describe experiments to investigate how insulating materials can be charged by friction</u></b></h3>
+                            <p>1. Attempt to lift a light insulating material with another insulating material while they are uncharged.<br>
+                            2. Rub one of the materials (the heavier one) on another insulating object.<br>
+                            3. Attempt to lift the lighter insulating material again.<br>
+                            4. The light insulating material should stick to the other material, showing that it has been charged.<br><br>
+                            Examples of materials: poly(ethene) rod and paper</p><br>
+                                                                                       
+                            <h3><b>2.21 <u>Explain that positive and negative electrostatic charges are produced on materials by the loss and gain of electrons</u></b></h3>
+                            <p>The substance that loses electrons becomes positively charged. <br>The substance that gains electrons becomes negatively charged.</p><br>
+                                                                                       
+                            <h3><b><u>2.22 Understand that there are forces of attraction between unlike charges and forces of repulsion between like charges</u></b></h3>
+                            <p></p><br>
+                                                                                       
+                            <h3><b><u>Explain electrostatic phenomena in terms of the movement of electrons</u></b></h3>
+                            <p>When two insulating materials rub together and generate friction, electrons from atoms of one of the materials may move to the other, leading to an imbalance of charges. Thus, since the charges are dissimilar (opposite), the materials attract.</p><br>
+                                                                                       
+                            <h3><b>2.24 <u>Explain the potential dangers of electrostatic charges, e.g. when fuelling aircraft and tankers</u></b></h3>
+                            <p>- As the vehicle travels, it generates friction with the air, leading to the movement of electrons.<br>
+                            - This means that the vehicle becomes charged with static electricity, and the potential difference between the vehicle and the earth also increases.<br>
+                            - As a result, there is a chance of spark as the charge escapes to earth while refuelling. <br>
+                            - A spark could ignite the fuel, leading to an explosion. Hence, vehicles must be earthed before transferring fuel.</p><br>
+                                                                                       
+                            <h3><b>2.25 <u>Explain some uses of electrostatic charges, e.g. in photocopiers and inkjet printers.</u></b></h3>
+                            <p><b><u>Photocopiers:</u></b><br>
+                            1. Part of the drum on the photocopier is positively charged (protons > electrons). <br>
+                            2. The image of the object to be copied is formed on the drum. The charge stays only where the image is dark.<br>
+                            3. The toner drops onto the drum and sticks to charged areas.<br>
+                            4. The surplus toner is removed.<br>
+                            5. Paper is pressed against the toner image to create an image on paper.<br>
+                            6. The paper is heated to melt the toner image. This forms a permanent image on paper.<br><br>
+                            <u><b>Inkjet printers:</b></u><br>
+                            1. Each spot of ink is given a charge so that it falls between a pair of deflecting plates.<br>
+                            2. Electrostatic forces direct it to the correct position.<br>
+                            3. Charges on the plates change very quickly (hundreds of times per second?) so each drop falls into a different position, forming images on the paper.<br><br>
+                            <u><b>Smoke precipitators:</b></u><br>
+                            1. Smoke rises up the chimney and passes through a mesh of wires that are highly charged (voltage of approx. 50,000V)<br>
+                            2. As they pass through the mesh, ash and dust particles become negatively charged <br>
+                            3. Higher up the chimney, these particles are attracted by and stick to large earthed metal plates.<br>
+                            4. "Cleaner" smoke is then released into atmosphere</p><br>
+                                                                                       
+                        
+                                                                                       
+                                                                                        
+                                                                                            
+            
+                            
+                            
+                            
+                        </div> 
+                
+                        <div class="mySlides3 w3-container">
+                                <h1>Section 3</h1>
+                        </div>
+                
+                        <div class="mySlides3 w3-container">
+                                <h1>Section 4</h1>
+                        </div> 
+                
+                        <div class="mySlides3 w3-container">
+                                <h1>Section 5</h1>
+                        </div>
+                        <div class="mySlides3 w3-container">
+                                <h1>Section 6</h1>
+                        </div>
+                        <div class="mySlides3 w3-container">
+                                <h1>Section 7</h1>
+                        </div>
+                      
+            </div>
+        </div>
+
+
+        <div class="mySlides w3-container">
+            <h2>Physics Videos</h2>
+        </div>
+            
+        <div class="mySlides w3-container">
+            <h2>Past Papers</h2>
+            <div class="w3-center w3-bar w3-black">
+                <button class="w3-button demo2 w3-bar-item" onclick="currentDiv2(1)">Questions By Topic</button> 
+                <button class="w3-button demo2 w3-bar-item" onclick="currentDiv2(2)">Past Year Tests</button> 
+            </div>
+                <div class="w3-content w3-white" style="max-width:100%">
+                    
+                            <div class="mySlides2 w3-container">
+                                <div class="autowide">
+                                    
+                                    <div class="module">
+                                        <b><h3>Double Science</h3></b>                           
+                                        <h4>Question Paper</h4>
+                                        <hr>
+                                        <h5 style="color:black">Section 1:Forces & Motion</h5>
+
+                                       <a  href="https://drive.google.com/open?id=0BwhNWu5jAmSsVDZ2TGEzdkZ2LWs" target="_blank"><h5>Movement And Position (1P)</h5></a>
+                                        <a  href="https://drive.google.com/open?id=0BwhNWu5jAmSsaHpoYV9kTnZmR3M" target="_blank"><h5>Forces ,Movement, Shape & Momentum (1P)</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsOHMzbWZldDJJU0k" target="_blank"><h5>Astronomy (1P)</h5></a> 
+                                        <hr>
+                                        <h5 style="color:black">Section 2:Electricity</h5>
+                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsdE13ZmpxVHJERlE" target="_blank"><h5>Mains Electricity (1P)</h5></a>
+                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSseGJINHBoNm93dmc" target="_blank"><h5>Energy & Potential Difference in Circuits (1P)</h5></a>
+                                        <h5>None Available</h5>
+                                        
+                                        <hr>
+                                        <h5 style="color:black">Section 3: Waves</h5>
+                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsNXR6c1JPUWg3LVk" target="_blank"><h5>Properties of Waves (1P)</h5></a>
+                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsNTVYZk1oaDVmck0" target="_blank"><h5>Electromagnetic Spectrum (1P)</h5></a>
+                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsOUlWLVdaLUZzN2s" target="_blank"><h5>Light & Sound (1P)</h5></a> 
+                                        <hr>
+                                        <h5 style="color:black">Section 4: Energy Resources & Energy Transfer</h5>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsdE0wRFozekdmMjA" target="_blank"><h5>Energy Transfer (1P)</h5></a>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZUNVX20wdlZYQ00" target="_blank"><h5>Work & Power (1P)</h5></a>
+                                        <h5>None Available <br> &nbsp;</h5>
+                                        
+                                        <hr>
+                                        <h5 style="color:black">Section 5: Solids, Liquids & Gases</h5>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSm9xQnlaSHh2ZWc" target="_blank"><h5>Density & Pressure (1P)</h5></a>
+                                        <h5>None Available</h5>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsU1VaVWpZeFJTZlE" target="_blank"><h5>Ideal Gas Molecules (1P)</h5></a>
+                                         <hr>
+                                        <h5 style="color:black">Section 6: Magnetism & Electromagnetism</h5>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsQ1ZpeHdBQ2huMFE" target="_blank"><h5>Magnetism (1P)</h5></a>
+                                        <h5>None Available</h5>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSseWhuWk81dnZFaXM" target="_blank"><h5>Electromagnetic Induction (1P)</h5></a>
+                                        <hr>
+                                        <h5 style="color:black">Section 7: Radioactivity & Particles</h5>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsTXVvWjF5VlA5S28" target="_blank"><h5>Radioactivity (1P)</h5></a>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSscV9pMTFDdEpIREE" target="_blank"><h5>Particles (1P)</h5></a>
+                                    </div>
+                                    
+                                    <div class="module">
+                                        <b><h3>&nbsp;</h3></b>                           
+                                        <h4>Mark Scheme</h4>
+                                        <hr>
+                                        <h5>&nbsp;</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSseWJxYTFnWW9MU00" target="_blank"><h5 >Movement And Position (1P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsYXU3Y20xMGo3RHM" target="_blank"><h5>Forces ,Movement, Shape & Momentum (1P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMk1la1ZkcWVyNW8" target="_blank"><h5>Astronomy</h5></a> 
+                                        <hr>
+                                        <h5>&nbsp;</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsUU4yTU40QXBuQUE" target="_blank"><h5>Mains Electricity (1P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbjUyN2JpdkQxNzA" target="_blank"><h5>Energy & Potential Difference in Circuits (1P) MS</h5></a>
+                                        <h5>None Available</h5>
+                                        <hr>
+                                        <h5>&nbsp;</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSDlXNTF3RzFCRk0" target="_blank"><h5>Properties of Waves (1P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsVm1wcWh3Smg1Q2M" target="_blank"><h5>Electromagnetic Spectrum (1P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMmdqQjZLZ2RmNjA" target="_blank"><h5>Light & Sound</h5></a> 
+                                        <hr>
+                                        <h5>&nbsp;<br>&nbsp;</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSXhxVTNJU1RRZTQ" target="_blank"><h5>Energy Transfer (1P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsR2x0aHNmRGlaOFk" target="_blank"><h5>Work & Power (1P) MS</h5></a>
+                                        <h5>None Available <br> &nbsp;</h5>
+                                        
+                                        <hr>
+                                        <h5>&nbsp;</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsNEotRnVUZkcwZmc" target="_blank"><h5>Density & Pressure (1P) MS</h5></a>
+                                        <h5>None Available</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsY04xajNRUWZacU0" target="_blank"><h5>Ideal Gas Molecules (1P) MS</h5></a>
+                                         <hr>
+                                        <h5>&nbsp;<br>&nbsp;</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsd0FfdTFEQ1lQdlk" target="_blank"><h5>Magnetism (1P) MS</h5></a>
+                                        <h5>None Available</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsWFpvMXlOam4wdk0" target="_blank"><h5>Electromagnetic Induction (1P) MS</h5></a>
+                                        <hr>
+                                        <h5>&nbsp;</h5>
+                                        
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsanhueGY3UElxQmM" target="_blank"><h5>Radioactivity (1P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbW9DbzJuQ3NIbTA" target="_blank"><h5>Particles (1P) MS</h5></a>
+                                    </div>
+                                    
+                                    <div class="module">
+                                        <b><h3>Separate Science</h3></b>
+                                        <h4>Question Paper</h4>
+                                        <hr>
+                                        <h5>&nbsp;</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsVUlweDZFSkR3M28" target="_blank"><h5 >Movement And Position (2P)</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMEJfU2VFRnh0Rjg" target="_blank"><h5>Forces ,Movement, Shape & Momentum (2P)</h5></a>
+                                        <h5>None Available</h5>
+                                        <hr>
+                                        <h5>&nbsp;</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsd0JXNHN6c1dqWDQ" target="_blank"><h5>Mains Electricity (2P)</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSseDRwWjJNaHZUNU0" target="_blank"><h5>Energy & Potential Difference in Circuits (2P)</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsRjlNOUNlTW1CR3c" target="_blank"><h5>Electric Charge (2P)</h5></a>
+                                        <hr>
+                                        <h5>&nbsp;</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSscVI5d0k2R0tpdWc" target="_blank"><h5>Properties of Waves (2P)</h5></a>
+                                        <h5>None Available</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsTWZQSTdqRFlDVnc" target="_blank"><h5>Light & Sound</h5></a> 
+                                        <hr>
+                                        <h5>&nbsp;<br>&nbsp;</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsVGE3OVd3RUx1M3c" target="_blank"><h5>Energy Transfer (2P)</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSscnFTM3NYVVd6RjA" target="_blank"><h5>Work & Power (2P)</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsOXQxNzJsa3lPdGc" target="_blank"><h5>Energy Resources & Electricity Generation (2P)</h5></a>
+                                        <hr>
+                                        <h5>&nbsp;</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMmw1SFI3UXpqVkE" target="_blank"><h5>Density & Pressure (2P)</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbGZoMWY5V3loMTg" target="_blank"><h5>Change of State (2P)</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsTnpKdUlfdXpDdk0" target="_blank"><h5>Ideal Gas Molecules (2P)</h5></a>
+                                         <hr>
+                                        <h5>&nbsp;<br>&nbsp;</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsX2cwQTJiTEZya28" target="_blank"><h5>Magnetism (2P)</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsYUJ1S3lFRXUxV28"><h5>Elecromagnetism (2P)</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZmp2YUc3OWhVekk" target="_blank"><h5>Electromagnetic Induction (2P)</h5></a>
+                                        <hr>
+                                        <h5>&nbsp;</h5>
+                                        
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsNnpLRDlKYW42VTA" target="_blank"><h5>Radioactivity (2P)</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMTZZS1NEcmk4bnc" target="_blank"><h5>Particles (2P)</h5></a>
+                                    </div>
+                                    
+                                    <div class="module">
+                                    <h3>&nbsp;</h3>
+                                    <h4>Mark Scheme</h4>
+                                    <hr>
+                                    <h5>&nbsp;</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsS0loQjFLdVlSNGcs" target="_blank"><h5 >Movement And Position (2P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMEJfU2VFRnh0Rjg" target="_blank"><h5>Forces ,Movement, Shape & Momentum (2P) MS</h5></a>
+                                        <h5>None Available</h5>
+                                        <hr>
+                                        <h5>&nbsp;</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsS1dyOE0wSlpzbjg" target="_blank"><h5>Mains Electricity (2P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsM29PNzBTWW1TWDA" target="_blank"><h5>Energy & Potential Difference in Circuits (2P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsRTVEdWVaSXNMX0U" target="_blank"><h5>Electric Charge (2P) MS</h5></a>
+                                        <hr>
+                                        <h5>&nbsp;</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsVDUycmg4RzdsV2M" target="_blank"><h5>Properties of Waves (2P) MS</h5></a>
+                                        <h5>None Available</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsdEJ3NVh1Wld3c2c" target="_blank"><h5>Light & Sound</h5></a> 
+                                        <hr>
+                                        <h5>&nbsp;<br>&nbsp;</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsN3pFNUZmWUNyXzA" target="_blank"><h5>Energy Transfer (2P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsM0gyN2RyckR2Rlk" target="_blank"><h5>Work & Power (2P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsTm1lTWVqcjdZelk" target="_blank"><h5>Energy Resources & Electricity Generation (2P) MS</h5></a>
+                                        <hr>
+                                        <h5>&nbsp;</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsQmRaQTBoeXNuQmc" target="_blank"><h5>Density & Pressure (2P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsTHJvRHRLeWFtbEU" target="_blank"><h5>Change of State (2P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsTEFKOS1rT2wxOTg" target="_blank"><h5>Ideal Gas Molecules (2P) MS</h5></a>
+                                         <hr>
+                                        <h5>&nbsp;<br>&nbsp;</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbWFORFBCRmh5bGM" target="_blank"><h5>Magnetism (2P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSselltbmdrcUdFN28" target="_blank"><h5>Elecromagnetism (2P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSseVMxcGlSWEMxcG8" target="_blank"><h5>Electromagnetic Induction (2P) MS</h5></a>
+                                        <hr>
+                                        <h5>&nbsp;</h5>
+                                        
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSEV2dXl6cEZURkk" target="_blank"><h5>Radioactivity (2P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsdGtGUExiWGZna2s" target="_blank"><h5>Particles (2P) MS</h5></a>
+                                    </div>
+                                </div>
+                                            
+                            </div>
+                    
+                            <div class="mySlides2 w3-container">
+                           
+                            <div class="autowide">
+                             
+                                    <div class="module">
+                                    <h1>Exam Papers</h1>
+                                    <hr>
+                                    <center>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsRFRLV2dlV3BxUU0" target="_blank"><h5 >Jun 16 Paper 1P (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsV25qNXdpWjJHMW8" target="_blank"><h5 >Jun 16 Paper 1PR (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsQXdPMTRxVDB2NWM" target="_blank"><h5 >Jun 16 Paper 2P (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsdXg1RlBwSUh3eUU" target="_blank"><h5 >Jun 16 Paper 2PR (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsT3ZkaWlVc3V5Vzg" target="_blank"><h5 >Jan 16 Paper 1P (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsRFNfVWFnRkI3YUk" target="_blank"><h5 >Jan 16 Paper 2P (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsV2lXdWMwV0RWOVk" target="_blank"><h5 >Jun 15 Paper 1P (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsVjI0Vl9sWElSYlE" target="_blank"><h5 >Jun 15 Paper 1PR (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsNzJFcGEtRnNfT1U" target="_blank"><h5 >Jun 15 Paper 2P (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsNGtWYWFGenlfYjA" target="_blank"><h5 >Jun 15 Paper 2PR (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSmF5S2I1bmJWV1k" target="_blank"><h5 >Jan 15 Paper 1P (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSFprWmZ2T1JUazg" target="_blank"><h5 >Jan 15 Paper 2P (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSXhyZWZvVzRCRFE" target="_blank"><h5 >Jun 14 Paper 1P (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsb083Q3l0V21fX28" target="_blank"><h5 >Jun 14 Paper 1PR (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsRk1WMFlabFBMNXc" target="_blank"><h5 >Jun 14 Paper 2P (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsYWNrYjh0RVBJTWc" target="_blank"><h5 >Jun 14 Paper 2PR (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSscVh4SHNQalRTdjg" target="_blank"><h5 >Jan 14 Paper 1P (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsWUlPa0FtNWo4dGM" target="_blank"><h5 >Jan 14 Paper 2P (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSselpHenBqdDZ6Wkk" target="_blank"><h5 >Jun 13 Paper 1P (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsUmljcGc3ekJoblE" target="_blank"><h5 >Jun 13 Paper 1PR (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsNXhNQUp2RW1RTXc" target="_blank"><h5 >Jun 13 Paper 2P (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsTkRRaGZuaERxSUU" target="_blank"><h5 >Jun 13 Paper 2PR (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMVZPSUJ0RlhPMmc" target="_blank"><h5 >Jan 13 Paper 1P (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsVDFObER2dmxhMjA" target="_blank"><h5 >Jan 13 Paper 2P (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsNkE3Sjl0LUNoWWM" target="_blank"><h5 >Jun 12 Paper 1P (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMDloTTdIUkxtMHc" target="_blank"><h5 >Jun 12 Paper 2P (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZU9oVXJGeGhNdnc" target="_blank"><h5 >Jan 12 Paper 1P (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSseEltTWNBQUxwQjg" target="_blank"><h5 >Jan 12 Paper 2P (QP)</h5></a>
+                                    </center>
+                                    </div>
+                                
+                                    <div class="module">
+                                    <h1>Mark Schemes</h1>
+                                    <hr>
+                                     <center>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMHlSX1lma3dYOUE" target="_blank"><h5 >Jun 16 Paper 1P (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMi10azNSRThzdDg" target="_blank"><h5 >Jun 16 Paper 1PR (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsajBkSTdxLWc5bGM" target="_blank"><h5 >Jun 16 Paper 2P (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsdm13aGNYYVlGX00" target="_blank"><h5 >Jun 16 Paper 2PR (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsV1pQLVBIV0VWN3c" target="_blank"><h5 >Jan 16 Paper 1P (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsWk9SQWNzUmF2Szg" target="_blank"><h5 >Jan 16 Paper 2P (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsajVtQmZKdVJSTDQ" target="_blank"><h5 >Jun 15 Paper 1P (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsT0NvcDFxSlVOdG8" target="_blank"><h5 >Jun 15 Paper 1PR (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsRmZFWngxRVZHLTA" target="_blank"><h5 >Jun 15 Paper 2P (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsYW95N1ZjMVNSSlU" target="_blank"><h5 >Jun 15 Paper 2PR (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMEZUUlVGb2Z2TGc" target="_blank"><h5 >Jan 15 Paper 1P (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsU2p0SGdzeHNRRHc" target="_blank"><h5 >Jan 15 Paper 2P (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsRHBwN0IzV0xLQWs" target="_blank"><h5 >Jun 14 Paper 1P (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsV21CU2ktNi1Ramc" target="_blank"><h5 >Jun 14 Paper 1PR (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsRHZyY21CUjI3YWs" target="_blank"><h5 >Jun 14 Paper 2P (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsTjlxdmVzWXdLRUU" target="_blank"><h5 >Jun 14 Paper 2PR (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsTzl1ZGJka2pSbVE" target="_blank"><h5 >Jan 14 Paper 1P (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsR1ZMV1VReHJweEk" target="_blank"><h5 >Jan 14 Paper 2P (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsdGZTdEtjdjBBYm8" target="_blank"><h5 >Jun 13 Paper 1P (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsRm5uZE0xRE82LVE" target="_blank"><h5 >Jun 13 Paper 1PR (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSEd3YVhNaEo4QVU" target="_blank"><h5 >Jun 13 Paper 2P (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZElCZl9zemp0MEU" target="_blank"><h5 >Jun 13 Paper 2PR (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsS3hfUUVxRmM5NFU" target="_blank"><h5 >Jan 13 Paper 1P (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsWnJhU2ZLYjMxYzQ" target="_blank"><h5 >Jan 13 Paper 2P (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbHN5cDZDSERER1U" target="_blank"><h5 >Jun 12 Paper 1P (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsR2ZnU0lCanRJaXc" target="_blank"><h5 >Jun 12 Paper 2P (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbXhxdE1UNkFNX2s" target="_blank"><h5 >Jan 12 Paper 1P (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsRkdwbUZaSDA2eXM" target="_blank"><h5 >Jan 12 Paper 2P (MS)</h5></a>
+                                    </center>
+                                    </div>
+                                
+                                </div>
+                            
+                            </div>
+                </div>
+        </div>
+            
+        <div class="mySlides w3-container">
+            <h2>Books And Fun Videos</h2>
+        </div>
+            
+       <div class="mySlides w3-container w3-white">
+                <h2>Ask Any Question! We Will Reply Soon</h2>
+                <div id="disqus_thread"></div>
+                <script>
+
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                /*
+                var disqus_config = function () {
+                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                */
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://dcbinspire.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+        </div>
+
+        </div>
+
+
+    
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+
+    function currentDiv(n) {
+      showDivs(slideIndex = n);
+    }
+
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      if (n > x.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+         dots[i].className = dots[i].className.replace(" w3-red", "");
+      }
+      x[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " w3-red";
+    }
+    
+    
+     var slideIndex2 = 1;
+    showDivs2(slideIndex2);
+
+    function currentDiv2(n) {
+      showDivs2(slideIndex2 = n);
+    }
+
+    function showDivs2(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides2");
+      var dots = document.getElementsByClassName("demo2");
+      if (n > x.length) {slideIndex2 = 1}    
+      if (n < 1) {slideIndex2 = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+         dots[i].className = dots[i].className.replace(" w3-red", "");
+      }
+      x[slideIndex2-1].style.display = "block";  
+      dots[slideIndex2-1].className += " w3-red";
+    }
+    
+    
+         var slideIndex3 = 1;
+    showDivs3(slideIndex3);
+
+    function currentDiv3(n) {
+      showDivs3(slideIndex3 = n);
+    }
+
+    function showDivs3(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides3");
+      var dots = document.getElementsByClassName("demo3");
+      if (n > x.length) {slideIndex3 = 1}    
+      if (n < 1) {slideIndex3 = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+         dots[i].className = dots[i].className.replace(" w3-red", "");
+      }
+      x[slideIndex3-1].style.display = "block";  
+      dots[slideIndex3-1].className += " w3-red";
+    }
+    
+
+    
+</script>
+<script id="dsq-count-scr" src="//dcbinspire.disqus.com/count.js" async></script>
+</body >
+</html>
