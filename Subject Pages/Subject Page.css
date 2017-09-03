@@ -72,3 +72,11 @@ h1 {
 		margin-right: 0;
 	}
 }
+#factss {
+  float: right ;
+  width: 50% ;
+}
+#video {
+  float: left;
+  width: 50%;
+}
