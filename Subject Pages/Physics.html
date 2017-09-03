@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    <head><script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script></head>
   <link rel="stylesheet" type="text/css" href="Subject%20Page.css">
             <link rel="shortcut icon" type="image/x-icon" href="Logo.ico" />
 <link rel="stylesheet" href="../Buttonsw3.css">
@@ -14,14 +15,19 @@
 <body style="background-color:#8d99ae" >
         <div class="w3-center w3-bar w3-black">
               <button class="w3-button w3-bar-item" onclick="location.href='../index.html'" style="background-color:#B20320">Home</button> 
-              <button class="w3-button demo w3-bar-item " onclick="currentDiv(1)">Syllabus Point Breakdown</button> 
-              <button class="w3-button demo w3-bar-item" onclick="currentDiv(2)">Physics Videos</button> 
-              <button class="w3-button demo w3-bar-item" onclick="currentDiv(3)">Past Papers</button> 
-              <button class="w3-button demo w3-bar-item" onclick="currentDiv(4)">Books And Fun Videos</button> 
-              <button class="w3-button demo w3-bar-item" onclick="currentDiv(5)">Q & A</button> 
+              <button class="w3-button demo w3-bar-item " onclick="currentDiv(1)">Featured Content</button> 
+              <button class="w3-button demo w3-bar-item " onclick="currentDiv(2)">Syllabus Point Breakdown</button> 
+              <button class="w3-button demo w3-bar-item" onclick="currentDiv(3)">Physics Videos</button> 
+              <button class="w3-button demo w3-bar-item" onclick="currentDiv(4)">Past Papers</button> 
+              <button class="w3-button demo w3-bar-item" onclick="currentDiv(5)">Books And Fun Videos</button> 
+              <button class="w3-button demo w3-bar-item" onclick="currentDiv(6)">Q & A</button> 
         </div>
+        
         <div class="w3-content" style="max-width:100%">
-            
+            <div class="mySlides w3-container w3-white">
+                    <h2>Physics Fact Of The Day!</h2>
+                        <h3 id=fact></h3>
+            </div> 
         <div class="mySlides w3-container">
             <h2>Syllabus Points</h2>
         <div class="w3-center w3-bar w3-black">
@@ -41,9 +47,11 @@
             <h3><b></b></h3>
              <p></p><br>
             
-            
-            
+
+
             <div class="w3-content w3-white" style="max-width:100%">
+                
+                
                         <div class="mySlides3 w3-container">
                                 <h1>Forces and Motion</h1><br>
                             <p>***<u>Underlined</u> points are triple***</p><br>
@@ -296,7 +304,7 @@
                             - V = E/Q</p><br>
                                                                                        
                             <h3><b>2.19 Identify common materials which are electrical conductors or insulators, including metals and plastics.</b></h3>
-                            <p>Conductors - metals <br>Insulators - plastics</b></p><br>
+                            <p>Conductors - metals <br>Insulators - plastics</p><br>
                                                                                        
                             <h3><b>2.20 <u>Describe experiments to investigate how insulating materials can be charged by friction</u></b></h3>
                             <p>1. Attempt to lift a light insulating material with another insulating material while they are uncharged.<br>
@@ -369,7 +377,7 @@
             </div>
         </div>
 
-            
+
         <div class="mySlides w3-container">
             <h2>Physics Videos</h2>
         </div>
@@ -757,6 +765,26 @@
       x[slideIndex3-1].style.display = "block";  
       dots[slideIndex3-1].className += " w3-red";
     }
+    
+        $(document).ready(function()
+    {
+        var today = new Date();
+        var date1 = new Date(parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear()); 
+        // get the current date today
+        var date2 = new Date("9/3/2017");
+        // day the site was launched
+        var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+        //need to have date diff because it will increment everyday as the day moves further from our launch date, everytime the date diff increases so does our fact, it will display the fact on the next line in the txt file.
+        var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+        // to make sure date diff is always positive
+        jQuery.get('file.txt', function(data) // getting the file
+        {     
+            var factnumber = data.split('\n'); //spliting the file into lines
+            var facttxt = document.getElementById('fact');
+            facttxt.innerHTML = factnumber[diffDays]; //changing the h1 tag's text into the fact
+        }); 
+    }); 
+    
 </script>
 <script id="dsq-count-scr" src="//dcbinspire.disqus.com/count.js" async></script>
 </body >
