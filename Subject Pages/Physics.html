@@ -13,7 +13,26 @@
 .mySlides {display:none;}
 </style>
 <body style="background-color:#8d99ae" >
-    <h3 id=fact></h3>
+    <script>
+            $(document).ready(function()
+    {
+        var today = new Date();
+        var date1 = new Date(parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear()); 
+        // get the current date today
+        var date2 = new Date("9/3/2017");
+        // day the site was launched
+        var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+        //need to have date diff because it will increment everyday as the day moves further from our launch date, everytime the date diff increases so does our fact, it will display the fact on the next line in the txt file.
+        var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+        // to make sure date diff is always positive
+        jQuery.get('file.txt', function(data) // getting the file
+        {     
+            var factnumber = data.split('\n'); //spliting the file into lines
+            var facttxt = document.getElementById('fact');
+            facttxt.innerHTML = factnumber[diffDays]; //changing the h1 tag's text into the fact
+        }); 
+    }); 
+    </script>
         <div class="w3-center w3-bar w3-black">
               <button class="w3-button w3-bar-item" onclick="location.href='../index.html'" style="background-color:#B20320">Home</button> 
               <button class="w3-button demo w3-bar-item " onclick="currentDiv(1)">Featured Content</button> 
@@ -27,7 +46,7 @@
         <div class="w3-content" style="max-width:100%">
             <div class="mySlides w3-container w3-white">
                     <h2>Physics Fact Of The Day!</h2>
-                        
+                        <h1 id=fact></h1>
             </div> 
         <div class="mySlides w3-container">
             <h2>Syllabus Points</h2>
@@ -767,24 +786,7 @@
       dots[slideIndex3-1].className += " w3-red";
     }
     
-        $(document).ready(function()
-    {
-        var today = new Date();
-        var date1 = new Date(parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear()); 
-        // get the current date today
-        var date2 = new Date("9/3/2017");
-        // day the site was launched
-        var timeDiff = Math.abs(date2.getTime() - date1.getTime());
-        //need to have date diff because it will increment everyday as the day moves further from our launch date, everytime the date diff increases so does our fact, it will display the fact on the next line in the txt file.
-        var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-        // to make sure date diff is always positive
-        jQuery.get('file.txt', function(data) // getting the file
-        {     
-            var factnumber = data.split('\n'); //spliting the file into lines
-            var facttxt = document.getElementById('fact');
-            facttxt.innerHTML = factnumber[diffDays]; //changing the h1 tag's text into the fact
-        }); 
-    }); 
+
     
 </script>
 <script id="dsq-count-scr" src="//dcbinspire.disqus.com/count.js" async></script>
