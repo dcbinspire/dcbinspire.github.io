@@ -28,6 +28,7 @@
         jQuery.get('file.txt', function(data) // getting the file
         {     
             var factnumber = data.split('\n'); //spliting the file into lines
+            alert(data)
             var facttxt = document.getElementById('fact');
             facttxt.innerHTML = factnumber[diffDays]; //changing the h1 tag's text into the fact
         }); 
@@ -44,6 +45,7 @@
         </div>
         
         <div class="w3-content" style="max-width:100%">
+            
             <div class="mySlides w3-container w3-white">
                     <h2>Physics Fact Of The Day!</h2>
                         <h1 id=fact></h1>
