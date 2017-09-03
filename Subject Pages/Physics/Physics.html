@@ -2,12 +2,12 @@
     <head><script src="../jquery-3.2.1.min.js"></script></head>
   <link rel="stylesheet" type="text/css" href="../Subject%20Page.css">
             <link rel="shortcut icon" type="image/x-icon" href="Logo.ico" />
-<link rel="stylesheet" href="../Buttonsw3.css">
+<link rel="stylesheet" href="../../Buttonsw3.css">
 <img src="../Subject%20Page%20Pics/Physics%20Page.png" width="100%" >
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Physics</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../Style.css">
+    <link rel="stylesheet" href="../../Style.css">
 <style>
 .mySlides {display:none;}
 </style>
@@ -31,9 +31,9 @@
             facttxt.innerHTML = factnumber[diffDays]; //changing the h1 tag's text into the fact
         }); 
                 
-        jQuery.get('PhysicsFactPics.txt', function(data) // getting the file
+        jQuery.get('PhysicsFactPics.txt', function(data2) // getting the file
         {     
-            var picnumber = data.split('\n'); //spliting the file into lines
+            var picnumber = data2.split('\n'); //spliting the file into lines
             document.getElementById("factimg").src=picnumber[diffDays];
 
         }); 
