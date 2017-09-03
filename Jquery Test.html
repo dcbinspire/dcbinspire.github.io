@@ -2,17 +2,20 @@
 <html>
     <head><script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script></head>
 <body>
+    
     <script>
-        
     
     $(document).ready(function()
     {
-
-    jQuery.get('file.txt', function(data) {
-   alert(data);
-   $('#div').html(data.replace('n',''));
-    }); 
-
+        jQuery.get('file.txt', function(data) {     
+            alert(data); 
+            var words = data.split(" ");
+            for (var i = 0; i < words.length; i++) 
+            {
+                words[i] += " ";
+                alert(words[i])
+            }
+        }); 
     }); 
 
     </script>
