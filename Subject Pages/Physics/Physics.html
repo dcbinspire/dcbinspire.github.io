@@ -37,6 +37,12 @@
             document.getElementById("factimg").src=picnumber[diffDays];
 
         }); 
+        jQuery.get('PhysicsVideo.txt', function(data3) // getting the file
+        {     
+            var vidnumber = data3.split('\n'); //spliting the file into lines
+            document.getElementById("youtube").src="https://www.youtube.com/embed/"+vidnumber[diffDays];
+
+        }); 
     }); 
     </script>
         <div class="w3-center w3-bar w3-black">
@@ -58,6 +64,9 @@
                         <img id=factimg src="" width=40%>
                         <br>
                         <h2>Video</h2> 
+                        <center>
+                            <iframe id=youtube width="70%" src="" frameborder="0" allowfullscreen></iframe>
+                        </center>
             </div> 
         <div class="mySlides w3-container">
             <h2>Syllabus Points</h2>
