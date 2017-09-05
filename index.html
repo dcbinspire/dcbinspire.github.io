@@ -26,8 +26,8 @@
         jQuery.get('InspireQuotes.txt', function(data) // getting the file
         {     
             var quotenumber = data.split('\n'); //spliting the file into lines
-            var quotetxt = document.getElementById('quotetxt');
-            quotetxt.innerHTML = quotenumber[diffDays]; //changing the h1 tag's text into the fact
+            var quotetxt2 = document.getElementById('quotetxt');
+            quotetxt2.innerHTML = quotenumber[diffDays]; //changing the h1 tag's text into the fact
         }); 
                 
     }); 
