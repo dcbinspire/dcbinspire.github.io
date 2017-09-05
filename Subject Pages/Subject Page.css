@@ -88,4 +88,14 @@ h1 {
     padding: 10px;
     border: 5px solid #EDF2F4;
     margin: 0;
+}
+
+        div.borders2 {
+    border-radius: 25px;
+    background-color: #EDF2F4;
+    width: 100%;
+    padding: 10px;
+    border: 5px solid #EDF2F4;
+    margin: 0;
+}
             
