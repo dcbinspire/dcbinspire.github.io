@@ -203,6 +203,7 @@ input[type=searchtext]:focus {
     width: 100%;
     padding: 10px;
     color:white;
+    border: 5px solid #2B2D42;
     margin: 0;
             
 }
