@@ -2,6 +2,7 @@
 <html>
 
     <head>
+            <script src="jquery-3.2.1.min.js"></script>
         <link rel="shortcut icon" type="image/x-icon" href="Logo.ico" />
         <link rel="stylesheet" href="Buttonsw3.css">
         <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
@@ -9,6 +10,27 @@
            (function(){
               emailjs.init("user_CBiuqLZ6Ri8hfxrHaEVYG");
            })();
+        </script>
+        <script>
+        $(document).ready(function()
+    {
+        var today = new Date();
+        var date1 = new Date(parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear()); 
+        // get the current date today
+        var date2 = new Date("9/3/2017");
+        // day the site was launched
+        var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+        //need to have date diff because it will increment everyday as the day moves further from our launch date, everytime the date diff increases so does our fact, it will display the fact on the next line in the txt file.
+        var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+        // to make sure date diff is always positive
+        jQuery.get('InspireQuotes.txt', function(data) // getting the file
+        {     
+            var quotenumber = data.split('\n'); //spliting the file into lines
+            var quotetxt = document.getElementById('quotetxt');
+            quotetxt.innerHTML = quotenumber[diffDays]; //changing the h1 tag's text into the fact
+        }); 
+                
+    }); 
         </script>
     </head>
     <title font="">INSPIRE</title>
@@ -80,7 +102,7 @@
     
     
     
-    
+
     
 <div class="w3-content w3-display-container" style="max-width:100%">
     
@@ -147,8 +169,12 @@
     <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(6)"></span>
   </div>
 </div>
-<br>
+    <div class="quoteborder">
+  <h3 id=quotetxt></h3>  
+    </div>
+
 <center>
+    
 <div class="borders">
     
 <a href ="Subject%20Pages/Physics/Physics.html"><img style="border: 1px solid black;" hspace="3%" src="FrontpgPics/physics%20poster.png"  class="movpost physics igcsephysics igcse" width = "158.4px" height ="234.8px"></a>

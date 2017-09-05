@@ -198,3 +198,11 @@ input[type=searchtext]:focus {
             padding: 12px;
             
         }
+        div.quoteborder {
+    background-color: #2B2D42;
+    width: 100%;
+    padding: 10px;
+    color:white;
+    margin: 0;
+            
+}
