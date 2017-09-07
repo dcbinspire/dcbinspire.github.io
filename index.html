@@ -46,8 +46,8 @@
     <h1 class ="header">&nbsp;&nbsp;INSPIRE</h1>
     <div id="main">
     <div style="text-align: right" id="menu">
-    
-    <a  class="button" onclick="document.getElementById('id01').style.display='block'; get()" id=request>Request Topic</a>
+    <a  class="button" onclick="document.getElementById('id02').style.display='block'; get();" id=request>Request Tutor</a>
+    <a  class="button" onclick="document.getElementById('id01').style.display='block'; get();" id=request>Request Topic</a>
     <a class="button" onclick="All()">All Subjects</a>
     <input type="searchtext" name="search" onkeydown="key_down(event)" placeholder="Search for a topic" id="searchtxt" required>
     </div>
@@ -64,21 +64,21 @@
     <br>
       <label><b>Name:</b></label>
     <br>
-      <input type="text" placeholder="Enter your name" name="uname" required id="name">
+      <input type="text" placeholder="Enter your name" name="uname" required id="namet">
     <br>
         <label><b>Email:</b></label>
     <br>
-        <input  type="text"  placeholder="Enter your email to receive notifications when the topic is uploaded" name="psw" id="email" required>
+        <input  type="text"  placeholder="Enter your email to receive notifications when the topic is uploaded" name="psw" id="emailt" required>
     <br>
       <label><b>Topic:</b></label>
     <br>
-      <input  type="text"  placeholder="Enter topic name" name="psw" required id="showname">
+      <input  type="text"  placeholder="Enter topic name" name="psw" required id="topict">
     <br>
         <label><b>Other relavant infomation:</b></label>
     <br>
-        <input  type="text"  placeholder="Enter any other relavant information" name="psw" id="option">
+        <input  type="text"  placeholder="Enter any other relavant information" name="psw" id="optiont">
     <br>
-      <button class="buttonSearch" onclick ="send()" type="button">Submit</button>
+      <button class="buttonSearch" onclick ="send(); Setvalue();" type="button" type="submit">Submit</button>
     <br>
     <br>
     </div>
@@ -92,10 +92,65 @@
     
     
     
-    <div id="id02" class="modal">
+<div id="id02" class="modal">
   
-  <form class="modal-content animate" >
-    
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal" id="closed2">&times;</span>
+      
+    </div>
+    <br><br>
+    <div class="w3-center w3-bar buttoncolor">
+        <button class="w3-button demo2 w3-bar-item" onclick="currentDiv2(1)">Request A Tutor</button> 
+        <button class="w3-button demo2 w3-bar-item" onclick="currentDiv2(2)">How Will This Help You?</button> 
+    </div>
+<div class="w3-content " style="max-width:100%">
+    <div class="mySlides2 w3-container">
+            <div class="container">  
+            <br>
+            <label><b>Name:</b></label>
+            <br>
+            <input  type="Text" placeholder="Enter Your Full Name" name="name" id ="nametxt" required>
+            <br>
+            <label><b>Form:</b></label>
+            <br>
+            <input  type="Text" placeholder="Enter Your Form" name="form" id ="formtxt" required>
+            <br>
+            <label><b>Email:</b></label>
+            <br>
+            <input  type="Text" placeholder="Enter Your Email" name="email" id ="emailtxt" required>
+            <br>
+            <label><b>Subject You Need Help In:</b></label>
+            <br>
+            <input  type="Text" placeholder="Enter Subject" name="subject" id ="subjecttxt" required>
+            <br>
+            <label><b>Specific Topic:</b></label>
+            <br>
+            <input  type="Text" placeholder="Enter Specific Topic Your Within Subject You Need Help With(Optional)" name="topic" id ="topictxt">
+            <br>
+            <label><b>Preferred Time:</b></label>
+            <br>
+            <input  type="Text" placeholder="Enter When You Want To Be Tutored (Date and Time)" name="time" id ="timetxt">
+            <button  class="buttonSearch" onclick="send2(); Setvalue();"  type="button">Submit Tutor Request Form</button>
+            <br>
+            <br>
+            </div>
+    </div>
+    <div class="mySlides2 w3-container">
+        <h2>Why Get A Tutor?</h2>
+        <h4>Have a test the next day? Need some help locking down some key concepts?</h4>
+        <h4>Ask For a Tutor!</h4>
+        <h4>A one time tutor will be assigned to you from the tutoring prefects (A Knowledgeable KS5 Student) <br><br> They will meet you at your preferred time and just teach you how to do everything</h4>
+        <center>
+        <img src="http://thevoice.srcs.org/wp-content/uploads/2017/05/tutor2.jpg" width=100%>
+        </center>
+        <br><br>
+    </div>
+
+</div>
+
+    <div class="container" style="background-color:#f1f1f1">
+    </div>
   </form>
 </div>
     
@@ -207,7 +262,6 @@
 </body>
     
 <script>
-    
 
     
 var myIndex = 0;
@@ -262,6 +316,40 @@ window.onclick = function(event) {
     }
 }
 
+var modal2 = document.getElementById('id02');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal2) {
+        modal2.style.display = "none";
+    }
+}
+
+
+     var slideIndex2 = 1;
+    showDivs2(slideIndex2);
+
+    function currentDiv2(n) {
+      showDivs2(slideIndex2 = n);
+    }
+
+    function showDivs2(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides2");
+      var dots = document.getElementsByClassName("demo2");
+      if (n > x.length) {slideIndex2 = 1}    
+      if (n < 1) {slideIndex2 = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+         dots[i].className = dots[i].className.replace(" red", "");
+      }
+      x[slideIndex2-1].style.display = "block";  
+      dots[slideIndex2-1].className += " red";
+    }
+    
+
 var modal = document.getElementById('id02');
 
 // When the user clicks anywhere outside of the modal, close it
@@ -270,39 +358,49 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-
-var modal = document.getElementById('id03');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
-function Movie()
+   
+function Setvalue()
     {
-        localStorage.setItem("Entrance",true)
+
+
     }
 
 function get()
     {
-                    document.getElementById("name").value = localStorage.getItem("Name")
-                    document.getElementById("email").value = localStorage.getItem("Email")
+                    document.getElementById("nametxt").value = localStorage.getItem("Name2")
+                    document.getElementById("emailtxt").value = localStorage.getItem("Email2")
+                    document.getElementById("formtxt").value = localStorage.getItem("Form2")
+                    document.getElementById("namet").value = localStorage.getItem("Name2")
+                    document.getElementById("emailt").value = localStorage.getItem("Email2")
                     
     }
 function send()
     {
-        localStorage.setItem("Name",document.getElementById("name").value)
-        localStorage.setItem("Email",document.getElementById("email").value)
-        emailjs.send("default_service","ocean_movie_s_send",{name:document.getElementById("name").value, email:document.getElementById("email").value,  Movie:document.getElementById("showname").value, Year:document.getElementById("year").value, information:document.getElementById("option").value});
+        localStorage.setItem("Name2",document.getElementById("namet").value) 
+        localStorage.setItem("Email2",document.getElementById("emailt").value) 
+        emailjs.send("default_service","inspire_topic",{Name:document.getElementById("namet").value, Email:document.getElementById("emailt").value,  Topic:document.getElementById("topict").value, Other:document.getElementById("optiont").value});
         
-        document.getElementById("name").value=""
-        document.getElementById("showname").value=""
-        document.getElementById("email").value=""
-        document.getElementById("year").value=""
-        document.getElementById("option").value=""
+        document.getElementById("namet").value=""
+        document.getElementById("emailt").value=""
+        document.getElementById("topict").value=""
+        document.getElementById("optiont").value=""
         document.getElementById("closed").click();
+        alert("Form Submitted!")
+    }
+function send2()
+    {
+        localStorage.setItem("Name2",document.getElementById("nametxt").value) 
+        localStorage.setItem("Email2",document.getElementById("emailtxt").value) 
+        localStorage.setItem("Form2",document.getElementById("formtxt").value) 
+        emailjs.send("default_service","new_tutor_request",{Name:document.getElementById("nametxt").value, Form:document.getElementById("formtxt").value,  Email:document.getElementById("emailtxt").value, Subject:document.getElementById("subjecttxt").value, Topic:document.getElementById("topictxt").value, Time:document.getElementById("timetxt").value});
+        
+        document.getElementById("nametxt").value=""
+        document.getElementById("emailtxt").value=""
+        document.getElementById("topictxt").value=""
+        document.getElementById("subjecttxt").value=""
+        document.getElementById("formtxt").value=""
+        document.getElementById("timetxt").value=""
+        document.getElementById("closed2").click();
         alert("Form Submitted!")
     }
     /* Search ENTER key listner */
@@ -335,6 +433,7 @@ function send()
     {
         alert("Coming Soon")
     }
+    
     </script>
     
 </html>

@@ -16,7 +16,7 @@ input[type=searchtext] {
     transition: width 0.4s ease-in-out;
 }
 input[type=searchtext]:focus {
-    width: 50%;
+    width: 40%;
 }
 .mySlides {display:none}
     .w3-left, .w3-right, .w3-badge {cursor:pointer}
@@ -206,4 +206,9 @@ input[type=searchtext]:focus {
     border: 5px solid #2B2D42;
     margin: 0;
             
+}
+
+.red
+{
+    background-color: #B20320
 }
