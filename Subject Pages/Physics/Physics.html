@@ -1141,8 +1141,78 @@
                             </div>
                 </div>
         </div>
-        <div class="mySlides w3-container">
+        <div class="mySlides w3-container w3-white">
             <h2>Physics Videos</h2>
+            <button class="w3-button demo4" id=back onclick="currentDiv4(1); back();" style="background-color:#f44336; color:white">Home</button> 
+            
+            <div class="w3-content video" style="max-width:100%" >
+                <div class="mySlides4 w3-container">
+                    
+                        <br><br>
+                    <center>
+                        <img class="demo4" hspace=1% type="submit" onclick="currentDiv4(2); back();" height = "158.4px" width ="234.8px" src="https://upload.wikimedia.org/wikipedia/en/e/e5/Eureka_cartoon.JPG">
+                    
+                        <img class="demo4" hspace=1% type="submit" onclick="currentDiv4(3); back();" height = "158.4px" width ="234.8px" src="https://image.slidesharecdn.com/forceandmotionreviewppt-130415110727-phpapp01/95/force-and-motion-review-ppt-1-638.jpg?cb=1366024109">
+                    
+                        <img class="demo4" hspace=1% type="submit" onclick="currentDiv4(4); back();" height = "158.4px" width ="234.8px" src="http://www.instantdisplay.co.uk/elec.jpg">
+                        
+                        <img class="demo4" hspace=1% type="submit" onclick="currentDiv4(5); back();" height = "158.4px" width ="234.8px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Wave_characteristics.svg/350px-Wave_characteristics.svg.png">
+                    
+                    <br><br>
+                        
+                        <img class="demo4" hspace=1% type="submit" onclick="currentDiv4(6); back();" height = "158.4px" width ="234.8px" src="https://i.pinimg.com/736x/33/98/9f/33989f78182b952e6ee5ca3d35727069--physical-science-physics.jpg">
+                        
+                        <img class="demo4" hspace=1% type="submit" onclick="currentDiv4(7); back();" height = "158.4px" width ="234.8px" src="https://i.ytimg.com/vi/vuBPgTMKUc0/maxresdefault.jpg">
+                    
+                        <img class="demo4" hspace=1% type="submit" onclick="currentDiv4(8); back();" height = "158.4px" width ="234.8px" src="http://www.aplusphysics.com/courses/regents/electricity/images/MagneticFieldLines.gif">
+                    
+                        <img class="demo4" hspace=1% type="submit" onclick="currentDiv4(9); back();" height = "158.4px" width ="234.8px" src="https://i.ytimg.com/vi/Ea_kZxidOZU/maxresdefault.jpg">
+                    </center>
+                    
+                </div>
+                <div class="mySlides4 w3-container">
+                    <h1>Eureka!</h1>
+                    <iframe src="https://drive.google.com/embeddedfolderview?id=0BwhNWu5jAmSsZ0JtVmwydnpwMVU#grid" width="100%" height="1200px" frameborder="0" align="center"></iframe>    
+                </div>
+                
+                <div class="mySlides4 w3-container">
+                    <h1>Section 1: Forces And Motion</h1>
+                    <iframe src="https://drive.google.com/embeddedfolderview?id=0BwhNWu5jAmSsczVPMUhCc2lqOTg#grid" width="100%" height="500px" frameborder="0" align="center"></iframe>    
+                </div>
+                
+                <div class="mySlides4 w3-container">
+                    <h1>Section 2: Electricity</h1>
+                    <iframe src="https://drive.google.com/embeddedfolderview?id=0BwhNWu5jAmSsZzZxMmR2ZUlTa1E#grid" width="100%" height="500px" frameborder="0" align="center"></iframe>    
+                </div>
+                
+                <div class="mySlides4 w3-container">
+                    <h1>Section 3: Waves</h1>
+                    <iframe src="https://drive.google.com/embeddedfolderview?id=0BwhNWu5jAmSsaF9OenFVVHNoZXM#grid" width="100%" height="500px" frameborder="0" align="center"></iframe>    
+                </div>
+                
+                <div class="mySlides4 w3-container">
+                    <h1>Section 4: Energy Transfer</h1>
+                    <iframe src="https://drive.google.com/embeddedfolderview?id=0BwhNWu5jAmSsU2lES1FXRE5YQU0#grid" width="100%" height="500px" frameborder="0" align="center"></iframe>    
+                </div>
+                
+                <div class="mySlides4 w3-container">
+                    <h1>Section 5: Solid Liquid And Gases</h1>
+                    <iframe src="https://drive.google.com/embeddedfolderview?id=0BwhNWu5jAmSsd3ZDWlhkNnlYclk#grid" width="100%" height="500px" frameborder="0" align="center"></iframe>    
+                </div>
+                
+                <div class="mySlides4 w3-container">
+                    <h1>Section 6: Electromagnetism</h1>
+                    <iframe src="https://drive.google.com/embeddedfolderview?id=0BwhNWu5jAmSsUEZXVXlkYzZZd0U#grid" width="100%" height="500px" frameborder="0" align="center"></iframe>    
+                </div>
+                
+                <div class="mySlides4 w3-container">
+                    <h1>Section 7: Radioactivity</h1>
+                    <iframe src="https://drive.google.com/embeddedfolderview?id=0BwhNWu5jAmSsQ2ExWjNhN2R4U2c#grid" width="100%" height="500px" frameborder="0" align="center"></iframe>    
+                </div>
+                
+            <br><br>
+            </div>
+            <br><br>
         </div>
         <div class="mySlides w3-container w3-white">
             <h2>Physics Books</h2>
@@ -1266,6 +1336,45 @@
       }
       x[slideIndex3-1].style.display = "block";  
       dots[slideIndex3-1].className += " w3-red";
+    }
+    
+    var stuff = 0 
+    var slideIndex4 = 1;
+    showDivs4(slideIndex4);
+
+    function currentDiv4(n) {
+      showDivs4(slideIndex4 = n);
+      stuff = slideIndex4
+    }
+
+    function showDivs4(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides4");
+      var dots = document.getElementsByClassName("demo4");
+      if (n > x.length) {slideIndex4 = 1}    
+      if (n < 1) {slideIndex4 = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+         dots[i].className = dots[i].className.replace(" w3-red", "");
+      }
+      x[slideIndex4-1].style.display = "block";  
+      dots[slideIndex4-1].className += " w3-red";
+    }
+    
+    function back()
+    {
+        if (stuff != 1)
+            {
+                var button = document.getElementById("back")
+                button.innerHTML= "Back"
+            }
+        else
+            {
+                var button = document.getElementById("back")
+                button.innerHTML= "Home"
+            }
     }
     
 

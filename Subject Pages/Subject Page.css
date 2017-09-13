@@ -98,4 +98,26 @@ h1 {
     border: 5px solid #EDF2F4;
     margin: 0;
 }
+
+    .button {
+     /* Green */
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    text-decoration: none;
+    -moz-transition: 0.5s linear;
+    -ms-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    -webkit-transition: 1s linear;
+    transition: 0.5s linear;
+    font-size: 16px;
+    height: 66px;
+    border: 1px
+    border: 1px solid black;
+    
+}
+.video
+{
+    background-color: #F0F3F4
+}
             
