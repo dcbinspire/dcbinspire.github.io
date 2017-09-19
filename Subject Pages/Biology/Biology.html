@@ -1,0 +1,624 @@
+<html>
+    <head><script src="../../jquery-3.2.1.min.js"></script></head>
+  <link rel="stylesheet" type="text/css" href="../Subject%20Page.css">
+            <link rel="shortcut icon" type="image/x-icon" href="../Logo.ico" />
+<link rel="stylesheet" href="../../Buttonsw3.css">
+<img src="../Subject%20Page%20Pics/Biology%20Page.png" width="100%" >
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Biology</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../Style.css">
+<style>
+.mySlides {display:none;}
+</style>
+<body style="background-color:#8d99ae" >
+    <script>
+            $(document).ready(function()
+    {
+        var today = new Date();
+        var date1 = new Date(parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear()); 
+        // get the current date today
+        var date2 = new Date("9/19/2017");
+        // day the site was launched
+        var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+        //need to have date diff because it will increment everyday as the day moves further from our launch date, everytime the date diff increases so does our fact, it will display the fact on the next line in the txt file.
+        var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+        // to make sure date diff is always positive
+        jQuery.get('BiologyFact.txt', function(data) // getting the file
+        {     
+            var factnumber = data.split('\n'); //spliting the file into lines
+            var facttxt = document.getElementById('fact');
+            facttxt.innerHTML = factnumber[diffDays]; //changing the h1 tag's text into the fact
+        }); 
+                
+        jQuery.get('BiologyFactPics.txt', function(data2) // getting the file
+        {     
+            var picnumber = data2.split('\n'); //spliting the file into lines
+            document.getElementById("factimg").src=picnumber[diffDays];
+
+        }); 
+        jQuery.get('BiologyVideo.txt', function(data3) // getting the file
+        {     
+            var vidnumber = data3.split('\n'); //spliting the file into lines
+            document.getElementById("youtube").src="https://www.youtube.com/embed/"+vidnumber[diffDays];
+
+        }); 
+    }); 
+    </script>
+        <div class="w3-center w3-bar w3-black">
+              <button class="w3-button w3-bar-item" onclick="location.href='../../index.html'" style="background-color:#B20320">Home</button> 
+              <button class="w3-button demo w3-bar-item " onclick="currentDiv(1)">Featured Content</button> 
+              <button class="w3-button demo w3-bar-item " onclick="currentDiv(2)">Syllabus Point Breakdown</button> 
+              <button class="w3-button demo w3-bar-item" onclick="currentDiv(3)">Past Papers</button> 
+              <button class="w3-button demo w3-bar-item" onclick="currentDiv(4)">Biology Videos</button>  
+              <button class="w3-button demo w3-bar-item" onclick="currentDiv(5)">Books And Fun Videos</button> 
+              <button class="w3-button demo w3-bar-item" onclick="currentDiv(6)">Test Dates</button>
+              <button class="w3-button demo w3-bar-item" onclick="currentDiv(7)">Q & A</button> 
+        </div>
+        
+        <div class="w3-content" style="max-width:100%">
+            
+            <div class="mySlides w3-container w3-white">
+                        <br>
+                <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Biology Fact Of The Day:</h2>
+                <center>
+                        <div class="borders">
+                            <h5 id=fact></h5>
+                            <img id=factimg src="" width=40%>
+                        
+                        </div>
+                </center>
+                        <br>
+                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Biology Video Of The Day:</h2> 
+                        <center>
+                            <iframe id=youtube width="90%" height="70%"src="" frameborder="0" allowfullscreen></iframe>
+                        </center>
+                <br><br>
+            </div> 
+        <div class="mySlides w3-container">
+            <h2>Syllabus Points</h2>
+        <div class="w3-center w3-bar w3-black">
+              <button class="w3-button demo3 w3-bar-item " onclick="currentDiv3(1)">Section 1</button> 
+              <button class="w3-button demo3 w3-bar-item" onclick="currentDiv3(2)">Section 2</button> 
+              <button class="w3-button demo3 w3-bar-item" onclick="currentDiv3(3)">Section 3</button> 
+              <button class="w3-button demo3 w3-bar-item" onclick="currentDiv3(4)">Section 4</button> 
+              <button class="w3-button demo3 w3-bar-item" onclick="currentDiv3(5)">Section 5</button> 
+              <button class="w3-button demo3 w3-bar-item" onclick="currentDiv3(6)">Section 6</button> 
+              <button class="w3-button demo3 w3-bar-item" onclick="currentDiv3(7)">Section 7</button> 
+        </div>
+            
+            
+            <!-- To anyone adding content to sections, here is a template to make things easier. And also, underline triple points but not the point number or the breakdown itself, just the title -->
+            
+            
+            <h3><b></b></h3>
+             <p></p><br>
+            
+
+
+            <div class="w3-content w3-white" style="max-width:100%">
+                
+                
+                        <div class="mySlides3 w3-container">
+                                <h1>Forces and Motion</h1><br>
+                            <p>***<u>Underlined</u> points are triple***</p><br>
+                            
+                        </div>
+                
+                        <div class="mySlides3 w3-container">
+                                <h1>Electricity</h1><br>
+                            <p>***<u>Underlined</u> points are triple***</p><br>
+                            
+                                                                
+                        </div> 
+                
+                        <div class="mySlides3 w3-container">
+                            <h1>Waves</h1>
+                                <h3><b></b></h3>
+                                <p></p><br>
+                            <p>***<u>Underlined</u> points are triple***</p><br>
+                            
+                            
+                            
+                        </div>
+                
+                        <div class="mySlides3 w3-container">
+                                <h1>Energy resources & energy transfer</h1><br>
+                             <p>***<u>Underlined</u> points are triple***</p><br>
+                            
+                            
+                            
+                        </div> 
+                
+                        <div class="mySlides3 w3-container">
+                                <h1>Solids, liquids & gases</h1><br>
+                            <p>***<u>Underlined</u> points are triple***</p><br>
+                            
+                        </div>
+                
+                        <div class="mySlides3 w3-container">
+
+                                <h1>Magnetism & Electromagnetism</h1><br>
+
+                            <p>***<u>Underlined</u> points are triple***</p><br>
+                           
+                        </div>
+                
+                        <div class="mySlides3 w3-container">
+                                        <h1>Radioactivity & Particles</h1><br>
+        <p>***<u>Underlined</u> points are triple***</p><br>
+        
+        
+                                
+                        </div>
+                      
+            </div>
+        </div>
+
+
+
+            
+        <div class="mySlides w3-container">
+            <h2>Past Papers</h2>
+            <div class="w3-center w3-bar w3-black">
+                <button class="w3-button demo2 w3-bar-item" onclick="currentDiv2(1)">Questions By Topic</button> 
+                <button class="w3-button demo2 w3-bar-item" onclick="currentDiv2(2)">Past Year Tests</button> 
+            </div>
+                <div class="w3-content w3-white" style="max-width:100%">
+                    
+                            <div class="mySlides2 w3-container">
+                                <div class="autowide">
+                                    
+                                    <div class="module">
+                                        <b><h3>Double Science</h3></b>                           
+                                        <h4>Question Paper</h4>
+                                        <hr>
+                                        <h5 style="color:black">Section 1:Forces & Motion</h5>
+
+                                       <a  href="https://drive.google.com/open?id=0BwhNWu5jAmSsVDZ2TGEzdkZ2LWs" target="_blank"><h5>Movement And Position (1P) QP </h5></a>
+                                        <a  href="https://drive.google.com/open?id=0BwhNWu5jAmSsaHpoYV9kTnZmR3M" target="_blank"><h5>Forces ,Movement, Shape & Momentum (1P) QP</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsOHMzbWZldDJJU0k" target="_blank"><h5>Astronomy (1P) QP</h5></a> 
+                                        <hr>
+                                        <h5 style="color:black">Section 2:Electricity</h5>
+                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsdE13ZmpxVHJERlE" target="_blank"><h5>Mains Electricity (1P) QP</h5></a>
+                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSseGJINHBoNm93dmc" target="_blank"><h5>Energy & Potential Difference in Circuits (1P) QP</h5></a>
+                                        <h5>None Available</h5>
+                                        
+                                        <hr>
+                                        <h5 style="color:black">Section 3: Waves</h5>
+                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsNXR6c1JPUWg3LVk" target="_blank"><h5>Properties of Waves (1P) QP</h5></a>
+                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsNTVYZk1oaDVmck0" target="_blank"><h5>Electromagnetic Spectrum (1P) QP</h5></a>
+                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsOUlWLVdaLUZzN2s" target="_blank"><h5>Light & Sound (1P) QP</h5></a> 
+                                        <hr>
+                                        <h5 style="color:black">Section 4: Energy Resources & Energy Transfer</h5>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsdE0wRFozekdmMjA" target="_blank"><h5>Energy Transfer (1P) QP</h5></a>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZUNVX20wdlZYQ00" target="_blank"><h5>Work & Power (1P) QP</h5></a>
+                                        <h5>None Available <br> &nbsp;</h5>
+                                        
+                                        <hr>
+                                        <h5 style="color:black">Section 5: Solids, Liquids & Gases</h5>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSm9xQnlaSHh2ZWc" target="_blank"><h5>Density & Pressure (1P) QP</h5></a>
+                                        <h5>None Available</h5>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsU1VaVWpZeFJTZlE" target="_blank"><h5>Ideal Gas Molecules (1P) QP</h5></a>
+                                         <hr>
+                                        <h5 style="color:black">Section 6: Magnetism & Electromagnetism</h5>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsQ1ZpeHdBQ2huMFE" target="_blank"><h5>Magnetism (1P) QP</h5></a>
+                                        <h5>None Available</h5>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSseWhuWk81dnZFaXM" target="_blank"><h5>Electromagnetic Induction (1P) QP</h5></a>
+                                        <hr>
+                                        <h5 style="color:black">Section 7: Radioactivity & Particles</h5>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsTXVvWjF5VlA5S28" target="_blank"><h5>Radioactivity (1P) QP</h5></a>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSscV9pMTFDdEpIREE" target="_blank"><h5>Particles (1P) QP</h5></a>
+                                    </div>
+                                    
+                                    <div class="module">
+                                        <b><h3>&nbsp;</h3></b>                           
+                                        <h4>Mark Scheme</h4>
+                                        <hr>
+                                        <h5 style="color:black">Section 1:Forces & Motion</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSseWJxYTFnWW9MU00" target="_blank"><h5 >Movement And Position (1P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsYXU3Y20xMGo3RHM" target="_blank"><h5>Forces ,Movement, Shape & Momentum (1P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMk1la1ZkcWVyNW8" target="_blank"><h5>Astronomy</h5></a> 
+                                        <hr>
+                                        <h5 style="color:black">Section 2:Electricity</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsUU4yTU40QXBuQUE" target="_blank"><h5>Mains Electricity (1P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbjUyN2JpdkQxNzA" target="_blank"><h5>Energy & Potential Difference in Circuits (1P) MS</h5></a>
+                                        <h5>None Available</h5>
+                                        <hr>
+                                        <h5 style="color:black">Section 3: Waves</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSDlXNTF3RzFCRk0" target="_blank"><h5>Properties of Waves (1P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsVm1wcWh3Smg1Q2M" target="_blank"><h5>Electromagnetic Spectrum (1P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMmdqQjZLZ2RmNjA" target="_blank"><h5>Light & Sound</h5></a> 
+                                        <hr>
+                                        <h5 style="color:black">Section 4: Energy Resources & Energy Transfer</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSXhxVTNJU1RRZTQ" target="_blank"><h5>Energy Transfer (1P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsR2x0aHNmRGlaOFk" target="_blank"><h5>Work & Power (1P) MS</h5></a>
+                                        <h5>None Available <br> &nbsp;</h5>
+                                        
+                                        <hr>
+                                        <h5 style="color:black">Section 5: Solids, Liquids & Gases</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsNEotRnVUZkcwZmc" target="_blank"><h5>Density & Pressure (1P) MS</h5></a>
+                                        <h5>None Available</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsY04xajNRUWZacU0" target="_blank"><h5>Ideal Gas Molecules (1P) MS</h5></a>
+                                         <hr>
+                                        <h5 style="color:black">Section 6: Magnetism & Electromagnetism</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsd0FfdTFEQ1lQdlk" target="_blank"><h5>Magnetism (1P) MS</h5></a>
+                                        <h5>None Available</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsWFpvMXlOam4wdk0" target="_blank"><h5>Electromagnetic Induction (1P) MS</h5></a>
+                                        <hr>
+                                        <h5 style="color:black">Section 7: Radioactivity & Particles</h5>
+                                        
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsanhueGY3UElxQmM" target="_blank"><h5>Radioactivity (1P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbW9DbzJuQ3NIbTA" target="_blank"><h5>Particles (1P) MS</h5></a>
+                                    </div>
+                                    
+                                    <div class="module">
+                                        <b><h3>Separate Science</h3></b>
+                                        <h4>Question Paper</h4>
+                                        <hr>
+                                        <h5 style="color:black">Section 1:Forces & Motion</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsVUlweDZFSkR3M28" target="_blank"><h5 >Movement And Position (2P) QP</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMEJfU2VFRnh0Rjg" target="_blank"><h5>Forces ,Movement, Shape & Momentum (2P) QP</h5></a>
+                                        <h5>None Available</h5>
+                                        <hr>
+                                        <h5 style="color:black">Section 2:Electricity</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsd0JXNHN6c1dqWDQ" target="_blank"><h5>Mains Electricity (2P) QP</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSseDRwWjJNaHZUNU0" target="_blank"><h5>Energy & Potential Difference in Circuits (2P) QP</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsRjlNOUNlTW1CR3c" target="_blank"><h5>Electric Charge (2P) QP</h5></a>
+                                        <hr>
+                                        <h5 style="color:black">Section 3: Waves</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSscVI5d0k2R0tpdWc" target="_blank"><h5>Properties of Waves (2P) QP</h5></a>
+                                        <h5>None Available &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsTWZQSTdqRFlDVnc" target="_blank"><h5>Light & Sound</h5></a> 
+                                        <hr>
+                                        <h5 style="color:black">Section 4: Energy Resources & Energy Transfer</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsVGE3OVd3RUx1M3c" target="_blank"><h5>Energy Transfer (2P) QP</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSscnFTM3NYVVd6RjA" target="_blank"><h5>Work & Power (2P) QP</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsOXQxNzJsa3lPdGc" target="_blank"><h5>Energy Resources & Electricity Generation (2P) QP</h5></a>
+                                        <hr>
+                                        <h5 style="color:black">Section 5: Solids, Liquids & Gases</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMmw1SFI3UXpqVkE" target="_blank"><h5>Density & Pressure (2P) QP</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbGZoMWY5V3loMTg" target="_blank"><h5>Change of State (2P) QP</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsTnpKdUlfdXpDdk0" target="_blank"><h5>Ideal Gas Molecules (2P) QP</h5></a>
+                                         <hr>
+                                        <h5 style="color:black">Section 6: Magnetism & Electromagnetism</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsX2cwQTJiTEZya28" target="_blank"><h5>Magnetism (2P) QP</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsYUJ1S3lFRXUxV28"><h5>Elecromagnetism (2P) QP</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZmp2YUc3OWhVekk" target="_blank"><h5>Electromagnetic Induction (2P) QP</h5></a>
+                                        <hr>
+                                        <h5 style="color:black">Section 7: Radioactivity & Particles</h5>
+                                        
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsNnpLRDlKYW42VTA" target="_blank"><h5>Radioactivity (2P) QP</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMTZZS1NEcmk4bnc" target="_blank"><h5>Particles (2P) QP</h5></a>
+                                    </div>
+                                    
+                                    <div class="module">
+                                    <h3>&nbsp;</h3>
+                                    <h4>Mark Scheme</h4>
+                                    <hr>
+                                        <h5 style="color:black">Section 1:Forces & Motion</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsS0loQjFLdVlSNGcs" target="_blank"><h5 >Movement And Position (2P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMEJfU2VFRnh0Rjg" target="_blank"><h5>Forces ,Movement, Shape & Momentum (2P) MS</h5></a>
+                                        <h5>None Available</h5>
+                                        <hr>
+                                        <h5 style="color:black">Section 2:Electricity</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsS1dyOE0wSlpzbjg" target="_blank"><h5>Mains Electricity (2P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsM29PNzBTWW1TWDA" target="_blank"><h5>Energy & Potential Difference in Circuits (2P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsRTVEdWVaSXNMX0U" target="_blank"><h5>Electric Charge (2P) MS</h5></a>
+                                        <hr>
+                                        <h5 style="color:black">Section 3: Waves</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsVDUycmg4RzdsV2M" target="_blank"><h5>Properties of Waves (2P) MS</h5></a>
+                                        <h5>None Available&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                                        
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsdEJ3NVh1Wld3c2c" target="_blank"><h5>Light & Sound</h5></a> 
+                                        <hr>
+                                        <h5 style="color:black">Section 4: Energy Resources & Energy Transfer</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsN3pFNUZmWUNyXzA" target="_blank"><h5>Energy Transfer (2P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsM0gyN2RyckR2Rlk" target="_blank"><h5>Work & Power (2P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsTm1lTWVqcjdZelk" target="_blank"><h5>Energy Resources & Electricity Generation (2P) MS</h5></a>
+                                        <hr>
+                                        <h5 style="color:black">Section 5: Solids, Liquids & Gases</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsQmRaQTBoeXNuQmc" target="_blank"><h5>Density & Pressure (2P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsTHJvRHRLeWFtbEU" target="_blank"><h5>Change of State (2P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsTEFKOS1rT2wxOTg" target="_blank"><h5>Ideal Gas Molecules (2P) MS</h5></a>
+                                         <hr>
+                                        <h5 style="color:black">Section 6: Magnetism & Electromagnetism</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbWFORFBCRmh5bGM" target="_blank"><h5>Magnetism (2P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSselltbmdrcUdFN28" target="_blank"><h5>Elecromagnetism (2P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSseVMxcGlSWEMxcG8" target="_blank"><h5>Electromagnetic Induction (2P) MS</h5></a>
+                                        <hr>
+                                        <h5 style="color:black">Section 7: Radioactivity & Particles</h5>
+                                        
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSEV2dXl6cEZURkk" target="_blank"><h5>Radioactivity (2P) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsdGtGUExiWGZna2s" target="_blank"><h5>Particles (2P) MS</h5></a>
+                                    </div>
+                                </div>
+                                            
+                            </div>
+                    
+                            <div class="mySlides2 w3-container">
+                           
+                            <div class="autowide">
+                             
+                                    <div class="module">
+                                    <h1>Exam Papers</h1>
+                                    <hr>
+                                    <center>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsRFRLV2dlV3BxUU0" target="_blank"><h5 >Jun 16 Paper 1P (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsV25qNXdpWjJHMW8" target="_blank"><h5 >Jun 16 Paper 1PR (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsQXdPMTRxVDB2NWM" target="_blank"><h5 >Jun 16 Paper 2P (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsdXg1RlBwSUh3eUU" target="_blank"><h5 >Jun 16 Paper 2PR (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsT3ZkaWlVc3V5Vzg" target="_blank"><h5 >Jan 16 Paper 1P (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsRFNfVWFnRkI3YUk" target="_blank"><h5 >Jan 16 Paper 2P (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsV2lXdWMwV0RWOVk" target="_blank"><h5 >Jun 15 Paper 1P (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsVjI0Vl9sWElSYlE" target="_blank"><h5 >Jun 15 Paper 1PR (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsNzJFcGEtRnNfT1U" target="_blank"><h5 >Jun 15 Paper 2P (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsNGtWYWFGenlfYjA" target="_blank"><h5 >Jun 15 Paper 2PR (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSmF5S2I1bmJWV1k" target="_blank"><h5 >Jan 15 Paper 1P (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSFprWmZ2T1JUazg" target="_blank"><h5 >Jan 15 Paper 2P (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSXhyZWZvVzRCRFE" target="_blank"><h5 >Jun 14 Paper 1P (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsb083Q3l0V21fX28" target="_blank"><h5 >Jun 14 Paper 1PR (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsRk1WMFlabFBMNXc" target="_blank"><h5 >Jun 14 Paper 2P (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsYWNrYjh0RVBJTWc" target="_blank"><h5 >Jun 14 Paper 2PR (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSscVh4SHNQalRTdjg" target="_blank"><h5 >Jan 14 Paper 1P (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsWUlPa0FtNWo4dGM" target="_blank"><h5 >Jan 14 Paper 2P (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSselpHenBqdDZ6Wkk" target="_blank"><h5 >Jun 13 Paper 1P (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsUmljcGc3ekJoblE" target="_blank"><h5 >Jun 13 Paper 1PR (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsNXhNQUp2RW1RTXc" target="_blank"><h5 >Jun 13 Paper 2P (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsTkRRaGZuaERxSUU" target="_blank"><h5 >Jun 13 Paper 2PR (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMVZPSUJ0RlhPMmc" target="_blank"><h5 >Jan 13 Paper 1P (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsVDFObER2dmxhMjA" target="_blank"><h5 >Jan 13 Paper 2P (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsNkE3Sjl0LUNoWWM" target="_blank"><h5 >Jun 12 Paper 1P (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMDloTTdIUkxtMHc" target="_blank"><h5 >Jun 12 Paper 2P (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZU9oVXJGeGhNdnc" target="_blank"><h5 >Jan 12 Paper 1P (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSseEltTWNBQUxwQjg" target="_blank"><h5 >Jan 12 Paper 2P (QP)</h5></a>
+                                    </center>
+                                    </div>
+                                
+                                    <div class="module">
+                                    <h1>Mark Schemes</h1>
+                                    <hr>
+                                     <center>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMHlSX1lma3dYOUE" target="_blank"><h5 >Jun 16 Paper 1P (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMi10azNSRThzdDg" target="_blank"><h5 >Jun 16 Paper 1PR (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsajBkSTdxLWc5bGM" target="_blank"><h5 >Jun 16 Paper 2P (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsdm13aGNYYVlGX00" target="_blank"><h5 >Jun 16 Paper 2PR (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsV1pQLVBIV0VWN3c" target="_blank"><h5 >Jan 16 Paper 1P (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsWk9SQWNzUmF2Szg" target="_blank"><h5 >Jan 16 Paper 2P (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsajVtQmZKdVJSTDQ" target="_blank"><h5 >Jun 15 Paper 1P (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsT0NvcDFxSlVOdG8" target="_blank"><h5 >Jun 15 Paper 1PR (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsRmZFWngxRVZHLTA" target="_blank"><h5 >Jun 15 Paper 2P (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsYW95N1ZjMVNSSlU" target="_blank"><h5 >Jun 15 Paper 2PR (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMEZUUlVGb2Z2TGc" target="_blank"><h5 >Jan 15 Paper 1P (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsU2p0SGdzeHNRRHc" target="_blank"><h5 >Jan 15 Paper 2P (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsRHBwN0IzV0xLQWs" target="_blank"><h5 >Jun 14 Paper 1P (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsV21CU2ktNi1Ramc" target="_blank"><h5 >Jun 14 Paper 1PR (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsRHZyY21CUjI3YWs" target="_blank"><h5 >Jun 14 Paper 2P (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsTjlxdmVzWXdLRUU" target="_blank"><h5 >Jun 14 Paper 2PR (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsTzl1ZGJka2pSbVE" target="_blank"><h5 >Jan 14 Paper 1P (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsR1ZMV1VReHJweEk" target="_blank"><h5 >Jan 14 Paper 2P (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsdGZTdEtjdjBBYm8" target="_blank"><h5 >Jun 13 Paper 1P (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsRm5uZE0xRE82LVE" target="_blank"><h5 >Jun 13 Paper 1PR (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSEd3YVhNaEo4QVU" target="_blank"><h5 >Jun 13 Paper 2P (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZElCZl9zemp0MEU" target="_blank"><h5 >Jun 13 Paper 2PR (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsS3hfUUVxRmM5NFU" target="_blank"><h5 >Jan 13 Paper 1P (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsWnJhU2ZLYjMxYzQ" target="_blank"><h5 >Jan 13 Paper 2P (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbHN5cDZDSERER1U" target="_blank"><h5 >Jun 12 Paper 1P (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsR2ZnU0lCanRJaXc" target="_blank"><h5 >Jun 12 Paper 2P (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbXhxdE1UNkFNX2s" target="_blank"><h5 >Jan 12 Paper 1P (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsRkdwbUZaSDA2eXM" target="_blank"><h5 >Jan 12 Paper 2P (MS)</h5></a>
+                                    </center>
+                                    </div>
+                                
+                                </div>
+                            
+                            </div>
+                </div>
+        </div>
+        <div class="mySlides w3-container w3-white">
+            <h2>Biology Videos</h2>
+            <button class="w3-button demo4" id=back onclick="currentDiv4(1); back();" style="background-color:#f44336; color:white">Home</button> 
+            
+            <div class="w3-content video" style="max-width:100%" >
+                <div class="mySlides4 w3-container">
+                    
+                        <br><br>
+                    
+                
+            <br><br>
+            </div>
+            <br><br>
+        </div>
+        <div class="mySlides w3-container w3-white">
+            <h2>Biology Books</h2>
+            <div class="borders2">
+                    
+
+            </div>
+            <br><br>
+            <h2>Biology Movies/TV Shows</h2>
+            <div class="borders2">
+                
+                
+            
+                    
+            </div>
+                    
+            
+            <br><br>
+        </div>
+            <div class="mySlides w3-container w3-white">
+                <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=2&amp;bgcolor=%23ffffff&amp;src=3b54p17ej560pebokbi1rg2g1c%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=Asia%2FSingapore" style="border:solid 1px #777" width="100%" height="800" frameborder="0" scrolling="no"></iframe>
+            </div>
+            
+       <div class="mySlides w3-container w3-white">
+                <h2>Ask Any Question! We Will Reply Soon</h2>
+                <div id="disqus_thread"></div>
+                <script>
+
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                /*
+                var disqus_config = function () {
+                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                */
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://dcbinspire.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+        </div>
+            
+
+        </div>
+
+
+    
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+
+    function currentDiv(n) {
+      showDivs(slideIndex = n);
+    }
+
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      if (n > x.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+         dots[i].className = dots[i].className.replace(" w3-red", "");
+      }
+      x[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " w3-red";
+    }
+    
+    
+     var slideIndex2 = 1;
+    showDivs2(slideIndex2);
+
+    function currentDiv2(n) {
+      showDivs2(slideIndex2 = n);
+    }
+
+    function showDivs2(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides2");
+      var dots = document.getElementsByClassName("demo2");
+      if (n > x.length) {slideIndex2 = 1}    
+      if (n < 1) {slideIndex2 = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+         dots[i].className = dots[i].className.replace(" w3-red", "");
+      }
+      x[slideIndex2-1].style.display = "block";  
+      dots[slideIndex2-1].className += " w3-red";
+    }
+    
+    
+         var slideIndex3 = 1;
+    showDivs3(slideIndex3);
+
+    function currentDiv3(n) {
+      showDivs3(slideIndex3 = n);
+    }
+
+    function showDivs3(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides3");
+      var dots = document.getElementsByClassName("demo3");
+      if (n > x.length) {slideIndex3 = 1}    
+      if (n < 1) {slideIndex3 = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+         dots[i].className = dots[i].className.replace(" w3-red", "");
+      }
+      x[slideIndex3-1].style.display = "block";  
+      dots[slideIndex3-1].className += " w3-red";
+    }
+    
+    var stuff = 0 
+    var slideIndex4 = 1;
+    showDivs4(slideIndex4);
+
+    function currentDiv4(n) {
+      showDivs4(slideIndex4 = n);
+      stuff = slideIndex4
+    }
+
+    function showDivs4(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides4");
+      var dots = document.getElementsByClassName("demo4");
+      if (n > x.length) {slideIndex4 = 1}    
+      if (n < 1) {slideIndex4 = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+         dots[i].className = dots[i].className.replace(" w3-red", "");
+      }
+      x[slideIndex4-1].style.display = "block";  
+      dots[slideIndex4-1].className += " w3-red";
+    }
+    
+    
+    
+    function back()
+    {
+        if (stuff != 1)
+            {
+                var button = document.getElementById("back")
+                button.innerHTML= "Back"
+            }
+        else
+            {
+                var button = document.getElementById("back")
+                button.innerHTML= "Home"
+            }
+    }
+    
+
+    
+</script>
+<script id="dsq-count-scr" src="//dcbinspire.disqus.com/count.js" async></script>
+</body >
+</html>
