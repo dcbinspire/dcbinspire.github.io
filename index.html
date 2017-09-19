@@ -17,7 +17,7 @@
         var today = new Date();
         var date1 = new Date(parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear()); 
         // get the current date today
-        var date2 = new Date("9/12/2017");
+        var date2 = new Date("9/19/2017");
         // day the site was launched
         var timeDiff = Math.abs(date2.getTime() - date1.getTime());
         //need to have date diff because it will increment everyday as the day moves further from our launch date, everytime the date diff increases so does our fact, it will display the fact on the next line in the txt file.
@@ -46,7 +46,7 @@
     <h1 class ="header">&nbsp;&nbsp;INSPIRE</h1>
     <div id="main">
     <div style="text-align: right" id="menu">
-    <a  class="button" onclick="document.getElementById('id02').style.display='block'; get();" id=request>Request Tutor</a>
+    <a  class="button" onclick="document.getElementById('id02').style.display='block'; get();">Request Tutor</a>
     <a  class="button" onclick="document.getElementById('id01').style.display='block'; get();" id=request>Request Topic</a>
     <a class="button" onclick="All()">All Subjects</a>
     <input type="searchtext" name="search" onkeydown="key_down(event)" placeholder="Search for a topic" id="searchtxt" required>
