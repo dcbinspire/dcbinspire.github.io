@@ -26,6 +26,7 @@
     <div style="text-align: right" id="menu">
     <a  class="button" onclick="document.getElementById('id02').style.display='block'; get();" id=request>Request Tutor</a>
     <a  class="button" onclick="document.getElementById('id01').style.display='block'; get();" id=request>Request Topic</a>
+    <a class="button" onclick="All()">All Subjects</a>
     <a class="button" onclick="home()">Home</a>
     <input type="searchtext" name="search" onkeydown="key_down(event)" placeholder="Search for a topic" id="searchtxt" required>
     </div>
@@ -374,6 +375,13 @@ function send2()
         document.getElementById("timetxt").value=""
         document.getElementById("closed2").click();
         alert("Form Submitted!")
+    }
+    
+    function All()
+    {
+        self.location="TopicSearch.html";
+        localStorage.setItem("hide",false)
+        localStorage.setItem("Entrance",true)
     }
     </script>
     

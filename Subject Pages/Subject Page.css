@@ -120,4 +120,14 @@ h1 {
 {
     background-color: #F0F3F4
 }
+div.footer {
+	position:fixed;
+	bottom:0;
+	right: 0;
+	left: 0;
+	padding: 1rem;
+	background-color:#131B23;
+	text-align: center;
+    color:white
+}
             
