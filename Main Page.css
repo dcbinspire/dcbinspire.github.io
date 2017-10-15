@@ -28,7 +28,7 @@ input[type=searchtext]:focus {
         }
         .whiteclass{ color: 242638;}
     .button {
-    background-color: #B20320; /* Green */
+    background-color: #05233f; /* Green */
     color: white;
     padding: 20px 32px;
     text-align: center;
@@ -45,7 +45,7 @@ input[type=searchtext]:focus {
     
 }
     .buttoncolor{
-            background-color:#2B2D42;
+            background-color:#091730;
             color:white;
             border-bottom-right-radius: 25px;
         }
@@ -64,7 +64,7 @@ input[type=searchtext]:focus {
             float: left;
             width: 100%;
             height: 66px;
-            background-color: #B20320;
+            background-color: #05233f;
             padding-top:15px;
             z-index:-10;
             position:absolute;
@@ -165,10 +165,10 @@ input[type=searchtext]:focus {
     }
         div.borders {
     border-radius: 25px;
-    background-color: #EDF2F4;
+    background-color: #afb7bf;
     width: 90%;
     padding: 10px;
-    border: 5px solid #EDF2F4;
+    border: 5px solid #afb7bf;
     margin: 0;
             
 }
@@ -199,16 +199,16 @@ input[type=searchtext]:focus {
             
         }
         div.quoteborder {
-    background-color: #2B2D42;
+    background-color: #091730;
     width: 100%;
     padding: 2px;
     color:white;
-    border: 5px solid #2B2D42;
+    border: 5px solid #091730;
     margin: 0;
             
 }
 
 .red
 {
-    background-color: #B20320
+    background-color: #05233f
 }
