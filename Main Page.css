@@ -1,4 +1,13 @@
     /*searchbar css*/
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url(/helveticaneue/HelveticaNeueLt.ttf);
+  }
+* {
+    font-family: "Helvetica Neue";
+    font-weight:200;
+    line-height: 120%;
+  }
 input[type=searchtext] {
     width: 18%;
     height: 40px;
@@ -164,7 +173,7 @@ input[type=searchtext]:focus {
         }
     }
         div.borders {
-    border-radius: 25px;
+    border-radius: 5px;
     background-color: #afb7bf;
     width: 90%;
     padding: 10px;
