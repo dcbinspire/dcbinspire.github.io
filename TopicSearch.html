@@ -133,7 +133,34 @@
     </div>
   </form>
 </div>
-        
+       
+<div id="id03" class="modal">
+  
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="closeConstruct()" class="close" title="Close Modal" id="closed2">&times;</span>
+    </div>
+    <br><br>
+    <h3 align="center" id="test">Hi there! This page is currerently under construction. <br>We are hard at work<br> It will be ready soon! Be sure to check reguarly!</h3>
+    <center>
+    <img src="FrontpgPics/construct.png" >
+    </center>
+    <br><br>
+    <div class="quoteborder">
+        <center>
+        <br>
+        <label><b>Admin Password:</b></label><br>
+        <input type="password" style="color:black;" onkeydown="admin(event)" id="adminpass" >
+        </center>
+        <br><br>
+    </div>
+    
+
+    <div class="container" style="background-color:#f1f1f1">
+    </div>
+  </form>
+</div>
+    
     
 <h3 style="color:white; width:100%; height:50px; padding-top:12.5px; background-color:#091730; position:relative; top:-10px;" id="SearchText" > &nbsp;  &nbsp; &nbsp; All Topics</h3>
 <center>
@@ -144,13 +171,13 @@
     
 <a href="Subject%20Pages/Biology/Biology.html"><img style="border: 1px solid black;" hspace="3%" src="FrontpgPics/Biology%20Poster.png" id=3 class="movpost biology" width = "158.4px" height ="234.8px"></a>
     
-<a href="#"><img style="border: 1px solid black;" onclick =clickonrq() hspace="3%"  src="http://static.wpe.au.syrahost.com/var/m_4/4b/4b1/28256/940003-coming-soon.jpg" class="movpost " id=4 width = "158.4px" height ="234.8px"></a>
-    
+<a href="#"><img style="border: 1px solid black;" onclick ="document.getElementById('id03').style.display='block'; HistoryConstruct();"  src="FrontpgPics/History%20Poster.jpg"  width = "158.4px" height ="234.8px" hspace="3%"></a>
 
     
 <br>
 <br>
-<a href="#"><img style="border: 1px solid black;" id=5 onclick =clickonrq()  hspace="3%"  src="http://static.wpe.au.syrahost.com/var/m_4/4b/4b1/28256/940003-coming-soon.jpg" class="movpost " width = "158.4px" height ="234.8px"></a>
+<a href="#"><img style="border: 1px solid black;" onclick ="document.getElementById('id03').style.display='block'; GeographyConstruct();"  src="FrontpgPics/Geography%20Poster.jpg"  width = "158.4px" height ="234.8px" hspace="3%"></a>
+   
    
 <a href="#"><img style="border: 1px solid black;" id=6 onclick =clickonrq() hspace="3%" src="http://static.wpe.au.syrahost.com/var/m_4/4b/4b1/28256/940003-coming-soon.jpg" class="movpost " width = "158.4px" height ="234.8px"></a>
     
@@ -172,6 +199,49 @@
 </body>
     
 <script>
+function admin(e) 
+    {
+        if(e.keyCode === 13) {
+                if(document.getElementById("adminpass").value == "inspire123")
+                    {
+                        if(localStorage.getItem("history") == "true")
+                            {
+                                window.open("Subject%20Pages/History/History.html");
+                                localStorage.setItem("history",false)
+                                window.close();
+                            }
+                        if(localStorage.getItem("geography") =="true")
+                            {
+                                window.open("Subject%20Pages/Geography/Geography.html");
+                                localStorage.setItem("geography",false)
+                                window.close();
+                            }
+                    }
+        }
+    }
+    function HistoryConstruct()
+    {
+        localStorage.setItem("history",true)
+    }
+    function GeographyConstruct()
+    {
+        localStorage.setItem("geography",true)
+    }
+    function closeConstruct()
+    {
+        document.getElementById('id03').style.display='none'
+        localStorage.setItem("geography",false)
+        localStorage.setItem("history",false)
+    }
+var modal3 = document.getElementById('id03');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal3) {
+        modal3.style.display = "none";
+    }
+}
+
 var allmov = document.getElementsByTagName("a").length;
 allmov=allmov-3
 
