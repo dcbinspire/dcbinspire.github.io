@@ -15,32 +15,83 @@
     <script>
             $(document).ready(function()
     {
+        if (localStorage.getItem("dateFactsPhysics")==null)
+            {
+                localStorage.setItem("dateFactsPhysics","10/15/2017")
+            }
+                
+        if (localStorage.getItem("dateVidsPhysics")==null)
+            {
+                localStorage.setItem("dateVidsPhysics","10/15/2017")
+            }
+                
+        if (localStorage.getItem("datePicsPhysics")==null)
+            {
+                localStorage.setItem("datePicsPhysics","10/15/2017")
+            }
         var today = new Date();
-        var date1 = new Date(parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear()); 
+                
+        var Factsdate1 = new Date(parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear()); 
         // get the current date today
-        var date2 = new Date("10/15/2017");
+        var Factsdate2 = new Date(localStorage.getItem("dateFacts"));
         // day the site was launched
-        var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+        var timeDiffFacts = Math.abs(Factsdate2.getTime() - Factsdate1.getTime());
         //need to have date diff because it will increment everyday as the day moves further from our launch date, everytime the date diff increases so does our fact, it will display the fact on the next line in the txt file.
-        var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+        var diffDaysFacts = Math.ceil(timeDiffFacts / (1000 * 3600 * 24));
         // to make sure date diff is always positive
+                
+                
+    
+        var Picsdate1 = new Date(parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear()); 
+        // get the current date today
+        var Picsdate2 = new Date(localStorage.getItem("datePicsPhysics"));
+        // day the site was launched
+        var timeDiffPics = Math.abs(Picsdate2.getTime() - Picsdate1.getTime());
+        //need to have date diff because it will increment everyday as the day moves further from our launch date, everytime the date diff increases so does our fact, it will display the fact on the next line in the txt file.
+        var diffDaysPics = Math.ceil(timeDiffPics / (1000 * 3600 * 24));
+        // to make sure date diff is always positive
+                
+                
+        var Vidsdate1 = new Date(parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear()); 
+        // get the current date today
+        var Vidsdate2 = new Date(localStorage.getItem("dateVidsPhysics"));
+        // day the site was launched
+        var timeDiffVids = Math.abs(Vidsdate2.getTime() - Vidsdate1.getTime());
+        //need to have date diff because it will increment everyday as the day moves further from our launch date, everytime the date diff increases so does our fact, it will display the fact on the next line in the txt file.
+        var diffDaysVids = Math.ceil(timeDiffVids / (1000 * 3600 * 24));
+        // to make sure date diff is always positive
+				
+
+						   
         jQuery.get('PhysicsFact.txt', function(data) // getting the file
         {     
             var factnumber = data.split('\n'); //spliting the file into lines
             var facttxt = document.getElementById('fact');
-            facttxt.innerHTML = factnumber[diffDays]; //changing the h1 tag's text into the fact
+            facttxt.innerHTML = factnumber[diffDaysFacts]; //changing the h1 tag's text into the fact
+            if (factnumber[diffDaysFacts] == null)
+                {
+                    localStorage.setItem("dateFacts",parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear())
+                }
         }); 
                 
         jQuery.get('PhysicsFactPics.txt', function(data2) // getting the file
         {     
-            var picnumber = data2.split('\n'); //spliting the file into lines
-            document.getElementById("factimg").src=picnumber[diffDays];
+            var picnumber = data2.split('\n'); //spliting the file into lines			
+            document.getElementById("factimg").src=picnumber[diffDaysPics];
+            if (picnumber[diffDaysPics] == null)
+                {
+                    localStorage.setItem("datePicsPhysics",parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear())
+                }
 
         }); 
         jQuery.get('PhysicsVideo.txt', function(data3) // getting the file
         {     
             var vidnumber = data3.split('\n'); //spliting the file into lines
-            document.getElementById("youtube").src="https://www.youtube.com/embed/"+vidnumber[diffDays];
+            document.getElementById("youtube").src="https://www.youtube.com/embed/"+vidnumber[diffDaysVids];
+            if (vidnumber[diffDaysVids] == null)
+                {
+                    localStorage.setItem("dateVidsPhysics",parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear())
+                }
 
         }); 
     }); 

@@ -1,4 +1,4 @@
-Did you ever wonder why the colour of our blood is red? Here’s the answer - the iron present in our blood forms a ring of atoms called porphyrin, the shape of this structure produces the red colour. The shape of the porphyrin is affected by the presence of oxygen in your body.
+﻿Did you ever wonder why the colour of our blood is red? Here’s the answer - the iron present in our blood forms a ring of atoms called porphyrin, the shape of this structure produces the red colour. The shape of the porphyrin is affected by the presence of oxygen in your body.
 An adult human body is made up of ± 100 trillion cells. Surprised! Then hold your guts for another one. These cells can be differentiated into 200 different types with diverse forms.
 Human bone is an excellent example of a perfect architecture. The femur that supports the weight of our body during walking is more powerful when compared to a solid concrete of the same weight.
 Our bone marrow produces 260 billion red blood cells (RBCs) and 135 billion white blood cells (WBCs) per day.
@@ -23,5 +23,3 @@ How do ants eat? Want to know? Ants cannot chew their food, they move their jaws
 Babies born with farsightedness. They start to focus properly only between 3 to 6 months of age.
 Human life expectancy would increase by 9.78 years if all the major cardiovascular diseases were eliminated.
 In seahorses, the male gives birth to a young one.
-
-

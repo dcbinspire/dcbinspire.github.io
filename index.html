@@ -14,23 +14,35 @@
         <script>
         $(document).ready(function()
     {
+        if (localStorage.getItem("date")==null)
+            {
+                localStorage.setItem("date","10/15/2017")
+            }
+                
         var today = new Date();
+                
         var date1 = new Date(parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear()); 
         // get the current date today
-        var date2 = new Date("9/26/2017");
+        var date2 = new Date(localStorage.getItem("date"));
         // day the site was launched
         var timeDiff = Math.abs(date2.getTime() - date1.getTime());
         //need to have date diff because it will increment everyday as the day moves further from our launch date, everytime the date diff increases so does our fact, it will display the fact on the next line in the txt file.
         var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
         // to make sure date diff is always positive
+				
+
+						   
         jQuery.get('InspireQuotes.txt', function(data) // getting the file
         {     
-            var quotenumber = data.split('\n'); //spliting the file into lines
-            var quotetxt2 = document.getElementById('quotetxt');
-            quotetxt2.innerHTML = quotenumber[diffDays]; //changing the h1 tag's text into the fact
+            var quoteNum = data.split('\n'); //spliting the file into lines
+            var quote = document.getElementById('quotetxt');
+            quote.innerHTML = quoteNum[diffDays]; //changing the h1 tag's text into the fact
+            if (quoteNum[diffDays] == null)
+                {
+                    localStorage.setItem("date",parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear())
+                }
         }); 
-                
-    }); 
+    });
         </script>
     </head>
     <title font="">INSPIRE</title>
