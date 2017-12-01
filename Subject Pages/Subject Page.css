@@ -131,3 +131,21 @@ div.footer {
     color:white
 }
 
+div.sideMenu
+{
+	position:fixed;
+	top:18em;
+	right: 5em;
+	text-align: center;
+    color:white;
+	width: 200px;
+}
+.SideMenuBtn
+{
+	width: 200px;
+    background-color: black;
+	border:none;
+	padding: 0.75rem;
+    text-decoration: none;
+}
+
