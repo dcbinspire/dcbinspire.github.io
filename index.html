@@ -67,6 +67,7 @@
     <input type="searchtext" name="search" onkeydown="key_down(event)" placeholder="Search for a topic" id="searchtxt" required>
     </div>
     </div>
+    
     <div id="id01" class="modal">
   
   <form class="modal-content animate" >
@@ -175,7 +176,7 @@
   
   <form class="modal-content animate">
     <div class="imgcontainer">
-      <span onclick="closeConstruct()" class="close" title="Close Modal" id="closed2">&times;</span>
+      <span onclick="closeConstruct()" class="close" title="Close Modal" id="closed3">&times;</span>
     </div>
     <br><br>
     <h3 align="center" id="test">Hi there! This page is currerently under construction. <br>We are hard at work<br> It will be ready soon! Be sure to check reguarly!</h3>
@@ -195,6 +196,22 @@
 
     <div class="container" style="background-color:#f1f1f1">
     </div>
+  </form>
+</div>
+   
+ <div id="id04" class="modal">
+  
+  <form class="modal-content animate" >
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal" id="closed4">&times;</span>    
+    </div>
+    <div class="container">
+		<h1>A message from the Inspire Team:</h1>
+		<h1> <strong>History Section Launched!</strong></h1>
+    </div>
+    <div class="quoteborder">
+    </div>
+
   </form>
 </div>
     
@@ -276,7 +293,7 @@
   
 <a href="Subject%20Pages/Biology/Biology.html"><img style="border: 1px solid black;" hspace="3%" src="FrontpgPics/Biology%20Poster.png"  width = "158.4px" height ="234.8px"></a>
     
-<a href="#"><img style="border: 1px solid black;" onclick ="document.getElementById('id03').style.display='block'; HistoryConstruct();"  src="FrontpgPics/History%20Poster.jpg"  width = "158.4px" height ="234.8px" hspace="3%"></a>
+<a href="Subject Pages/History/History.html"><img style="border: 1px solid black;" hspace="3%" src="FrontpgPics/History%20Poster.jpg"  width = "158.4px" height ="234.8px"></a>
 
     
 <br>
@@ -300,8 +317,17 @@
 </body>
     
 <script>
-
-    
+	if(localStorage.getItem("historylaunch")==null)
+		{
+			localStorage.setItem("historylaunch","hello")
+			document.getElementById('id04').style.display='block'
+		}
+	else
+		{
+			document.getElementById('id04').style.display='none'
+		}
+	
+	
 var myIndex = 0;
 carousel();
 
