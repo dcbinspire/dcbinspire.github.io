@@ -154,5 +154,21 @@ div.sideMenu
 	color:black;
 	background-color:#B8B6B6;
 }
+.vertLine
+{
+	border-right: 2px solid rgba(64,64,64,0.7);
+	height:800px;
+}
 
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
 
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
