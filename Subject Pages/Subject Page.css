@@ -157,7 +157,13 @@ div.sideMenu
 .vertLine
 {
 	border-right: 2px solid rgba(64,64,64,0.7);
-	height:800px;
+	height:880px;
+}
+
+.vertLineTheme3
+{
+	border-right: 2px solid rgba(64,64,64,0.7);
+	height:1200px;
 }
 
 .column {
