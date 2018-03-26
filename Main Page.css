@@ -37,7 +37,7 @@ input[type=searchtext]:focus {
         }
         .whiteclass{ color: 242638;}
     .button {
-    background-color: #05233f; /* Green */
+    background-color: rgb(158,20,34); /* Green */
     color: white;
     padding: 20px 32px;
     text-align: center;
@@ -73,7 +73,7 @@ input[type=searchtext]:focus {
             float: left;
             width: 100%;
             height: 66px;
-            background-color: #05233f;
+            background-color: rgb(158,20,34);
             padding-top:15px;
             z-index:-10;
             position:absolute;
@@ -219,5 +219,5 @@ input[type=searchtext]:focus {
 
 .red
 {
-    background-color: #05233f
+    background-color: rgb(158,20,34)
 }
