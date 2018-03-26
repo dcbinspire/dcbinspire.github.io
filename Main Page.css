@@ -1,4 +1,4 @@
-    /*searchbar css*/
+ /*searchbar css*/
 @font-face {
   font-family: "Helvetica Neue";
   src: url(/helveticaneue/HelveticaNeueLt.ttf);
@@ -37,7 +37,7 @@ input[type=searchtext]:focus {
         }
         .whiteclass{ color: 242638;}
     .button {
-    background-color: #05233f; /* Green */
+    background-color: rgb(158,20,34); /* Green */
     color: white;
     padding: 20px 32px;
     text-align: center;
@@ -73,7 +73,7 @@ input[type=searchtext]:focus {
             float: left;
             width: 100%;
             height: 66px;
-            background-color: #05233f;
+            background-color: rgb(158,20,34);
             padding-top:15px;
             z-index:-10;
             position:absolute;
@@ -219,5 +219,101 @@ input[type=searchtext]:focus {
 
 .red
 {
-    background-color: #05233f
+    background-color: rgb(158,20,34)
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+.BannerTag
+{
+	display:none;
+	position: absolute;
+	width:50%;
+	color:white;
+	height:100%;
+	top:0%;
+	right:0%;
+	background-color:rgba(67,72,102,0.95);
+}
+
+.BannerCard:hover .BannerTag
+{
+	display:block;
+	-webkit-animation-name: fade;
+  	-webkit-animation-duration: 2s;
+}
+.BannerText
+{
+	margin-top: 2%;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-bottom: 2%;
+}
+
+.BannerTag button
+{
+	background-color: #091730; 
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+	position: absolute;
+	width: 100%;
+	bottom: 0%;
+	right:0%;
+	left: 0%;
+}
+
+.BannerTag button:hover
+{
+	background-color: #153672; 
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+	position: absolute;
+	width: 100%;
+	bottom: 0%;
+	right:0%;
+	left: 0%;
+}
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
 }
