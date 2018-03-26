@@ -64,7 +64,7 @@
 				
 
 						   
-        jQuery.get('HistoryFact.txt', function(data) // getting the file
+        jQuery.get('GeographyFact.txt', function(data) // getting the file
         {     
             var factnumber = data.split('\n'); //spliting the file into lines
             var facttxt = document.getElementById('fact');
@@ -75,7 +75,7 @@
                 }
         }); 
                 
-        jQuery.get('HistoryFactPics.txt', function(data2) // getting the file
+        jQuery.get('GeographyFactPics.txt', function(data2) // getting the file
         {     
             var picnumber = data2.split('\n'); //spliting the file into lines			
             document.getElementById("factimg").src=picnumber[diffDaysPics];
@@ -85,7 +85,7 @@
                 }
 
         }); 
-        jQuery.get('HistoryVideo.txt', function(data3) // getting the file
+        jQuery.get('GeographyVideo.txt', function(data3) // getting the file
         {     
             var vidnumber = data3.split('\n'); //spliting the file into lines
             document.getElementById("youtube").src="https://www.youtube.com/embed/"+vidnumber[diffDaysVids];
@@ -124,7 +124,7 @@
                         <br>
                         <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Geography Video Of The Day:</h2> 
                         <center>
-                            <iframe id=youtube width="90%" height="70%"src="" frameborder="0" allowfullscreen></iframe>
+                            <iframe id=youtube width="90%" height="600px"src="" frameborder="0" allowfullscreen></iframe>
                         </center>
                 <br><br>
             </div> 
@@ -134,8 +134,6 @@
               <button class="w3-button demo3 w3-bar-item " onclick="currentDiv3(1)">Theme 1</button> 
               <button class="w3-button demo3 w3-bar-item" onclick="currentDiv3(2)">Theme 2</button> 
               <button class="w3-button demo3 w3-bar-item" onclick="currentDiv3(3)">Theme 3</button> 
-              <button class="w3-button demo3 w3-bar-item" onclick="currentDiv3(4)">Theme 4</button> 
-              <button class="w3-button demo3 w3-bar-item" onclick="currentDiv3(5)">Theme 5</button> 
         </div>
             
             
@@ -151,33 +149,636 @@
                 
                 
                         <div class="mySlides3 w3-container">
-                                <h1>Population and Settlement</h1><br>
+								<h1><a href="Geo Case Study Cards/Geo Case Study Cards/popSettlement.pdf" target="_blank">Theme 1: Population and Settlement</a></h1><br>
+								<h4>
+									<strong>REQUIRED CASE STUDIES:</strong>
+									<li>A country which is over-populated</li>
+									<li>A country which is under-populated</li>
+									<li>A country with a high rate of natural population growth</li>
+									<li>A country with a low rate of population growth (or population
+										decline)</li>
+									<li>An international migration</li>
+									<li>A country with a high dependent population</li>
+									<li>A densely populated country or area (at any scale from local to regional)</li>
+									<li>A sparsely populated country or area (at any scale from local to regional)</li>
+									<li style="color:red">Settlement and service provision in an area || MISSING - SHUNYI TRIP</li>
+									<li style="color:red">An urban area (including changing land use and urban sprawl) || MISSING - SHUNYI TRIP</li>
+									<li>A rapidly growing urban area in a developing country and migration to it</li>
+								</h4>
                                 <br>
-                                <section id="popDynamics">
-									<h3>1.1 Population Dynamics</h3>
-									<h4>A country which is over-populated</h4>
-									<img src="Geo Case Study Cards/Geo Case Study Cards/OverPop.jpg" width="80%">
-								</section>
-                            
-                        </div>
-                
-                        <div class="mySlides3 w3-container">
-                                <h1>Structure and Functions in Living Organisms</h1><br>
-                            
-                                                                
+                                  <div class="row">                          
+                                    <div class="column vertLine">
+									
+										<h4><a target="_blank" href="Geo Case Study Cards/Geo Case Study Cards/Bangladesh.jpg">CASE STUDY: BANGLADESH</a></h4>
+										<p>
+										<li>A country that is over-populated</li>
+										<li>A country with a high rate of natural growth</li>
+										<li>A densely populated country</li>
+										<br><br>
+										Population Density: <strong>~1298 per km2</strong><br>
+										Population Growth Rate: <strong>+1.6%</strong><br>
+										Birth rate: <strong>21.14 per 1000</strong><br>
+										Death rate: <strong>5.61 per 1000</strong>
+										<br><br>
+										Contraceptive prevalence:<strong> 61.2%</strong><br>
+										Average age at first birth: <strong>18.1</strong>
+										<br><br>
+										Physicians density:<strong> 0.36 per 1000</strong><br>
+										Hospital beds density: <strong>0.6 per 1000</strong>
+										<br><br>
+										Terrain: <br>
+										-	Mostly flat alluvial plain<br>
+										-	Hilly in SE
+										<br><br>
+										Land Use:<br>
+										-	Agricultural : <strong>70.1%</strong><br>
+										-	Forest : <strong>11.1%</strong><br>
+										-	Other : <strong>18.8%</strong>
+										<br><br>
+										Most populated: <br>
+										-	Area around the Ganges river<br>
+										-	200-600mm of rainfall
+										<br><br>
+										Unemployment: <strong>8.7%</strong>
+										<br><br><br>
+										</p>
+									  </div>
+									<div class="column vertLine">
+										<h4><a target="_blank" href="Geo Case Study Cards/Geo Case Study Cards/Australia.jpg">CASE STUDY: AUSTRALIA</a></h4>
+										<li>A sparsely populated country</li>
+										<li>A country that is underpopulated</li>
+										<br><br>
+										Population Density: <strong>~3 per km2</strong><br>
+										Population Growth Rate: <strong>+1.03%</strong><br>
+										Birth Rate: <strong>12.1 per 1000</strong><br>
+										Death Rate:<strong> 7.3 per 1000</strong>
+										<br><br>
+										Contraceptive prevalence:<strong> 72.3%</strong><br>
+										Average age at first birth: <strong>30.5</strong>
+										<br><br>
+										Physicians density: <strong>3.37 per 1000</strong><br>
+										Hospital beds density: <strong>3.9 per 1000</strong><br>
+										<strong>21</strong> years of free education<br>
+										<strong>11.6</strong> million employed in the workforce
+										<br><br>
+										Terrain: mostly low plateau with deserts; fertile plain in SE
+										<br><br>
+										Land Use:
+										-	Agricultural : <strong>53.4%</strong><br>
+										-	Forest : <strong>19.3%</strong><br>
+										-	Other : <strong>27.3%</strong>
+										<br><br>
+										Most populated: 
+										-	<strong>300-400mm</strong> of rainfall<br>
+										-	<strong>21-24˚C</strong> average daily maximum temperature<br>
+										-	<strong>0-300m </strong>above sea level<br><br>
+
+									</div>
+									<div class="column vertLine">
+										<h4><a target="_blank" href="Geo Case Study Cards/Geo Case Study Cards/Italy.jpg">CASE STUDY: ITALY</a></h4>
+
+										<li>A country with a high dependent population</li>
+										<li>A country with a low rate of population growth</li>
+										<br><br>
+										<strong>8 / 10</strong> Italians &lt <strong>30 y/o</strong> live with their parents<br>
+										Average age for moving out: <strong>36</strong><br>
+										Average wage for Italians <strong>25-30</strong> = half of their counter-parts in England<br>
+										<strong>40%</strong> that leave their parents’ home must return<br>
+										Workers to pensioners’ ratio = <strong>0.7</strong><br>
+										2008: <strong>21%</strong> of Italy’s GNP spent on caring for people &gt <strong>65 y/o</strong>
+										<br><br>
+										Population Growth Rate: <strong>0.23%</strong><br>
+										Birth Rate: <strong>8.7 per 1000</strong><br>
+										Death Rate: <strong>10.3 per 1000</strong><br>
+										Percentage population <strong>>65: 23.7%</strong><br>
+										Total Dependency Ratio: <strong>56.5%</strong>
+										<br><br>
+										Mother’s mean age at first birth: <strong>30.3</strong><br>
+										Life expectancy at birth: <strong>82.2</strong><br>
+										Total fertility rate: <strong>1.43 per woman</strong>
+										<br><br>
+										
+									</div>
+									<div class="column">
+											<h4><a href="Geo Case Study Cards/Geo Case Study Cards/International Migration.jpg">CASE STUDY: International Migration from Mexico -> USA</a></h4>
+
+											<li>An international migration</li>
+											<br><br>
+											Crime rates (push factor):
+											-	<strong>81%</strong> of Mexicans describe crime as a problem in Mexico<br>
+											-	Homicide rates: <strong>10-14 per 100,000</strong> in Mexico ; lower in USA<br>
+											-	Last 5 years: <strong>47,500</strong> killed in drug-related crimes
+											<br><br>
+											Unemployment (push factor):
+											-	<strong>2.2 (2002) -> 5.37 (2010)</strong><br>
+											-	<strong>47%</strong> live below the poverty line
+											<br><br>
+											Standards of living (both push/pull factor):<br>
+											-	Mexico: <strong>1 doctor per 1800</strong><br>
+											-	USA:<strong> 1 doctor per 400</strong>
+											-	Life expectancy in <strong>Mexico = 72; USA = 76</strong>
+											-	Adult literacy rate: <strong>Mexico = 55%; USA = 99%</strong>
+											<br><br>
+										</div>
+								</div>
+								<hr>						
+								<div class="row">
+									<div class="column vertLine">
+										<h4><a target="_blank" href="Geo Case Study Cards/Geo Case Study Cards/Internal Migration.jpg">CASE STUDY: INTERNAL MIGRATION IN CHINA</a></h4>
+
+										<li>A rapidly growing urban area in a developing country and migration to it</li>
+										<br><br>
+										In<strong> 2009, 11% </strong>of the total population of China were rural to urban migrants <strong>(145 million)</strong>
+										<br><br>
+										<strong>44.4%</strong> of new-generation workers were employed in the manufacturing industry
+										<br><br>
+										First migration rates of migrants:<br>
+										-	Born <strong>1980-90 is 21.1 </strong><br>
+										-	Born after <strong>1990 is 17.2</strong><br>
+										-	More and more young people are migrating
+										<br><br>
+										Effects:<br>
+										-	Increased supply of labour in urban areas<br>
+										-	Increased income<br>
+										-	Increased environmental population<br>
+										-	Overpopulation<br>
+										-	Increased crime & safety issues<br>
+										-	Increased demand for resources
+										<br><br>
+
+									</div>
+									<div class="column vertLine">
+										<h4><a target="_blank" href="Geo Case Study Cards/Geo Case Study Cards/RIO.jpg">CASE STUDY: ROCINHA, RIO DE JANEIRO, BRAZIL</a></h4>
+										<br><br>
+										<li>A rapidly growing urban area in a developing country and migration to it</li>
+										<br><br>
+										Densely populated: <strong>200,000</strong> people live there
+										Narrow streets<br>
+										Most of the favela is on a steep hill with many trees surrounding
+										<br><br>
+										High crime rates: <strong>November 2011</strong>, hundreds of police and military patrolled streets to track drug dealers
+										<br><br>
+										Spread of diseases by Aedes mosquitos (dengue)<br>
+										Other diseases:<br>
+										-	Rocinha – Tuberculosis: <strong>380 cases per 1000</strong><br>
+										-	Rest of Brazil – <strong>Tuberculosis: 37.5 cases per 1000</strong>
+										<br><br>
+									</div>
+									
+									<div class="column vertLine">
+										<h4><a target="_blank" href="Geo Case Study Cards/Geo Case Study Cards/Russia Pronatalist.jpg">CASE STUDY: RUSSIA’S DAY OF CONCEPTION</a></h4>
+										<br>
+										<li>A pro-natalist population policy</li>
+										<br><br>
+										First adopted in 2006<br>
+										On 12th September, citizens get the day off work<br>
+										If a child is born on 12th June, couples win prizes
+										<br><br>
+										Why?<br>
+										-	Few young people to work/pay taxes<br>
+										-	Low population slowing Russia’s population growth<br>
+										-	Spike in emigration after 1991<br>
+										-	Population falling <strong>700,000 annually</strong><br>
+										-	2007: <strong>141.4 million</strong> citizens, estimated &lt 100 million by 2050 at current rates
+										<br><br>
+										Effects:<br>
+										-	Birth rate increased by 4.5% in 2007<br>
+										-	<strong>1,479,600</strong> -&lt <strong>1,610,000 births</strong> from 2006 to 2007<br>
+										-	2010: total fertility rate <strong>1.54 (from 1.2 in 2006)</strong><br>
+									</div>
+									
+									<div class="column">
+										<h4><a href="Geo Case Study Cards/Geo Case Study Cards/China OCP.jpg" target="_blank">CASE STUDY: CHINA’S ONE/TWO CHILD POLICY</a></h4>
+										<br>
+										An anti-natalist population policy
+										<br><br>
+										25th September 1980: Politburo of the Chinese Communist Party (CCP) issued and open letter urging members of the party & youth league to only have one child.<br>
+										-	Before then, in 1970s, the government encouraged delaying marriages, longer intervals between births, and fewer children.<br>
+										-	Before the family planning policy was introduced in 1978, the total fertility rate was 5 
+										<br><br>
+										Effects:<br>
+										-	Government claims the policy helped achieve 400 million fewer births in the past 30 years.<br>
+										-	Female infanticide, child abandonment.<br>
+										-	Human trafficking of young women<br>
+										-	In some rural areas, male : female = 6 : 1<br>
+										-	Little emperor syndrome: only children gain seemingly<br> excessive amounts of attention from their parents and grandparents
+										<br><br>
+										Consequences for people that disobeyed the policy:<br>
+										-	Forced sterilization (usually metal IUD)<br>
+										-	10% salary cut<br>
+										-	Loss of free public education + healthcare for family<br>
+										-	Fines of 10,000RMB
+										<br><br>
+										NOTE: modified to two child policy in April 2016 due to ageing population
+
+									</div>
+									
+								</div>
+						</div>
+                       
+                        <div class="mySlides3 w3-container">                            
+							<h1><a href="Geo Case Study Cards/Geo Case Study Cards/naturalEnviroment.pdf" target="_blank">Theme 2: The natural environment</a></h1>       
+                       		<h4>
+								<strong>REQUIRED CASE STUDIES:</strong>
+								<li>An earthquake</li>
+								<li>A volcano</li>
+								<li>The opportunities presented by a river, the hazards associated with it and their management</li>
+								<li>The opportunities presented by an area of coastline, the hazards associated with it and their management</li>
+								<li>An area of tropical rainforest</li>
+								<li>An area of hot desert</li>
+							</h4>
+                       		<br>
+                       		<div class="row">
+                       		
+                       			<div class="column vertLine">
+									<h4><a href="Geo Case Study Cards/Geo Case Study Cards/The Great Hanshin Earthquake.jpg" target="_blank">CASE STUDY: THE GREAT HANSHIN EARTHQUAKE</a></h4>
+									<br>
+									<li>An earthquake</li>
+									<br><br>
+									<strong>17th January 1995</strong><br>
+									Magnitude: <strong>6.9</strong><br>
+									Ground moved <strong>18cm horizontally, 12 cm vertically</strong><br>
+									Plates: Philippines plate <strong>subducted</strong> by <strong>Eurasian plate at the Nojima fault</strong>
+									<br><br>
+									Environmental Effects: <br>
+									-	<strong>300</strong> fires<br>
+									-	<strong>716</strong> reported aftershocks<br>
+									-	Liquefaction of soil = subsidence of artificial islands (e.g. Rokkō Island)
+									<br><br>
+									Social Effects: <br>
+									-	<strong>400,000 </strong>buildings irreparably damaged<br>
+									-	<strong>120/150</strong> quays in the port of Kobe damaged<br>
+									-	<strong>70%</strong> of Osaka-Kobe railway tracks out of operation<br>
+									-	Daikai Station on Kobe Rapid Railway line collapsed<br>
+									-	Part of National Route 28 damaged
+									<br><br>
+									Economic Effects:<br>
+									-	Mitsubishi and Panasonic forced to close<br>
+									-	<strong>$120</strong> billion in damage<br>
+									-	<strong>2.5% of Japan’s GDP</strong> used for clean-up
+									<br><br>
+								</div>
+								
+								<div class="column vertLine">
+									<h4><a href="Geo Case Study Cards/Geo Case Study Cards/Mount St Helens(Volcano u retard).jpg" target="_blank">CASE STUDY: MOUNT ST HELENS</a></h4>
+									<br>
+									<li>A volcano</li>
+									<br><br>
+									Type: stratovolcano<br>
+									Erupted <strong>18th May 1980</strong><br>
+									Plates: Juan de Fuca subducted by North American plate
+									<br><br>
+									Environmental Effects:<br>
+									-	Removed <strong>396m</strong> of the summit, leaving a massive crater<br>
+									-	Contaminated Toutle River<br>
+									-	Filled in Spirit Lake
+									<br><br>
+									Social Effects:<br>
+									-	<strong>57 deaths</strong> due to asphyxiation, burns, trauma
+									<br><br>
+									Economic Effects:<br>
+									-	<strong>$449.80 million</strong> on restoring forestry<br>
+									-	<strong>$363.90 million</strong> on clean-up<br>
+									-	<strong>$969.80 million</strong> in total<br>
+
+								</div>
+								
+								<div class="column vertLine">
+									<h4><a target="_blank" href="Geo Case Study Cards/Geo Case Study Cards/Missipi River.jpg">CASE STUDY: MISSISSIPPI RIVER</a></h4>
+									<br>
+									<li>Opportunities presented by a river, the hazards associated with it, and their management</li>
+									<br><br>
+									Opportunities:<br>
+									-	Fertile soil for farming corn, rice, and sweet potato<br>
+									-	Water for irrigation<br>
+									-	Transport: trade routes, ports (economic opportunities)<br>
+									-	Flat land for building houses, roads, and railways (e.g. New Orleans and Baton Rouge)<br>
+									-	Source of fish – aquaculture (famous for shrimp)
+									<br><br>
+									Hazards:<br>
+									-	Farmland can be flooded<br>
+									-	Stores of food could be damaged by floods<br>
+									-	Foundations of homes unstable<br>
+									-	Bridges needed = large investment of time and money needed (e.g. Horace Wilkinson Bridge)<br>
+									-	Insurance companies may refuse to insure homes (e.g. in Morgan City)<br>
+									-	Poor market value<br>
+
+								</div>
+								
+								<div class="column">
+									<h4><a target="_blank" href="Geo Case Study Cards/Geo Case Study Cards/Coastal Management.jpg">CASE STUDY: COASTAL MANAGEMENT IN HOLDERNESS</a></h4>
+									<br>
+									<li>The opportunities presented by an area of coastline, the hazards associated with it, and their management</li>
+									<br><br>
+									Location: <strong>NE of England</strong>
+									<br><br>
+									One of the world’s most vulnerable coastlines: retreats at a rate of <strong>1-2m</strong> per year<br>
+									-	Strong prevailing winds = longshore drift = material moves south<br>
+									-	Cliffs are made of a soft boulder clay = erodes quickly
+									<br><br>
+									Threatens the village of Mappleton <strong>(approximately 50 properties)</strong>
+									<br><br>
+									1991: coastal management scheme costing <strong>2 million GBP</strong> introduced<br>
+									-	Rock armour built along the base of the cliff<br>
+									-	Two rock groynes
+									<br><br>
+									<li>Mappleton and the cliffs no longer at risk from erosion</li><br>
+									<li>Rock groynes have stopped beach material from being moved South of Mappleton</li><br>
+
+								</div>
+								
+							</div>
+                       		<hr>
+                       		<div class="row">
+                       			<div class="column vertLine">
+									<h4><a target="_blank" href="Geo Case Study Cards/Geo Case Study Cards/Amazon Rainforest.jpg">CASE STUDY: AMAZON RAINFOREST</a></h4>
+									<br>
+									<li>An area of tropical rainforest</li>
+									<br><br>
+									<strong>>50%</strong> of remaining rainforest on Earth
+									<br><br>
+									Cattle sector = <strong>80%</strong> of deforestation<br>
+									-	<strong>1995: 70%</strong> of formerly forested land  cattle ranching<br>
+									-	<strong>91%</strong> of remaining land deforested since 1995 for cattle ranching since <strong>1970</strong><br>
+									Other = small-scale subsistence farming/mechanized cropland
+									<br><br>
+									Slash and Burn is employed by native people<br>
+									-	Small areas of land cleared, vegetation burned<br>
+									-	Nutrients from ash<br>
+									-	Soil = fertile for a few years<br>
+									-	When depleted, move on to another part<br>
+									-	Area regenerates<br>
+									-	No lasting damage = sustainable
+									<br><br>
+									Response:<br>
+									-	Norwegian government donated <strong>$1 billion</strong> to Amazon fund in <strong>2008</strong><br>
+									-	September 2015: president Dilma Rousseff told UN that Brazil had reduced rate of deforestation by <strong>82%</strong><br>
+									-	Reforestation: aim to restore and reforest <strong>120,000km2 by 2030</strong><br>
+									-	National parks established to protect forestry<br>
+
+								</div>	
+								
+								<div class="column vertLine">
+									<h4><a href="Geo Case Study Cards/Geo Case Study Cards/Sahel Region(desert).jpg" target="_blank">CASE STUDY: THE SAHEL REGION</a></h4>
+
+									<li>An area of hot desert</li>
+									<br><br>
+									(looks specifically at 2012 drought)
+									<br><br>
+									Crop failure and mass famine<br>
+									-	FAO: agricultural production dropped by 25% from 2010<br>
+									-	Mauritania: <strong>52%</strong> crop production drop<br>
+									-	Chad: <strong>50%</strong> crop production fall<br>
+									-	<strong>2012: grain harvest down by ~1.4 million tons</strong><br>
+									-	<strong>15 million </strong>malnourished in West Africa and Sahel Region<br>
+									-	Malnutrition exceeded threshold levels of <strong>15%</strong>
+									<br><br>
+									Economic productivity<br>
+									-	Food prices increase<br>
+									-	Fewer workers<br>
+									-	Vicious cycle
+									<br><br>
+									Response<br>
+									-	February 2012: UN convened emergency meeting; appealed for <strong>$725</strong> million, only <strong>20%</strong> raised by March<br>
+									-	March 2012: Oxfam launched <strong>$36.3</strong> million emergency appeal<br>
+									-	UNHCR appealed for <strong>$36.5</strong> million to help the average of <strong>~1500</strong> arriving in Mauritania daily<br>
+									-	Cloud seeding in Burkina Faso (which started in 1998)<br>
+									-	AMETSOC monitors droughts<br>
+									-	2012: FAO Drylands Restoration Initiative<br>
+
+								</div>
+								
+								<div class="column vertLine">
+									<h4><a target="_blank" href="Geo Case Study Cards/Geo Case Study Cards/Corals (Great barrier Reef).jpg">CASE STUDY: THE GREAT BARRIER REEF</a></h4>
+									<br>
+									<li>A coral reef (not explicitly stated as a required case study, but questions are common)</li>
+									<br><br>
+									Formed <strong>13,000</strong> years ago, when the sea level = <strong>61m</strong>
+									<br><br>
+									Requirements:<br>
+									-	Sunlight<br>
+									-	No pollution<br>
+									-	Temperature: <strong>23-25˚C</strong><br>
+									-	Tropical areas
+									<br><br>
+									<strong>World Heritage Area since 1981</strong>
+									<br><br>
+									Employs<strong> 6% </strong>of Australia’s workforce
+									<strong>12%</strong> of Australia’s exports<br>
+									-	Nearly 5 billion Australian dollars generated from tourism annually
+									<br><br>
+									Covers an area of <strong>344,400 km2</strong> (<strong>2,900</strong> individual reefs, <strong>900</strong> islands)
+									<br><br>
+									Biodiversity:<br>
+									-	<strong>30 species</strong> of whales, dolphins and porpoises<br>
+									-	<strong>5,000 species</strong> of mollusk<br>
+									-	<strong>1,500 species</strong> of fish<br>
+									
+								</div>	
+							</div>
                         </div> 
                 
                         <div class="mySlides3 w3-container">
-                            <h1>Reproduction and Inheritance</h1>         
-                        </div>
-                
-                        <div class="mySlides3 w3-container">
-                                <h1>Ecology and the Environment</h1><br>
-                        </div> 
-                
-                        <div class="mySlides3 w3-container">
-                                <h1>Use of Biological Resources</h1><br>
-                            
+							<h1><a href="Geo Case Study Cards/Geo Case Study Cards/EconDev.pdf" target="_blank">Theme 3: Economic development</a></h1>   
+                            <h4>
+								<strong>REQUIRED CASE STUDIES:</strong>
+								<li>A transnational corporation and its global links</li>
+								<li>A farm or agricultural system</li>
+								<li>A country or region suffering from food shortages</li>
+								<li>An industrial zone or factory</li>
+								<li>An area where tourism is important</li>
+								<li>Energy supply in a country or area</li>
+								<li>Water supply in a country or area</li>
+								<li>An area where economic development is taking place causing the</li> <li>environment to be at risk</li>
+							</h4>      
+                       		<br>
+                       		<div class="row">
+                       			<div class="column vertLineTheme3">
+									<h4><a href="Geo Case Study Cards/Geo Case Study Cards/NIKE.jpg" target="_blank">CASE STUDY: NIKE</a></h4>
+									<br>
+									<li>A transnational corporation and its global links</li>
+									<br><br>
+									HQ: Beaverton, Oregon, USA<br>
+									CEO: Mark Parker
+									<br><br>
+									Nike’s shoe/clothing production takes place at Tangerang (25km west of Jakarta, Indonesia)<br>
+									Average wage of a Nike factory worker in an <strong>LEDC: $1.25</strong><br>
+									Lebron James’ lifetime endorsement deal is worth <strong>$500</strong> million<br>
+									2014: brand alone worth <strong>$19 billion</strong><br>
+									<br><br>
+									Employs <strong>44,000</strong> people worldwide<br>
+									More than <strong>700</strong> shops open around the world<br>
+									Offices located in <strong>45</strong> countries outside USA
+									<br><br>
+									As of <strong>July 2011, 2/3</strong> of factories producing converse products did not meet worker treatment standards
+									<br><br>
+									April 2014: strike in China factory:<br>
+									-	<strong>70,000</strong> employees<br>
+									-	Underpay of employees by <strong>250RMB per month (for 20 years)</strong><br>
+									-	Average salary at YueYuen factory is <strong>3000RMB</strong><br>
+
+								</div>
+								
+								<div class="column vertLineTheme3">
+									<h4><a href="Geo Case Study Cards/Geo Case Study Cards/Rice Farm.jpg" target="_blank">CASE STUDY: WAYAN TOPELE’S BALINESE RICE FARM</a></h4>
+									<br>
+									<li>A farm or agricultural system</li>
+									<br><br>
+									Location: <strong>7.5km N</strong> of the town of Ubud, near River Sala<br>
+									Area: <strong>0.6 hectares</strong> – contiguous farm
+									<br><br>
+									Operated by: family & contract laborers (when needed)<br>
+									Primarily a subsistence farm
+									<br><br>
+									Fairly gentle gradient = only 2 levels needed<br>
+									-	Section 1 – upper level – mix of IR36 and Padi Bali<br>
+									-	Section 2 – lower level – IR36 + vegetable + grass near river
+									<br><br>
+									Padi Bali = 6 months to cultivate; IR36 = <strong>3 months</strong> to cultivate
+									<br><br>
+									Harvested rice = <strong>1/3 to government, 1/3 eaten, 1/3 barter for machinery</strong>
+									<br><br>
+									Little/no education = no accurate records of production
+									Normal year= <strong>120kg </strong>of rice produced<br>
+									-	1994: tumero infestation =<strong> 50%</strong> of normal harvest<br>
+									-	Harvest handed to government, destroyed, and free pesticide was provided
+									<br><br>
+									Subak (irrigation system) gives him 2 quotas of water
+									<br><br>
+									Very fertile soil:<br>
+									-	Alluvial deposits from River Sala = underlayers fertile<br>
+									-	1963 eruption of Gunung Agung = surface layers fertile
+									<br><br>
+									Pests: black moths, grasshoppers, Sangit mosquitos, birds
+									<br><br>
+									Technology: high-yielding varieties of rice (IR36), fertilisers (e.g. TSP, urea, potassium chloride)
+									<br><br>
+								</div>
+								
+								<div class="column vertLineTheme3">
+									<h4><a href="Geo Case Study Cards/Geo Case Study Cards/Afganistan(food shortage).jpg" target="_blank">CASE STUDY: AFGHATNISTAN’S FOOD SHORTAGE</a></h4>
+									<br>
+									<li>A country or region suffering from food shortages</li>
+									<br><br>
+									Location: Asia/Middle East<br>
+									Religion: Muslim, Taliban Extremists
+									<br><br>
+									War: 30 years and counting (with Russia, Taliban, USA)
+									<br><br>
+									Life expectancy at birth: <strong>51.3 years</strong> (lowest in the world)<br>
+									Infant mortality rate: <strong>112.8/1000</strong> live births<br>
+									Child labour percentage: <strong>25.3%</strong><br>
+									Unemployment rate: <strong>35% (2008)</strong><br>
+									Population below poverty line: <strong>35.8% (2011)</strong>
+									<br><br>
+									<strong>70 cents</strong> earned per day, <strong>58 cents</strong> per bag of rice, 120 cents on the black market
+									<br><br>
+									<strong>3 million</strong> people in the Harat province had insufficient wheat<br>
+									Market price of food skyrocketed<br>
+									Rivers affected by drought (major one in 2012)<br>
+									Grueling winters = hypothermia<br>
+								</div>
+								
+								<div class="column">
+									<h4><a href="Geo Case Study Cards/Geo Case Study Cards/M4 Corridor.jpg" target="_blank">CASE STUDY: M4 CORRIDOR</a></h4>
+									<br>
+									<li>An industrial zone or factory</li>
+									<br><br>
+									Runs from Wales to London
+									<br><br>
+									Home to lots of tech firms like microelectronics, Rolls Royce, and British Aerospace because:<br>
+									-	M4 motorway to transport inputs and outputs<br>
+									-	Mainline railway Wales to London<br>
+									-	Heathrow airport (and 4 others) for international links<br>
+									-	Large labour force form London and nearby towns<br>
+									-	Nearby firms to exchange ideas<br>
+									-	Near Bristol, Bath, Reading, and London universities for expertise and research<br>
+									-	Attractive environments for workers (e.g. national parks like Dartmoor)<br>
+
+								</div>
+							</div>
+					   <hr>
+						   <div class="row">
+								<div class="column vertLineTheme3">
+									<h4><a href="Geo Case Study Cards/Geo Case Study Cards/Ecotourism Cloud Forest.jpg" target="_blank">CASE STUDY: ECOTOURISM IN THE MONTEVERDE CLOUD FOREST</a></h4>
+									<br>
+									<li>An area where tourism is important</li>
+									<br><br>
+									Attractions:<br>
+									-	Altitude of <strong>1700m</strong><br>
+									-	100 mammalian species, <strong>2,500 plant species, >400 bird species, >120 reptile and amphibian species</strong><br>
+									-	Trails and trams, canopy tours, museums
+									<br><br>
+									Advantages:<br>
+									-	<strong>80 new businesses</strong> opened since 1970s<br>
+									-	The Reserva Biológica Bosque Nuboso Monteverde covers over <strong>10,500 hectares</strong><br>
+									-	<strong>400 full-time + 140 part-time jobs</strong> related to tourism
+									<br><br>
+									Disadvantages:<br>
+									-	Land prices have increased<br>
+									-	People have migrated looking for jobs = pressure on local infrastructure<br>
+									-	Atmosphere changed from a local Quaker community to a tourist centre<br>
+									-	Tourists demanding more facilities and luxury<br>
+									-	40% of Monteverde’s amphibians have become extinct<br>
+									-	Areas close to the trail = less wildlife<br>
+									-	Some activities (e.g. ziplining) are not sustainable<br>
+									-	Dirt track road = tourists arrive in 4x4 -> petrol + dust
+									<br><br>
+									Management:<br>
+									-	Budgets reserved to train + educate locals and tourists about protection of the reserve<br>
+									-	Access to the cloud forest is strictly controlled
+								</div>
+
+								<div class="column vertLineTheme3">
+									<h4><a href="Geo Case Study Cards/Geo Case Study Cards/Energy Supply China.jpg" target="_blank">CASE STUDY: ENERGY SUPPLY IN CHINA</a></h4>
+									<br>
+									<li>Energy supply in a country or area</li>
+									<br><br>
+									World’s largest emitter of greenhouse gases<br>
+									Industrial sector = <strong>70% </strong>of energy use
+									<br><br>
+									Coal: <strong>3527Mt</strong> produced; <strong>199Mt</strong> imported<br>
+									-	Declining, peak in 2014 = <strong>67%</strong> of energy consumption
+									<br><br>
+									Petroleum: importing approximately 7 million barrels per day<br>
+									-	Market dominated by Sinopec, CNPC, CNOOC<br>
+									-	<strong>18% of energy consumption</strong> in 2013
+									<br><br>
+									Gas: <strong>6% of energy consumption</strong> in 2013
+									<br><br>
+									Hydro/Nuclear/Wind: <strong>9%</strong> of energy consumption in 2013
+									<br><br>
+									In <strong>2013, 5000</strong> coal mines were closed
+									<br><br>
+									In 2016, China reached a total wind power generation capacity of <strong>149GW</strong><br>
+									-	Generated <strong>241 TWh</strong> of electricity
+									<br><br>
+									In 2015, the hydropower capacity was <strong>319GW</strong><br>
+									-	Generated <strong>1,126</strong> of energy (info about Three Gorges Dam relevant)
+
+								</div>
+
+								<div class="column vertLineTheme3">
+									<h4><a href="Geo Case Study Cards/Geo Case Study Cards/Water Supply.jpg" target="_blank">CASE STUDY: WATER SUPPLY IN LESOTHO</a></h4>
+									<br>
+									<li>Water supply in a country or area</li>
+									<br><br>
+									The Lesotho Highlands Water Project is the largest civil engineering project in Africa
+									<br><br>
+									When complete, it will divert <strong>40%</strong> of Senqu fiver water through 5 large-scale dams
+									<br><br>
+									After taking water for its own use, Lesotho will sell it to South Africa<br>
+									- Income will be used to develop its infrastructure and economy
+									<br><br>
+									Lots of highlands which receive high rainfall<br>
+									- Valleys are ideal for building dams and reservoirs
+									<br><br>
+									HEP can be generated with the dams
+									<br><br>
+									Lakes will attract tourism, creating jobs and benefitting the economy
+
+								</div>
+							</div>
                         </div>
                 
                       
@@ -199,176 +800,11 @@
                                 <div class="autowide">
                                     
                                     <div class="module">
-                                        <b><h3>Double Science</h3></b>                           
-                                        <h4>Question Paper</h4>
-                                        <hr>
-                                        <h5 style="font-weight: 600;">Theme 1:The Nature & Variety of Living Organisms</h5>
-
-                                       <a  href="https://drive.google.com/open?id=0BwhNWu5jAmSsanp3dnRjU0dNXzQ" target="_blank"><h5>Characteristics of Living Organisms (1B) QP </h5></a>
-                                        <a  href="https://drive.google.com/open?id=0BwhNWu5jAmSsTFhOVUJ6RkZoc3c" target="_blank"><h5>Variety of Living Organsims (1B) QP</h5></a>
-                                        
-                                        <hr>
-                                        <h5 style="font-weight: 600;">Theme 2:Structure & Functions of Living Organisms</h5>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMk5kT0FuQklRaG8" target="_blank"><h5>Levels of Organisation  (1B) QP</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsYkg1RGd2dV94SlU" target="_blank"><h5>Cell Structure (1B) QP</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbXNFd2hNc1VqTjQ" target="_blank"><h5>Biological Molecules (1B) QP</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMDc0cU5LbjRPUGs" target="_blank"><h5>Movement of Substances (1B) QP</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsM1VYUE9tZDJBcTg" target="_blank"><h5>Nutrition (1B) QP</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSXZJcEpBeGxmem8" target="_blank"><h5>Respiration (1B) QP</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsa2dqdTlJTi1IM2M" target="_blank"><h5>Gas Exchange (1B) QP</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsU3REc3YxejJ1OE0" target="_blank"><h5>Transport (1B) QP</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSWpoU3NqbVFBY0k" target="_blank"><h5>Excretion (1B) QP</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsWHpxYlR5UHdZWmM" target="_blank"><h5>Coordination and Response (1B) QP</h5></a>
-                                        
-                                        
-                                        <hr>
-                                        <h5 style="font-weight: 600;">Theme 3: Reproduction & Inheritance</h5>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsX3ozbkktYXR0Y0U" target="_blank"><h5>Reproduction (1B) QP</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsaTB6Q1FkTjByVnc" target="_blank"><h5>Inheritance (1B) QP</h5></a>
-                                        
-                                        
-                                        <hr>
-                                        <h5 style="font-weight: 600;">Theme 4: Ecology & Environment</h5>
-                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsQ0xnaXg2dVl3NUU" target="_blank"><h5>The Organisms in the Environment (1B) QP</h5></a>
-                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsNktTbE5ybVFNeHc" target="_blank"><h5>Feeding Relationships (1B) QP</h5></a>
-                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsN285OTgtVFczT2M" target="_blank"><h5>Cycles within the Ecosystems (1B) QP</h5></a>
-                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsR2VzU3pYZEFtUjg" target="_blank"><h5>Human Influences on the Environment (1B) QP</h5></a>
-                                        
-                                        <hr>
-                                        <h5 style="font-weight: 600;">Theme 5: Use of Biological Resources</h5>
-                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsQUszRDBNNEk1Slk" target="_blank"><h5>​Food Production (1B) QP</h5></a>
-                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsRjljVVVrOUE0UXc" target="_blank">
-                                                <h5>Selective Breeding </h5></a>
-                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsallHNEhXc1puY1U" target="_blank"><h5>Genetic Engineering (1B) QP</h5></a>
-                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMjdXekFwOFpxWms" target="_blank"><h5>Cloning (1B) QP</h5></a>
-
+										<h1>Past Papers</h1>
                                     </div>
                                     
                                     <div class="module">
-                                        <b><h3>&nbsp;</h3></b>                           
-                                        <h4>Mark Scheme</h4>
-                                        <hr>
-                                        <h5 style="font-weight: 600;">Theme 1:The Nature & Variety of Living Organisms</h5>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsT2V1ZHo4R0hjdXc" target="_blank"><h5 >Characteristics of Living Organisms (1B) MS</h5></a>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbkQ5emZvQmdRbGs" target="_blank"><h5>Variety of Living Organsims (1B) MS</h5></a>
-                                        
-                                        <hr>
-                                        <h5 style="font-weight: 600;">Theme 2:Structure & Functions of Living Organisms</h5>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZF9nRmtlRHUteWc" target="_blank"><h5>Levels of Organisation  (1B) QP</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsb29hMjFvRTZqLUE" target="_blank"><h5>Cell Structure (1B) QP</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsWnlFY0VRcE13Uk0" target="_blank"><h5>Biological Molecules (1B) QP</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMXRBcnRYNWMxUGM" target="_blank"><h5>Movement of Substances (1B) QP</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsM3d0MkJUQ2Y0QlE" target="_blank"><h5>Nutrition (1B) QP</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsVWxkYUpJcWQyNFk" target="_blank"><h5>Respiration (1B) QP</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSXJIOFJkZ19VQ0k" target="_blank"><h5>Gas Exchange (1B) QP</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZVBPeHkyejZ3NGc" target="_blank"><h5>Transport (1B) QP</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsR2tBWEF6SXNqZjA" target="_blank"><h5>Excretion (1B) QP</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZkRvVm5LOU01c00" target="_blank"><h5>Coordination and Response (1B) QP</h5></a>
-                                        <hr>
-                                        <h5 style="font-weight: 600;">Theme 3: Reproduction & Inheritance</h5>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsQVkzb2ZrNUxNLW8" target="_blank"><h5>Reproduction (1B) MS</h5></a>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsRDdNM1JsREdCU1k" target="_blank"><h5>Inheritance (1B) MS</h5></a>
-
-                                        
-                                        <hr>
-                                        <h5 style="font-weight: 600;">Theme 4: Ecology & Environment</h5>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbmNYLTMtYnBaZzQ" target="_blank"><h5>The Organisms in the Environment (1B) MS</h5></a>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsY0N5YnhxcGMwU0U" target="_blank"><h5>Feeding Relationships (1B) MS</h5></a>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsOF9lLUNRdGdrQWM" target="_blank"><h5>Cycles within the Ecosystems (1B) MS</h5></a>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsaDJTc1hiUFJjMmc" target="_blank"><h5>Human Influences on the Environment (1B) MS</h5></a>
-
-                                        
-                                        <hr>
-                                        <h5 style="font-weight: 600;">Theme 5: Use of Biological Resources</h5>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsXzNpaDFFVHQxU0E" target="_blank"><h5>​Food Production (1B) MS</h5></a>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZk9udVJqMGR3ZzQ" target="_blank">
-                                        <h5>Selective Breeding </h5></a>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbXpXRlFGLUdmOUk" target="_blank"><h5>Genetic Engineering (1B) MS</h5></a>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsekVTTjhDaVNVc2s" target="_blank"><h5>Cloning (1B) QP</h5></a>
-
-                                    </div>
-                                    
-                                    <div class="module">
-                                        <b><h3>Separate Science</h3></b>
-                                        <h4>Question Paper</h4>
-                                        <hr>
-                                        <h5 style="font-weight: 600;">Theme 1:The Nature & Variety of Living Organisms</h5>
-                                        <h5 >None Available &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsRy0yOUNBUFlMZUE" target="_blank"><h5>Variety of Living Organsims (2B) QP</h5></a>
-
-                                        <hr>
-                                        <h5 style="font-weight: 600;">Theme 2:Structure & Functions of Living Organisms</h5>
-                                            <h5>None Available </h5>
-                                            <h5>None Available</h5>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsNF9sZVZ2SGo5a28" target="_blank"><h5>Biological Molecules (2B) MS</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSExZcWpISmxtTW8" target="_blank"><h5>Movement of Substances (2B) MS</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsNldLcmdYU0hoM2M" target="_blank"><h5>Nutrition (2B) MS</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSWRmRWFzeUhuWk0" target="_blank"><h5>Respiration (2B) MS</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsd3M5NFA5bEoySHM" target="_blank"><h5>Gas Exchange (2B) MS</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsWDFJZjBvaUg5RGc" target="_blank"><h5>Transport (2B) MS</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsTjJyUU12LVMzaEE" target="_blank"><h5>Excretion (2B) MS</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsc2Z0OHRyX3FHUlk" target="_blank"><h5>Coordination and Response (2B) MS</h5></a>
-                                        <hr>
-                                        <h5 style="font-weight: 600;">Theme 3: Reproduction & Inheritance</h5>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsOHBSWk4taFRKeWM" target="_blank"><h5>Reproduction (2B) QP</h5></a>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsWVN3M1VBMGVSdzA" target="_blank"><h5>Inheritance (2B) QP</h5></a>
-    
-                                        <hr>
-                                        <h5 style="font-weight: 600;">Theme 4: Ecology & Environment</h5>
-                                        <h5>None Available &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbXFQYjJuZXFQNWM" target="_blank"><h5>Feeding Relationships (2B) QP</h5></a>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSmkycVRnZ0M3b0k" target="_blank"><h5>Cycles within the Ecosystems (2B) QP</h5></a>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsclBIZjR0VVRxZXM" target="_blank"><h5>Human Influences on the Environment (2B) QP</h5></a>
-                                        
-
-                                        <hr>
-                                        <h5 style="font-weight: 600;">Theme 5: Use of Biological Resources</h5>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsVkRkQ2Vwa21TRUU" target="_blank"><h5>​Food Production (2B) QP</h5></a>
-                                        <h5>None Available</h5>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsejF5X3JTOGtKQ28" target="_blank"><h5>Genetic Engineering (2B) QP</h5></a>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsR2VzSTNRY3ZFaU0" target="_blank"><h5>Cloning (2B) QP</h5></a>
-
-                                    </div>
-                                    
-                                    <div class="module">
-                                    <h3>&nbsp;</h3>
-                                    <h4>Mark Scheme</h4>
-                                    <hr>
-                                        <h5 style="font-weight: 600;">Theme 1:The Nature & Variety of Living Organisms</h5>
-                                        <h5 >None Available &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbEhMZ0xNTzFJMWs" target="_blank"><h5>Variety of Living Organsims (2B) MS</h5></a>
-
-                                        <hr>
-                                        <h5 style="font-weight: 600;">Theme 2:Structure & Functions of Living Organisms</h5>
-                                            <h5>None Available </h5>
-                                            <h5>None Available</h5>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsR05Bd2twZTRwRFk" target="_blank"><h5>Biological Molecules (2B) MS</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZllfZEJvdjhlSW8" target="_blank"><h5>Movement of Substances (2B) MS</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsaWt1ZDMzVTZXX2s" target="_blank"><h5>Nutrition (2B) MS</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsd3p6eXVZSnZEMmc" target="_blank"><h5>Respiration (2B) MS</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsUmkwV3FGaUZ0RFU" target="_blank"><h5>Gas Exchange (2B) MS</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsVm9uc1RkR3VvUWc" target="_blank"><h5>Transport (2B) MS</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbEt6Z2QtMUhyejA" target="_blank"><h5>Excretion (2B) MS</h5></a>
-                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSmVaTnlrZHI3QU0" target="_blank"><h5>Coordination and Response (2B) MS</h5></a>
-                                        <hr>
-                                        <h5 style="font-weight: 600;">Theme 3: Reproduction & Inheritance</h5>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsR1FwcWNjWU1BaFk" target="_blank"><h5>Reproduction (2B) MS</h5></a>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsTXdsSUtJVkxoeGc" target="_blank"><h5>Inheritance (2B) MS</h5></a>
-                                        
-                                        
-                                        <hr>
-                                        <h5 style="font-weight: 600;">Theme 4: Ecology & Environment</h5>
-                                        <h5>None Available &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsX2ZlX2Z5Y2VQd1U" target="_blank"><h5>Feeding Relationships (2B) MS</h5></a>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsQTdBWXFHc002b00" target="_blank"><h5>Cycles within the Ecosystems (2B) MS</h5></a>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsTHUyOWJoeHM4U2c" target="_blank"><h5>Human Influences on the Environment (2B) MS</h5></a>
-
-                                        <hr>
-                                        <h5 style="font-weight: 600;">Theme 5: Use of Biological Resources</h5>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsUjduOFlfRU04NUU" target="_blank"><h5>​Food Production (2B) MS</h5></a>
-                                        <h5>None Available</h5>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsYkhRTWJscVZ0Qmc" target="_blank"><h5>Genetic Engineering (2B) MS</h5></a>
-                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMU4zNjk4YUxMQjg" target="_blank"><h5>Cloning (2B) MS</h5></a>
+										<h1>Coming Soon...</h1>
                                     </div>
                                 </div>
                                             
@@ -379,91 +815,11 @@
                             <div class="autowide">
                              
                                     <div class="module">
-                                    <h1>Exam Papers</h1>
-                                    <hr>
-                                    <center>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZ3lHU1FOMnlIR28" target="_blank"><h5 >Jun 16 Paper 1B (QP)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsNlNtOXVnbTBMOGc" target="_blank"><h5 >Jun 16 Paper 1BR (QP)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsUC1PVEVZWG9kRFU" target="_blank"><h5 >Jun 16 Paper 2B (QP)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbEFuZXQtaU9NeTQ" target="_blank"><h5 >Jun 16 Paper 2BR (QP)</h5></a>
-                                    <hr>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsdDBocDNvS0V5aXc" target="_blank"><h5 >Jan 16 Paper 1B (QP)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZUg5TzdoR21JQUU" target="_blank"><h5 >Jan 16 Paper 2B (QP)</h5></a>
-                                    <hr>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsaHFvUmtfdmZRY2c" target="_blank"><h5 >Jun 15 Paper 1B (QP)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSseUxtc1dZRHVaTjQ" target="_blank"><h5 >Jun 15 Paper 1BR (QP)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsUC1PVEVZWG9kRFU" target="_blank"><h5 >Jun 15 Paper 2B (QP)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsQmtpUmlPUXVpZUE" target="_blank"><h5 >Jun 15 Paper 2BR (QP)</h5></a>
-                                    <hr>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsVnE5cjhoTjcwbDQ" target="_blank"><h5 >Jan 15 Paper 1B (QP)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSscm5MclZGWXZVZ00" target="_blank"><h5 >Jan 15 Paper 2B (QP)</h5></a>
-                                    <hr>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMmRQTnFXTWI2RUU" target="_blank"><h5 >Jun 14 Paper 1B (QP)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsS3B1NnVrQUVyRUE" target="_blank"><h5 >Jun 14 Paper 1BR (QP)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsYUYyWlBQQXlJZm8" target="_blank"><h5 >Jun 14 Paper 2B (QP)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSscFM3NTRBQlZkczg" target="_blank"><h5 >Jun 14 Paper 2BR (QP)</h5></a>
-                                    <hr>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsdTh4ZjR1UElSajA" target="_blank"><h5 >Jan 14 Paper 1B (QP)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsWi0wSzQzblBrNms" target="_blank"><h5 >Jan 14 Paper 2B (QP)</h5></a>
-                                    <hr>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsYlFHaFFCNHY1Yk0" target="_blank"><h5 >Jun 13 Paper 1B (QP)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsRU1BM1dldjhqODQ" target="_blank"><h5 >Jun 13 Paper 1BR (QP)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsXzdRRm9OMzBha0E" target="_blank"><h5 >Jun 13 Paper 2B (QP)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsNW5WOEZnUXRaaEE" target="_blank"><h5 >Jun 13 Paper 2BR (QP)</h5></a>
-                                    <hr>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsUTRRcTlwRGZUM0U" target="_blank"><h5 >Jan 13 Paper 1B (QP)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsOVdtQ2ZpNmEyS2c" target="_blank"><h5 >Jan 13 Paper 2B (QP)</h5></a>
-                                    <hr>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsV19oVHlveW1YMTA" target="_blank"><h5 >Jun 12 Paper 1B (QP)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsc0Q2c0tuZVQ4bkE" target="_blank"><h5 >Jun 12 Paper 2B (QP)</h5></a>
-                                    <hr>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsLTF5TmNSVmN4aHM" target="_blank"><h5 >Jan 12 Paper 1B (QP)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsa0prOHMwcGJGa1U" target="_blank"><h5 >Jan 12 Paper 2B (QP)</h5></a>
-                                    </center>
+                                    	<h1>Past Papers</h1>
                                     </div>
                                 
                                     <div class="module">
-                                    <h1>Mark Schemes</h1>
-                                    <hr>
-                                     <center>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZVo3U1F5R2dwbW8" target="_blank"><h5 >Jun 16 Paper 1B (MS)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsNlNtOXVnbTBMOGc" target="_blank"><h5 >Jun 16 Paper 1BR (MS)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbU1SOVZocDAzQjQ" target="_blank"><h5 >Jun 16 Paper 2B (MS)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsY24yRW1UcThYczA" target="_blank"><h5 >Jun 16 Paper 2BR (MS)</h5></a>
-                                    <hr>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSscUx3QTNnbTljWk0" target="_blank"><h5 >Jan 16 Paper 1B (MS)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSscEMzbjRBMW5kT2c" target="_blank"><h5 >Jan 16 Paper 2B (MS)</h5></a>
-                                    <hr>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsa0NsdzYyTWhabjA" target="_blank"><h5 >Jun 15 Paper 1B (MS)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsY0haZkpMelFLS2c" target="_blank"><h5 >Jun 15 Paper 1BR (MS)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMk1iQlFzWEJNc1k" target="_blank"><h5 >Jun 15 Paper 2B (MS)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsaGtzMkRQTVJjUHM" target="_blank"><h5 >Jun 15 Paper 2BR (MS)</h5></a>
-                                    <hr>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsNFNURVZCc0RQdGM" target="_blank"><h5 >Jan 15 Paper 1B (MS)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsdjZIQzg3NTFyRTQ" target="_blank"><h5 >Jan 15 Paper 2B (MS)</h5></a>
-                                    <hr>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsYklZcTlKcm1yX3M" target="_blank"><h5 >Jun 14 Paper 1B (MS)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbnZ0WUNFaTQ1U28" target="_blank"><h5 >Jun 14 Paper 1BR (MS)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsNHVhLXVzSkUySmM" target="_blank"><h5 >Jun 14 Paper 2B (MS)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsRno1TXJOT3VGbTg" target="_blank"><h5 >Jun 14 Paper 2BR (MS)</h5></a>
-                                    <hr>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsc1A1UkRvWHJwVVU" target="_blank"><h5 >Jan 14 Paper 1B (MS)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsaUg5cDNuMVMtbUE" target="_blank"><h5 >Jan 14 Paper 2B (MS)</h5></a>
-                                    <hr>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsT3VncXk5VVgwbjQ" target="_blank"><h5 >Jun 13 Paper 1B (MS)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsTFM3eXpzOTdtTk0" target="_blank"><h5 >Jun 13 Paper 1BR (MS)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsWWlUWDhOQlFZbXc" target="_blank"><h5 >Jun 13 Paper 2B (MS)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsVlZPMnctdTlNMzg" target="_blank"><h5 >Jun 13 Paper 2BR (MS)</h5></a>
-                                    <hr>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSXpwaXlZWFdPWGs" target="_blank"><h5 >Jan 13 Paper 1B (MS)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsN1JZbGltTUg4ejQ" target="_blank"><h5 >Jan 13 Paper 2B (MS)</h5></a>
-                                    <hr>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsOGsybERqdFNjTDg" target="_blank"><h5 >Jun 12 Paper 1B (MS)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsOVVMajJmY3ZuSFE" target="_blank"><h5 >Jun 12 Paper 2B (MS)</h5></a>
-                                    <hr>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsVnVueF9zOUJsSzA" target="_blank"><h5 >Jan 12 Paper 1B (MS)</h5></a>
-                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsY0JYT01ZWU9UaTA" target="_blank"><h5 >Jan 12 Paper 2B (MS)</h5></a>
-                                    </center>
+                                    	<h1>Coming Soon...</h1>
                                     </div>
                                 
                                 </div>
@@ -504,8 +860,8 @@
             <br><br>
         </div>
         <div class="mySlides w3-container w3-white">
-                <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=2&amp;bgcolor=%23ffffff&amp;src=3b54p17ej560pebokbi1rg2g1c%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=Asia%2FSingapore" style="border:solid 1px #777" width="100%" height="800" frameborder="0" scrolling="no"></iframe>
-            </div>    
+			<h1>Test dates not available for this subject yet</h1>  
+        </div>    
         <div class="mySlides w3-container w3-white">
                 <h2>Ask Any Question! We Will Reply Soon</h2>
                 <div id="disqus_thread"></div>
