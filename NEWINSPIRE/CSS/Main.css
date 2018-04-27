@@ -1,0 +1,128 @@
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url(/NEWINSPIRE/Fonts/helveticaneue/HelveticaNeueLt.ttf);
+  }
+* {
+    font-family: "Helvetica Neue";
+    font-weight:200;
+    line-height: 120%;
+  }
+
+.TitleCard
+{
+	position: absolute;
+	top:0;
+	left:0;
+	right:0;
+	height:10%;
+	width: 100%;
+	max-height: 70px;
+	z-index: -1;
+	background-color: rgb(158,20,34);
+	color:white;
+	display:flex;
+    align-items: center;
+    justify-content:flex-start;
+
+}
+.TitleCard h1
+{
+	font-weight: 500;
+	font-size:2em;
+	position:relative;
+	left:1.2em;
+	cursor: pointer;
+	
+}
+
+.menubar {
+	position: absolute;
+	top:0;
+	right:0;
+	width:900px;
+}
+
+.menubar button {
+	float: right;
+	background-color: rgb(158,20,34);
+	border:none;
+    color: white;
+	font-size: 100%;
+    text-align: center;
+    text-decoration: none;
+	padding: 2% 3.5%;
+	max-height: 70px;
+	min-height: 70px;
+	max-width: 170px;
+	cursor: pointer;
+}
+
+.menubar button:hover {
+    background-color: white;
+	color:black;
+}
+
+.menubar a
+{
+	color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.menubar a:hover {background-color: #ddd}
+
+.topicDropdown-content {
+    display: none;
+    position: absolute;
+	top:100%;
+	right:29.6%;
+    background-color: #f1f1f1;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.IBdropdown-content {
+    display: none;
+    position: absolute;
+	top:0px;
+	right:-126%;
+    background-color: #f1f1f1;
+    min-width: 125px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.IGCSEdropdown-content {
+    display: none;
+    position: absolute;
+	top:48px;
+	right:-126%;
+    background-color: #f1f1f1;
+    min-width: 125px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.contactDropdown-Content {
+    display: none;
+    position: absolute;
+	top:100%;
+	right:14.5%;
+    background-color: #f1f1f1;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.topicDropdown:hover .topicDropdown-content {
+    display: block;
+}
+.IBdropdown:hover .IBdropdown-content {
+    display: block;
+}
+.IGCSEdropdown:hover .IGCSEdropdown-content {
+    display: block;
+}
+.contactDropdown:hover .contactDropdown-Content {
+    display: block;
+}
