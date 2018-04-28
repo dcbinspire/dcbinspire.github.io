@@ -264,6 +264,7 @@
 	top:100px;
 	background-color: white;
 	margin-bottom: 50px;
+	z-index: -1;
 }
 .books img
 {
