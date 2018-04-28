@@ -125,6 +125,7 @@
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+	z-index: 5;
 }
 
 .menubar a:hover {background-color: #ddd}
@@ -162,6 +163,7 @@
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+	z-index: 5;
 }
 
 .menubarMobile a:hover {background-color: #ddd}
