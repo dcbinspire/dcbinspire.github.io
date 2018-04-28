@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="CSS/Main.css">
 <script src="JS/Main.js"></script>
 <script src="JS/jquery.js"></script>
+<script src="JS/detectmobilebrowser.js"></script>
 <title>INSPIRE</title>
 </head>
 <body>
@@ -12,29 +13,30 @@
 <div id="menu">
 </div>
 
+<div class="Modules">
+	<div id="bookModule" class="books"> 
+	</div>
 
-<div id="bookModule">
+	<div id="challengeModule">
+	</div>
+
+	<div id="topicModule">
+	</div>
+
+	<div id="vidfactModule">
+	</div>
+
+	<div id="quoteModule">
+	</div>
 </div>
-
-<div id="challengeModule">
-</div>
-
-<div id="topicModule">
-</div>
-
-<div id="vidfactModule">
-</div>
-
-<div id="quoteModule">
-</div>
-
 
 </body>
 
 <script>
 $(document).ready(function(){
 	$('#menu').load('DynamicLoadHTML/Navbar.html');
-	//$('#bookModule').load('DynamicLoadHTML/Modules/bookModule.html #test1');
+	$('#bookModule').load('DynamicLoadHTML/Modules/bookModule.html #PHYbook1');
 });
+	
 </script>
 </html>

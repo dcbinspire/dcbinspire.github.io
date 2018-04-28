@@ -1,4 +1,4 @@
-<div class="TitleCard">
+<div id="Title" class="TitleCard">
 	<h1 onClick="">INSPIRE</h1>
 </div>
  
@@ -41,3 +41,48 @@
 	<em><h3>Reignite the passion for learning</h3></em>
 </div>
 
+<script>
+	$(window).on('resize', function() {
+	if($(window).width() > 400) {
+        $('#navbar').addClass('menubar');
+		$('#navbar').removeClass('menubarMobile');
+		$('#Title').addClass('TitleCard');
+		$('#Title').removeClass('TitleCardMobile');
+		$("#footer").removeClass("footerCSSMobile")
+		$("#footer").addClass("footerCSS")
+		
+			if(jQuery.browser.mobile)
+			{
+				$("#footer").addClass("footerCSSMobile")
+				$("#footer").removeClass("footerCSS")
+			}
+		
+    }else{
+        $('#navbar').addClass('menubarMobile');
+		$('#navbar').removeClass('menubar');
+		$('#Title').addClass('TitleCardMobile');
+		$('#Title').removeClass('TitleCard');
+		$("#footer").addClass("footerCSSMobile")
+		$("#footer").removeClass("footerCSS")
+		
+			if(jQuery.browser.mobile)
+			{
+				$("#footer").addClass("footerCSSMobile")
+				$("#footer").removeClass("footerCSS")
+			}
+    	}
+	})
+	
+	if(jQuery.browser.mobile)
+		{
+			if($(window).width() < 400)
+				{
+					$('#navbar').addClass('menubarMobile');
+					$('#navbar').removeClass('menubar');
+					$('#Title').addClass('TitleCardMobile');
+					$('#Title').removeClass('TitleCard');
+				}
+			$("#footer").addClass("footerCSSMobile")
+			$("#footer").removeClass("footerCSS")
+		}
+</script>

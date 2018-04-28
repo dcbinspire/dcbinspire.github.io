@@ -17,6 +17,7 @@
 	height:10%;
 	width: 100%;
 	max-height: 70px;
+	min-height: 70px;
 	z-index: -1;
 	background-color: rgb(158,20,34);
 	color:white;
@@ -25,7 +26,37 @@
     justify-content:flex-start;
 
 }
+
 .TitleCard h1
+{
+	font-weight: 500;
+	font-size:2em;
+	position:relative;
+	left:1.2em;
+	cursor: pointer;
+	
+}
+
+.TitleCardMobile
+{
+	position: fixed;
+	top:0;
+	left:0;
+	right:0;
+	height:10%;
+	width: 100%;
+	max-height: 70px;
+	min-height: 70px;
+	z-index: -1;
+	background-color: rgb(158,20,34);
+	color:white;
+	display:flex;
+    align-items: center;
+    justify-content:flex-start;
+
+}
+
+.TitleCardMobile h1
 {
 	font-weight: 500;
 	font-size:2em;
@@ -54,6 +85,11 @@
 {
 	position: relative;
 	left:1.2em;
+}
+
+.footerCSSMobile
+{
+	display: none;
 }
 
 .menubar {
@@ -92,6 +128,50 @@
 }
 
 .menubar a:hover {background-color: #ddd}
+
+.menubarMobile {
+	position: fixed;
+	top:0;
+	right:0;
+	width:900px;
+}
+
+.menubarMobile button {
+	float: right;
+	background-color: rgb(158,20,34);
+	border:none;
+    color: white;
+	font-size: 100%;
+    text-align: center;
+    text-decoration: none;
+	padding: 2% 3.5%;
+	max-height: 70px;
+	min-height: 70px;
+	max-width: 170px;
+	cursor: pointer;
+}
+
+.menubarMobile button:hover {
+    background-color: white;
+	color:black;
+}
+
+.menubarMobile a
+{
+	color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.menubarMobile a:hover {background-color: #ddd}
+
+.menubar button:hover {
+    background-color: white;
+	color:black;
+}
+
+
 
 .topicDropdown-content {
     display: none;
@@ -134,6 +214,26 @@
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
+.purchaseDrop-content {
+    display: none;
+    position: absolute;
+	top:100%;
+	right:24.5%;
+    background-color: #f1f1f1;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.moreDrop-content {
+    display: none;
+    position: absolute;
+	top:100%;
+	right:-15.7%;
+    background-color: #f1f1f1;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
 
 .topicDropdown:hover .topicDropdown-content {
     display: block;
@@ -146,4 +246,77 @@
 }
 .contactDropdown:hover .contactDropdown-Content {
     display: block;
+}
+.purchaseDrop:hover .purchaseDrop-content {
+    display: block;
+}
+.moreDrop:hover .moreDrop-content {
+    display: block;
+}
+
+.books
+{
+	position:absolute;
+	width:600px;
+	height: 225px;
+	top:100px;
+	background-color: white;
+	margin-bottom: 50px;
+}
+.books img
+{
+	width:150px;
+	position: absolute;
+	bottom: 0;
+}
+.books button
+{
+	background-color: #555555;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+	cursor: pointer;
+}
+.bookButtons a
+{
+	color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.bookButtons a:hover {background-color: #ddd}
+
+.bookButtons button:hover {
+    background-color:#737373;
+}
+
+.books .bookButtons
+{
+	position: absolute;
+	right:110px;
+	bottom: 0;
+}
+.books .Synopsis
+{
+	
+	position: absolute;
+	top:0px;
+	right:10px;
+	left:160px;
+	text-align: justify;
+}
+
+.bookButtons .purchaseDrop, .moreDrop, button
+{
+	display:inline;
+}
+
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
 }
