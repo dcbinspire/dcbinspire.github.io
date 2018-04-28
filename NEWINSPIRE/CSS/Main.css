@@ -35,6 +35,27 @@
 	
 }
 
+.footerCSS
+{
+	background-color: #091730;
+	color:white;
+	position: fixed;
+	bottom: 0;
+	right:0;
+	left:0;
+	width:100%;
+	height:35px;
+	display:flex;
+    align-items: center;
+    justify-content:flex-start;
+}
+
+.footerCSS h3
+{
+	position: relative;
+	left:1.2em;
+}
+
 .menubar {
 	position: absolute;
 	top:0;
