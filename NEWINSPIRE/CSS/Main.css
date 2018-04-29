@@ -8,6 +8,11 @@
     line-height: 120%;
   }
 
+body
+{
+	overflow-x:hidden;
+}
+
 .TitleCard
 {
 	position: absolute;
@@ -220,7 +225,7 @@
     display: none;
     position: absolute;
 	top:100%;
-	right:24.5%;
+	left:6.4%;
     background-color: #f1f1f1;
     min-width: 100px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -230,7 +235,7 @@
     display: none;
     position: absolute;
 	top:100%;
-	right:-15.7%;
+	left:13.65%;
     background-color: #f1f1f1;
     min-width: 100px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -272,7 +277,7 @@
 	position: absolute;
 	bottom: 0;
 }
-.books button
+.bookButtons button
 {
 	background-color: #555555;
     border: none;
@@ -297,11 +302,12 @@
     background-color:#737373;
 }
 
-.books .bookButtons
+.bookButtons
 {
 	position: absolute;
-	right:110px;
-	bottom: 0;
+	left:250px;
+	top: 290px;
+	width: 100%;
 }
 .books .Synopsis
 {
@@ -313,6 +319,11 @@
 	text-align: justify;
 }
 
+.Synopsis p, h3
+{
+	line-height:8px;
+}
+
 .bookButtons .purchaseDrop, .moreDrop, button
 {
 	display:inline;
@@ -322,4 +333,40 @@
     width:5px;
     height:auto;
     display:inline-block;
+}
+
+#topicModule
+{
+	position: absolute;
+	width:600px;
+	height: 225px;
+	top:100px;
+	left:675px;
+	background-color: white;
+	margin-bottom: 50px;
+	z-index: -1;
+}
+
+#topicModule img
+{
+	width:100%;
+	position: relative;
+	cursor: pointer;
+}
+
+#bioSlideImg{position:relative;}
+#chemSlideImg{position:relative;}
+#phySlideImg{position:relative;}
+
+#topicModule span
+{
+	cursor: pointer;
+	position: absolute;
+	z-index: 1;
+	top:0;
+	left:0;
+	background-color:#091730;
+    color:white;
+    border-bottom-right-radius: 25px;
+	padding: 10px 20px;
 }

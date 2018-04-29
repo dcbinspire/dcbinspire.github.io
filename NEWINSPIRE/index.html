@@ -14,28 +14,38 @@
 </div>
 
 <div class="Modules">
-	<div id="bookModule" class="books"> 
-	</div>
-
-	<div id="challengeModule">
-	</div>
+	<div id="bookModule" class="books"></div>
+	<div id="bookBtnsLoad"></div>
 
 	<div id="topicModule">
+			<div id="TopicImg1"></div>
+			<div id="TopicImg2"></div>
+			<div id="TopicImg3"></div>
 	</div>
+	
+	<div id="challengeModule"></div>
 
-	<div id="vidfactModule">
-	</div>
+	<div id="vidfactModule"></div>
 
-	<div id="quoteModule">
-	</div>
+	<div id="quoteModule"></div>
 </div>
 
 </body>
 
 <script>
+
 $(document).ready(function(){
+	//Menu Navbar Load
 	$('#menu').load('DynamicLoadHTML/Navbar.html');
-	$('#bookModule').load('DynamicLoadHTML/Modules/bookModule.html #PHYbook1');
+	
+	//bookModule Load
+	$('#bookModule').load('DynamicLoadHTML/Modules/bookModule.html #BIObook1');
+	$('#bookBtnsLoad').load('DynamicLoadHTML/Modules/bookModule.html #bookBtns');
+	
+	//topic module Load
+	$('#TopicImg1').load('DynamicLoadHTML/Modules/topicModule.html #bioSlideImg');
+	$('#TopicImg2').load('DynamicLoadHTML/Modules/topicModule.html #chemSlideImg');
+	$('#TopicImg3').load('DynamicLoadHTML/Modules/topicModule.html #phySlideImg');
 });
 	
 </script>
