@@ -8,9 +8,9 @@
     line-height: 120%;
   }
 
-body
+.overflow
 {
-	overflow-x:hidden;
+	overflow-x: hidden;
 }
 
 .TitleCard
@@ -269,7 +269,7 @@ body
 	top:100px;
 	background-color: white;
 	margin-bottom: 50px;
-	z-index: -1;
+	z-index: -2;
 }
 .books img
 {
@@ -344,7 +344,7 @@ body
 	left:675px;
 	background-color: white;
 	margin-bottom: 50px;
-	z-index: -1;
+	z-index: -2;
 }
 
 #topicModule img

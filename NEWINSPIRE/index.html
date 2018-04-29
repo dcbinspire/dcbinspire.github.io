@@ -8,7 +8,7 @@
 <script src="JS/detectmobilebrowser.js"></script>
 <title>INSPIRE</title>
 </head>
-<body>
+<body id="body" class="overflow">
 
 <div id="menu">
 </div>
@@ -47,6 +47,15 @@ $(document).ready(function(){
 	$('#TopicImg2').load('DynamicLoadHTML/Modules/topicModule.html #chemSlideImg');
 	$('#TopicImg3').load('DynamicLoadHTML/Modules/topicModule.html #phySlideImg');
 });
+	
+if(jQuery.browser.mobile)
+	{
+		$("#body").removeClass("overflow")
+	}
+else
+	{
+		$("#body").addClass("overflow")
+	}
 	
 </script>
 </html>
