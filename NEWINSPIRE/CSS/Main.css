@@ -179,6 +179,22 @@
 }
 
 
+.Modules
+{
+	position: relative;
+}
+.bodyCenter
+{
+	width:1300px;
+	margin: auto;  
+	position: absolute;
+	left:0;
+	right: 0;
+	top: 70px;
+	bottom: 0;
+	z-index: -6;
+}
+
 
 .topicDropdown-content {
     display: none;
@@ -266,7 +282,8 @@
 	position:absolute;
 	width:600px;
 	height: 225px;
-	top:100px;
+	top:15px;
+	left:5px;
 	background-color: white;
 	margin-bottom: 50px;
 	z-index: -2;
@@ -306,7 +323,7 @@
 {
 	position: absolute;
 	left:250px;
-	top: 290px;
+	top: 206px;
 	width: 100%;
 }
 .books .Synopsis
@@ -340,7 +357,7 @@
 	position: absolute;
 	width:600px;
 	height: 225px;
-	top:100px;
+	top:20px;
 	left:675px;
 	background-color: white;
 	margin-bottom: 50px;
@@ -357,6 +374,8 @@
 #bioSlideImg{position:relative;}
 #chemSlideImg{position:relative;}
 #phySlideImg{position:relative;}
+#hisSlideImg{position:relative;}
+#geoSlideImg{position:relative;}
 
 #topicModule span
 {
@@ -369,4 +388,92 @@
     color:white;
     border-bottom-right-radius: 25px;
 	padding: 10px 20px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 5; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 70%;
+	height: 50%;
+	position: relative;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    font-size: 28px;
+    font-weight: bold;
+	position: absolute;
+	top:0px;
+	right:13px;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#vidfactModule
+{
+	position:absolute;
+	width:600px;
+	height: 225px;
+	top:310px;
+	left:5px;
+	background-color:white;
+	margin-bottom: 50px;
+	z-index: -2;
+}
+#video iFrame
+{
+	height:225px;
+	width:200px;
+}
+#fact
+{
+	position: absolute;
+	width:380px;
+	right:10px;
+	text-align: justify;
+	top:-18px;
+}
+#vidFactButtons
+{
+	position: relative;
+	bottom:246px;
+	right:-40px;
+}
+
+#Modalvideo iFrame
+{
+	position: absolute;
+	width:50%;
+	height: 90%;
+}
+#Modalfacts
+{
+	position: absolute;
+	width:40%;
+	right:4%;
+	top:1%;;
 }

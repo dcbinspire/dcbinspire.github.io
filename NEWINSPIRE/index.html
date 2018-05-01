@@ -13,49 +13,100 @@
 <div id="menu">
 </div>
 
-<div class="Modules">
-	<div id="bookModule" class="books"></div>
-	<div id="bookBtnsLoad"></div>
+<div class="bodyCenter">
+	<div class="ModulesContainer">
+		<div id="bookModule" class="books"></div>
+		<div id="bookBtnsLoad"></div>
 
-	<div id="topicModule">
-			<div id="TopicImg1"></div>
-			<div id="TopicImg2"></div>
-			<div id="TopicImg3"></div>
+		<div id="topicModule">
+				<div id="TopicImg1"></div>
+				<div id="TopicImg2"></div>
+				<div id="TopicImg3"></div>
+		</div>
+
+		<div id="vidfactModule">
+			<div id="video"></div>
+			<div id="fact"></div>
+			<div id="vidFactButtons"></div>
+		</div>
+		
+		<div id="challengeModule"></div>
 	</div>
 	
-	<div id="challengeModule"></div>
-
-	<div id="vidfactModule"></div>
-
-	<div id="quoteModule"></div>
+	<div id="multiPurposeModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+					
+			<div id="Modalvideo"></div>
+			<div id="Modalfacts"></div>
+					
+		</div>
+	</div>
 </div>
 
 </body>
 
 <script>
+	//Module Load Script
+	$(document).ready(function(){
+		//Menu Navbar Load
+		$('#menu').load('DynamicLoadHTML/Navbar.html');
 
-$(document).ready(function(){
-	//Menu Navbar Load
-	$('#menu').load('DynamicLoadHTML/Navbar.html');
-	
-	//bookModule Load
-	$('#bookModule').load('DynamicLoadHTML/Modules/bookModule.html #BIObook1');
-	$('#bookBtnsLoad').load('DynamicLoadHTML/Modules/bookModule.html #bookBtns');
-	
-	//topic module Load
-	$('#TopicImg1').load('DynamicLoadHTML/Modules/topicModule.html #bioSlideImg');
-	$('#TopicImg2').load('DynamicLoadHTML/Modules/topicModule.html #chemSlideImg');
-	$('#TopicImg3').load('DynamicLoadHTML/Modules/topicModule.html #phySlideImg');
-});
-	
-if(jQuery.browser.mobile)
+		//bookModule Load
+		$('#bookModule').load('DynamicLoadHTML/Modules/bookModule.html #BIObook1');
+		$('#bookBtnsLoad').load('DynamicLoadHTML/Modules/bookModule.html #bookBtns');
+
+		//topic module Load
+		$('#TopicImg1').load('DynamicLoadHTML/Modules/topicModule.html #bioSlideImg');
+		$('#TopicImg2').load('DynamicLoadHTML/Modules/topicModule.html #geoSlideImg');
+		$('#TopicImg3').load('DynamicLoadHTML/Modules/topicModule.html #hisSlideImg');
+		
+		//vidFact Module Load
+		$('#video').load('DynamicLoadHTML/Modules/vidfactModule.html #bioVid1');
+		$('#fact').load('DynamicLoadHTML/Modules/vidfactModule.html #bioFact1');
+		$("#vidFactButtons").load('DynamicLoadHTML/Modules/vidfactModule.html #vidFactButtons')
+	});
+</script>
+<script>
+	//MobileOptimisationScript
+	if(jQuery.browser.mobile)
 	{
 		$("#body").removeClass("overflow")
 	}
-else
+	else
 	{
 		$("#body").addClass("overflow")
 	}
-	
+</script>
+<script>
+	//ModalScript
+	var modal = document.getElementById('multiPurposeModal');
+	var span = document.getElementsByClassName("close")[0];
+	// When the user clicks the button, open the modal 
+	function showModal() {
+		modal.style.display = "block";
+	}
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+		modal.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+		}
+	}
+	function getModalVidFact()
+	{
+		showModalVidFact("bioVid1", "bioFact1")
+	}
+	function showModalVidFact(vidID, factID)
+	{
+		modal.style.display = "block";
+		$('#Modalvideo').load('DynamicLoadHTML/Modules/vidfactModule.html #'+ vidID);
+		$('#Modalfacts').load('DynamicLoadHTML/Modules/vidfactModule.html #' +factID);
+	}
 </script>
 </html>
