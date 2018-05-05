@@ -477,3 +477,15 @@
 	right:4%;
 	top:1%;;
 }
+
+#challengeModule
+{
+	position:absolute;
+	width:600px;
+	height: 225px;
+	top:310px;
+	left:675px;
+	background-color:aqua;
+	margin-bottom: 50px;
+	z-index: -2;
+}

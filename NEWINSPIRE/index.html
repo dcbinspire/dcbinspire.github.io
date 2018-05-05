@@ -30,7 +30,11 @@
 			<div id="vidFactButtons"></div>
 		</div>
 		
-		<div id="challengeModule"></div>
+		<div id="challengeModule">
+			<div id="ScienceChallenge" class="challengeSlides"></div>
+			<div id="MathChallenge" class="challengeSlides"></div>
+		</div>
+		
 	</div>
 	
 	<div id="multiPurposeModal" class="modal">
@@ -48,6 +52,7 @@
 
 <script>
 	//Module Load Script
+	carousel()
 	$(document).ready(function(){
 		//Menu Navbar Load
 		$('#menu').load('DynamicLoadHTML/Navbar.html');
@@ -65,6 +70,10 @@
 		$('#video').load('DynamicLoadHTML/Modules/vidfactModule.html #bioVid1');
 		$('#fact').load('DynamicLoadHTML/Modules/vidfactModule.html #bioFact1');
 		$("#vidFactButtons").load('DynamicLoadHTML/Modules/vidfactModule.html #vidFactButtons')
+		
+		//Challenge Module Load
+		$('#ScienceChallenge').load('DynamicLoadHTML/Modules/challengeModule.html #mathChlge');
+		$('#MathChallenge').load('DynamicLoadHTML/Modules/challengeModule.html #sciChlge');
 	});
 </script>
 <script>
