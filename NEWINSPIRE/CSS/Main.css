@@ -483,6 +483,11 @@
     color:white;
 }
 
+a
+{
+    color:white;   
+}
+
 #challengeModule
 {
 	position:absolute;
@@ -492,6 +497,6 @@
 	left:675px;
 	background-color:#091730;
 	margin-bottom: 50px;
-    margin-left: 50px;
+    margin-left: auto;
 	z-index: -2;
 }
