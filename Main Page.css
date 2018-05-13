@@ -317,3 +317,7 @@ input[type=searchtext]:focus {
   position: absolute;
   top: 0;
 }
+.msgContainer
+{
+	width:100%;
+}
