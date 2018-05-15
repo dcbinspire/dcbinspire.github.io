@@ -486,11 +486,12 @@
 a
 {
     color:white;   
+    margin-left:50px;
 }
 
 h2
 {
-    margin-left:100px;
+    margin-left:50px;
 }
 
 #challengeModule
