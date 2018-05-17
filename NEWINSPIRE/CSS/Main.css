@@ -19,7 +19,7 @@
 	top:0;
 	left:0;
 	right:0;
-	height:10%;
+	height:8%;
 	width: 100%;
 	max-height: 70px;
 	min-height: 70px;
@@ -483,14 +483,15 @@
     color:white;
 }
 
-a
+a2
 {
     color:white;   
+    margin-left:25px;
 }
 
 h2
 {
-    margin-left:100px;
+    margin-left:25px;
 }
 
 #challengeModule
