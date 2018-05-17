@@ -60,13 +60,13 @@
 		$('#bookModule').empty
 		var BookSubjects = ["#BIObook","#CHEMbook","#PHYbook"];
 		var today2 = new Date();
+		localStorage.setItem("firstTime","true")
 		if(today2.getDay() == 1 || localStorage.getItem("firstTime")==null)
 			{
 				localStorage.setItem("firstTime","true")
 			}
 		if((today2.getDay() == 5 && localStorage.getItem("firstTime")=="true")  || localStorage.getItem("randomSubject")==null || localStorage.getItem("newBook")==null)
 		{
-			alert("working")
 			localStorage.setItem("firstTime","false")
 			localStorage.setItem("randomSubject", Math.floor(Math.random() * BookSubjects.length))
 			if(BookSubjects[parseInt(localStorage.getItem("randomSubject"))]=="#BIObook")
