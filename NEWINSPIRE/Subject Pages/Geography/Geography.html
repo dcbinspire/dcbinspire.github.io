@@ -1,0 +1,1017 @@
+<!doctype html>
+<html>
+<head><script src="../../jquery-3.2.1.min.js"></script></head>
+  <link rel="stylesheet" type="text/css" href="../Subject%20Page.css">
+            <link rel="shortcut icon" type="image/x-icon" href="../Logo.ico" />
+<link rel="stylesheet" href="../../Buttonsw3.css">
+<img src="../Subject%20Page%20Pics/Geography%20Page.png" width="100%" >
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Geography</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../Style.css">
+<style>
+.mySlides {display:none;}
+</style>
+<body style="background-color:#8d99ae" >
+    <script>
+            $(document).ready(function()
+    {
+        if (localStorage.getItem("dateFactsGeo")==null)
+            {
+                localStorage.setItem("dateFactsGeo","10/15/2017")
+            }
+                
+        if (localStorage.getItem("dateVidsGeo")==null)
+            {
+                localStorage.setItem("dateVidsGeo","10/15/2017")
+            }
+                
+        if (localStorage.getItem("datePicsGeo")==null)
+            {
+                localStorage.setItem("datePicsGeo","10/15/2017")
+            }
+        var today = new Date();
+                
+        var Factsdate1 = new Date(parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear()); 
+        // get the current date today
+        var Factsdate2 = new Date(localStorage.getItem("dateFactsGeo"));
+        // day the site was launched
+        var timeDiffFacts = Math.abs(Factsdate2.getTime() - Factsdate1.getTime());
+        //need to have date diff because it will increment everyday as the day moves further from our launch date, everytime the date diff increases so does our fact, it will display the fact on the next line in the txt file.
+        var diffDaysFacts = Math.ceil(timeDiffFacts / (1000 * 3600 * 24));
+        // to make sure date diff is always positive
+                
+                
+    
+        var Picsdate1 = new Date(parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear()); 
+        // get the current date today
+        var Picsdate2 = new Date(localStorage.getItem("datePicsGeo"));
+        // day the site was launched
+        var timeDiffPics = Math.abs(Picsdate2.getTime() - Picsdate1.getTime());
+        //need to have date diff because it will increment everyday as the day moves further from our launch date, everytime the date diff increases so does our fact, it will display the fact on the next line in the txt file.
+        var diffDaysPics = Math.ceil(timeDiffPics / (1000 * 3600 * 24));
+        // to make sure date diff is always positive
+                
+                
+        var Vidsdate1 = new Date(parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear()); 
+        // get the current date today
+        var Vidsdate2 = new Date(localStorage.getItem("dateVidsGeo"));
+        // day the site was launched
+        var timeDiffVids = Math.abs(Vidsdate2.getTime() - Vidsdate1.getTime());
+        //need to have date diff because it will increment everyday as the day moves further from our launch date, everytime the date diff increases so does our fact, it will display the fact on the next line in the txt file.
+        var diffDaysVids = Math.ceil(timeDiffVids / (1000 * 3600 * 24));
+        // to make sure date diff is always positive
+				
+
+						   
+        jQuery.get('GeographyFact.txt', function(data) // getting the file
+        {     
+            var factnumber = data.split('\n'); //spliting the file into lines
+            var facttxt = document.getElementById('fact');
+            facttxt.innerHTML = factnumber[diffDaysFacts]; //changing the h1 tag's text into the fact
+            if (factnumber[diffDaysFacts] == null)
+                {
+                    localStorage.setItem("dateFactsGeo",parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear())
+                }
+        }); 
+                
+        jQuery.get('GeographyFactPics.txt', function(data2) // getting the file
+        {     
+            var picnumber = data2.split('\n'); //spliting the file into lines			
+            document.getElementById("factimg").src=picnumber[diffDaysPics];
+            if (picnumber[diffDaysPics] == null)
+                {
+                    localStorage.setItem("datePicsGeo",parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear())
+                }
+
+        }); 
+        jQuery.get('GeographyVideo.txt', function(data3) // getting the file
+        {     
+            var vidnumber = data3.split('\n'); //spliting the file into lines
+            document.getElementById("youtube").src="https://www.youtube.com/embed/"+vidnumber[diffDaysVids];
+            if (vidnumber[diffDaysVids] == null)
+                {
+                    localStorage.setItem("dateVidsGeo",parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear())
+                }
+
+        }); 
+    }); 
+    </script>
+        
+        <div class="w3-center w3-bar w3-black">
+              <button class="w3-button w3-bar-item" onclick="location.href='../../index.html'" style="background-color:#B20320">Home</button> 
+              <button class="w3-button demo w3-bar-item " onclick="currentDiv(1)">Featured Content</button> 
+              <button class="w3-button demo w3-bar-item " onclick="currentDiv(2)">Case Studies</button> 
+              <button class="w3-button demo w3-bar-item" onclick="currentDiv(3)">Past Papers</button> 
+              <button class="w3-button demo w3-bar-item" onclick="currentDiv(4)">Geography Videos</button>  
+              <button class="w3-button demo w3-bar-item" onclick="currentDiv(5)">Books And Fun Videos</button> 
+              <button class="w3-button demo w3-bar-item" onclick="currentDiv(6)">Test Dates</button>
+              <button class="w3-button demo w3-bar-item" onclick="currentDiv(7)">Q & A</button> 
+        </div>
+        
+        <div class="w3-content" style="max-width:100%">
+            
+            <div class="mySlides w3-container w3-white">
+                        <br>
+                <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Geography Fact Of The Day:</h2>
+                <center>
+                        <div class="borders">
+                            <h5 id=fact></h5>
+                            <img id=factimg src="" width=40%>
+                        
+                        </div>
+                </center>
+                        <br>
+                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Geography Video Of The Day:</h2> 
+                        <center>
+                            <iframe id=youtube width="90%" height="600px"src="" frameborder="0" allowfullscreen></iframe>
+                        </center>
+                <br><br>
+            </div> 
+        <div class="mySlides w3-container">
+            <h2>Syllabus Points</h2>
+        <div class="w3-center w3-bar w3-black">
+              <button class="w3-button demo3 w3-bar-item " onclick="currentDiv3(1)">Theme 1</button> 
+              <button class="w3-button demo3 w3-bar-item" onclick="currentDiv3(2)">Theme 2</button> 
+              <button class="w3-button demo3 w3-bar-item" onclick="currentDiv3(3)">Theme 3</button> 
+        </div>
+            
+            
+            <!-- To anyone adding content to Themes, here is a template to make things easier. And also, underline triple points but not the point number or the breakdown itself, just the title -->
+            
+            
+            <h3></h3>
+             <p></p><br>
+            
+
+
+            <div class="w3-content w3-white" style="max-width:100%">
+                
+                
+                        <div class="mySlides3 w3-container">
+								<h1><a href="Geo Case Study Cards/Geo Case Study Cards/popSettlement.pdf" target="_blank">Theme 1: Population and Settlement</a></h1><br>
+								<h4>
+									<strong>REQUIRED CASE STUDIES:</strong>
+									<li>A country which is over-populated</li>
+									<li>A country which is under-populated</li>
+									<li>A country with a high rate of natural population growth</li>
+									<li>A country with a low rate of population growth (or population
+										decline)</li>
+									<li>An international migration</li>
+									<li>A country with a high dependent population</li>
+									<li>A densely populated country or area (at any scale from local to regional)</li>
+									<li>A sparsely populated country or area (at any scale from local to regional)</li>
+									<li style="color:red">Settlement and service provision in an area || MISSING - SHUNYI TRIP</li>
+									<li style="color:red">An urban area (including changing land use and urban sprawl) || MISSING - SHUNYI TRIP</li>
+									<li>A rapidly growing urban area in a developing country and migration to it</li>
+								</h4>
+                                <br>
+                                  <div class="row">                          
+                                    <div class="column vertLine">
+									
+										<h4><a target="_blank" href="Geo Case Study Cards/Geo Case Study Cards/Bangladesh.jpg">CASE STUDY: BANGLADESH</a></h4>
+										<p>
+										<li>A country that is over-populated</li>
+										<li>A country with a high rate of natural growth</li>
+										<li>A densely populated country</li>
+										<br><br>
+										Population Density: <strong>~1298 per km2</strong><br>
+										Population Growth Rate: <strong>+1.6%</strong><br>
+										Birth rate: <strong>21.14 per 1000</strong><br>
+										Death rate: <strong>5.61 per 1000</strong>
+										<br><br>
+										Contraceptive prevalence:<strong> 61.2%</strong><br>
+										Average age at first birth: <strong>18.1</strong>
+										<br><br>
+										Physicians density:<strong> 0.36 per 1000</strong><br>
+										Hospital beds density: <strong>0.6 per 1000</strong>
+										<br><br>
+										Terrain: <br>
+										-	Mostly flat alluvial plain<br>
+										-	Hilly in SE
+										<br><br>
+										Land Use:<br>
+										-	Agricultural : <strong>70.1%</strong><br>
+										-	Forest : <strong>11.1%</strong><br>
+										-	Other : <strong>18.8%</strong>
+										<br><br>
+										Most populated: <br>
+										-	Area around the Ganges river<br>
+										-	200-600mm of rainfall
+										<br><br>
+										Unemployment: <strong>8.7%</strong>
+										<br><br><br>
+										</p>
+									  </div>
+									<div class="column vertLine">
+										<h4><a target="_blank" href="Geo Case Study Cards/Geo Case Study Cards/Australia.jpg">CASE STUDY: AUSTRALIA</a></h4>
+										<li>A sparsely populated country</li>
+										<li>A country that is underpopulated</li>
+										<br><br>
+										Population Density: <strong>~3 per km2</strong><br>
+										Population Growth Rate: <strong>+1.03%</strong><br>
+										Birth Rate: <strong>12.1 per 1000</strong><br>
+										Death Rate:<strong> 7.3 per 1000</strong>
+										<br><br>
+										Contraceptive prevalence:<strong> 72.3%</strong><br>
+										Average age at first birth: <strong>30.5</strong>
+										<br><br>
+										Physicians density: <strong>3.37 per 1000</strong><br>
+										Hospital beds density: <strong>3.9 per 1000</strong><br>
+										<strong>21</strong> years of free education<br>
+										<strong>11.6</strong> million employed in the workforce
+										<br><br>
+										Terrain: mostly low plateau with deserts; fertile plain in SE
+										<br><br>
+										Land Use:
+										-	Agricultural : <strong>53.4%</strong><br>
+										-	Forest : <strong>19.3%</strong><br>
+										-	Other : <strong>27.3%</strong>
+										<br><br>
+										Most populated: 
+										-	<strong>300-400mm</strong> of rainfall<br>
+										-	<strong>21-24˚C</strong> average daily maximum temperature<br>
+										-	<strong>0-300m </strong>above sea level<br><br>
+
+									</div>
+									<div class="column vertLine">
+										<h4><a target="_blank" href="Geo Case Study Cards/Geo Case Study Cards/Italy.jpg">CASE STUDY: ITALY</a></h4>
+
+										<li>A country with a high dependent population</li>
+										<li>A country with a low rate of population growth</li>
+										<br><br>
+										<strong>8 / 10</strong> Italians &lt <strong>30 y/o</strong> live with their parents<br>
+										Average age for moving out: <strong>36</strong><br>
+										Average wage for Italians <strong>25-30</strong> = half of their counter-parts in England<br>
+										<strong>40%</strong> that leave their parents’ home must return<br>
+										Workers to pensioners’ ratio = <strong>0.7</strong><br>
+										2008: <strong>21%</strong> of Italy’s GNP spent on caring for people &gt <strong>65 y/o</strong>
+										<br><br>
+										Population Growth Rate: <strong>0.23%</strong><br>
+										Birth Rate: <strong>8.7 per 1000</strong><br>
+										Death Rate: <strong>10.3 per 1000</strong><br>
+										Percentage population <strong>>65: 23.7%</strong><br>
+										Total Dependency Ratio: <strong>56.5%</strong>
+										<br><br>
+										Mother’s mean age at first birth: <strong>30.3</strong><br>
+										Life expectancy at birth: <strong>82.2</strong><br>
+										Total fertility rate: <strong>1.43 per woman</strong>
+										<br><br>
+										
+									</div>
+									<div class="column">
+											<h4><a href="Geo Case Study Cards/Geo Case Study Cards/International Migration.jpg">CASE STUDY: International Migration from Mexico -> USA</a></h4>
+
+											<li>An international migration</li>
+											<br><br>
+											Crime rates (push factor):
+											-	<strong>81%</strong> of Mexicans describe crime as a problem in Mexico<br>
+											-	Homicide rates: <strong>10-14 per 100,000</strong> in Mexico ; lower in USA<br>
+											-	Last 5 years: <strong>47,500</strong> killed in drug-related crimes
+											<br><br>
+											Unemployment (push factor):
+											-	<strong>2.2 (2002) -> 5.37 (2010)</strong><br>
+											-	<strong>47%</strong> live below the poverty line
+											<br><br>
+											Standards of living (both push/pull factor):<br>
+											-	Mexico: <strong>1 doctor per 1800</strong><br>
+											-	USA:<strong> 1 doctor per 400</strong>
+											-	Life expectancy in <strong>Mexico = 72; USA = 76</strong>
+											-	Adult literacy rate: <strong>Mexico = 55%; USA = 99%</strong>
+											<br><br>
+										</div>
+								</div>
+								<hr>						
+								<div class="row">
+									<div class="column vertLine">
+										<h4><a target="_blank" href="Geo Case Study Cards/Geo Case Study Cards/Internal Migration.jpg">CASE STUDY: INTERNAL MIGRATION IN CHINA</a></h4>
+
+										<li>A rapidly growing urban area in a developing country and migration to it</li>
+										<br><br>
+										In<strong> 2009, 11% </strong>of the total population of China were rural to urban migrants <strong>(145 million)</strong>
+										<br><br>
+										<strong>44.4%</strong> of new-generation workers were employed in the manufacturing industry
+										<br><br>
+										First migration rates of migrants:<br>
+										-	Born <strong>1980-90 is 21.1 </strong><br>
+										-	Born after <strong>1990 is 17.2</strong><br>
+										-	More and more young people are migrating
+										<br><br>
+										Effects:<br>
+										-	Increased supply of labour in urban areas<br>
+										-	Increased income<br>
+										-	Increased environmental population<br>
+										-	Overpopulation<br>
+										-	Increased crime & safety issues<br>
+										-	Increased demand for resources
+										<br><br>
+
+									</div>
+									<div class="column vertLine">
+										<h4><a target="_blank" href="Geo Case Study Cards/Geo Case Study Cards/RIO.jpg">CASE STUDY: ROCINHA, RIO DE JANEIRO, BRAZIL</a></h4>
+										<br><br>
+										<li>A rapidly growing urban area in a developing country and migration to it</li>
+										<br><br>
+										Densely populated: <strong>200,000</strong> people live there
+										Narrow streets<br>
+										Most of the favela is on a steep hill with many trees surrounding
+										<br><br>
+										High crime rates: <strong>November 2011</strong>, hundreds of police and military patrolled streets to track drug dealers
+										<br><br>
+										Spread of diseases by Aedes mosquitos (dengue)<br>
+										Other diseases:<br>
+										-	Rocinha – Tuberculosis: <strong>380 cases per 1000</strong><br>
+										-	Rest of Brazil – <strong>Tuberculosis: 37.5 cases per 1000</strong>
+										<br><br>
+									</div>
+									
+									<div class="column vertLine">
+										<h4><a target="_blank" href="Geo Case Study Cards/Geo Case Study Cards/Russia Pronatalist.jpg">CASE STUDY: RUSSIA’S DAY OF CONCEPTION</a></h4>
+										<br>
+										<li>A pro-natalist population policy</li>
+										<br><br>
+										First adopted in 2006<br>
+										On 12th September, citizens get the day off work<br>
+										If a child is born on 12th June, couples win prizes
+										<br><br>
+										Why?<br>
+										-	Few young people to work/pay taxes<br>
+										-	Low population slowing Russia’s population growth<br>
+										-	Spike in emigration after 1991<br>
+										-	Population falling <strong>700,000 annually</strong><br>
+										-	2007: <strong>141.4 million</strong> citizens, estimated &lt 100 million by 2050 at current rates
+										<br><br>
+										Effects:<br>
+										-	Birth rate increased by 4.5% in 2007<br>
+										-	<strong>1,479,600</strong> -&lt <strong>1,610,000 births</strong> from 2006 to 2007<br>
+										-	2010: total fertility rate <strong>1.54 (from 1.2 in 2006)</strong><br>
+									</div>
+									
+									<div class="column">
+										<h4><a href="Geo Case Study Cards/Geo Case Study Cards/China OCP.jpg" target="_blank">CASE STUDY: CHINA’S ONE/TWO CHILD POLICY</a></h4>
+										<br>
+										An anti-natalist population policy
+										<br><br>
+										25th September 1980: Politburo of the Chinese Communist Party (CCP) issued and open letter urging members of the party & youth league to only have one child.<br>
+										-	Before then, in 1970s, the government encouraged delaying marriages, longer intervals between births, and fewer children.<br>
+										-	Before the family planning policy was introduced in 1978, the total fertility rate was 5 
+										<br><br>
+										Effects:<br>
+										-	Government claims the policy helped achieve 400 million fewer births in the past 30 years.<br>
+										-	Female infanticide, child abandonment.<br>
+										-	Human trafficking of young women<br>
+										-	In some rural areas, male : female = 6 : 1<br>
+										-	Little emperor syndrome: only children gain seemingly<br> excessive amounts of attention from their parents and grandparents
+										<br><br>
+										Consequences for people that disobeyed the policy:<br>
+										-	Forced sterilization (usually metal IUD)<br>
+										-	10% salary cut<br>
+										-	Loss of free public education + healthcare for family<br>
+										-	Fines of 10,000RMB
+										<br><br>
+										NOTE: modified to two child policy in April 2016 due to ageing population
+
+									</div>
+									
+								</div>
+						</div>
+                       
+                        <div class="mySlides3 w3-container">                            
+							<h1><a href="Geo Case Study Cards/Geo Case Study Cards/naturalEnviroment.pdf" target="_blank">Theme 2: The natural environment</a></h1>       
+                       		<h4>
+								<strong>REQUIRED CASE STUDIES:</strong>
+								<li>An earthquake</li>
+								<li>A volcano</li>
+								<li>The opportunities presented by a river, the hazards associated with it and their management</li>
+								<li>The opportunities presented by an area of coastline, the hazards associated with it and their management</li>
+								<li>An area of tropical rainforest</li>
+								<li>An area of hot desert</li>
+							</h4>
+                       		<br>
+                       		<div class="row">
+                       		
+                       			<div class="column vertLine">
+									<h4><a href="Geo Case Study Cards/Geo Case Study Cards/The Great Hanshin Earthquake.jpg" target="_blank">CASE STUDY: THE GREAT HANSHIN EARTHQUAKE</a></h4>
+									<br>
+									<li>An earthquake</li>
+									<br><br>
+									<strong>17th January 1995</strong><br>
+									Magnitude: <strong>6.9</strong><br>
+									Ground moved <strong>18cm horizontally, 12 cm vertically</strong><br>
+									Plates: Philippines plate <strong>subducted</strong> by <strong>Eurasian plate at the Nojima fault</strong>
+									<br><br>
+									Environmental Effects: <br>
+									-	<strong>300</strong> fires<br>
+									-	<strong>716</strong> reported aftershocks<br>
+									-	Liquefaction of soil = subsidence of artificial islands (e.g. Rokkō Island)
+									<br><br>
+									Social Effects: <br>
+									-	<strong>400,000 </strong>buildings irreparably damaged<br>
+									-	<strong>120/150</strong> quays in the port of Kobe damaged<br>
+									-	<strong>70%</strong> of Osaka-Kobe railway tracks out of operation<br>
+									-	Daikai Station on Kobe Rapid Railway line collapsed<br>
+									-	Part of National Route 28 damaged
+									<br><br>
+									Economic Effects:<br>
+									-	Mitsubishi and Panasonic forced to close<br>
+									-	<strong>$120</strong> billion in damage<br>
+									-	<strong>2.5% of Japan’s GDP</strong> used for clean-up
+									<br><br>
+								</div>
+								
+								<div class="column vertLine">
+									<h4><a href="Geo Case Study Cards/Geo Case Study Cards/Mount St Helens(Volcano u retard).jpg" target="_blank">CASE STUDY: MOUNT ST HELENS</a></h4>
+									<br>
+									<li>A volcano</li>
+									<br><br>
+									Type: stratovolcano<br>
+									Erupted <strong>18th May 1980</strong><br>
+									Plates: Juan de Fuca subducted by North American plate
+									<br><br>
+									Environmental Effects:<br>
+									-	Removed <strong>396m</strong> of the summit, leaving a massive crater<br>
+									-	Contaminated Toutle River<br>
+									-	Filled in Spirit Lake
+									<br><br>
+									Social Effects:<br>
+									-	<strong>57 deaths</strong> due to asphyxiation, burns, trauma
+									<br><br>
+									Economic Effects:<br>
+									-	<strong>$449.80 million</strong> on restoring forestry<br>
+									-	<strong>$363.90 million</strong> on clean-up<br>
+									-	<strong>$969.80 million</strong> in total<br>
+
+								</div>
+								
+								<div class="column vertLine">
+									<h4><a target="_blank" href="Geo Case Study Cards/Geo Case Study Cards/Missipi River.jpg">CASE STUDY: MISSISSIPPI RIVER</a></h4>
+									<br>
+									<li>Opportunities presented by a river, the hazards associated with it, and their management</li>
+									<br><br>
+									Opportunities:<br>
+									-	Fertile soil for farming corn, rice, and sweet potato<br>
+									-	Water for irrigation<br>
+									-	Transport: trade routes, ports (economic opportunities)<br>
+									-	Flat land for building houses, roads, and railways (e.g. New Orleans and Baton Rouge)<br>
+									-	Source of fish – aquaculture (famous for shrimp)
+									<br><br>
+									Hazards:<br>
+									-	Farmland can be flooded<br>
+									-	Stores of food could be damaged by floods<br>
+									-	Foundations of homes unstable<br>
+									-	Bridges needed = large investment of time and money needed (e.g. Horace Wilkinson Bridge)<br>
+									-	Insurance companies may refuse to insure homes (e.g. in Morgan City)<br>
+									-	Poor market value<br>
+
+								</div>
+								
+								<div class="column">
+									<h4><a target="_blank" href="Geo Case Study Cards/Geo Case Study Cards/Coastal Management.jpg">CASE STUDY: COASTAL MANAGEMENT IN HOLDERNESS</a></h4>
+									<br>
+									<li>The opportunities presented by an area of coastline, the hazards associated with it, and their management</li>
+									<br><br>
+									Location: <strong>NE of England</strong>
+									<br><br>
+									One of the world’s most vulnerable coastlines: retreats at a rate of <strong>1-2m</strong> per year<br>
+									-	Strong prevailing winds = longshore drift = material moves south<br>
+									-	Cliffs are made of a soft boulder clay = erodes quickly
+									<br><br>
+									Threatens the village of Mappleton <strong>(approximately 50 properties)</strong>
+									<br><br>
+									1991: coastal management scheme costing <strong>2 million GBP</strong> introduced<br>
+									-	Rock armour built along the base of the cliff<br>
+									-	Two rock groynes
+									<br><br>
+									<li>Mappleton and the cliffs no longer at risk from erosion</li><br>
+									<li>Rock groynes have stopped beach material from being moved South of Mappleton</li><br>
+
+								</div>
+								
+							</div>
+                       		<hr>
+                       		<div class="row">
+                       			<div class="column vertLine">
+									<h4><a target="_blank" href="Geo Case Study Cards/Geo Case Study Cards/Amazon Rainforest.jpg">CASE STUDY: AMAZON RAINFOREST</a></h4>
+									<br>
+									<li>An area of tropical rainforest</li>
+									<br><br>
+									<strong>>50%</strong> of remaining rainforest on Earth
+									<br><br>
+									Cattle sector = <strong>80%</strong> of deforestation<br>
+									-	<strong>1995: 70%</strong> of formerly forested land  cattle ranching<br>
+									-	<strong>91%</strong> of remaining land deforested since 1995 for cattle ranching since <strong>1970</strong><br>
+									Other = small-scale subsistence farming/mechanized cropland
+									<br><br>
+									Slash and Burn is employed by native people<br>
+									-	Small areas of land cleared, vegetation burned<br>
+									-	Nutrients from ash<br>
+									-	Soil = fertile for a few years<br>
+									-	When depleted, move on to another part<br>
+									-	Area regenerates<br>
+									-	No lasting damage = sustainable
+									<br><br>
+									Response:<br>
+									-	Norwegian government donated <strong>$1 billion</strong> to Amazon fund in <strong>2008</strong><br>
+									-	September 2015: president Dilma Rousseff told UN that Brazil had reduced rate of deforestation by <strong>82%</strong><br>
+									-	Reforestation: aim to restore and reforest <strong>120,000km2 by 2030</strong><br>
+									-	National parks established to protect forestry<br>
+
+								</div>	
+								
+								<div class="column vertLine">
+									<h4><a href="Geo Case Study Cards/Geo Case Study Cards/Sahel Region(desert).jpg" target="_blank">CASE STUDY: THE SAHEL REGION</a></h4>
+
+									<li>An area of hot desert</li>
+									<br><br>
+									(looks specifically at 2012 drought)
+									<br><br>
+									Crop failure and mass famine<br>
+									-	FAO: agricultural production dropped by 25% from 2010<br>
+									-	Mauritania: <strong>52%</strong> crop production drop<br>
+									-	Chad: <strong>50%</strong> crop production fall<br>
+									-	<strong>2012: grain harvest down by ~1.4 million tons</strong><br>
+									-	<strong>15 million </strong>malnourished in West Africa and Sahel Region<br>
+									-	Malnutrition exceeded threshold levels of <strong>15%</strong>
+									<br><br>
+									Economic productivity<br>
+									-	Food prices increase<br>
+									-	Fewer workers<br>
+									-	Vicious cycle
+									<br><br>
+									Response<br>
+									-	February 2012: UN convened emergency meeting; appealed for <strong>$725</strong> million, only <strong>20%</strong> raised by March<br>
+									-	March 2012: Oxfam launched <strong>$36.3</strong> million emergency appeal<br>
+									-	UNHCR appealed for <strong>$36.5</strong> million to help the average of <strong>~1500</strong> arriving in Mauritania daily<br>
+									-	Cloud seeding in Burkina Faso (which started in 1998)<br>
+									-	AMETSOC monitors droughts<br>
+									-	2012: FAO Drylands Restoration Initiative<br>
+
+								</div>
+								
+								<div class="column vertLine">
+									<h4><a target="_blank" href="Geo Case Study Cards/Geo Case Study Cards/Corals (Great barrier Reef).jpg">CASE STUDY: THE GREAT BARRIER REEF</a></h4>
+									<br>
+									<li>A coral reef (not explicitly stated as a required case study, but questions are common)</li>
+									<br><br>
+									Formed <strong>13,000</strong> years ago, when the sea level = <strong>61m</strong>
+									<br><br>
+									Requirements:<br>
+									-	Sunlight<br>
+									-	No pollution<br>
+									-	Temperature: <strong>23-25˚C</strong><br>
+									-	Tropical areas
+									<br><br>
+									<strong>World Heritage Area since 1981</strong>
+									<br><br>
+									Employs<strong> 6% </strong>of Australia’s workforce
+									<strong>12%</strong> of Australia’s exports<br>
+									-	Nearly 5 billion Australian dollars generated from tourism annually
+									<br><br>
+									Covers an area of <strong>344,400 km2</strong> (<strong>2,900</strong> individual reefs, <strong>900</strong> islands)
+									<br><br>
+									Biodiversity:<br>
+									-	<strong>30 species</strong> of whales, dolphins and porpoises<br>
+									-	<strong>5,000 species</strong> of mollusk<br>
+									-	<strong>1,500 species</strong> of fish<br>
+									
+								</div>	
+							</div>
+                        </div> 
+                
+                        <div class="mySlides3 w3-container">
+							<h1><a href="Geo Case Study Cards/Geo Case Study Cards/EconDev.pdf" target="_blank">Theme 3: Economic development</a></h1>   
+                            <h4>
+								<strong>REQUIRED CASE STUDIES:</strong>
+								<li>A transnational corporation and its global links</li>
+								<li>A farm or agricultural system</li>
+								<li>A country or region suffering from food shortages</li>
+								<li>An industrial zone or factory</li>
+								<li>An area where tourism is important</li>
+								<li>Energy supply in a country or area</li>
+								<li>Water supply in a country or area</li>
+								<li>An area where economic development is taking place causing the</li> <li>environment to be at risk</li>
+							</h4>      
+                       		<br>
+                       		<div class="row">
+                       			<div class="column vertLineTheme3">
+									<h4><a href="Geo Case Study Cards/Geo Case Study Cards/NIKE.jpg" target="_blank">CASE STUDY: NIKE</a></h4>
+									<br>
+									<li>A transnational corporation and its global links</li>
+									<br><br>
+									HQ: Beaverton, Oregon, USA<br>
+									CEO: Mark Parker
+									<br><br>
+									Nike’s shoe/clothing production takes place at Tangerang (25km west of Jakarta, Indonesia)<br>
+									Average wage of a Nike factory worker in an <strong>LEDC: $1.25</strong><br>
+									Lebron James’ lifetime endorsement deal is worth <strong>$500</strong> million<br>
+									2014: brand alone worth <strong>$19 billion</strong><br>
+									<br><br>
+									Employs <strong>44,000</strong> people worldwide<br>
+									More than <strong>700</strong> shops open around the world<br>
+									Offices located in <strong>45</strong> countries outside USA
+									<br><br>
+									As of <strong>July 2011, 2/3</strong> of factories producing converse products did not meet worker treatment standards
+									<br><br>
+									April 2014: strike in China factory:<br>
+									-	<strong>70,000</strong> employees<br>
+									-	Underpay of employees by <strong>250RMB per month (for 20 years)</strong><br>
+									-	Average salary at YueYuen factory is <strong>3000RMB</strong><br>
+
+								</div>
+								
+								<div class="column vertLineTheme3">
+									<h4><a href="Geo Case Study Cards/Geo Case Study Cards/Rice Farm.jpg" target="_blank">CASE STUDY: WAYAN TOPELE’S BALINESE RICE FARM</a></h4>
+									<br>
+									<li>A farm or agricultural system</li>
+									<br><br>
+									Location: <strong>7.5km N</strong> of the town of Ubud, near River Sala<br>
+									Area: <strong>0.6 hectares</strong> – contiguous farm
+									<br><br>
+									Operated by: family & contract laborers (when needed)<br>
+									Primarily a subsistence farm
+									<br><br>
+									Fairly gentle gradient = only 2 levels needed<br>
+									-	Section 1 – upper level – mix of IR36 and Padi Bali<br>
+									-	Section 2 – lower level – IR36 + vegetable + grass near river
+									<br><br>
+									Padi Bali = 6 months to cultivate; IR36 = <strong>3 months</strong> to cultivate
+									<br><br>
+									Harvested rice = <strong>1/3 to government, 1/3 eaten, 1/3 barter for machinery</strong>
+									<br><br>
+									Little/no education = no accurate records of production
+									Normal year= <strong>120kg </strong>of rice produced<br>
+									-	1994: tumero infestation =<strong> 50%</strong> of normal harvest<br>
+									-	Harvest handed to government, destroyed, and free pesticide was provided
+									<br><br>
+									Subak (irrigation system) gives him 2 quotas of water
+									<br><br>
+									Very fertile soil:<br>
+									-	Alluvial deposits from River Sala = underlayers fertile<br>
+									-	1963 eruption of Gunung Agung = surface layers fertile
+									<br><br>
+									Pests: black moths, grasshoppers, Sangit mosquitos, birds
+									<br><br>
+									Technology: high-yielding varieties of rice (IR36), fertilisers (e.g. TSP, urea, potassium chloride)
+									<br><br>
+								</div>
+								
+								<div class="column vertLineTheme3">
+									<h4><a href="Geo Case Study Cards/Geo Case Study Cards/Afganistan(food shortage).jpg" target="_blank">CASE STUDY: AFGHATNISTAN’S FOOD SHORTAGE</a></h4>
+									<br>
+									<li>A country or region suffering from food shortages</li>
+									<br><br>
+									Location: Asia/Middle East<br>
+									Religion: Muslim, Taliban Extremists
+									<br><br>
+									War: 30 years and counting (with Russia, Taliban, USA)
+									<br><br>
+									Life expectancy at birth: <strong>51.3 years</strong> (lowest in the world)<br>
+									Infant mortality rate: <strong>112.8/1000</strong> live births<br>
+									Child labour percentage: <strong>25.3%</strong><br>
+									Unemployment rate: <strong>35% (2008)</strong><br>
+									Population below poverty line: <strong>35.8% (2011)</strong>
+									<br><br>
+									<strong>70 cents</strong> earned per day, <strong>58 cents</strong> per bag of rice, 120 cents on the black market
+									<br><br>
+									<strong>3 million</strong> people in the Harat province had insufficient wheat<br>
+									Market price of food skyrocketed<br>
+									Rivers affected by drought (major one in 2012)<br>
+									Grueling winters = hypothermia<br>
+								</div>
+								
+								<div class="column">
+									<h4><a href="Geo Case Study Cards/Geo Case Study Cards/M4 Corridor.jpg" target="_blank">CASE STUDY: M4 CORRIDOR</a></h4>
+									<br>
+									<li>An industrial zone or factory</li>
+									<br><br>
+									Runs from Wales to London
+									<br><br>
+									Home to lots of tech firms like microelectronics, Rolls Royce, and British Aerospace because:<br>
+									-	M4 motorway to transport inputs and outputs<br>
+									-	Mainline railway Wales to London<br>
+									-	Heathrow airport (and 4 others) for international links<br>
+									-	Large labour force form London and nearby towns<br>
+									-	Nearby firms to exchange ideas<br>
+									-	Near Bristol, Bath, Reading, and London universities for expertise and research<br>
+									-	Attractive environments for workers (e.g. national parks like Dartmoor)<br>
+
+								</div>
+							</div>
+					   <hr>
+						   <div class="row">
+								<div class="column vertLineTheme3">
+									<h4><a href="Geo Case Study Cards/Geo Case Study Cards/Ecotourism Cloud Forest.jpg" target="_blank">CASE STUDY: ECOTOURISM IN THE MONTEVERDE CLOUD FOREST</a></h4>
+									<br>
+									<li>An area where tourism is important</li>
+									<br><br>
+									Attractions:<br>
+									-	Altitude of <strong>1700m</strong><br>
+									-	100 mammalian species, <strong>2,500 plant species, >400 bird species, >120 reptile and amphibian species</strong><br>
+									-	Trails and trams, canopy tours, museums
+									<br><br>
+									Advantages:<br>
+									-	<strong>80 new businesses</strong> opened since 1970s<br>
+									-	The Reserva Biológica Bosque Nuboso Monteverde covers over <strong>10,500 hectares</strong><br>
+									-	<strong>400 full-time + 140 part-time jobs</strong> related to tourism
+									<br><br>
+									Disadvantages:<br>
+									-	Land prices have increased<br>
+									-	People have migrated looking for jobs = pressure on local infrastructure<br>
+									-	Atmosphere changed from a local Quaker community to a tourist centre<br>
+									-	Tourists demanding more facilities and luxury<br>
+									-	40% of Monteverde’s amphibians have become extinct<br>
+									-	Areas close to the trail = less wildlife<br>
+									-	Some activities (e.g. ziplining) are not sustainable<br>
+									-	Dirt track road = tourists arrive in 4x4 -> petrol + dust
+									<br><br>
+									Management:<br>
+									-	Budgets reserved to train + educate locals and tourists about protection of the reserve<br>
+									-	Access to the cloud forest is strictly controlled
+								</div>
+
+								<div class="column vertLineTheme3">
+									<h4><a href="Geo Case Study Cards/Geo Case Study Cards/Energy Supply China.jpg" target="_blank">CASE STUDY: ENERGY SUPPLY IN CHINA</a></h4>
+									<br>
+									<li>Energy supply in a country or area</li>
+									<br><br>
+									World’s largest emitter of greenhouse gases<br>
+									Industrial sector = <strong>70% </strong>of energy use
+									<br><br>
+									Coal: <strong>3527Mt</strong> produced; <strong>199Mt</strong> imported<br>
+									-	Declining, peak in 2014 = <strong>67%</strong> of energy consumption
+									<br><br>
+									Petroleum: importing approximately 7 million barrels per day<br>
+									-	Market dominated by Sinopec, CNPC, CNOOC<br>
+									-	<strong>18% of energy consumption</strong> in 2013
+									<br><br>
+									Gas: <strong>6% of energy consumption</strong> in 2013
+									<br><br>
+									Hydro/Nuclear/Wind: <strong>9%</strong> of energy consumption in 2013
+									<br><br>
+									In <strong>2013, 5000</strong> coal mines were closed
+									<br><br>
+									In 2016, China reached a total wind power generation capacity of <strong>149GW</strong><br>
+									-	Generated <strong>241 TWh</strong> of electricity
+									<br><br>
+									In 2015, the hydropower capacity was <strong>319GW</strong><br>
+									-	Generated <strong>1,126</strong> of energy (info about Three Gorges Dam relevant)
+
+								</div>
+
+								<div class="column vertLineTheme3">
+									<h4><a href="Geo Case Study Cards/Geo Case Study Cards/Water Supply.jpg" target="_blank">CASE STUDY: WATER SUPPLY IN LESOTHO</a></h4>
+									<br>
+									<li>Water supply in a country or area</li>
+									<br><br>
+									The Lesotho Highlands Water Project is the largest civil engineering project in Africa
+									<br><br>
+									When complete, it will divert <strong>40%</strong> of Senqu fiver water through 5 large-scale dams
+									<br><br>
+									After taking water for its own use, Lesotho will sell it to South Africa<br>
+									- Income will be used to develop its infrastructure and economy
+									<br><br>
+									Lots of highlands which receive high rainfall<br>
+									- Valleys are ideal for building dams and reservoirs
+									<br><br>
+									HEP can be generated with the dams
+									<br><br>
+									Lakes will attract tourism, creating jobs and benefitting the economy
+
+								</div>
+							</div>
+                        </div>
+                
+                      
+            </div>
+        </div>
+
+
+
+            
+        <div class="mySlides w3-container">
+            <h2>Past Papers</h2>
+            <div class="w3-center w3-bar w3-black">
+                <button class="w3-button demo2 w3-bar-item" onclick="currentDiv2(1)">Questions By Topic</button> 
+                <button class="w3-button demo2 w3-bar-item" onclick="currentDiv2(2)">Past Year Tests</button> 
+            </div>
+                <div class="w3-content w3-white" style="max-width:100%">
+                    
+                            <div class="mySlides2 w3-container">
+                                <div class="autowide">
+                                    
+                                    <div class="module">
+										<h1>Past Papers</h1>
+                                    </div>
+                                    
+                                    <div class="module">
+										<h1>Coming Soon...</h1>
+                                    </div>
+                                </div>
+                                            
+                            </div>
+                    
+                            <div class="mySlides2 w3-container">
+                           
+                            <div class="autowide">
+                             
+                                    <div class="module">
+                                    	<h1>Past Papers</h1>
+                                    </div>
+                                
+                                    <div class="module">
+                                    	<h1>Coming Soon...</h1>
+                                    </div>
+                                
+                                </div>
+                            
+                            </div>
+                </div>
+        </div>
+        <div class="mySlides w3-container w3-white">
+            <h2>Geography Videos</h2>
+            <button class="w3-button demo4" id=back onclick="currentDiv4(1); back();" style="background-color:#f44336; color:white">Home</button> 
+            
+            <div class="w3-content video" style="max-width:100%" >
+                <div class="mySlides4 w3-container">
+                    
+                        <br><br>
+                    
+                </div>
+            <br><br>
+            </div>
+            <br><br>
+        </div>
+        <div class="mySlides w3-container w3-white">
+            <h2>Geography Books</h2>
+            <div class="borders2">
+                    
+
+            </div>
+            <br><br>
+            <h2>Geography Movies/TV Shows</h2>
+            <div class="borders2">
+                
+                
+            
+                    
+            </div>
+                    
+            
+            <br><br>
+        </div>
+        <div class="mySlides w3-container w3-white">
+			<h1>Test dates not available for this subject yet</h1>  
+        </div>    
+        <div class="mySlides w3-container w3-white">
+                <h2>Ask Any Question! We Will Reply Soon</h2>
+                <div id="disqus_thread"></div>
+                <script>
+
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE Theme BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                /*
+                var disqus_config = function () {
+                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                */
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://dcbinspire.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+        </div>
+            
+
+        </div>
+
+
+    
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+
+    function currentDiv(n) {
+      showDivs(slideIndex = n);
+    }
+
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      if (n > x.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+         dots[i].className = dots[i].className.replace(" w3-red", "");
+      }
+      x[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " w3-red";
+    }
+    
+    
+     var slideIndex2 = 1;
+    showDivs2(slideIndex2);
+
+    function currentDiv2(n) {
+      showDivs2(slideIndex2 = n);
+    }
+
+    function showDivs2(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides2");
+      var dots = document.getElementsByClassName("demo2");
+      if (n > x.length) {slideIndex2 = 1}    
+      if (n < 1) {slideIndex2 = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+         dots[i].className = dots[i].className.replace(" w3-red", "");
+      }
+      x[slideIndex2-1].style.display = "block";  
+      dots[slideIndex2-1].className += " w3-red";
+    }
+    
+    
+         var slideIndex3 = 1;
+    showDivs3(slideIndex3);
+
+    function currentDiv3(n) {
+      showDivs3(slideIndex3 = n);
+    }
+
+    function showDivs3(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides3");
+      var dots = document.getElementsByClassName("demo3");
+      if (n > x.length) {slideIndex3 = 1}    
+      if (n < 1) {slideIndex3 = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+         dots[i].className = dots[i].className.replace(" w3-red", "");
+      }
+      x[slideIndex3-1].style.display = "block";  
+      dots[slideIndex3-1].className += " w3-red";
+    }
+    
+    var stuff = 0 
+    var slideIndex4 = 1;
+    showDivs4(slideIndex4);
+
+    function currentDiv4(n) {
+      showDivs4(slideIndex4 = n);
+      stuff = slideIndex4
+    }
+
+    function showDivs4(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides4");
+      var dots = document.getElementsByClassName("demo4");
+      if (n > x.length) {slideIndex4 = 1}    
+      if (n < 1) {slideIndex4 = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+         dots[i].className = dots[i].className.replace(" w3-red", "");
+      }
+      x[slideIndex4-1].style.display = "block";  
+      dots[slideIndex4-1].className += " w3-red";
+    }
+    
+    
+    
+    function back()
+    {
+        if (stuff != 1)
+            {
+                var button = document.getElementById("back")
+                button.innerHTML= "Back"
+            }
+        else
+            {
+                var button = document.getElementById("back")
+                button.innerHTML= "Home"
+            }
+    }
+    
+
+    
+</script>
+<script id="dsq-count-scr" src="//dcbinspire.disqus.com/count.js" async></script>
+</body >
+</html>

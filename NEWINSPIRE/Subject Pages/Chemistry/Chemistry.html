@@ -1,0 +1,1216 @@
+<html>
+    <head><script src="../../jquery-3.2.1.min.js"></script>
+    </head>
+  <link rel="stylesheet" type="text/css" href="../Subject%20Page.css">
+            <link rel="shortcut icon" type="image/x-icon" href="../Logo.ico" />
+<link rel="stylesheet" href="../../Buttonsw3.css">
+<img src="../Subject%20Page%20Pics/Chemistry%20Page.png" width="100%" >
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Chemistry</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../Style.css">
+<style>
+.mySlides {display:none;}
+</style>
+<body style="background-color:#8d99ae" >
+    <script>
+            $(document).ready(function()
+    {
+        if (localStorage.getItem("dateFactsChem")==null)
+            {
+                localStorage.setItem("dateFactsChem","10/15/2017")
+            }
+                
+        if (localStorage.getItem("dateVidsChem")==null)
+            {
+                localStorage.setItem("dateVidsChem","10/15/2017")
+            }
+                
+        if (localStorage.getItem("datePicsChem")==null)
+            {
+                localStorage.setItem("datePicsChem","10/15/2017")
+            }
+        var today = new Date();
+                
+        var Factsdate1 = new Date(parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear()); 
+        // get the current date today
+        var Factsdate2 = new Date(localStorage.getItem("dateFactsChem"));
+        // day the site was launched
+        var timeDiffFacts = Math.abs(Factsdate2.getTime() - Factsdate1.getTime());
+        //need to have date diff because it will increment everyday as the day moves further from our launch date, everytime the date diff increases so does our fact, it will display the fact on the next line in the txt file.
+        var diffDaysFacts = Math.ceil(timeDiffFacts / (1000 * 3600 * 24));
+        // to make sure date diff is always positive
+                
+                
+    
+        var Picsdate1 = new Date(parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear()); 
+        // get the current date today
+        var Picsdate2 = new Date(localStorage.getItem("datePicsChem"));
+        // day the site was launched
+        var timeDiffPics = Math.abs(Picsdate2.getTime() - Picsdate1.getTime());
+        //need to have date diff because it will increment everyday as the day moves further from our launch date, everytime the date diff increases so does our fact, it will display the fact on the next line in the txt file.
+        var diffDaysPics = Math.ceil(timeDiffPics / (1000 * 3600 * 24));
+        // to make sure date diff is always positive
+                
+                
+        var Vidsdate1 = new Date(parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear()); 
+        // get the current date today
+        var Vidsdate2 = new Date(localStorage.getItem("dateVidsChem"));
+        // day the site was launched
+        var timeDiffVids = Math.abs(Vidsdate2.getTime() - Vidsdate1.getTime());
+        //need to have date diff because it will increment everyday as the day moves further from our launch date, everytime the date diff increases so does our fact, it will display the fact on the next line in the txt file.
+        var diffDaysVids = Math.ceil(timeDiffVids / (1000 * 3600 * 24));
+        // to make sure date diff is always positive
+				
+
+						   
+        jQuery.get('ChemistryFact.txt', function(data) // getting the file
+        {     
+            var factnumber = data.split('\n'); //spliting the file into lines
+            var facttxt = document.getElementById('fact');
+            facttxt.innerHTML = factnumber[diffDaysFacts]; //changing the h1 tag's text into the fact
+            if (factnumber[diffDaysFacts] == null)
+                {
+                    localStorage.setItem("dateFactsChem",parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear())
+                }
+        }); 
+                
+        jQuery.get('ChemistryFactPics.txt', function(data2) // getting the file
+        {     
+            var picnumber = data2.split('\n'); //spliting the file into lines			
+            document.getElementById("factimg").src=picnumber[diffDaysPics];
+            if (picnumber[diffDaysPics] == null)
+                {
+                    localStorage.setItem("datePicsChem",parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear())
+                }
+
+        }); 
+        jQuery.get('ChemistryVideo.txt', function(data3) // getting the file
+        {     
+            var vidnumber = data3.split('\n'); //spliting the file into lines
+            document.getElementById("youtube").src="https://www.youtube.com/embed/"+vidnumber[diffDaysVids];
+            if (vidnumber[diffDaysVids] == null)
+                {
+                    localStorage.setItem("dateVidsChem",parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear())
+                }
+
+        }); 
+    });
+    </script>
+        <div class="w3-center w3-bar w3-black">
+              <button class="w3-button w3-bar-item" onclick="location.href='../../index.html'" style="background-color:#B20320">Home</button> 
+              <button class="w3-button demo w3-bar-item " onclick="currentDiv(1)">Featured Content</button> 
+              <button class="w3-button demo w3-bar-item " onclick="currentDiv(2)">Syllabus Point Breakdown</button> 
+              <button class="w3-button demo w3-bar-item" onclick="currentDiv(3)">Past Papers</button> 
+              <button class="w3-button demo w3-bar-item" onclick="currentDiv(4)">Chemistry Videos</button>  
+              <button class="w3-button demo w3-bar-item" onclick="currentDiv(5)">Books And Fun Videos</button> 
+            <button class="w3-button demo w3-bar-item" onclick="currentDiv(6)">Test Dates</button>
+              <button class="w3-button demo w3-bar-item" onclick="currentDiv(7)">Q & A</button> 
+              
+        </div>
+        
+        <div class="w3-content" style="max-width:100%">
+            
+            <div class="mySlides w3-container w3-white">
+                        <br>
+                <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chemistry Fact Of The Day:</h2>
+                <center>
+                        <div class="borders">
+                            <h5 id=fact></h5>
+                            <img id=factimg src="" width=40%>
+                        
+                        </div>
+                </center>
+                        <br>
+                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chemistry Video Of The Day:</h2> 
+                        <center>
+                            <iframe id=youtube width="90%" height="70%" src="" frameborder="0" allowfullscreen></iframe>
+                        </center>
+                <br><br>
+            </div> 
+        <div class="mySlides w3-container">
+            <h2>Syllabus Points</h2>
+        <div class="w3-center w3-bar w3-black">
+              <button class="w3-button demo3 w3-bar-item " onclick="currentDiv3(1)">Section 1</button> 
+              <button class="w3-button demo3 w3-bar-item" onclick="currentDiv3(2)">Section 2</button> 
+              <button class="w3-button demo3 w3-bar-item" onclick="currentDiv3(3)">Section 3</button> 
+              <button class="w3-button demo3 w3-bar-item" onclick="currentDiv3(4)">Section 4</button> 
+              <button class="w3-button demo3 w3-bar-item" onclick="currentDiv3(5)">Section 5</button> 
+
+        </div>
+            
+            
+            <!-- To anyone adding content to sections, here is a template to make things easier. And also, underline triple points but not the point number or the breakdown itself, just the title -->
+            
+            
+            <h3></h3>
+             <p></p><br>
+            
+
+
+            <div class="w3-content w3-white" style="max-width:100%">
+                
+                
+                        <div class="mySlides3 w3-container">
+                                <h1>Principles of chemistry</h1><br>
+                            <p>***<u>Underlined</u> points are triple***</p><br>
+                            <h3><b>1.1 understand the arrangement, movement and energy of the particles in each of the three states of matter: solid, liquid and gas.</b></h3>
+                                <img src ="Chem_1.1.PNG"><br>
+                            
+                            <h3>1.2 understand how the interconversions of solids, liquids and gases are achieved and recall the names used for these interconversions.</h3>
+                                <img src = "Chem_1.2.PNG"><br>
+                            
+                            <h3>1.3 explain the changes in arrangement, movement and energy of particles</h3>
+                                <p>In a solid, there are strong forces of attraction between the particles, meaning that they are arranged in an ordered manner. Particles cannot move around and have a definite shape and volume that cannot be compressed. However, unless the substance is cooled to absolute zero, the particles will be vibrating in their spots. As the temperature increases, the kinetic energy the particles have increases, hence the particles start vibrating faster. <br><br>
+
+                                When the melting point is reached, particles have enough kinetic energy to move around, and the forces of attraction between the particles are weaker (than in solids). Particles are still held closely together, but can move around to take the shape of the container. Even so, it has a fixed volume and is difficult to compress.<br><br>
+
+                                Once the boiling point is reached, particles overcome forces of attraction. This means that particles are far apart and move quickly (due to the high kinetic energy), taking the shape of the container. Since the particles are so far apart, they have a low density and have no definite shape or volume.</p><br>
+                            
+                            <h3><b>1.4 describe and explain experiments to investigate the small size of particles and their movement including:</b></h3>
+                                <p>i. Dilution of coloured solutions<br>
+                                    Dissolve some potassium manganate in 10cm3 of water in a test tube - A purple solution should form.
+                                    Add 1ml of the solution to another 10ml of water and repeat until no colour can be seen.<br><br>
+
+                                    As the solution becomes diluted, the particles become further apart. This shows that the particles must be very small as it takes many tries for no colour to be seen.<br><br>
+
+                                    ii. Diffusion experiments<br>
+                                    IN GAS:<br>
+                                    Place 2 cotton wool (one dipped in Ammonia and the other in Hydrochloric acid) on opposite ends of a gas tube. A white ring (ammonium chloride) should form towards the end with the HCl because ammonia is less dense and travels faster through the air.<br><br>
+
+                                    IN LIQUIDS: <br>
+                                    Place a crystal of potassium permangenate in the water. The coloured particles split off from the crystal and move through the solution until it is evenly spread out. This turns the solution from colourless to purple.</p><br>
+                            
+                            <h3>1.5 understand the terms atom and molecule</h3>
+                                <p>Atom: Smallest particle of an element<br>
+                                - Atoms of same element have the same atomic number<br><br>
+                                Molecule: 2 or more chemically combined atoms<br>
+                                    - All molecules are COVALENTLY BONDED</p><br>
+                            
+                            <h3>1.6 understand the differences between elements, compounds and mixtures</h3>
+                                <p>Element: A substance that cannot be broken down by chemical means. <br>
+                                Compound: Two or more elements chemically combined, to which they are not all the same. <br>
+                                Mixture: Two or more substances that are not chemically combined.</p><br>
+                            
+                            <h3>1.7 describe experimental techniques for the separation of mixtures, including simple distillation, fractional distillation, filtration, crystallization and paper chromatography.</h3>
+                                <p>Simple distillation: One substance is evaporated off, to either obtain the substance or the substance dissolved in it. E.g. Obtaining salt from water.<br><br>
+                                    Fractional distillation: Different substances have different boiling points, therefore, condense at difference parts of the boiling tube and collected separately. This works because temperatures get cooler the higher up the tube you go.<br><br>
+                                    Filtration: When a mixture is poured through filter paper inside a funnel to separate the insoluble substance (residue) from the soluble substance (filtrate). E.g. sand for water <br><br>
+                                    Crystallization: A solution is heated with an evaporation dish and bunsen burner, however, not fully, once most of the water has boiled away, the dish should be left to cool and evaporate so crystals will form. <br><br>
+                                    Chromatography: Colours like inks and dyes are placed on a chromatography paper and into a solvent. The colours are then separated as the solvent travels up the paper.
+                                </p><br>
+                            
+                            <h3>1.8 explain how information from chromatograms can be used to identify the composition of a mixture</h3>
+                                <p>1. Using a pencil, draw a line 2cm parallel to the bottom of the paper.<br>
+                                    2. Draw dots 0.5cm in diameter for the mixtures, ensuring that they are spaced 1cm apart.<br>
+                                    3. Fill 1cm in height of a beaker with water.<br>
+                                    4. Place the chromatography paper into the water, ensuring that the water is below the pencil line.<br>
+                                    5. Hold the paper in this position until the water level rises above the dyes, and the dyes stop separating.<br>
+                                    6. Take the paper out of the beaker of water, and allow to dry.<br>
+                                    7. Compare the distance travelled of the dyes (R<sub>f</sub> values) with known dyes.</p><br>
+                            
+                            <h3>1.9 understand that atoms consist of a central nucleus, composed of protons and neutrons, surrounded by electrons, orbiting in shells.</h3>
+                                <p></p><br>
+                            
+                            <h3>1.10 recall the relative mass and relative charge of ap proton, neutron and electron.</h3>
+                                <p><img src = "Chem_1.10.PNG"></p><br>
+                            
+                            <h3>1.11 understand the terms atomic number, mass number, isotopes and relative atomic mass</h3>
+                                <p>Atomic number: number of protons. <br>
+                                    Mass number: number of nucleons.<br>
+                                    Isotopes: atoms with the same number of protons (and the same atomic number, hence making them the same element) and different number of neutrons (and different mass number).<br>
+                                    Relative Atomic Mass: average atomic mass of all the isotopes of an element relative to C-12</p><br>
+                            
+                            <h3>1.12 calculate the relative atomic mass of an element from the relative abundances of its isotopes</h3>
+                                <p>Relative atomic mass is the average weight of an atom of an element. There is variation in the weight due to the fact that there are different isotopes with in an element. (Different isotopes have different weights as they have different numbers of neutrons.)<br><br> To calculate: <br>(% of isotope x its mass) + (% of isotope x its mass) ... / 100</p><br>
+                            
+                            <h3>1.13 understand that the periodic table is an arrangement of elements in order of atomic number</h3>
+                                <p>Remember, atomic number is the number of protons in the element.</p><br>
+                            
+                            <h3>1.14 deduce the electron configurations of the first 20 elements from their positions in the periodic table.</h3>
+                                <p>Same number of electrons and protons, as they are not ions, therefore, you can deduce how many electrons they have by looking at their atomic number. The first shell holds 2, second one 8, third one 8.</p><br>
+                            
+                            <h3>1.15 deduce the number of outer electrons in a main group element from its position in the periodic table.</h3>
+                                <p>Same as 1.14, but just subtract the electrons from all the shells other than the outer layer from total number of electrons.</p><br>
+                            
+                            <h3>1.16 calculate relative formula masses (Mr) from relative atomic mass (Ar)</h3>
+                                <p>M<sub>r</sub> is the relative mass of a molecule, A<sub>r</sub> is ther relative mass of an element. <br><br>M<sub>r</sub> = (number of that element in the molecule x relative atomic mass) + (number of that element in the molecule x relative atomic mass)...</p><br>
+                            
+                            <h3>1.17 understand the use of the term mole to represent the amount of substance.</h3>
+                                <p>A mole is just a certain amount of molecules, just like having a thousand molecules. Having a mole of molecules is having 6.022x10<sup>23</sup> of it.</p><br>
+                            
+                            <h3>1.18 <u>understand the term mole as the Avogadro number of particles (atoms, molecules, formulae, ions or electrons) in a substance.</u></h3>
+                                <p>6.022x10<sup>23</sup></p><br>
+                            
+                            <h3>1.19 carry out mole calculations using relative atomic mass (A<sub>r</sub>) and relative formula mass (M<sub>r</sub>)</h3>
+                                <p>Moles = mass/(relative atomic or formula mass) <br><br> n = m/M<sub>r</sub></p><br>
+                            
+                            <h3>1.20 understand the term molar volume of a gas and use its values (24dm<sup>3</sup> and 24,000cm<sup>3</sup> at room temperature and pressure (rtp) in calculations.</h3>
+                                <p>1 mol = 24dm<sup>3</sup></p><br>
+                        
+                            <h3>1.21 write word equations and balanced chemical equations to represent the reactions studied in this specification.</h3>
+                                <p>Example of word equation: hydrogen + oxygen => water <br><br> Example of chemical equations: 2H<sub>2</sub> + O<sub>2</sub> => H<sub>2</sub>O <br><br> Tip: Make sure in chemical equations, the number of elements are the same on both sides.</p><br>
+                            
+                            <h3>1.22 use the state symbols: (s), (l), (g), (aq) in chemical equations to represent solids, liquids, gases and aqueous solutions respectively.</h3>
+                                <p></p><br>
+                                       
+                            <h3>1.23 understand how the formulae of simple compounds can be obtained experimentally, including metal oxides, water and salts containing water of crystallisation</h3>
+                                <p>EXAMPLE: Magnesium Oxide experiment thing you most likely did in class.<br><br>
+
+                                    Weigh empty crucible + lid<br>
+                                    Weigh crucible + lid + magnesium
+                                    <br>Heat using a bunsen flame, with a heat-proof mat, tripod, and clay triangle.
+                                    <br>Quickly lift crucible quickly so oxygen gets in.
+                                    <br>When all magnesium has been oxidised, allow the apparatus to cool.
+                                    <br>Weigh the contents of the crucible.
+                                    <br>Find mass of magnesium and magnesium oxide.
+                                    <br>Subtract mass of magnesium from magnesium oxide to find the mass of oxygen.
+                                    <br>Use n = m/M<sub>r</sub> to find the number of moles of magnesium and oxygen, then find the empirical formula.</p><br>
+                            
+                            <h3>1.24 calculate empirical and molecular formulae from experimental data.</h3>
+                                <p>Change the masses found of elements in a compound into percentages, then, divide each percentage by their respective A<sub>r</sub> and you will have the number of atoms of it in a single molecule. <br><br> EXAMPLE:<br> Mass of carbon = 84%  A<sub>r</sub> = 12 <br> 
+                                C = 84/12 = 7 <br> Hydrogen mass = 16%  A<sub>r</sub>= 1 <br> H = 16/1 = 16 <br><br>=>C<sub>7</sub>H<sub>16</sub> <br><br>
+                                To find the empirical formula, we divide the molecular formula by the smallest number. <br><br> EXAMPLE: <br>C<sub>4</sub>H<sub>8</sub> => CH<sub>2</sub></p><br>
+                            
+                            <h3>1.25 calculate reacting masses using experimental data and chemical equations,</h3>
+                                <p>This means if you know the number of moles of element A and the number of moles of element B, you can calculate the mass of compound AB. <br><br> REMEMBER: n = m/A<sub>r</sub><br> So m = n * A<sub>r</sub><br><br> Apply this to each element A and B and just add up their respective masses to find the mass of compound AB.</p><br>
+                            
+                            <h3>1.26 <u>calculate percentage yield.</u></h3>
+                                <p>(Actual yield / theoretical yield) * 100 <br><br>Theoretical yield is the mass you expect to get.<br><br> Actual yield is the mass you obtain from an experiment<br>
+                         <br>To work out the theoretical yield, it is useful to remember than when given an equation, such as Al<sub>2</sub>O<sub>3</sub> => 2Al you already know the ratio of aluminium and oxygen (2:3). This tells us that every 2 moles of aluminium is required to bond with 3 moles of oxygen to make 1 mole of aluminium oxide. After which you can calculate the mass of its respective elements fairly easily (n = m / M<sub>r</sub>) <br><br> EXAMPLE QUESTION: The mass of Al<sub>2</sub>O<sub>3</sub> is 204g, calculate the theoretical yield of aluminium if electrolysis is applied to the compound.  <br><br>n = 204/102 = 2 <br>Therefore, we know how many moles aluminium oxide contains, so aluminium must contain 2*2 = 4 moles, as stated before.<br> Therefore, we can calculate the mass of aluminium: m = n * A<sub>r</sub> = 4*27 = 108g</p><br>
+                            <h3>1.27 carry out mole calculations using volumes and molar concentrations.</h3>
+                                <p>mole = volume * molar concentration</p><br>
+                            
+                            
+                            <h3>1.28 describe the formation of ions by the gain or loss of electrons.</h3>
+                                <p></p><br>
+                            
+                            <h3>1.29 understand oxidation as the loss of electrons and reduction as the gain of electrons</h3>
+                                <p>OILRIG - Oxidation Is Loss, Reduction Is Gain.</p><br>
+                            
+                            <h3>1.30 recall the charges of common ions in this specification.</h3>
+                                <p>Nitrate NO<sub>3</sub><sup>-</sup>
+                            <br>Sulfide S<sup>2-</sup>
+                            <br>Sulfate SO<sub>4</sub><sup>2-</sup>
+                            <br>Oxide O<sup>2-</sup>
+                            <br>Carbonate CO<sub>3</sub><sup>2-</sup>
+                            <br>Ammonium NH<sub>4</sub><sup>+</sup></p><br>
+                            
+                            <h3>1.31 deduce the charge of an ion from the electronic configuration of the atom from which the ion is formed</h3>
+                                <p>Easy way to work it out:<br>
+                           If the atom has lost electrons, it will have a positive charge, which will be the same as the number of electrons lost. e.g. lost 2 electrons, so +2 charge
+                            <br><br> If the atom has gained electrons, it will have a negative charge, which will be the same as the number of electrons gained. e.g. Gained 3 electrons, so -3 charge.</p><br>
+                            
+                            <h3>1.32 explain, using dot and cross diagrams, the formation of ionic compounds by electron transfer, limited to combinations of elements from Groups 1, 2, 3, 5, 6 and 7.</h3>
+                                <p><img src="Chem_1.32.gif"></p><br>
+                            
+                            <h3>1.33 understand ionic bonding as a strong electrostatic attraction between oppositely charged ions</h3>
+                                <p>Very useful for lots of exams, as this will always come up in some form or another.</p><br>
+                            
+                            <h3>1.34 understand that ionic compounds have high melting and boiling points because of strong electrostatic forces between oppositely charged ions</h3>
+                                <p>Also useful to remember.</p><br>
+                            
+                            <h3>1.35 <u>understand the relationship between ionic charge and the melting point and boiling point of an ionic compound</u></h3>
+                                <p>Higher the charge, the higher the melting/boiling point.</p><br>
+                            
+                            <h3>1.36 <u>describe an ionic crystal as a giant three-dimensional lattice structure held together by the attraction between oppositely charged ions</u></h3>
+                                <p>I know it's a mouthful, but hey, just add 3D lattice to the definition of an ionic compound.</p><br>
+                            
+                            <h3>1.37 <u>draw a diagram to represent the positions of the ions in a crystal of sodium chloride.</u></h3>
+                                <p><img src="Chem_1.37.GIF"></p><br>
+                            
+                            <h3>1.38 describe the formation of a covalent bond by the sharing of a pair of electrons between two atoms.</h3>
+                                <p>Also useful to remember, as this will come up on tests often.</p><br>
+                            
+                            <h3>1.39 understand covalent bonding as a strong attraction between the bonding pair of electrons and the nuclei of the atoms involved in the bond.</h3>
+                                <p>*Strong electrostatic attraction.</p><br>
+                            
+                            <h3>1.40 explain, using dot and cross diagrams, the formation of covalent compounds by electron sharing for the following substances:</h3>
+                                <p>i) Hydrogen H<sub>2</sub> - single bond <br>
+                            ii) Chlorine Cl<sub>2</sub> - single bond<br>
+                            iii) Hydrogen chloride HCl - single bond<br>
+                            iv) Water H<sub>2</sub>O - single bonds<br>
+                            v) Methane CH<sub>4</sub> - single bonds<br>
+                            vi) Ammonia NH<sub>3</sub> - single bonds<br>
+                            vii) Oxygen O<sub>2</sub> - double bond<br>
+                            viii) Nitrogen N<sub>2</sub> - triple bond<br>
+                            ix) Carbon dioxide CO<sub>2</sub> - double bonds<br>
+                            x) Ethane C<sub>2</sub>H<sub>6</sub> - single bonds<br>
+                            xi) Ethene C<sub>2</sub>H<sub>6</sub> - C=C double bond, C-H single bonds<br>
+                            </p><br>
+                            
+                            <h3>1.41 understand that substances with simple molecular structures are gases, liquids or solids with low melting points.</h3>
+                                <p></p><br>
+                            
+                            <h3>1.42 explain why substances with simple molecular structures have low melting and boiling points in terms of the relatively weak forces between the molecules</h3>
+                                <p>Intermolecular forces of attraction between simple covalent molecules are weak. Thus, not much energy is required to overcome them causing them to have low melting and boiling points.</p><br>
+                            
+                            <h3>1.43 explain the high melting and boiling points of substances with giant covalent structures in terms of the breaking of many strong covalent bonds.</h3>
+                                <p></p><br>
+                            
+                            <h3>1.44 <u>Draw diagrams representing the positions of the atoms in diamond and graphite.</u></h3>
+                                <p>Diamond <img src = "Chem_1.44.png"> <br> Graphite <img src ="Chem_1.44(20.PNG"></p><br>
+                            
+                            <h3>1.45 <u>explain how the uses of diamond and graphite depend on their structures, limited to graphite as a lubricant and diamond in cutting</u></h3>
+                                <p><b>Diamond:</b> <br>- Very strong carbon-carbon covalent bonds.<br>
+                            - These extend throughout the whole structure in three dimensions.<br>
+                            - Each carbon atom has 4 unpaired electrons, each of these are used to form a covalent bond, forming a tetrahedral arrangement.<br><br>
+                            <b>Graphite:</b><br>
+                            - Structure can be compared to a deck of cards: each individual card is strong but they can be easily separated from each other.<br>
+                            - Each layer of graphene can be easily flaked off, thus it is used as a dry lubricant.</p><br>
+                            
+                            <h3>1.46 understand that a metal can be described as a giant structure of positive ions surrounded by a sea of delocalised electrons</h3>
+                                <p>Good phrase to remember.</p><br>
+                            
+                            <h3>1.47 explain the electrical conductivity and malleability of a metal in terms of its structure and bonding.</h3>
+                                <p>Metallic bonding is sometimes described as an array of positive ions in a 'sea of electrons'. The more outer electrons an atom has to delocalise, the stronger the attraction between the negative 'sea' and the higher charged ions, so the bonding is stronger and the melting point is greater.<br><br>
+
+                                Conductivity: metals are conductive because the delocalised electrons are free to move throughout the structure when a voltage is applied.<br><br>
+
+                                Malleability: metals are arranged in layers/sheets/rows and thus the positive ions can slide over each other into new positions without breaking the metallic bonds because they are always surrounded by a sea of electrons, meaning they are malleable.</p><br>
+                            
+                            <h3>1.48 understand that an electric current is a flow of electrons or ions.</h3>
+                                <p></p><br>
+                            
+                            <h3>1.49 understand why covalent compounds do not conduct electricity</h3>
+                                <p>Because electrons are not free to move in covalent structures.</p><br>
+                            
+                            <h3>1.50 understand why ionic compounds conduct electricity only when molten or in solution.</h3>
+                                <p>Ions are mobile when molten or in solution, otherwise, they're in their lattice structure and stay in place.</p><br>
+                            
+                            <h3>1.51 describe experiments to distinguish between electrolytes and non-electrolytes.</h3>
+                                <p>1. Either melt or dissolve the substance in water to be tested in a beaker.
+                                    <br>2. Connect graphite electrodes to crocodile clips, and connect these clips to a power pack.
+                                    <br>3. Place the graphite electrodes into the solution/molten substance.
+                                    <br>4. Connect a lightbulb or LED in series with the power pack and the sample.
+                                    <br>5. Turn on the power pack.
+                                    <br>6. If the lightbulb lights up, it is an electrolyte
+
+                            </p>
+                            
+                            <h3>1.52 understand that electrolysis involves the formation of new substances when ionic compounds conduct electricity.</h3>
+                                <p>During electrolysis, ionic compounds conduct electricity. The positively charged ions move to one end whilst the negatively to the other, these are then turned to atoms and lose their charge, from which new substances are formed.</p><br>
+                            
+                            <h3>1.53 describe experiments to investigate electrolysis, using inert electrodes, of molten salts such as lead(II) bromide and predict the products.</h3>
+                                <p>Inert electrodes are electrodes that aren't involved in the experiment, however, only provide or take away electrons from electrolytes. See above 1.51 for details.</p><br>
+                            
+                            <h3>1.54 <u>describe experiments to investigate electrolysis, using inert electrodes, of aqueous solutions such as sodium chloride, copper(II) sulfate and dilute sulfuric acid and predict the products.</u></h3>
+                                <p>Sodium chloride:<br>Cathode - Hydrogen<br>Anode - Chlorine<br>Solution becomes sodium hydroxide.</p><br>
+                            
+                            <h3>1.55 write ionic half-equations representing the reactions at the electrodes during electrolysis.</h3>
+                                <p>Sodium chloride:<br>2Cl<sup>-</sup> => Cl<sub>2</sub> + 2e<sup>-</sup><br>
+                                2H<sup>+</sup> + 2e<sup>-</sup> => H<sub>2</sub><br><br>
+                            Copper(II) sulfate:<br> 4OH<sup>-</sup> => O<sub>2</sub> + H<sub>2</sub>O + 4e<sup>-</sup><br>
+                                2Cu<sup>2+</sup> => 2Cu(II)<br><br>
+                                   Sulfuric acid: <br>
+                                4OH<sup>-</sup> => O<sub>2</sub> + 2H<sub>2</sub>O + 4e<sup>-</sup><br>
+                                    4H<sup>+</sup> + 4e<sup>-</sup> => 2H<sub>2</sub>
+                            </p><br>
+                            
+                            <h3>1.56 <u>recall that one faraday represents one mole of electrons</u></h3>
+                                <p></p><br>
+                            
+                            <h3>1.57 <u>calculate the amounts of the products of the electrolysis of molten salts and aqueous solutions.</u></h3>
+                                <p>1 faraday = 96500 coulombs<br><br>
+
+                                    EXAMPLE QUESTION:<br><br>
+
+                                When the concentration of sodium chloride solution is high, the gas that collects in test tube P is mostly chlorine. The equation for its formation is: <br><br>
+
+                                2Cl<sup>-</sup> â†’ Cl2 + 2e<sup>-</sup><br>
+                                In one experiment, the volume of chlorine gas collected was 18 cm3. <br><br>
+
+                                Calculate the quantity of electricity, in coulombs, needed to produce this volume of chlorine gas. <br>
+                                (1 faraday = 96 500 coulombs) <br><br>
+
+                                18 Ã· 1000 = 0.018dm3<br>
+                                0.018 Ã· 24 = 0.00075 mol<br><br>
+
+                                0.00075 * 2 * 96500 = 144.75 = 145 (3sf)<br>
+                                moles of product * moles of electrons * 96500</p><br>
+                            
+                            
+                            
+                        </div>
+                
+                        <div class="mySlides3 w3-container">
+                                <h1>Chemistry of the elements</h1><br>
+                            <p>***<u>Underlined</u> points are triple***</p><br>
+                            <h3>2.1 understand the terms group and period</h3>
+                                <p>Group = column<br>Period = row</p><br>
+                            <h3>2.2 recall the positions of metals and non-metals in the Periodic Table </h3>
+                                <p>Non metals are positioned to the right of Boron, Silicon etc in a zigzag pattern.</p><br>
+                            <h3>2.3 explain the classification of elements as metals or non-metals on the basics of their electrical conductivity and the acid-base character of their oxides </h3>
+                                <p>Metals are conductive, and their oxides are alkali. Non-metals are less conductive, and their oxides are acidic.</p><br>
+                            <h3>2.4 understand why elements in the same group of the Periodic Table habve similar chemical properties </h3>
+                                <p>Elements in the same group have same numbers of electrons in the outer shell, which means they react with other elemants in similar ways.</p><br>
+                            <h3>2.5 understand that the noble gases (Group 0) are a family of inert gases and explain their lack of reactivity in terms of their electronic configurations. </h3>
+                                <p>Noble gases have a full outer shell, which means they are relatively stable</p><br>
+                            <h3>2.6 describe the reactions of Group 1 elements with water and understand that the reactions provide a basis for their recognition as a family of elements </h3>
+                                <p>Lithium: effervescence<br>Sodium: effervescence<br>Potassium: melts into a sphere and whizzes around the surface of the water with a lilac flame</p><br>
+                            <h3>2.7 describe the relative reactivities of the elements in Group 1 </h3>
+                                <p>The further down you move in Group 1, the more reactive the elements are</p><br>
+                            <h3>2.8 <u>explain the relative reactivities of the elements in Group 1 in terms of distance between the outer electrons and the nucleus</u> </h3>
+                                <p>As you move down the periods, the elements get more reactive. This is because there are more inner shells, increasing the distance between the nucleus and the outer electrons. The shells in between give the electron shielding from the positive nucleus, weakening the electrostatic attraction between the negative electron and the nucleus. Therefore, the outer electron is lost more easily, making the element more reactive</p><br>
+                            <h3>2.9 recall the colours and physical states of halogens at room temperature</h3>
+                                <p>Fluorine - yellow gas<br>Chlorine - green gas<br>Bromine - dark red/brown liquid/gas<br> Iodine- dark grey/purple solid/gas</p><br>
+                            <h3>2.10 make predictions about the properties of other halogens in this group</h3>
+                                <p>Astatine - black solid</p><br>
+                            <h3>2.11 understand the difference between hydrogen chloride gas and hydrochloric acid</h3>
+                                <p>HCl (g): simple (polar) covalent compound, no ions.<br>HCl (aq): ions (H<sup>+</sup>,Cl<sup>-</sup>) dissociated in water</p><br>
+                            <h3>2.12 explain, in terms of dissociation, why hydrogen chloride is acidic in water but not in methylbenzene</h3>
+                                <p>Water, which is polar, dissociates hydrogen chloride into H<sup>+</sup> and Cl<sup>-</sup> ions when it dissolves. The hydrogen ions make the solution acidic. Methylbenzene, on the other hand, is non-polar. This means it does not dissociate hydrogen chloride and therefore does not produce acidic hydrogen ions.</p><br>
+                            <h3>2.13 describe the relative reactivites of the elements in Group 7</h3>
+                                <p>As you move down Group 7, the elements get less reactive</p><br>
+                            <h3>2.14 describe experiments to demonstrate that a more reactive halogen will displace a less reactive halogen from a solution of one of its salts </h3>
+                                <p>Take a dimple tray and put spots of halides in each dimple using a pipette.<br>Use a pipette and place 3 drops of a halogen into those dimples, mixing them with the halide.<br>If a colour change is observed, the halogen in the halide has been displaced.</p><br>
+                            <h3>2.15 understand these displacement reactions as redox reactions</h3>
+                                <p>The halogen is reduced, since it gains electrons<br>The halide is oxidised, since it loses electrons</p><br>
+                            <h3>2.16 recall the gases present in air and their approximate percentage by volume</h3>
+                                <p>Nitrogen = 78.1%<br>Oxygen = 21.0%<br>Argon = 0.9%<br>Carbon Dioxide = 0.04%</p><br>
+                            <h3>2.17 explain how experiments involving the reactions of elements such as copper, iron and phosphorus with air can be used to investigate the percentage by volume of oxygen in air</h3>
+                                <p>Using Copper<br>- The apparatus originally contains 100cm<sup>3</sup> of air<br>- This is pushed backwards and forwards over the heated copper, which turns black as copper(II) oxide is formed<br>- The volume of gas in the syringes falls as the oxygen is used up<br>- As the copper reacts, the Bunsen burner is moved along the tubes so that it is always heating fresh copper<br>- Eventually, all the oxygen in the air is used up<br>- The volume stops dropping as the copper stops reacting due to the lack of oxygen<br>- After cooling, roughly 79cm<sup>3</sup> of gas is left in the syringes. Thus, we can see that 21% of the initial volume has been used up, allowing us to deduce that the air contained 21% oxygen.<br>Using Iron<br>- A tube containing damp iron wool or iron filings in a test tube containing air is inverted in a beaker of water.<br>- The water level in the tube is marked by a small elastic band.<br>- The tube is left for a week or so for the iron to use up all the oxygen.<br>- The water level rises in the tube as the oxygen is used up.<br>- The new level is marked with a second rubber band.<br>- The volume of the gas used up is found by filling the tube with water to each of the rubber bands in turn and pouring it into a small measuring cylinder.<br>- Subtract the final volume from the initial volume to find the volume of gas used.<br>- Divide volume of gas used by total volume of gas to find percentage of oxygen.</p><br>
+                            <h3>2.18 describe the laboratory preparation of oxygen from hydrogen peroxide, using manganese(IV) oxide as a catalyst </h3>
+                                <p>Set up a sdie-arm boiling tube with hydrogen peroxide solution and solid manganese(IV) oxide.<br>- Use a thistle funnel to add more hydrogen peroxide if necessary.<br>- Connect side arm boiling tube to a delivery tube that delivers the oxygen produced into a test tube inverted in a beaker of water.</p><br>
+                            <h3>2.19 describe the reactions of magnesium, carbon and sulfur with oxygen in air, and the acid-base character of the oxides produced</h3>
+                                <p>Magnesium<br>- Bright white flame<br>- Forms white, powdery ash of magnesium oxide<br>- Metal oxides are bases.<br>Sulphur<br>- Burns in a tiny, almost invisible, blue flame<br>- Poisonous, colourless, and acidic sulphur dioxide is produced.<br>Carbon Dioxide<br>- Carbon burns if heated very strongly in air<br>- Produces colourless CO<sub>2</sub><br>- May produce small yellow-orange flame and perhaps some sparks</p><br>
+                            <h3>2.20 describe the laboratory preparation of carbon dioxide from calcium carbonate and dilute hydrochloric acid</h3>
+                                <p>Same as with oxygen except for the use of calcium carbonate (in the form of marble chips) and dilute hydrochloric acid</p><br>
+                            <h3>2.21 cescribe the formation of carbon dioxide from the thermal decomposition of metal carbonates such as copper(II) carbonate</h3>
+                                <p>Metal carbonate -> Carbon dioxide + metal oxide</p><br>
+                            <h3>2.22 describe the properties of carbon dioxide, limited to its solubility and density </h3>
+                                <p>Carbon dioxide is soluble in water, and forms carbonic acid.<br>Carbon dioxide is not dense as it is a gas. However, it is much denser than air; it sinks in air.</p><br>
+                            <h3>2.23 explain the use of carbon dioxide in carbonating drinks and in fire extinguishers, in terms fo its solubility and density</h3>
+                                <p>Carbonating drinks: Carbon dioxide is slightly soluble in water. Under pressure, it will dissolve. When the pressure is released, the carbon dioxide is less solube and thus escapes, creating bubbles in the drink.<br>Fire extinguishers: Carbon dioxide is denser than oxygen and therefore displaces it in a fire, smothering the flame.</p><br>
+                            <h3>2.24 understand that carbon dioxide is a greenhouse gas and may contribute to climate change</h3>
+                                <p>The Sun radiates energy to the Earth<br>The Earth re-emits some energy as infrared radiation<br>Greenhouse gases absorb these infrared rays, and therefore less energy is released into space, warming the atmosphere.</p><br>
+                            <h3>2.25 describe the reactions of dilute hydrochloric and dilute sulfuric acids with magnesium, aluminium, zinc and iron</h3>
+                                <p>Magnesium<br>- Effervescence<br>- Magnesium decreases in size<br>- Solution heats up (exothermic reaction)<br>- Colourless solution<br>Aluminium<br>- Slow reaction<br>- When heated, reaction speeds up, causing effervescence<br>- Aluminium decreases in size<br>- Colourless solution<br>Zinc<br>- Effervescence<br>- Zinc decreases in size<br>- Solution heats up (exothermic reaction)<br>- Colourless solution<br>Iron(II)<br>- Effervescence<br>- Iron decreases in size<br>- Solution heats up (exothermic reaction)<br>- Pale green solution</p><br>
+                            <h3>2.26 describe the combustion of hydrogen</h3>
+                                <p>Produces a squeaky pop in a test tube. 2H<sub>2</sub> (g) + O<sub>2</sub> (g) -> 2H<sub>2</sub>
+                            
+                            O (l)</p><br>
+                            <h3>2.27 describe the use of anhydrous copper(II) sulfate in the chemical test for water</h3>
+                                <p>The copper(II) sulfate is hydrated by the water, causing it to change in colour from white to blue</p><br>
+                            <h3>2.28 describe a physical test to show whether water is pure</h3>
+                                <p>Pure water will freeze/melt at 0ÂºC and condensate/boil at 100ÂºC</p><br>
+                            <h3>2.29 understand that metals can be arranged in a reactivity series based on the reactions of the metals and their compounds</h3>
+                                <p>K<br>Na<br>Li<br>Ca<br>Mg<br>Al<br>C<br>Zn<br>Fe<br>Sn<br>Pb<br>H<br>Cu<br>Hg<br>Ag<br>Au</p><br>
+                            <h3>2.30 describe how reactions with water and dilute acids can be used to deduce the reactivites of metals and their compounds</h3>
+                                <p>1. React all metals with water<br>2. Obeserve reactions. More bubbles and fizzing = more reactive.<br>3. React metals that do not react with water with acid<br>4. Observe reactions. More bubbles and fizzing = more reactive.<br>5. Place in order of most effervescence. Metals that react with water are more reactive than metals that do not.</p><br>
+                            <h3>2.31 deduce the position of a metal within the reactivity series using displacement reactions between metals and their oxides, and between metals and their salts in aqueous solutions</h3>
+                                <p>A more reactive metal will displace a less reactive metal</p><br>
+                            <h3>2.32 understand oxidation and reduction as the addition and removal of oxygen respectively</h3>
+                                <p>But also loss and gain of electrons. Look at the question to determine which definition to use. Or just go with both where applicable</p><br>
+                            <h3>2.33 understand the terms redox, oxidising agent, and reducing agent</h3>
+                                <p>Redox: a reaction where one substance is reduced and another is oxidised simultaneously<br>Oxidising agent: a substance that causes oxidation by being reduced and gaining electrons<br>Reducing agent: a substance that causes reduction by being oxidised and losing electrons.</p><br>
+                            <h3>2.34 describe the conditions under which iron rusts</h3>
+                                <p>For rusting to occur, water and oxygen must be present</p><br>
+                            <h3>2.35 describe how the rusting of iron may be prevented by grease, oil, paint, plastic and galvanising</h3>
+                                <p>Coating iron in grease, oil, paint or plastic prevents rusting by isolating the iron; the iron cannot rust due to the lack of oxygen and water.<br>Galvanising iron prevents rusting since zinc is more reactive than iron. The zinc acts as a reducing agent, preventing the oxidation of iron.</p><br>
+                            <h3>2.36 understand the sacrifical protection of iron in terms of the reactivity series</h3>
+                                <p>More reactive elements corrode in the place of iron, such as zinc</p><br>
+                            <h3>2.37 describe tests for the cations</h3>
+                                <p>Li<sup>+</sup>, Na<sup>+</sup>, K<sup>+</sup>, Ca<sup>2+</sup><br>- Li<sup>+</sup> = red<br>- Na<sup>+</sup> = yellow-orange<br>- K<sup>+</sup> = lilac<br>- Ca<sup>2+</sup> = orange<br>NH<sub>4</sub><sup>+</sup> using sodium hydroxide solution and identifying the ammonia evolved from the reaction<br>- The ammonia turns damp red litmus paper blue<br> Cu<sup>2+</sup>, Fe<sup>2+</sup> and Fe<sup>3+</sup> using sodium hydroxide solution<br>- Cu<sup>2+</sup> = blue<br>- Fe<sup>2+</sup> = green<br>- Fe<sup>3+</sup> = brown</p><br>
+                            <h3>2.38 describe tests for the anions</h3>
+                                <p>Cl<sup>-</sup>, Br<sup>-</sup> and I<sup>-</sup> using dilute nitric acid and silver nitrate solution<br>- Cl<sup>-</sup> = white precipitate<br>- Br<sup>-</sup> = cream precipitate<br>- I<sup>-</sup> = yellow precipitate<br>SO<sub>4</sub><sup>2-</sup> using dilute hydrochloric acid and barium chloride solution<br>- White precipitate formed<br>CO<sub>3</sub><sup>2-</sup> using dilute hydrochloric acid and identifying the carbon dioxide evolved from the reaction<br>- Limewater turns milky white in the presence of carbon dioxide</p><br>
+                            <h3>2.39 describe tests for the gases</h3>
+                                <p>Hydrogen: lit splint makes a squeaky pop<br>Oxygen: reignites glowing splint<br>Carbon dioxide: lit splint extinguishes/ limewater turns milky white<br>Ammonia: damp red litmus paper turns blue<br>Chlorine: damp blue litmus paper turns red then white</p><br>
+                        </div> 
+                
+                        <div class="mySlides3 w3-container">
+                                <h1>Organic chemistry</h1><br>
+                            <p>***<u>Underlined</u> points are triple***</p><br>
+                            <h3>3.1 explain the terms homologous series, hydrocarbon, saturated, unsaturated, general formula and isomerism</h3>
+                                <p>Homologous series: compounds with similar chemical properties, gradation in physical properties, of the same functional group(s), with the same general formula.<br>Hydrocarbon: a compound containing only hydrogen and carbon.<br>Saturated: has only C-C single bonds.<br>Unsaturated: does not only have C-C single bonds, may have double bonds or triple bonds.<br>General formula: the molecular formula of compounds of the same functional group where actual numbers are represented by variables such as n.<br>Isomerism: structural isomers are molecules with the same molecular formula but with different structural formulae</p><br>
+                            <h3>3.2 recall that alkanes have the general formula C<sub>n</sub>H<sub>2n+2</sub></h3>
+                                <p></p><br>
+                            <h3>3.3 draw displayed formulae for alkanes with up to five carbon atoms in a molecule, and name the straight-chain isomers</h3>
+                                <p>Meth-, Eth-, Prop-, But-, Pent-, Hex-,</p><br>
+                            <h3>3.4 recall the products of the complete and incomplete combustion of alkanes</h3>
+                                <p>Complete combustion: carbon dioxide + water<br>Incomplete combustion (insufficient oxygen): carbon monoxide/soot + water</p><br>
+                            <h3>3.5 describe the substitution reaction of methane with bromine to form bromomethane in the presence of UV light</h3>
+                                <p>CH<sub>4</sub> + Br<sub>2</sub> -> CH<sub>3</sub>Br + HBr</p><br>
+                            <h3>3.6 recall that alkenes have the general formula C<sub>n</sub>H<sub>2n</sub></h3>
+                                <p></p><br>
+                            <h3>3.7 draw displayed formulae for alkenes with up to four carbon atoms in a molecule, and name the straight-chain isomers (knowledge of cis- and trans- isomers is not required)</h3>
+                                <p></p><br>
+                            <h3>3.8 describe the addition reaction of alkenes with bromine, including the decolourising of bromine water as a test for alkenes</h3>
+                                <p>C<sub>2</sub>H<sub>4</sub> + Br<sub>2</sub> -> C<sub>2</sub>H<sub>4</sub>Br<sub>2</sub></p><br>
+                            <h3>3.9 <u>describe the manufacture of ethanol by passing ethene and steam over a phosphoric acid catalyst at a temperature of about 300ÂºC and a pressure of about 60-70 atm</u></h3>
+                                <p>Ethene is hydrated by steam, which causes it to pick up a hydroxide group and form ethanol</p><br>
+                            <h3>3.10 <u>describe the manufacture of ethanol by the fermentation of sugars, for example glucose, at a temperature of about 30ÂºC</u></h3>
+                                <p>The sugars are given to yeast, which are made to anaerobically respire; anaerobic respiration in yeast produces alcohol</p><br>
+                            <h3>3.11 <u>evaluate the factors relevant to the choice of method used in the manufcature of ethanol, for example the relative availability of sugar cane and crude oil</u></h3>
+                                <p>Fermentation<br>- Pros:<br>- Low operating temperature + pressure<br>- Less expensive<br>- Sugar cane is a renewable resource<br>- Cons:<br>- Batch process<br>- Slow<br>- Impure product<br>Hydration of Ethene<br>- Pros:<br>- Continuous process<br>- Fast<br>- Pure product<br>- Cons:<br>- High operating temperature + pressure<br>- More expensive<br>- Ethene is unrenewable since it relies on oil production</p><br>
+                            <h3>3.12 <u>describe the dehydration of ethanol to ethene, using aluminium oxide</u></h3>
+                                <p>The aluminium oxide must be hot. The ethanol will be passed over the aluminium oxide, which causes it to form ethene. The ethene is collected over cold water.</p><br>
+                        </div>
+                
+                        <div class="mySlides3 w3-container">
+                            <h1>Physical chemistry</h1><br>
+                            <p>***<u>Underlined</u> points are triple***</p><br>
+                            <h3><b>4.1 describe the use of the indicators litmus, phenolphthalein and methyl orange to distinguish between acidic and alkaline solutions</b></h3>
+        <p>Litmus:<br>- Acid - red<br>- Neutral - depends<br>- Alkali - blue<br><br>Phenolphthalein:<br>- Acid - colourless<br>- Neutral - colourless<br>- Alkali - pink<br><br>Methyl orange:<br>- Acid: red<br>- Alkali: yellow</p>
+        <br>
+        
+        <h3><b>4.2 understand how the pH scale, from 0â€“14, can be used to classify solutions as strongly acidic, weakly acidic, neutral, weakly alkaline or strongly alkaline</b></h3>
+        <p> &lt; 7 = acidic<br> 7 = neutral<br> &gt; 7 = alkaline</p>
+        <br>
+        
+        <h3><b>4.3 describe the use of universal indicator to measure the approximate pH value of a solution</b></h3>
+        <p>"Approximate" because colour change is gradual/not well-defined.</p>
+        <br>
+        
+        <h3><b>4.4 define acids as sources of hydrogen ions, H<sup>+</sup>, and alkalis as sources of hydroxide ions, OH<sup></sup></b></h3>
+        <br>
+        
+        <h3><b>4.5 predict the products of reactions between dilute hydrochloric, nitric and sulfuric acids; and metals, metal oxides and metal carbonates (excluding the reactions between nitric acid and metals)</b></h3>
+        <p>metal + acid &#8594; salt + hydrogen<br>metal oxide + acid &#8594; salt + water<br>metal carbonate + acid &#8594; salt + carbon dioxide + water</p>
+        <br>
+        
+        <h3><b>4.6 understand the general rules for predicting the solubility of salts in water:</b></h3>
+        <p>All common sodium, potassium and ammonium salts are soluble <br>All nitrates are soluble <br>Common halides are soluble, except those of silver and lead <br>Common sulfates are soluble, except those of barium and calcium <br>Common carbonates are insoluble, except those of sodium, potassium and ammonium<br>Common hydroxides are insoluble, except those of barium and calcium.</p>
+        <br>
+        
+        <h3><b>4.7 describe experiments to prepare soluble salts from acids</b></h3>
+        <p>1. Obtain the salt in solution (metal/metal oxide + dilute acid &#8594; salt + water)<br>2. Gently heat the solution using a Bunsen burner until crystals start to form<br>3. Let the solution cool and crystallise.<br>4. Filter the crystals from the remaining liquid. <br>5. Dry the crystals with filter paper.</p>
+        <br>
+        
+        <h3><b>4.8 describe experiments to prepare insoluble salts using precipitation reactions</b></h3>
+        <p>1. Mix 2 soluble solutions with the cation/anion desired (ammonium anion + cation nitrate is always safe).<br>2. Filter the solid out with filter paper and a funnel.<br>3. Clean the residue with distilled water and then dry the residue with filter paper or in a drying oven.</p>
+        <br>
+        
+        <h3><b>4.9 describe experiments to carry out acid-alkali titrations</b></h3>
+        <p>1. A solution of the alkali is measured into a conical flask using a pipette.<br>2. The acid is run in from the burette, swirling the flask constantly.<br>3. Towards the end, the acid is run in a drop at a time until the indicator just changes colour.<br>4. Do 1 rough run, finding an estimate of the volume of titre.<br>5. Repeat until concordant results obtained.<br>6. Find average of concordant results.</p>
+        <br>
+        
+        <h3><b>4.10 understand that chemical reactions in which heat energy is given out are described as exothermic and those in which heat energy is taken in are endothermic</b></h3>
+        <br>
+        
+        <h3><b>4.11 describe simple calorimetry experiments for reactions such as combustion, displacement, dissolving and neutralisation in which heat energy changes can be calculated from measured temperature changes</b></h3>
+        <p>1. Measure initial temperature.<br>2. Measure the final temperature.<br>3. Change in temperature is the reaction's calorimetry.</p>
+        <br>
+        
+        <h3><b><u>4.12 calculate molar enthalpy change from heat energy change</u></b></h3>
+        <p>Q = m âˆ™ c âˆ™ âˆ†T<br>Energy = mass of H<sub>2</sub>O âˆ™ heat capacity of H<sub>2</sub>O (4.18J/g/ËšC) âˆ™ change in temperature<br>Equation gives total energy released, use stoichiometry to find energy released per mole.</p>
+        <br>
+        
+        <h3><b>4.13 understand the use of ô°âˆ†H to represent enthalpy change for exothermic and endothermic reactions</b></h3>
+        <p>+ve âˆ†H = endothermic<br>-ve âˆ†H = exothermic.</p>
+        <br>
+        
+        <h3><b>4.14 represent exothermic and endothermic reactions on a simple energy level diagram</b></h3>
+        <br>
+        
+        <h3><b>4.15 understand that the breaking of bonds is endothermic and that the making of bonds is exothermic</b></h3>
+        <br>
+        
+        <h3><b><u>4.16 use average bond energies to calculate the enthalpy change during a simple chemical reaction.</u></b></h3>
+        <p>1. Write the balanced chemical equation.<br>2. Draw out all of the bonds.<br>3. Total the bond breaking.<br>4. Total the bond making.<br>5. Subtract bond making from bond breaking.</p>
+        <br>
+        
+        <h3><b>4.17 describe experiments to investigate the effects of changes in surface area of a solid, concentration of solutions, temperature and the use of a catalyst on the rate of a reaction</b></h3>
+        <p>Count and compare bubbles per minute OR the volume of gas produced in one minute (use a gas syringe and stopwatch) OR the time taken for a fixed volume of gas to be created (use a gas syringe and stopwatch).</p>
+        <br>
+        
+        <h3><b>4.18 describe the effects of changes in surface area of a solid, concentration of solutions, pressure of gases, temperature and the use of a catalyst on the rate of a reaction</b></h3>
+        <p>SURFACE AREA: when surface area increases, rate of reaction increases because the frequency of collision increases.<br>CONCENTRATION OF SOLUTIONS: when the concentration of solutions increases, the frequency of collisions increases, hence increasing the rate of reaction.<br>PRESSURE OF GASES: when the pressure of gases increases, the frequency of collisions between gas molecules increases, hence increasing the rate of reaction.<br>TEMPERATURE: when the temperature increases, the particles have a higher average kinetic energy, leading to an increase in the frequency of collisions. The increased kinetic energy also means that the activation energy of the reactions is met more easily, increasing the frequency of successful collisions thus resulting in a higher rate of reaction.<br>CATALYST: creates an alternate pathway with activation energy, but remains chemically unchanged at the end of the reaction.</p>
+        <br>
+        
+        <h3><b>4.19 understand the term activation energy and represent it on a reaction profile</b></h3>
+        <br>
+        
+        <h3><b>4.20 explain the effects of changes in surface area of a solid, concentration of solutions, pressure of gases and temperature on the rate of a reaction in terms of particle collision theory</b></h3>
+        <p><i>Surface area:</i> more area on solid for acid particles to collide into. Therefore, frequency of collision increases &#8594; higher rate of reaction<br><i>Concentration of solutions:</i> increasing the concentration will increase the number of times the particles collide &#8594; higher rate of reaction.<br><i>Pressure of gases:</i> Increasing the pressure of gases means the particles are closer together so they hit each other more frequently &#8594; higher rate of reaction<br><i>Temperature:</i> the higher the temperature, the faster the rate of reaction. This is because with higher temperature, the particles are moving faster and colliding more often. Furthermore, all reactions have an activation energy, meaning not all collisions will end with a reaction. With more heat energy, particles will collide with more energy and therefore the rate of reaction will increase.</p>
+        <br>
+        
+        <h3><b>4.21 explain that a catalyst speeds up a reaction by providing an alternative pathway with lower activation energy.</b></h3>
+        <p>Catalysts are substances that speed up a chemical reaction by providing an alternate pathway with lower activation energy. They remain chemically unchanged at the end of the reaction.</p>
+        <br>
+        
+        <h3><b>4.22 understand that some reactions are reversible and are indicated by the symbol â‡Œô° in equations</b></h3>
+        <br>
+        
+        <h3><b>4.23 describe reversible reactions such as the dehydration of hydrated copper(II) sulfate and the effect of heat on ammonium chloride</b></h3>
+        <p>Dehydration of hydrated copper(II) sulfate is an endothermic reaction. It happens when you remove the water.<br>Heating ammonium chloride gives you ammonia and hydrogen chloride.</p>
+        <br>
+        
+        <h3><b>4.24 understand the concept of dynamic equilibrium</b></h3>
+        <p>When a the rate of the forward reaction = rate of the backward reaction in a reversible reaction. The concentration of the reactants and the concentration of the products are constant (not necessarily equal). The forward and backward reaction happen simultaneously.</p>
+                        </div> 
+                
+                        <div class="mySlides3 w3-container">
+                                <h1>Chemistry in industry</h1><br>
+                            <p>***<u>Underlined</u> points are triple***</p><br>
+                            <h3>5.1 explain how the methods of extraction of the metals in this section are related to their positions in the reactivity series</h3>
+        <p>EXTRACTION OF IRON: <br>- A blast furnace is used since carbon is more reactive (higher up in the reactivity series) than iron.<br><br>EXTRACTION OF ALUMINIUM:<br>- Aluminium is more reactive than carbon so it cannot be displaced<br>- Thus, it must be obtained by electrolysis.</p>
+        <br>
+        
+        <h3>5.2 describe and explain the extraction of aluminium from purified aluminium oxide by electrolysis, including:</h3>
+        <p>The use of molten cryolite as a solvent and to decrease the required operating temperature <br>- Cryolite has a lower melting point therefore the required operating temperature is reduced.<br>- This means that operating cost is also reduced.<br><br>The need to replace the positive electrodes <br>- Oxygen produced at the positive electrode (anode) reacts with the electrode itself, which is made of carbon, to form CO<sub>2</sub><br>- This means that the mass of the electrode decreases over time (the electrode gets smaller)<br>- Thus, they must be replaced<br><br>The cost of the electricity as a major factor</p>
+        <br>
+        
+        <h3>5.3 write ionic half-equations for the reactions at the electrodes in aluminium extraction</h3>
+        <p>ANODE:<br>6O<sub>2</sub><sup>-</sup> â†’ 3O<sub>2</sub> + 12e<sup>-</sup><br><br>CATHODE:<br>4Al<sup>3+</sup> + 12e<sup>-</sup> â†’ 4Al</p>
+        <br>
+        
+        <h3>5.4 describe and explain the main reactions involved in the extraction of iron from iron ore (haematite), using coke, limestone and air in a blast furnace</h3>
+        <p>Coke is put into the furnace since the reaction between coke and oxygen is largely exothermic, meaning it can maintain the operating temperature needed to decompose limestone (to form CaO and CO<sub>2</sub>)<br>C + O<sub>2</sub> â†’ CO<sub>2</sub><br>CaCO<sub>3</sub> â†’ CaO + CO<sub>2</sub><br><br>CaO reacts with SiO2 and other acidic impurities in the haematite (iron ore) to from CaSiO3 (which flows out as molten slag)<br>CaO + SiO<sub>2</sub> â†’ CaSiO<sub>3</sub><br><br>The CO<sub>2</sub> produced in the reaction between coke and oxygen reacts with more coke to create 2CO<br>CO2 + C â†’ 2CO<br><br>Iron is displaced from iron oxide<br>2Fe<sub>2</sub>O<sub>3</sub> + 3C â†’ 4Fe + 3CO<sub>2</sub> OR Fe<sub>2</sub>O<sub>3</sub> + 3CO â†’ 2Fe + 3CO<sub>2</sub></p>
+        <br>
+        
+        <h3>5.5 explain the uses of aluminium and iron, in terms of their properties.</h3>
+        <p>ALUMINIUM:<br>- Low density<br>- Malleable<br>- Does not react with food or drink<br>- Used for airplanes, food and drink cans, aluminium foil<br><br>WROUGHT IRON:<br>- Pure iron<br>- Shiny<br>- Malleable<br>- Used for decorative works (such as gates)<br><br>MILD STEEL:<br>- Up to 0.25% carbon<br>- Increased hardness and strength of iron<br>- Used for nails, car bodies, ship building, girders<br><br>HIGH-CARBON STEEL<br>- 0.25-1.5% carbon<br>- Iron becomes harder and more brittle<br>- Used for cutting tools and masonry nails<br><br>CAST IRON:<br>- Iron fresh from the furnace<br>- Roughly 4% carbon as the largest impurity, but there are many more<br>- Doesn't shrink much when it solidies<br>- Used for manhole covers, engine blocks, guttering<br><br>STAINLESS STEEL:<br>- Alloy of iron, carbon, nickel, and chromium<br>- Resistant to corrosion<br>- Used for cooking utensils, cutlery, kitchen sinks</p>
+        <br>
+        
+        <h3>5.6 understand that crude oil is a mixture of hydrocarbons</h3>
+        <br>
+        
+        <h3>5.7 describe and explain how the industrial process of fractional distillation separates crude oil into fractions</h3>
+        <p>1. Crude oil is heated at the bottom of the fractionating column.<br>2. Hydrocarbons vaporise, and start to rise up the fractionating column.<br>3. The top of the column is cooler, the bottom hotter.<br>4. Since larger hydrocarbons have higher boiling points, they condense in the lower fractions.<br>5. Smaller hydrocarbons continue to rise, and condense in the higher fractions.</p>
+        <br>
+        
+        <h3>5.8 recall the names and uses of the main fractions obtained from crude oil: refinery gases, gasoline, kerosene, diesel, fuel oil and bitumen</h3>
+        <br>
+        
+        <h3>5.9 describe the trend in boiling point and viscosity of the main fractions</h3>
+        <p>Lower fractions = more viscous and higher boiling point</p>
+        <br>
+        
+        <h3>5.10 understand that incomplete combustion of fuels may produce carbon monoxide and explain that carbon monoxide is poisonous because it reduces the capacity of the blood to carry oxygen</h3>
+        <br>
+        
+        <h3>5.11 understand that, in car engines, the temperature reached is high enough to allow nitrogen and oxygen from air to react, forming nitrogen oxides</h3>
+        <br>
+        
+        <h3>5.12 understand that nitrogen oxides and sulfur dioxide are pollutant gases which contribute to acid rain, and describe the problems caused by acid rain</h3>
+        <p>Adverse effect on plants/trees/crops/vegetation<br>Adverse effect on fish / water animals / aquatic life <br>Adverse effect on iron/steel/metal <br>Adverse effect on stonework/limestone/marble </p>
+        <br>
+        
+        <h3>5.13 understand that fractional distillation of crude oil produces more long-chain hydrocarbons than can be used directly and fewer short-chain hydrocarbons than required and explain why this makes cracking necessary</h3>
+        <p>Smaller hydrocarbons (shorter chains) are more volatile and combustible thus more useful. This means demand for them is very high, making them more valuable. Long-chain hydrocarbons have fewer applications. Since there aren't enough short-chain hydrocarbons, cracking is necessary.</p>
+        <br>
+        
+        <h3>5.14 describe how long-chain alkanes are converted to alkenes and shorter-chain alkanes by catalytic cracking, using silica or alumina as the catalyst and a temperature in the range of 600â€“700ô°…&deg;C.</h3>
+        <p>Large hydrocarbon put into boiling tube with aluminium oxide catalyst/ceramic in the middle. Boiling tube is heated up, large hydrocarbon evaporates and goes through the delivery tube to be collected.<br><br>e.g. C<sub>10</sub>H<sub>22</sub> &#8594; C<sub>6</sub>H<sub>14</sub> + C<sub>4</sub>H<sub>8</sub><br><br>C-C single bonds of long-chain hydrocarbon broken.<br>C=C double bonds form.</p>
+        <br>
+        
+        <h3>5.16 draw the repeat unit of addition polymers, including poly(ethene), poly(propene) <u>and poly(chloroethene)</u></h3>
+        <br>
+        
+        <h3>5.17 deduce the structure of a monomer from the repeat unit of an addition polymer</h3>
+        <p>Find the repeating unit, replace the single bond in the middle with a double bond</p>
+        <br>
+        
+        <h3>5.18 describe some uses for polymers, including poly(ethene), poly(propene) <u>and poly(chloroethene)</u></h3>
+        <p>Poly(ethene):<br>- HDPE = making plastic bottles<br>- LDPE = thin film e.g. plastic bags<br>Poly(propene): ropes/crates<br>Poly(chloroethene): drain pipes and replacing windows</p>
+        <br>
+        
+        <h3>5.19 explain that addition polymers are hard to dispose of as their inertness means that they do not easily biodegrade</h3>
+        <p>Addition polymers cannot be decomposed by microorganisms.</p>
+        <br>
+        
+        <h3><u>5.20 understand that some polymers, such as nylon, form by a different process called condensation polymerisation</u></h3>
+        <br>
+        
+        <h3><u>5.21 understand that condensation polymerisation produces a small molecule, such as water, as well as the polymer.</u></h3>
+        
+        <h3>5.22 understand that nitrogen from air, and hydrogen from natural gas or the cracking of hydrocarbons, are used in the manufacture of ammonia</h3>
+        <p>Nitrogen:<br>From air. 78%ish of dry Beijing air on an unpolluted day.<br>Hydrogen from natural gas:<br>CH<sub>4</sub> (g) + H<sub>2</sub>O (l) â‡Œ CO (g) + 3H<sub>2</sub> (g)<br>Hydrogen from cracking of hydrocarbons.</p>
+        <br>
+        
+        <h3>5.23 describe the manufacture of ammonia by the Haber process, including the essential conditions:</h3>
+        <p>i. A temperature of about 450Â°C <br>ii. A pressure of about 200 atmospheres <br>iii. An iron catalyst </p>
+        <br>
+        
+        <h3>5.24 understand how the cooling of the reaction mixture liquefies the ammonia produced and allows the unused hydrogen and nitrogen to be recirculated</h3>
+        <p>The reaction is cooled below ammonia's boiling point, but not hydrogen's and nitrogen's, so the ammonia condenses and liquefies while the unreacted hydrogen and nitrogen remain in gas state and stay in the reactor.</p>
+        <br>
+        
+        <h3>5.25 describe the use of ammonia in the manufacture of nitric acid and fertilisers</h3>
+        <p>Nitric Acid: reacted with oxygen.<br>4NH<sub>3</sub> + 8O<sub>2</sub> â†’ 4HNO<sub>3</sub> + 4H<sub>2</sub>O<br><br>Fertilisers:<br>Ammonia is broken down to nitrate ions, which is needed for amino acids and proteins in plants for growth and repair.</p>
+        <br>
+        
+        <h3><u>5.26 recall the raw materials used in the manufacture of sulfuric acid*</u></h3>
+        <p>Sulphur, oxygen, water OR sulfide ore, oxygen, water</p>
+        <br>
+        
+        <h3><u>5.27 describe the manufacture of sulfuric acid by the contact process, including the essential conditions:</u></h3>
+        <p>i. A temperature of about 450Â°C <br>ii. A pressure of about 2 atmospheres <br>iii. A vanadium(V)oxide catalyst </p>
+        <br>
+        
+        <h3><u>5.28 describe the use of sulfuric acid in the manufacture of detergents, fertilisers and paints</u></h3>
+        <p>Detergents: on them labels in the form of sulfates, sulfonates, sulfuric acid, anionic surfactants.<br>Fertilisers: makes ammonium sulfate and 'superphosphate' (mixture of calcium phosphate and calcium sulfate)<br>Paints: used to extract the white pigment titanium dioxide from titanium ores.</p>
+        <br>
+        
+        <h3><u>5.29 describe the manufacture of sodium hydroxide and chlorine by the electrolysis of concentrated sodium chloride solution (brine) in a diaphragm cell</u></h3>
+        <p>NOTE: This will be a lot easier to understand if you look up a diagram.<br>Sodium chloride goes in from the side with the positive anode and is at a higher level so that no sodium hydroxide formed on the side of the cathode can flow backward and react with chlorine to make bleach.<br>Diaphragm is made of a porous material so the solution can seep through.</p>
+        <br>
+        
+        <h3><u>5.30 write ionic half-equations for the reactions at the electrodes in the diaphragm cell</u></h3>
+        <p>AT THE ANODE:<br>2Cl<sup>-</sup> (aq) &#8594; Cl<sub>2</sub> (g) + 2e<sup>-</sup><br><br>AT THE CATHODE:<br>2H<sub>2</sub>O &#8594; 2H<sup>+</sup> + 2OH<sup>-</sup><br>2H<sup>+</sup> + 2e<sup>-</sup> &#8594; H<sub>2</sub></p>
+        <br>
+        
+        <h3><u>5.31 describe important uses of sodium hydroxide, including the manufacture of bleach, paper and soap; and of chlorine, including sterilising water supplies and in the manufacture of bleach and hydrochloric acid.*</u></h3>
+        <p>SODIUM HYDROXIDE:<br>- Reacts with chlorine to make bleach.<br>- Helps break the wood down to pulp to make paper.<br>- Reacts with animal and vegetable fats and oils to make compounds (e.g. sodium stearate) that are present in soap.<br>- Purification of bauxite to make aluminium oxide.<br><br>CHLORINE:<br>- Sterilising water to make it safe to drink.<br>- Reacts with a bunch of stuff to make bleach.<br>- Makes hydrochloric acid in a CONTROLLED reaction with hydrogen.</p>
+        <br>
+                        </div>
+                       
+            </div>
+        </div>
+
+
+
+            
+        <div class="mySlides w3-container">
+            <h2>Past Papers</h2>
+            <div class="w3-center w3-bar w3-black">
+                <button class="w3-button demo2 w3-bar-item" onclick="currentDiv2(1)">Questions By Topic</button> 
+                <button class="w3-button demo2 w3-bar-item" onclick="currentDiv2(2)">Past Year Tests</button> 
+            </div>
+                <div class="w3-content w3-white" style="max-width:100%">
+                    
+                            <div class="mySlides2 w3-container">
+                                <div class="autowide">
+                                    
+                                    <div class="module">
+                                        <b><h3>Double Science</h3></b>                           
+                                        <h4>Question Paper</h4>
+                                        <hr>
+                                        <h5 style="color:black">Section 1: Principles of Chemistry</h5>
+
+                                        <a  href="https://drive.google.com/open?id=0BwhNWu5jAmSsM2RMRkRyRmVNcWc" target="_blank"><h5>States of Matter (1C) QP </h5></a>
+                                        <a  href="https://drive.google.com/open?id=0BwhNWu5jAmSsN3otSWt2OTJ0aU0" target="_blank"><h5>Atoms (1C) QP</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSseTRaX3RBTUhZWk0" target="_blank"><h5>Atomic Structure (1C) QP</h5></a> 
+                                        <a  href="https://drive.google.com/open?id=0BwhNWu5jAmSsSk1qbTVNTWVsa3c" target="_blank"><h5>Relative Formula (1C) QP </h5></a>
+                                        <a  href="https://drive.google.com/open?id=0BwhNWu5jAmSsT2ppcFlBUVMwaGs" target="_blank"><h5>Chemical Formulae & Equations (1C) QP</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMm1ST3gxOFRiRDg" target="_blank"><h5>Ionic Compounds (1C) QP</h5></a> 
+                                        <a  href="https://drive.google.com/open?id=0BwhNWu5jAmSsUVpnVUJlSjdJbk0" target="_blank"><h5>Covalent Substances (1C) QP </h5></a>
+                                        <a  href="https://drive.google.com/open?id=0BwhNWu5jAmSsdVFoTlVwNlhRaWs" target="_blank"><h5>â€‹Metallic Crystals (1C) QP</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsaGF0YWl6WU1LeDA" target="_blank"><h5>Electrolysis (1C) QP</h5></a> 
+                                        
+                                        <hr>
+                                        <h5 style="color:black">Section 2: Chemistry of the Elements</h5>
+                                        
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZ1FUblBrZnVIdjg" target="_blank"><h5>The Periodic Table (1C) QP</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSscWdnc0VQejRlc1U" target="_blank"><h5>Lithium, Sodium & Potassium (1C) QP</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSscXpHSURSX2NGLUk" target="_blank"><h5>Chlorine, Bromine & Iodine (1C) QP</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZzhnblp4MXB1M2s" target="_blank"><h5>â€‹Oxygen & Oxides (1C) QP</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsOXhaZzF2NUt3cjA" target="_blank"><h5>Hydrogen & Water (1C) QP</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsYm1VRENpWENEN3M" target="_blank"><h5>Reactivity Series (1C) QP</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsYVh5QnJGWkFHWDg" target="_blank"><h5>â€‹Tests for Ions & Gases (1C) QP</h5></a>
+                                        
+                                        
+                                        <hr>
+                                        <h5 style="color:black">Section 3: Organic Chemistry</h5>
+                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsTUxJV25ldE16djA" target="_blank"><h5>Introduction (1C) QP</h5></a>
+                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbXo5M0JUam9OUWM" target="_blank"><h5>Alkanes (1C) QP</h5></a>
+                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsS0p4SWVoNllfbHM" target="_blank"><h5>Alkenes (1C) QP</h5></a> 
+                                            <h5>None Available</h5>
+                                        <hr>
+                                        <h5 style="color:black">Section 4: Physical Chemistry</h5>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsODhZUWsyVWdVSUk" target="_blank"><h5>Acids & Alkalis (1C) QP</h5></a>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsQVdrRnpqTDJfVzg" target="_blank"><h5>Energetics (1C) QP</h5></a>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsLTdoR2NvU2g5RWs"         target="_blank"><h5>Rates of Reaï»¿ction (1C) QP</h5></a>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsdnJVTzAzZkI1LUE" target="_blank"><h5>Equilibria (1C) QP</h5></a>
+                                        
+                                        <hr>
+                                        <h5 style="color:black">Section 5: Chemistry in Industry</h5>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsREVRT3htanZYYXM" target="_blank"><h5>Extraction & Uses of Metals (1C) QP</h5></a>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsVjZsWUE1eDhueVU" target="_blank"><h5>Crude Oil (1C) QP</h5></a>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsVDVISk01RnVJODA"         target="_blank"><h5>Synthetic Polymers (1C) QP</h5></a>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsaXZrN19OX0JxTTA" target="_blank"><h5>â€‹Industrial Manufacture of Chemicals (1C) QP</h5></a>
+                                         
+                                    </div>
+                                    
+                                    <div class="module">
+                                        <b><h3>&nbsp;</h3></b>                           
+                                        <h4>Mark Scheme</h4>
+                                        <hr>
+                                        <h5 style="color:black">Section 1: Principles of Chemistry</h5>
+                                        <a  href="https://drive.google.com/open?id=0BwhNWu5jAmSsR01rcllVVkpGcWs" target="_blank"><h5>States of Matter (1C) MS </h5></a>
+                                        <a  href="https://drive.google.com/open?id=0BwhNWu5jAmSsVEtxM0Jhb3NrbWc" target="_blank"><h5>Atoms (1C) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsQUNsUTJRVktnWjQ" target="_blank"><h5>Atomic Structure (1C) MS</h5></a> 
+                                        <a  href="https://drive.google.com/open?id=0BwhNWu5jAmSsS0NrU2lhalNDVTQ" target="_blank"><h5>Relative Formula (1C) MS </h5></a>
+                                        <a  href="https://drive.google.com/open?id=0BwhNWu5jAmSsQ3ZxRnBncjN6eDg" target="_blank"><h5>Chemical Formulae & Equations (1C) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsM1hsYUEwRUh3dWs" target="_blank"><h5>Ionic Compounds (1C) MS</h5></a> 
+                                        <a  href="https://drive.google.com/open?id=0BwhNWu5jAmSsd1BMc0k3SS0yQ0U" target="_blank"><h5>Covalent Substances (1C) MS </h5></a>
+                                        <a  href="https://drive.google.com/open?id=0BwhNWu5jAmSsb1JabE1FTEp4V2s" target="_blank"><h5>Metallic Crystals (1C) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsYk9Lb1FnLXdsSGs" target="_blank"><h5>Electrolysis (1C) MS</h5></a> 
+                                        <hr>
+                                        <h5 style="color:black">Section 2: Chemistry of the Elements</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSseUtWWkFncDJGcTA" target="_blank"><h5>The Periodic Table (1C) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsR0F5YzY5SUdpNXc" target="_blank"><h5>Lithium, Sodium & Potassium (1C) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsekdYb3FuZHBMR2c" target="_blank"><h5>Chlorine, Bromine & Iodine (1C) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsemZ2QUlPR0xCM0k" target="_blank"><h5>â€‹Oxygen & Oxides (1C) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsajJzMm1RNVhIVHc" target="_blank"><h5>Hydrogen & Water (1C) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSlNQd1JCNmV5Mm8" target="_blank"><h5>Reactivity Series (1C) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsOHJWQjI4al9UMFU" target="_blank"><h5>â€‹Tests for Ions & Gases (1C) MS</h5></a>
+                                        <hr>
+                                        <h5 style="color:black">Section 3: Organic Chemistry</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsUzY0VkNYLXdjQ00" target="_blank"><h5>Introduction (1C) MS</h5></a>
+                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZHF6RDk5MTBXa0U" target="_blank"><h5>Alkanes (1C) MS</h5></a>
+                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsVVFWbzlTNUstcW8" target="_blank"><h5>Alkenes (1C) MS</h5></a> 
+                                            <h5>None Available</h5>
+                                        <hr>
+                                        <h5 style="color:black">Section 4: Physical Chemistry</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsU2t5Ui1ROFhibEU" target="_blank"><h5>Acids & Alkalis (1C) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSXVWM0JaM2pPMWs" target="_blank"><h5>Energetics (1C) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSG9IY2JiMFdIanc" target="_blank"><h5>Rates of Reaï»¿ction (1C) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsTnZNWk1PYnBCaDQ" target="_blank"><h5>Equilibria (1C) MS</h5></a>
+                                        
+                                        <hr>
+                                        <h5 style="color:black">Section 5: Chemistry in Industry</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMmlBaF9YYmhCMUE" target="_blank"><h5>Extraction & Uses of Metals (1C) MS</h5></a>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMjBMa3R2M2s3ODA" target="_blank"><h5>Crude Oil (1C) MS</h5></a>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsblZjTFNqLUYtRlk"         target="_blank"><h5>Synthetic Polymers (1C) MS</h5></a>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsOUt5OWtkT2ZIdWM" target="_blank"><h5>â€‹Industrial Manufacture of Chemicals (1C) MS</h5></a>
+                                       
+                                    </div>
+                                    
+                                    <div class="module">
+                                        <b><h3>Separate Science</h3></b>
+                                        <h4>Question Paper</h4>
+                                        <hr>
+                                        <h5 style="color:black">Section 1: Principles of Chemistry</h5>
+
+                                        <a  href="https://drive.google.com/open?id=0BwhNWu5jAmSsSWRhS3F4dUN6OXc" target="_blank"><h5>States of Matter (2C) QP </h5></a>
+                                        <a  href="https://drive.google.com/open?id=0BwhNWu5jAmSsT3NpcW1DRXpqcmM" target="_blank"><h5>Atoms (2C) QP</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsanNqd2VzdXBxelU" target="_blank"><h5>Atomic Structure (2C) QP</h5></a> 
+                                        <a  href="https://drive.google.com/open?id=0BwhNWu5jAmSseHVXYUEzeDEwN0E" target="_blank"><h5>Relative Formula (2C) QP </h5></a>
+                                        <a  href="https://drive.google.com/open?id=0BwhNWu5jAmSsd0J3cy1RYXZrZlE" target="_blank"><h5>Chemical Formulae & Equations (2C) QP</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsQmNfdnBtN2cxVmM" target="_blank"><h5>Ionic Compounds (2C) QP</h5></a> 
+                                        <h5>None Available</h5>
+                                        <h5>None Available</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsc29MUEFaWl8wYzA" target="_blank"><h5>Electrolysis (2C) QP</h5></a> 
+                                        
+                                        <hr>
+                                        <h5 style="color:black">Section 2: Chemistry of the Elements</h5>
+                                        
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsajlDZXpwUlE0cGs" target="_blank"><h5>The Periodic Table (2C) QP</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbENOS0FJblBXYlU" target="_blank"><h5>Lithium, Sodium & Potassium (2C) QP</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZk1vMFdwR25kREk" target="_blank"><h5>Chlorine, Bromine & Iodine (2C) QP</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsS3FMRXNiamRFbVU" target="_blank"><h5>â€‹Oxygen & Oxides (2C) QP</h5></a>
+                                        <h5>None Available</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMkNDa3Bid2xBMTA" target="_blank"><h5>Reactivity Series (2C) QP</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsdlNoVVBHd0sxVEk" target="_blank"><h5>â€‹Tests for Ions & Gases (2C) QP</h5></a>
+                                        
+                                        
+                                        <hr>
+                                        <h5 style="color:black">Section 3: Organic Chemistry</h5>
+                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsUk84ZWEyeldWUVE" target="_blank"><h5>Introduction (2C) QP</h5></a>
+                                            <h5>None Available</h5>
+                                            
+                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSXlPTUJ1cFBxekE" target="_blank"><h5>Alkenes (2C) QP</h5></a> 
+                                            
+                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsNlRoZmRIVDVYSUU" target="_blank"><h5>â€‹Ethanol (2C) QP</h5></a>
+                                        <hr>
+                                        <h5 style="color:black">Section 4: Physical Chemistry</h5>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsT2R5TjdhN3Qxam8" target="_blank"><h5>Acids & Alkalis (2C) QP</h5></a>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbkk3MXcySUF5UGc" target="_blank"><h5>Energetics (2C) QP</h5></a>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbUpGY1ZvZTJQRHc"         target="_blank"><h5>Rates of Reaï»¿ction (2C) QP</h5></a>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsS25HYlBKM2RIazg" target="_blank"><h5>Equilibria (2C) QP</h5></a>
+                                        
+                                        <hr>
+                                        <h5 style="color:black">Section 5: Chemistry in Industry</h5>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsTmlXX09LMU1xTDg" target="_blank"><h5>Extraction & Uses of Metals (2C) QP</h5></a>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSElVWlRJNnB5UlU" target="_blank"><h5>Crude Oil (2C) QP</h5></a>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZkFrcG13NXo3SXM"         target="_blank"><h5>Synthetic Polymers (2C) QP</h5></a>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsdEVvNlRscVlVVVU" target="_blank"><h5>â€‹Industrial Manufacture of Chemicals (2C) QP</h5></a>
+                                         
+                                    </div>
+                                    
+                                    <div class="module">
+                                        <b><h3>&nbsp;</h3></b>                           
+                                        <h4>Mark Scheme</h4>
+                                        <hr>
+                                        <h5 style="color:black">Section 1: Principles of Chemistry</h5>
+                                        <a  href="https://drive.google.com/open?id=0BwhNWu5jAmSsY2xaQnN6eUFnXzg" target="_blank"><h5>States of Matter (2C) MS </h5></a>
+                                        <a  href="https://drive.google.com/open?id=0BwhNWu5jAmSsUmt1cnFEM3E0Njg" target="_blank"><h5>Atoms (2C) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsVTVGRmVWcU9qUGc" target="_blank"><h5>Atomic Structure (2C) MS</h5></a> 
+                                        <a  href="https://drive.google.com/open?id=0BwhNWu5jAmSsbE5PM2ljUk9RUUE" target="_blank"><h5>Relative Formula (2C) MS </h5></a>
+                                        <a  href="https://drive.google.com/open?id=0BwhNWu5jAmSsbkFpVUFEZkRpNGM" target="_blank"><h5>Chemical Formulae & Equations (2C) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsdVo0WFJ2ZkhEc2c" target="_blank"><h5>Ionic Compounds (2C) MS</h5></a>
+                                        <h5>None Available</h5>
+                                        <h5>None Available</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsRk1uZmNPaUNPODA" target="_blank"><h5>Electrolysis (2C) MS</h5></a> 
+                                        <hr>
+                                        <h5 style="color:black">Section 2: Chemistry of the Elements</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsdVBOLXFFcnVBYVk" target="_blank"><h5>The Periodic Table (2C) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsN2JhQXhBRXJlc1U" target="_blank"><h5>Lithium, Sodium & Potassium (2C) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSscXdoNEhDQjloTm8" target="_blank"><h5>Chlorine, Bromine & Iodine (2C) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbVcxM3MtUHN1RVU" target="_blank"><h5>â€‹Oxygen & Oxides (2C) MS</h5></a>
+                                       
+                                        <h5>None Available</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZDVEemtLTGpfWHc" target="_blank"><h5>Reactivity Series (2C) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsek5GVUV5d1pDSUE" target="_blank"><h5>â€‹Tests for Ions & Gases (2C) MS</h5></a>
+                                        <hr>
+                                        <h5 style="color:black">Section 3: Organic Chemistry</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSseTVqamhJcTV3b1k" target="_blank"><h5>Introduction (2C) MS</h5></a>
+                                            <h5>None Available</h5>
+                                            
+                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsQzdUbmtHWTlJRzQ" target="_blank"><h5>Alkenes (2C) MS</h5></a> 
+                                            
+                                            <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsYVRaQUZkZG44WUE" target="_blank"><h5>â€‹Ethanol (2C) MS</h5></a>
+                                        <hr>
+                                        <h5 style="color:black">Section 4: Physical Chemistry</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsaW5uVlRuUG1KMzg" target="_blank"><h5>Acids & Alkalis (2C) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSscWg5RHlOdXpTZDg" target="_blank"><h5>Energetics (2C) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZnNFUEduSHg3TGc" target="_blank"><h5>Rates of Reaï»¿ction (2C) MS</h5></a>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsRTZVNllYQVFLRmM" target="_blank"><h5>Equilibria (2C) MS</h5></a>
+                                        
+                                        <hr>
+                                        <h5 style="color:black">Section 5: Chemistry in Industry</h5>
+                                        <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZ2JlN1lfTkV4b2M" target="_blank"><h5>Extraction & Uses of Metals (2C) MS</h5></a>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZkZsMlpMYXNaYmc" target="_blank"><h5>Crude Oil (2C) MS</h5></a>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsQ1VWNkRKRm9KQUk"         target="_blank"><h5>Synthetic Polymers (2C) MS</h5></a>
+                                                <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMnJ1d0ZQU1RCcFE" target="_blank"><h5>â€‹Industrial Manufacture of Chemicals (2C) MS</h5></a>
+                                        
+                                    </div>
+                                </div>
+                                            
+                            </div>
+                    
+                            <div class="mySlides2 w3-container">
+                           
+                            <div class="autowide">
+                             
+                                    <div class="module">
+                                    <h1>Exam Papers</h1>
+                                    <hr>
+                                    <center>
+                                    <a href="https://drive.google.com/open?id=1b5N44P_quvv2eY2ltL1C3h4hqerRR7rG" target="_blank"><h5 >Jun 17 Paper 1C (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=18v9YGiK1MDlhQd9hrcSrLGWDhtsY9Yhq" target="_blank"><h5 >Jun 17 Paper 1CR (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=1rdpd5c2L_oMFGA1xFTD_r-LXKAk2SBQO" target="_blank"><h5 >Jun 17 Paper 2C (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=1lvxa0EcSsg03i-fxyS-OXLyg_AwIt-fL" target="_blank"><h5 >Jun 17 Paper 2CR (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=1H35Y_N6Djb3to2gw-H5yUkVqB__11IPo" target="_blank"><h5 >Jan 17 Paper 1C (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=1qxKNMAYrm-PZs_nDl0pLL4K6HfSdaOIW" target="_blank"><h5 >Jan 17 Paper 2C (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsUHhqMXNXY3JJdzQ" target="_blank"><h5 >Jun 16 Paper 1C (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZHhydG9jMkxmRkU" target="_blank"><h5 >Jun 16 Paper 1CR (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsOUpERUJMRkV5b3c" target="_blank"><h5 >Jun 16 Paper 2C (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZ0FjejZwV293Z1U" target="_blank"><h5 >Jun 16 Paper 2CR (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsQWliWjctOGl3aEk" target="_blank"><h5 >Jan 16 Paper 1C (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsdU5selh2ZjBSX0E" target="_blank"><h5 >Jan 16 Paper 2C (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsb3Y1TTk4RG9YQU0" target="_blank"><h5 >Jun 15 Paper 1C (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZHhydG9jMkxmRkU" target="_blank"><h5 >Jun 15 Paper 1CR (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsUlJmX0M1ZHNhRjg" target="_blank"><h5 >Jun 15 Paper 2C (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsWTE1MjlhMTVsZTA" target="_blank"><h5 >Jun 15 Paper 2CR (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSE1qMXFHU3BabzQ" target="_blank"><h5 >Jan 15 Paper 1C (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsVVRHZEJMbzk3OVk" target="_blank"><h5 >Jan 15 Paper 2C (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbzNwa1VYZHBGV3M" target="_blank"><h5 >Jun 14 Paper 1C (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSjdhRmM5aVJIXzQ" target="_blank"><h5 >Jun 14 Paper 1CR (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsN0I5RGNBd3Fiems" target="_blank"><h5 >Jun 14 Paper 2C (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsUU1pQ28tSlRMSjA" target="_blank"><h5 >Jun 14 Paper 2CR (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsOUlCdmFlZ05HZm8" target="_blank"><h5 >Jan 14 Paper 1C (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSscTI2eXdXYkFhUUE" target="_blank"><h5 >Jan 14 Paper 2C (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsdXFCcUpBbmlMVG8" target="_blank"><h5 >Jun 13 Paper 1C (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsSlJ6OV9KbXRMcm8" target="_blank"><h5 >Jun 13 Paper 1CR (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsMVFkenZ1X0hldU0" target="_blank"><h5 >Jun 13 Paper 2C (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsUU5reWZ3cFdYZjg" target="_blank"><h5 >Jun 13 Paper 2CR (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsaHgtVmN1Q05WSE0" target="_blank"><h5 >Jan 13 Paper 1C (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbC1hNGZKcnV5TEU" target="_blank"><h5 >Jan 13 Paper 2C (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsTUtzbFRnR21hOVE" target="_blank"><h5 >Jun 12 Paper 1C (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsV2FNSDRuNnNQQWc" target="_blank"><h5 >Jun 12 Paper 2C (QP)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbndGWlRkTWlaa2c" target="_blank"><h5 >Jan 12 Paper 1C (QP)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsYWxrd2lqdGRqb0k" target="_blank"><h5 >Jan 12 Paper 2C (QP)</h5></a>
+                                    </center>
+                                    </div>
+                                
+                                    <div class="module">
+                                    <h1>Mark Schemes</h1>
+                                    <hr>
+                                     <center>
+                                    <a href="https://drive.google.com/open?id=1mUD3onv8-VOT4CM2-0hE7M4MTu2e2QgH" target="_blank"><h5 >Jun 17 Paper 1C (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=1oifOoxwNz5B6M6xsd3_extmWmR6vf_L0" target="_blank"><h5 >Jun 17 Paper 1CR (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=10WQuP8QBwaKBaxJL0vbugfZgkC5Co5-K" target="_blank"><h5 >Jun 17 Paper 2C (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=1Kr9J6otcA67CgLS3m2sE0PfXqws2ZeLh" target="_blank"><h5 >Jun 17 Paper 2CR (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=1ApewehxWGS9uOJvqL2fgTQy8aSje1cs9" target="_blank"><h5 >Jan 17 Paper 1C (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=1acrHKX3iXG-mXW67DOdaDqbnV4bUuDo_" target="_blank"><h5 >Jan 17 Paper 2C (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsTVhMQmF5QXVZWGs" target="_blank"><h5 >Jun 16 Paper 1C (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsQVFGUUlBdnBURDg" target="_blank"><h5 >Jun 16 Paper 1CR (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsaGx0dmFodGxKTWc" target="_blank"><h5 >Jun 16 Paper 2C (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsckxob2JRX2wzNDg" target="_blank"><h5 >Jun 16 Paper 2CR (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsY3NqZzlKN0tXZGc" target="_blank"><h5 >Jan 16 Paper 1C (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsQk5Pc0k4bUhvYTQ" target="_blank"><h5 >Jan 16 Paper 2C (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSseHBmVVg3VTdUWVE" target="_blank"><h5 >Jun 15 Paper 1C (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsS3otMi0tX2hjcG8" target="_blank"><h5 >Jun 15 Paper 1CR (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsaFp1ZS0xYkJYRFk" target="_blank"><h5 >Jun 15 Paper 2C (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsVkNjdEhxQ2N6b00" target="_blank"><h5 >Jun 15 Paper 2CR (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsVDA4cmtyUXNyOHM" target="_blank"><h5 >Jan 15 Paper 1C (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsN2t0SmMxa1gwSVE" target="_blank"><h5 >Jan 15 Paper 2C (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsNndsT25ndFFfaVE" target="_blank"><h5 >Jun 14 Paper 1C (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZHU1WlNvclFxcW8" target="_blank"><h5 >Jun 14 Paper 1CR (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsa0ZZZHRhYnNqMkk" target="_blank"><h5 >Jun 14 Paper 2C (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsT2hEWHl0WGczXzg" target="_blank"><h5 >Jun 14 Paper 2CR (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsVzJTb1Y4MURVOUU" target="_blank"><h5 >Jan 14 Paper 1C (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsbW9LMlAtUGhWSkE" target="_blank"><h5 >Jan 14 Paper 2C (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSseVNrcDB5UVpZT3M" target="_blank"><h5 >Jun 13 Paper 1C (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsa0dCZmVKa3hLWVE" target="_blank"><h5 >Jun 13 Paper 1CR (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsUC1RYkdaWHNLejA" target="_blank"><h5 >Jun 13 Paper 2C (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsRWpNVmVWcEtybUk" target="_blank"><h5 >Jun 13 Paper 2CR (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsc0JPVXk4S040T2M" target="_blank"><h5 >Jan 13 Paper 1C (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSscUJhQ1g1bEp6bms" target="_blank"><h5 >Jan 13 Paper 2C (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsNVFSYi1TUF80akE" target="_blank"><h5 >Jun 12 Paper 1C (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsOXhqYmh0M3BseWM" target="_blank"><h5 >Jun 12 Paper 2C (MS)</h5></a>
+                                    <hr>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsNWlMa1hxVHRxSGs" target="_blank"><h5 >Jan 12 Paper 1C (MS)</h5></a>
+                                    <a href="https://drive.google.com/open?id=0BwhNWu5jAmSsZ2hBalJCX05lVlE" target="_blank"><h5 >Jan 12 Paper 2C (MS)</h5></a>
+                                    </center>
+                                    </div>
+                                
+                                </div>
+                            
+                            </div>
+                </div>
+        </div>
+        <div class="mySlides w3-container">
+            <h2>Chemistry Videos</h2>
+        </div>
+        <div class="mySlides w3-container w3-white">
+            <h2>Chemistry Books</h2>
+            <div class="borders2">
+
+            </div>
+            <br><br>
+            <h2>Chemistry Movies/TV Shows</h2>
+            <div class="borders2">
+
+            </div>
+            <br><br>
+        </div>
+            <div class="mySlides w3-container w3-white">
+                <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=2&amp;bgcolor=%23ffffff&amp;src=3b54p17ej560pebokbi1rg2g1c%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=Asia%2FSingapore" style="border:solid 1px #777" width="100%" height="800" frameborder="0" scrolling="no"></iframe>
+            </div>
+            
+       <div class="mySlides w3-container w3-white">
+                <h2>Ask Any Question! We Will Reply Soon</h2>
+                <div id="disqus_thread"></div>
+                <script>
+
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                /*
+                var disqus_config = function () {
+                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                */
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://dcbinspire.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+        </div>
+
+        </div>
+
+
+    
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+
+    function currentDiv(n) {
+      showDivs(slideIndex = n);
+    }
+
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      if (n > x.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+         dots[i].className = dots[i].className.replace(" w3-red", "");
+      }
+      x[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " w3-red";
+    }
+    
+    
+     var slideIndex2 = 1;
+    showDivs2(slideIndex2);
+
+    function currentDiv2(n) {
+      showDivs2(slideIndex2 = n);
+    }
+
+    function showDivs2(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides2");
+      var dots = document.getElementsByClassName("demo2");
+      if (n > x.length) {slideIndex2 = 1}    
+      if (n < 1) {slideIndex2 = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+         dots[i].className = dots[i].className.replace(" w3-red", "");
+      }
+      x[slideIndex2-1].style.display = "block";  
+      dots[slideIndex2-1].className += " w3-red";
+    }
+    
+    
+         var slideIndex3 = 1;
+    showDivs3(slideIndex3);
+
+    function currentDiv3(n) {
+      showDivs3(slideIndex3 = n);
+    }
+
+    function showDivs3(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides3");
+      var dots = document.getElementsByClassName("demo3");
+      if (n > x.length) {slideIndex3 = 1}    
+      if (n < 1) {slideIndex3 = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+         dots[i].className = dots[i].className.replace(" w3-red", "");
+      }
+      x[slideIndex3-1].style.display = "block";  
+      dots[slideIndex3-1].className += " w3-red";
+    }
+    
+
+    
+</script>
+<script id="dsq-count-scr" src="//dcbinspire.disqus.com/count.js" async></script>
+</body >
+</html>
