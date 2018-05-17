@@ -57,7 +57,7 @@
 		
 	$(document).ready(function(){
 		$('#bookModule').load('DynamicLoadHTML/Modules/bookModule.html');//intialize Couting Vars
-		$('#bookModule').empty
+		$('#bookModule').empty();
 		var BookSubjects = ["#BIObook","#CHEMbook","#PHYbook"];
 		var today2 = new Date();
 		if(today2.getDay() == 1 || localStorage.getItem("firstTime")==null)
@@ -96,7 +96,6 @@
 		$('#menu').load('DynamicLoadHTML/Navbar.html');
 
 		//bookModule Load
-		
 		$('#bookModule').load('DynamicLoadHTML/Modules/bookModule.html '+localStorage.getItem("newBook")); //Overwrite
 		$('#bookBtnsLoad').load('DynamicLoadHTML/Modules/bookModule.html #bookBtns');
 		
