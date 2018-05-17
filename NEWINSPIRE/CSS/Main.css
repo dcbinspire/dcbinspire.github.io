@@ -19,10 +19,9 @@
 	top:0;
 	left:0;
 	right:0;
-	height:8%;
 	width: 100%;
-	max-height: 70px;
-	min-height: 70px;
+	max-height: 60px;
+	min-height: 60px;
 	z-index: -1;
 	background-color: rgb(158,20,34);
 	color:white;
@@ -50,8 +49,8 @@
 	right:0;
 	height:10%;
 	width: 100%;
-	max-height: 70px;
-	min-height: 70px;
+	max-height: 60px;
+	min-height: 60px;
 	z-index: -1;
 	background-color: rgb(158,20,34);
 	color:white;
@@ -113,9 +112,9 @@
     text-align: center;
     text-decoration: none;
 	padding: 2% 3.5%;
-	max-height: 70px;
-	min-height: 70px;
-	max-width: 170px;
+	max-height: 60px;
+	min-height: 60px;
+	max-width: 160px;
 	cursor: pointer;
 }
 
@@ -151,9 +150,9 @@
     text-align: center;
     text-decoration: none;
 	padding: 2% 3.5%;
-	max-height: 70px;
-	min-height: 70px;
-	max-width: 170px;
+	max-height: 60px;
+	min-height: 60px;
+	max-width: 160px;
 	cursor: pointer;
 }
 
@@ -190,7 +189,7 @@
 	position: absolute;
 	left:0;
 	right: 0;
-	top: 70px;
+	top: 60px;
 	bottom: 0;
 	z-index: -6;
 }
@@ -362,6 +361,7 @@
 	background-color: white;
 	margin-bottom: 50px;
 	z-index: -2;
+	overflow-y: scroll;
 }
 
 #topicModule img
@@ -489,7 +489,7 @@ a2
     margin-left:25px;
 }
 
-h2
+h23
 {
     margin-left:25px;
 }
