@@ -194,6 +194,10 @@
 	z-index: -6;
 }
 
+body
+{
+    background-color:white;
+}
 
 .topicDropdown-content {
     display: none;
