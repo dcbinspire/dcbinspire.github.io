@@ -203,7 +203,7 @@ body
     display: none;
     position: absolute;
 	top:100%;
-	right:29.6%;
+	right:29.1%;
     background-color: #f1f1f1;
     min-width: 100px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -213,7 +213,7 @@ body
     display: none;
     position: absolute;
 	top:0px;
-	right:-126%;
+	right:-125%;
     background-color: #f1f1f1;
     min-width: 125px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -222,8 +222,8 @@ body
 .IGCSEdropdown-content {
     display: none;
     position: absolute;
-	top:48px;
-	right:-126%;
+	top:43px;
+	right:-125%;
     background-color: #f1f1f1;
     min-width: 125px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -234,7 +234,7 @@ body
     display: none;
     position: absolute;
 	top:100%;
-	right:14.5%;
+	right:14.3%;
     background-color: #f1f1f1;
     min-width: 100px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -244,7 +244,7 @@ body
     display: none;
     position: absolute;
 	top:100%;
-	left:6.4%;
+	left:6.1%;
     background-color: #f1f1f1;
     min-width: 100px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -294,6 +294,7 @@ body
 .books img
 {
 	width:150px;
+	height:210px;
 	position: absolute;
 	bottom: 0;
 }
