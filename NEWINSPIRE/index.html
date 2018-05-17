@@ -57,6 +57,7 @@
 		
 	$(document).ready(function(){
 		$('#bookModule').load('DynamicLoadHTML/Modules/bookModule.html');//intialize Couting Vars
+		
 		var BookSubjects = ["#BIObook","#CHEMbook","#PHYbook"];
 		var today2 = new Date();
 		if(today2.getDay()==1 || localStorage.getItem("firstTime")==null)
@@ -96,10 +97,13 @@
 		//Menu Navbar Load
 		$('#menu').load('DynamicLoadHTML/Navbar.html');
 
-		//bookModule Load	
-		$('#bookModule').empty()
-		$('#bookModule').load('DynamicLoadHTML/Modules/bookModule.html '+localStorage.getItem("newBook")); //Overwrite
-		$('#bookBtnsLoad').load('DynamicLoadHTML/Modules/bookModule.html #bookBtns');
+		//bookModule Load
+		window.setTimeout(loadBooks,1000)
+		function loadBooks()
+		{
+			$('#bookModule').load('DynamicLoadHTML/Modules/bookModule.html '+localStorage.getItem("newBook")); //Overwrite
+			$('#bookBtnsLoad').load('DynamicLoadHTML/Modules/bookModule.html #bookBtns');
+		}
 		
 		//topic module Load
 		$('#TopicImg1').load('DynamicLoadHTML/Modules/topicModule.html #phySlideImg');
