@@ -117,6 +117,7 @@ $(document).ready(function()
 		   if(TodaysDate != localStorage.getItem("date2"))
 			   {
 				   localStorage.setItem("randomNum", Math.floor(Math.random() * counter+1))
+				   localStorage.setItem("date2", TodaysDate)
 			   }
 		   
            quote.innerHTML = quoteNum[parseInt(localStorage.getItem("randomNum"))]; //changing the h1 tag's text into the fact
