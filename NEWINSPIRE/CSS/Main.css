@@ -361,6 +361,7 @@
 	background-color: white;
 	margin-bottom: 50px;
 	z-index: -2;
+	overflow-y: scroll;
 }
 
 #topicModule img
