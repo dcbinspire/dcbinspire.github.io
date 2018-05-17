@@ -54,38 +54,40 @@
 
 <script>
 	//bookModuleLoadRandomScript
-	$('#bookModule').load('DynamicLoadHTML/Modules/bookModule.html');//intialize Couting Vars
-	$('#bookModule').empty()
-	
-	var BookSubjects= ["#BIObook","#CHEMbook","#PHYbook"];
-	var today2 = new Date();
-	if(today2.getDay()==1||localStorage.getItem("firstTime")==null)
+	$(document).ready(function(){
+		$('#bookModule').load('DynamicLoadHTML/Modules/bookModule.html');//intialize Couting Vars
+		$('#bookModule').empty()
+
+		var BookSubjects= ["#BIObook","#CHEMbook","#PHYbook"];
+		var today2 = new Date();
+		if(today2.getDay()==1||localStorage.getItem("firstTime")==null)
+			{
+				localStorage.setItem("firstTime","true")
+			}
+		if((today2.getDay() == 0 && localStorage.getItem("firstTime")=="true")  || localStorage.getItem("randomSubject")==null)
 		{
-			localStorage.setItem("firstTime","true")
+			localStorage.setItem("firstTime","false")
+			localStorage.setItem("randomSubject", Math.floor(Math.random() * BookSubjects.length+1))
+			if(BookSubjects[parseInt(localStorage.getItem("randomSubject"))]=="#BIObook")
+				{
+					localStorage.setItem("randomNumBio", Math.floor(Math.random() * parseInt(localStorage.getItem("numBioBooks"))+1))
+
+					localStorage.setItem("newBook",BookSubjects[parseInt(localStorage.getItem("randomSubject"))]+localStorage.getItem("randomNumBio"))
+				}
+			else if(BookSubjects[parseInt(localStorage.getItem("randomSubject"))]=="#CHEMbook")
+				{
+					localStorage.setItem("randomNumChem", Math.floor(Math.random() * parseInt(localStorage.getItem("numChemBooks"))+1))
+
+					localStorage.setItem("newBook",BookSubjects[parseInt(localStorage.getItem("randomSubject"))]+localStorage.getItem("randomNumChem"))
+				}
+			else if(BookSubjects[parseInt(localStorage.getItem("randomSubject"))]=="#PHYbook")
+				{
+					localStorage.setItem("randomNumPhy", Math.floor(Math.random() * parseInt(localStorage.getItem("numPhyBooks"))+1))
+
+					localStorage.setItem("newBook",BookSubjects[parseInt(localStorage.getItem("randomSubject"))]+localStorage.getItem("randomNumPhy"))
+				}
 		}
-	if((today2.getDay() == 0 && localStorage.getItem("firstTime")=="true")  || localStorage.getItem("randomSubject")==null)
-	{
-		localStorage.setItem("firstTime","false")
-		localStorage.setItem("randomSubject", Math.floor(Math.random() * BookSubjects.length+1))
-		if(BookSubjects[parseInt(localStorage.getItem("randomSubject"))]=="#BIObook")
-			{
-				localStorage.setItem("randomNumBio", Math.floor(Math.random() * parseInt(localStorage.getItem("numBioBooks"))+1))
-				
-				localStorage.setItem("newBook",BookSubjects[parseInt(localStorage.getItem("randomSubject"))]+localStorage.getItem("randomNumBio"))
-			}
-		else if(BookSubjects[parseInt(localStorage.getItem("randomSubject"))]=="#CHEMbook")
-			{
-				localStorage.setItem("randomNumChem", Math.floor(Math.random() * parseInt(localStorage.getItem("numChemBooks"))+1))
-				
-				localStorage.setItem("newBook",BookSubjects[parseInt(localStorage.getItem("randomSubject"))]+localStorage.getItem("randomNumChem"))
-			}
-		else if(BookSubjects[parseInt(localStorage.getItem("randomSubject"))]=="#PHYbook")
-			{
-				localStorage.setItem("randomNumPhy", Math.floor(Math.random() * parseInt(localStorage.getItem("numPhyBooks"))+1))
-				
-				localStorage.setItem("newBook",BookSubjects[parseInt(localStorage.getItem("randomSubject"))]+localStorage.getItem("randomNumPhy"))
-			}
-	}
+	});
 	
 	//Module Load Script
 	carousel()
