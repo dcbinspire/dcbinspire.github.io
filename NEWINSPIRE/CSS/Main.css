@@ -194,6 +194,10 @@
 	z-index: -6;
 }
 
+body
+{
+    background-color:#FBE8F1:
+}
 
 .topicDropdown-content {
     display: none;
