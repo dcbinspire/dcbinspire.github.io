@@ -54,11 +54,10 @@
 
 <script>
 	//bookModuleLoadRandomScript
+		
 	$(document).ready(function(){
 		$('#bookModule').load('DynamicLoadHTML/Modules/bookModule.html');//intialize Couting Vars
-		$('#bookModule').empty()
-
-		var BookSubjects= ["#BIObook","#CHEMbook","#PHYbook"];
+		var BookSubjects = ["#BIObook","#CHEMbook","#PHYbook"];
 		var today2 = new Date();
 		if(today2.getDay()==1 || localStorage.getItem("firstTime")==null)
 			{
@@ -66,6 +65,7 @@
 			}
 		if((today2.getDay() == 0 && localStorage.getItem("firstTime")=="true")  || localStorage.getItem("randomSubject")==null || localStorage.getItem("newBook")==null)
 		{
+			alert("working")
 			localStorage.setItem("firstTime","false")
 			localStorage.setItem("randomSubject", Math.floor(Math.random() * BookSubjects.length+1))
 			if(BookSubjects[parseInt(localStorage.getItem("randomSubject"))]=="#BIObook")
@@ -88,7 +88,7 @@
 				}
 		}
 	});
-	
+	alert(localStorage.getItem("newBook"))
 	//Module Load Script
 	carousel()
 	$(document).ready(function(){
@@ -97,8 +97,10 @@
 		$('#menu').load('DynamicLoadHTML/Navbar.html');
 
 		//bookModule Load	
+		$('#bookModule').empty()
 		$('#bookModule').load('DynamicLoadHTML/Modules/bookModule.html '+localStorage.getItem("newBook")); //Overwrite
 		$('#bookBtnsLoad').load('DynamicLoadHTML/Modules/bookModule.html #bookBtns');
+		
 		//topic module Load
 		$('#TopicImg1').load('DynamicLoadHTML/Modules/topicModule.html #phySlideImg');
 		$('#TopicImg2').load('DynamicLoadHTML/Modules/topicModule.html #chemSlideImg');
