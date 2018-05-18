@@ -91,3 +91,38 @@
 			$("#footer").removeClass("footerCSS")
 		}
 </script>
+
+<script>//quoteLoad
+$(document).ready(function()
+    {	
+	   var quoteNum
+	   var counter=0
+	   var today = new Date();
+	   var TodaysDate = new Date(parseFloat(today.getMonth()+1)+"/"+today.getDate()+"/"+today.getFullYear());
+       jQuery.get('txts/InspireQuotes.txt', function(data) // getting the file
+        {     
+            quoteNum = data.split('\n'); //spliting the file into lines
+            var quote = document.getElementById('footerQuote');
+		   
+		   	while(quoteNum[counter]!=null)
+				{
+					counter+=1
+				}
+		    
+		   if (localStorage.getItem("date2")==null)
+            	{
+					localStorage.setItem("date2", TodaysDate)
+					localStorage.setItem("randomNum", Math.floor(Math.random() * counter+1))
+            	}
+		   if(TodaysDate != localStorage.getItem("date2"))
+			   {
+				   localStorage.setItem("randomNum", Math.floor(Math.random() * counter+1))
+				   localStorage.setItem("date2", TodaysDate)
+			   }
+		   
+           quote.innerHTML = quoteNum[parseInt(localStorage.getItem("randomNum"))]; //changing the h1 tag's text into the fact
+        }); 
+		
+		
+	});
+</script>

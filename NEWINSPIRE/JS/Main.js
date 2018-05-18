@@ -11,4 +11,3 @@ function carousel() {
     setTimeout(carousel, 6000); 
 }
 
-//QuoteLoad

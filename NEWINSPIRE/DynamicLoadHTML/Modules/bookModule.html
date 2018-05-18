@@ -1,5 +1,13 @@
-	<div id="ScienceBooks">
+	<div id="AllBooks">
 		<div id="BiologyBooks">
+			<div id="BIObook0">
+				<img src="Imgs/Book Covers/coming soon.jpg">
+				<div class="Synopsis">
+					<h3>BOOK OF THE WEEK: Coming Soon</h3>
+					<em><p>Category: Biology</p></em>
+					This book from this category has not been added yet. Coming Soon,<br><br>Thanks for using Inspire!
+				</div>
+			</div>
 			<div id="BIObook1">
 				<img src="Imgs/Book Covers/coming soon.jpg">
 				<div class="Synopsis">
@@ -16,18 +24,18 @@
 					This book from this category has not been added yet. Coming Soon,<br><br>Thanks for using Inspire!
 				</div>
 			</div>
-			<div id="BIObook3">
-				<img src="Imgs/Book Covers/coming soon.jpg">
-				<div class="Synopsis">
-					<h3>BOOK OF THE WEEK: Coming Soon</h3>
-					<em><p>Category: Biology</p></em>
-					This book from this category has not been added yet. Coming Soon,<br><br>Thanks for using Inspire!
-				</div>
-			</div>
 		</div>
         
 		
 		<div id="ChemistryBooks">
+			<div id="CHEMbook0">
+				<img src="Imgs/Book Covers/coming soon.jpg">
+				<div class="Synopsis">
+					<h3>BOOK OF THE WEEK: Coming Soon</h3>
+					<em><p>Category: Chemistry</p></em>
+					This book from this category has not been added yet. Coming Soon,<br><br>Thanks for using Inspire!
+				</div>
+			</div>
 			<div id="CHEMbook1">
 				<img src="Imgs/Book Covers/coming soon.jpg">
 				<div class="Synopsis">
@@ -44,20 +52,12 @@
 					This book from this category has not been added yet. Coming Soon,<br><br>Thanks for using Inspire!
 				</div>
 			</div>
-			<div id="CHEMbook3">
-				<img src="Imgs/Book Covers/coming soon.jpg">
-				<div class="Synopsis">
-					<h3>BOOK OF THE WEEK: Coming Soon</h3>
-					<em><p>Category: Chemistry</p></em>
-					This book from this category has not been added yet. Coming Soon,<br><br>Thanks for using Inspire!
-				</div>
-			</div>
 		</div>
         
         
 		
 		<div id="PhysicsBooks">
-			<div id="PHYbook1">
+			<div id="PHYbook0">
 				<img src="Imgs/Book Covers/Physics/Quantum.jpeg">
 				<div class="Synopsis">
 					<h3>BOOK OF THE WEEK: Quantum</h3>
@@ -65,15 +65,15 @@
 					For most people, quantum theory is synonymous with mysterious, impenetrable science. And in fact for many years it was equally baffling for scientists themselves. In this tour de force of science history, Manjit Kumar gives a dramatic and superbly written account of this fundamental scientific revolution
 				</div>
 			</div>
-			<div id="PHYbook2">
-				<img src="Imgs/Book Covers/Physics/A brief History Of Time.jpg">
+			<div id="PHYbook1">
+				<img src="Imgs/Book Covers/Physics/A breif History Of Time.jpg">
 				<div class="Synopsis">
 					<h3>BOOK OF THE WEEK: A Brief History Of Time</h3>
 					<em><p>Category: Physics</p></em>
 					A Brief History of Time (1988) is a book written by the scientist and mathematician Stephen Hawking. This book is about physics, or the study of laws that predict how things work in the universe. It is also about cosmology, or how we see the universe and how the universe exists.
 				</div>
 			</div>
-			<div id="PHYbook3">
+			<div id="PHYbook2">
 				<img src="Imgs/Book Covers/Physics/Cosmos.jpg">
 				<div class="Synopsis">
 					<h3>BOOK OF THE WEEK: Cosmos</h3>
@@ -85,7 +85,7 @@
         
         
         <div id="MathBooks">
-			<div id="MATHBook1">
+			<div id="MATHBook0">
 				<img src="Imgs/Book Covers/Mathematics/theUniverseInZeroWords.jpg">
 				<div class="Synopsis">
 					<h3>BOOK OF THE WEEK: The Universe In Zero Words</h3>
@@ -93,7 +93,7 @@
 					The Universe in Zero Words tells the history of twenty-four great and beautiful equations that have shaped mathematics, science, and society--from the elementary (1+1=2) to the sophisticated (the Black-Scholes formula for financial derivatives), and from the famous (E=mc<sup>2</sup>) to the arcane (Hamilton's quaternion equations).  
 				</div>
 			</div>
-			<div id="MATHBook2">
+			<div id="MATHBook1">
 				<img src="Imgs/Book Covers/Mathematics/fermatsLastTheorem.jpg">
 				<div class="Synopsis" style="font-size:13px;">
 					<h3>BOOK OF THE WEEK: Fermats Last Theorem</h3>
@@ -101,7 +101,7 @@
 					French mathematician sets problem and then solves problem. Jots down in the margin of a book that he has a proof, but can’t be bothered to write down the proof itself. Frenchman dies, son discovers marginal note, publishes it, and the rest of the world starts trying to figure out the proof of Fermat’s Last Theorem. Everyone fails, until a ten year old boy starts working on the problem in 1963. Roughly thirty years later he comes up with a proof, but he’s made a mistake, Damn! He’s embarrassed and humiliated, but undaunted he sets down to work again and …
 				</div>
 			</div>
-			<div id="MATHBook3">
+			<div id="MATHBook2">
 				<img src="Imgs/Book Covers/Mathematics/primeObsession.jpg">
 				<div class="Synopsis" style="font-size:13px;">
 					<h3>BOOK OF THE WEEK: Prime Obsession</h3>
@@ -110,7 +110,7 @@
 
 				</div>	
 			</div>
-            <div id="MATHBook4">
+            <div id="MATHBook3">
 				<img src="Imgs/Book Covers/Mathematics/ellipticTales.jpg">
 				<div class="Synopsis" >
 					<h3>BOOK OF THE WEEK: Elliptic Tales</h3>
@@ -133,3 +133,10 @@
 	</div>
     <button>More</button>
 </div>
+
+
+<script>
+	localStorage.setItem("numBioBooks",$('#BiologyBooks .Synopsis').length)
+	localStorage.setItem("numPhyBooks",$('#PhysicsBooks .Synopsis').length)
+	localStorage.setItem("numChemBooks",$('#ChemistryBooks .Synopsis').length)
+</script>
