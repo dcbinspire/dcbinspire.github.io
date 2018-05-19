@@ -59,12 +59,11 @@
 		$('#bookModule').empty();
 		var BookSubjects = ["#BIObook","#CHEMbook","#PHYbook","#MATHbook"];
 		var today2 = new Date();
-		if(today2.getDay() == 1 || localStorage.getItem("firstTime")==null)
+		if((today2.getDay() >= 1 && today2.getDay() <= 6) || localStorage.getItem("firstTime")==null)
 			{
 				localStorage.setItem("firstTime","true")
 			}
-		localStorage.setItem("firstTime","true")
-		if((today2.getDay() == 5 && localStorage.getItem("firstTime")=="true")  || localStorage.getItem("randomSubject")==null || localStorage.getItem("newBook")==null)
+		if((today2.getDay() == 0 && localStorage.getItem("firstTime")=="true")  || localStorage.getItem("randomSubject")==null)
 		{
 			localStorage.setItem("firstTime","false")
 			localStorage.setItem("randomSubject", Math.floor(Math.random() * BookSubjects.length))
