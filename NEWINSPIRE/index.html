@@ -63,7 +63,7 @@
 			{
 				localStorage.setItem("firstTime","true")
 			}
-		if((today2.getDay() == 0 && localStorage.getItem("firstTime")=="true")  || localStorage.getItem("randomSubject")==null)
+		if((today2.getDay() == 0 && localStorage.getItem("firstTime")=="true")  || localStorage.getItem("randomSubject")==null||localStorage.getItem("randomNumBio")==null)
 		{
 			localStorage.setItem("firstTime","false")
 			localStorage.setItem("randomSubject", Math.floor(Math.random() * BookSubjects.length))
