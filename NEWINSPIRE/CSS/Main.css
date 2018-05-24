@@ -483,11 +483,6 @@ body
 	top:1%;;
 }
 
-.chall
-{
-    color:white;   
-    margin-left:25px;
-}
 
 #challengeModule
 {
@@ -499,4 +494,16 @@ body
 	background-color:#091730;
 	margin-bottom: 50px;
 	z-index: -2;
+	
+}
+
+#challengeModule button
+{
+	margin-left: 25px;
+}
+
+#challengeModule a, h2
+{
+    color:white;   
+    margin-left:25px;
 }

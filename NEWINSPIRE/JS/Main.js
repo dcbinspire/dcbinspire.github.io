@@ -11,3 +11,38 @@ function carousel() {
     setTimeout(carousel, 6000); 
 }
 
+function mathPastIssues()
+{
+	showModal()
+	emptyModule()
+	$('#pastFacts').load("DynamicLoadHTML/Modules/challengeModule.html #PastMathIssues")
+}
+function sciPastIssues()
+{
+	showModal()
+	emptyModule()
+	$('#pastFacts').load("DynamicLoadHTML/Modules/challengeModule.html #PastSciIssues")
+}
+
+// When the user clicks the button, open the modal 
+function showModal() 
+{
+	modal.style.display = "block";
+}
+function getModalVidFact()
+{
+	showModalVidFact("bioVid1", "bioFact1")
+}
+function showModalVidFact(vidID, factID)
+{
+	showModal() 
+	emptyModule()
+	$('#Modalvideo').load('DynamicLoadHTML/Modules/vidfactModule.html #'+ vidID);
+	$('#Modalfacts').load('DynamicLoadHTML/Modules/vidfactModule.html #' +factID);
+}
+function emptyModule()
+{
+	$('#Modalvideo').empty()
+	$('#Modalfacts').empty()
+	$('#pastFacts').empty()
+}
